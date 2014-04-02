@@ -34,6 +34,13 @@ Označenie operácií agenta:
 - prejsť sa po hrane s lokálnym číslom konca k = Sk
 \end{ozn}
 
+\begin{ozn}
+Agent začína v grafe, ktorý sme už nazvali počiatočný graf - v našom prípade
+obsahuje jeden izolovaný vrchol. Graf, ktorý má agent skonštruovať, budeme
+volať cieľový, konečný alebo konštrupvaný. Graf existujúci v danom kroku
+konštrukcie v modely budeme volať aktuálny graf alebo len graf.
+\end{ozn}
+
 \begin{lem}
 Agent na ceste do vrchola v grafe musí ísť po už existujúcich hranách.
 \end{lem}
@@ -44,19 +51,19 @@ nespája hrana.
 \end{proof}
 
 \begin{lem}
-Ak agent odíde z vrcholu v ktorom je počet súčet incidentných hrán a
+Ak agent odíde z vrcholu v ktorom je súčet počtov incidentných hrán a
 otvorených portov nižší, ako je počet hrán s ktorými má byť vrchol
-incidentný v konštruovanom grafe, tak sa agent doň musí neskôr vrátiť.
+incidentný v cieľovom grafe, tak sa agent doň musí neskôr vrátiť.
 \end{lem}
 
 \begin{proof}
-Neexistuje postupnosť operácií pomocou ktorej sa dá vytvoriť hrana do
-existujúceho vrcholubez jeho návštevy, ak v ňom nie je otvorený port pre
+Neexistuje postupnosť operácií, pomocou ktorej sa dá vytvoriť hrana do
+existujúceho vrcholu bez jeho návštevy, ak v ňom nie je otvorený port pre
 túto hranu.
 \end{proof}
 
 \begin{lem}
-Hrany vytvorené operáciou "nová hrana" tovria kostru grafu.
+Hrany vytvorené operáciou "nová hrana" tvoria kostru grafu.
 \end{lem}
 \begin{proof}
 Okrem inicializačného vrcholu, všetky vrcholy vzniknú operáciou "nová hrana"
@@ -67,26 +74,33 @@ pochádzajúcimi z oprácií NH je súvislý. Ich počet je zároveň o jeden me
 vrcholov, teda ide o kostru.
 \end{proof}
 \begin{lem}
-Hrany, ktoré prejdem od otvorenia prvého portu hrany po otvorenie druhého,
+\label{uzavrety_sled}
+Hrany, ktoré agent prejde od otvorenia prvého portu hrany po otvorenie druhého,
 tvoria v grafe s novovzniknutou hranou uzavretý sled.
 \end{lem}
 \begin{proof}
-Je to dané operáciami, ktoré môže agent vykonať.
+Je to dané operáciami, ktoré môže agent vykonať. Agent totiž prechádza len
+po hranách v grafe. Z vrchola ide do incidentnej hrany a z hrany do
+incidentného vrchola. Pričom žiadna hrana nemôže zaniknúť, teda medzi otvorením
+dvoch portov prejde agent po nejakom slede v grafe. Novovzniknutá hrana
+spája koncový a začiatočný bod tohot sledu; tvorí s ním teda uzavretý sled.
 \end{proof}
 \begin{pozn}
-Z tohto sledu viem vybrať kružnicu.
+Zo sledu z vety \ref{uzavrety_sled} vieme vybrať kružnicu.
 \end{pozn}
 \begin{lem}
-Minimálny počet hrán, ktoré potrebujem prejsť pri konštrukcii hrany pomocou
+Minimálny počet hrán, ktoré agent potrebuje prejsť pri konštrukcii hrany pomocou
 portov je rovný alebo väčší ako dĺžka najmenšej kružnice, na ktorej sa táto
 hrana nachádza.
 \end{lem}
 \begin{proof}
-Nájdem menší takýto sled ako je najkratšia kružnica. Z neho viem vybrať
+Nájdem menší takýto sled ako je najkratšia kružnica. Tento tvorí s
+novovzniknutou hranou uzavretý sled. Z neho vieme vybrať
 kružnicu, čo je spor s minimálnosťou najkratšej kružnice.
 \end{proof}
 \begin{lem}
-Ak mám k dispozícii dostatočný počet portov, problém efektívnej konštrukcie grafu sa
+Ak má agent k dispozícii dostatočný počet značiek portov, 
+tak sa problém efektívnej konštrukcie grafu
 redukuje na hľadanie najkratšieho sledu v ktorom sú všetky vrcholy. Pri
 hamiltonovskom grafe ide o hamiltonovskú kružnicu.
 \end{lem}
@@ -95,12 +109,16 @@ Agent prechádza vrcholmi, pričom mu sačí jedna návšteva každého vrcholu 
 otvorí potrebný počet portov príslušných značiek.
 \end{proof}
 \begin{lem}
-Vrchol v musím navštíviť minimálne $\frac{deg(v)}{\#značka * 2} $ krát.
+Vrchol v grafe musí agent navštíviť minimálne $\frac{deg(v)}{|Z| * 2} $ krát, kde
+Z je množina značiek pre porty, ktorú ma agent k dispozícii. Pričom do
+stupňa vrchola nerátame pre účely tejto vety slučky.
 \end{lem}
 \begin{proof}
-Pri každej návšteve viem otovrením portov so všetkými značkami vytvoriť nové
-hrany do vrcholov, kde sú otovrené príslušné porty a následne otvoriť toľko
-portov koľko je značiek, každý s inou značkou.
+Pri každej návšteve môže agent otovrením portov so všetkými značkami 
+vytvoriť nové hrany do vrcholov, v ktorých sú otovrené príslušné porty 
+a následne otvoriť toľko
+portov s navzájom rozdielnymi značkami, koľko má k dispozícii značiek
+(dvojica portov rovnakej značky v jednom vrchole by vytvorila slučku).
 \end{proof}
 
 \subsection{Jedna značka pre porty}

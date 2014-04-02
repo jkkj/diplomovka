@@ -1,0 +1,26 @@
+%\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Úvod}
+\chapter*{Základný model}\label{chap:intro}
+
+\section{Definícia}
+\begin{defin}
+Model sa skladá z grafu a agenta. Graf má nemeniteľné lokálne číslovanie koncov hrán vo
+vrchole, podľa poradia vzniku. Koniec hrany, ktorý vznikol ako prvý, má
+číslo 1. Prvý koniec vznikne spolu s vrcholom, zvyšné otvorením portu.
+Počiatočný graf obsahuje práve jeden izolovaný vrchol a nič viac. Akonáhle
+sú otvorené dva porty s rovnakými značkami, vznikne medzi nimi nová hrana a
+tieto porty tým zaniknú.
+\\
+Agent môže vo vrchole, v ktorom sa nachádza, vykonávať tieto operácie: pohnúť sa po hrane do susedného
+vrcholu, otvoriť port so značkou, vytvoriť hranu do nového vrchola v ktorom sa následne
+ocitne. Agent rozlišuje hrany podľa lokálneho číslovania ich koncov vo
+vrchole, kde sa práve nachádza. Agent vie ktorý koniec patrí hrane po ktorej
+prišiel do vrcholu. Agent začína vo vrchole počiatočného grafu.
+\\
+Agent pri vykonávaní algoritmu konštrukcie grafu nemá obmedzenú výpočtovú
+silu ani pamäť. Množina značiek portov je konečná a vopred daná. Efektivita
+algoritmu konštrukcie daného grafu sa pri tomto modely meria počtom pohybov
+agenta (tj. sumou počtu návštev cez všetky vrcholy) pri danej množine značiek
+portov, tento počet sa snažíme minimalizovať.
+\end{defin}

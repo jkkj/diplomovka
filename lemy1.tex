@@ -1,0 +1,796 @@
+
+
+%\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Všeobecná konštrukcia}
+\chapter{Všeobecná konštrukcia}\label{chap:intro}
+
+\section{Definícia}
+\begin{defin}
+Model sa skladá z grafu a agenta. Graf má nemeniteľné lokálne číslovanie koncov hrán vo
+vrchole, podľa poradia vzniku. Koniec hrany, ktorý vznikol ako prvý, má
+číslo 1. Prvý koniec vznikne spolu s vrcholom, zvyšné otvorením portu.
+Počiatočný graf obsahuje práve jeden izolovaný vrchol a nič viac. Akonáhle
+sú otvorené dva porty s rovnakými značkami, vznikne medzi nimi nová hrana a
+tieto porty tým zaniknú.
+\\
+Agent môže vo vrchole, v ktorom sa nachádza, vykonávať tieto operácie: pohnúť sa po hrane do susedného
+vrcholu, otvoriť port so značkou, vytvoriť hranu do nového vrchola v ktorom sa následne
+ocitne. Agent rozlišuje hrany podľa lokálneho číslovania ich koncov vo
+vrchole, kde sa práve nachádza. Agent vie ktorý koniec patrí hrane po ktorej
+prišiel do vrcholu. Agent začína vo vrchole počiatočného grafu.
+\\
+Agent pri vykonávaní algoritmu konštrukcie grafu nemá obmedzenú výpočtovú
+silu ani pamäť. Množina značiek portov je konečná a vopred daná. Efektivita
+algoritmu konštrukcie daného grafu sa pri tomto modely meria počtom pohybov
+agenta (tj. sumou počtu návštev cez všetky vrcholy) pri danej množine značiek
+portov, tento počet sa snažíme minimalizovať.
+\end{defin}
+
+\begin{ozn}
+Označenie operácií agenta:
+- nová hrana = NH
+- otvoriť port (s číslom n) = OP(n)
+- prejsť sa po hrane s lokálnym číslom konca k = Sk
+\end{ozn}
+
+\begin{lem}
+Agent na ceste do vrchola v grafe musí ísť po už existujúcich hranách.
+\end{lem}
+
+\begin{proof}
+Žiadna operácia agentovi nedovoľuje priamo prejsť medzi dvoma vrcholmi, ktoré
+nespája hrana.
+\end{proof}
+
+\begin{lem}
+Ak agent odíde z vrcholu v ktorom je počet súčet incidentných hrán a
+otvorených portov nižší, ako je počet hrán s ktorými má byť vrchol
+incidentný v konštruovanom grafe, tak sa agent doň musí neskôr vrátiť.
+\end{lem}
+
+\begin{proof}
+Neexistuje postupnosť operácií pomocou ktorej sa dá vytvoriť hrana do
+existujúceho vrcholubez jeho návštevy, ak v ňom nie je otvorený port pre
+túto hranu.
+\end{proof}
+
+\begin{lem}
+Hrany vytvorené operáciou "nová hrana" tovria kostru grafu.
+\end{lem}
+\begin{proof}
+Okrem inicializačného vrcholu, všetky vrcholy vzniknú operáciou "nová hrana"
+(NH). Každý vrchol okrem inicializačného je spojený hranou s lokálnym číslom
+1 so starším vrcholom (vrchol, ktorý vznikol skôr). Po týchto hranách sa dá
+z každého vrchola dostať do inicializačného, teda podgraf tvorený hranami
+pochádzajúcimi z oprácií NH je súvislý. Ich počet je zároveň o jeden menší ako počet
+vrcholov, teda ide o kostru.
+\end{proof}
+\begin{lem}
+Hrany, ktoré prejdem od otvorenia prvého portu hrany po otvorenie druhého,
+tvoria v grafe s novovzniknutou hranou uzavretý sled.
+\end{lem}
+\begin{proof}
+Je to dané operáciami, ktoré môže agent vykonať.
+\end{proof}
+\begin{pozn}
+Z tohto sledu viem vybrať kružnicu.
+\end{pozn}
+\begin{lem}
+Minimálny počet hrán, ktoré potrebujem prejsť pri konštrukcii hrany pomocou
+portov je rovný alebo väčší ako dĺžka najmenšej kružnice, na ktorej sa táto
+hrana nachádza.
+\end{lem}
+\begin{proof}
+Nájdem menší takýto sled ako je najkratšia kružnica. Z neho viem vybrať
+kružnicu, čo je spor s minimálnosťou najkratšej kružnice.
+\end{proof}
+\begin{lem}
+Ak mám k dispozícii dostatočný počet portov, problém efektívnej konštrukcie grafu sa
+redukuje na hľadanie najkratšieho sledu v ktorom sú všetky vrcholy. Pri
+hamiltonovskom grafe ide o hamiltonovskú kružnicu.
+\end{lem}
+\begin{proof}
+Agent prechádza vrcholmi, pričom mu sačí jedna návšteva každého vrcholu v ktorom
+otvorí potrebný počet portov príslušných značiek.
+\end{proof}
+\begin{lem}
+Vrchol v musím navštíviť minimálne $\frac{deg(v)}{\#značka * 2} $ krát.
+\end{lem}
+\begin{proof}
+Pri každej návšteve viem otovrením portov so všetkými značkami vytvoriť nové
+hrany do vrcholov, kde sú otovrené príslušné porty a následne otvoriť toľko
+portov koľko je značiek, každý s inou značkou.
+\end{proof}
+
+\subsection{Jedna značka pre porty}
+\begin{lem}
+Dolný odhad počtu krokov je minimum zo súčtov minimálnych kružníc pre všetky
+nekostrové hrany cez všetky kostry.
+\end{lem}
+\begin{proof}
+Menej ako najkratšia kružnica to agent urobiť nevie. Port pre ďalšiu hranu môže
+otvoriť port, až keď už vznikla predošlá. Od tohto momentu môže otvoriť port
+pre ďalšiu hranu a prejsť minimálne najkratšiu kružnocu na ktorej táto hrana
+leží a na konci otvoriť druhý port tejto hrany.
+\end{proof}
+\begin{lem}
+TODO zovšeobecniť prečo sa pri cyklickej mriežke tak našlapem a pri kocke
+nie ... a dokázať :)
+\end{lem}
+\begin{proof}
+\end{proof}
+
+\begin{lem}
+Po použití operácie NH, ktorou vznikne hrana h, sa nedostanem do už existujúceho vrchola bez použitia
+operácie OP, pri ktorej vznikne hrana alebo vracania sa po hrane h.
+\end{lem}
+\begin{proof}
+Vrchol v, ktorý vznikne operáciou NH je so zvyškom grafu spojený len hranou
+h, ktorá tvorí most do vzniku hrany operáciou OP medzi komponentmi na oboch
+stranách tohto mostu.
+\end{proof}
+
+\begin{lem}
+Najmenej krokov agent na konštrukciu konkrétnej hrany medzi už existujúcimi
+vrcholmi použije, ak pôjde do najbližšieho z nich, otvorí v ňom port a
+následne najkratšou cestou po už existujúcich hranách prejde do druhého
+vrcholu a otvorí port v ňom.
+\end{lem}
+\begin{proof}
+
+\end{proof}
+
+\subsection{Dve a viac značiek pre porty}
+Ušetriť oproti situácii, keď agent môže použiť len jednu značku pre porty
+možno vtedy, ak konštruovaný graf obsahuje cykly, kotré majú spoločné hrany.
+Vtedy, ak agent prechádza vrcholom s ktorým bude incidentná nasledujúca
+hrana, v ňom otvorí port a následne sa doň už nemusí vracať ak existuje
+kratšia cesta.
+
+\section{Mriežka}
+Najmenší cyklus má dĺžku štyri. Teda medzi otvorením dvoch portov pre danú
+hranu vykoná agent najmenej tri pohyby po hranách.
+
+\subsection{Jedna značka pre porty}
+\begin{lem}
+Mriežku $m \times n$ je možné s použitím jedinej značky pre port zostrojiť
+pomocou $3mn + m$ pohybov. Kde m je menší z rozmerov.
+\end{lem}
+\begin{proof}
+Agent vykonáva: OP,NH,NH,NH,OP,(n-2)krát (OP,S1,NH,NH,OP),S1,NH,HN,OP čím
+vytvorí prvý riadok mriežky. Následne vykoná
+(m-1)krát (NH,OP,S1,S2,NH,OP,(n-1)krát (OP,S1,S2,NH,OP))
+\end{proof}
+\begin{lem}
+TODO ... na menej to nejde ...
+\end{lem}
+\begin{proof}
+TODO
+\end{proof}
+\begin{lem}
+Pri rotačnej mriežke treba ''odšľapať'' oba ''rotačné cykly'' ... TODO
+\end{lem}
+\begin{proof}
+TODO ...
+\end{proof}
+
+
+
+\section{N-rozmerná kocka}
+Vrcholy spojené hranou sa líšia práve v jednej súradnici. Každej hrane z
+vrcholu možno priradiť súradnicu v ktorej sa jej druhý vrchol od tohto
+odlišuje. Toto priradenie je injekcia.
+Susedia vrchola sa navzájom líšia v práve dvoch súradniciach. Pri pohybe po
+hrane mením jednu súradnicu svojej pozície. Z tohto vyplývajú obmedzenia
+pre úsporu pohybov pridávaním značiek pre porty. Napríklad pri použití dvoch
+značiek pre porty potrebuje agent na vytvorenie dvoch nových portových hrán
+aspoň 5 ťahov. Úspora nastáva, keď port pre druhú hranu otvorím už počas
+cesty za otvorením portu prvej hrany.
+
+\begin{lem}
+Dva vrcholy, ktoré sa navzájom líšia v práve dvoch súradniciach majú práve dvoch
+spoločných susedov.
+\end{lem}
+\begin{proof}
+Susedné vrcholy sa líšia práve v jednej súradnici. Spločný sused dvoch
+vrcholov sa líši v práve jednej súradnici od každého z nich. Teda má všeky
+súradnice rovnaké ako jeden z nich a líši sa v jedej z tých dvoch. Teda ju
+má rovnakú ako druhý vrchol. Druhú z týchto súradníc má potom odlišnú od
+druhého vrchola. Čiže sa od každého z nich líši v práve jednej súradnici.
+Toto dáva práve dva rôzne vrcholy, ktoré susedia z oboma. Vrchol, ktorý
+sa od jedného z vrcholov líšiacich sa v dvoch súradniciach líši v nejakej
+inej, sa od druhého líši v troch súradniciah a teda s ním nesusedí.
+\end{proof}
+
+Otázkou ostáva, koľko hrán vie agent vytvoriť počas jednej návštevy vrcholu
+otváraním portov? 
+\begin{lem}
+Pri jednej návšteve vrcholu môže agent vytvoriť najviac $(frac{n-1}{2}) > \#dimenzii$
+hrán otvorením portu.
+\end{lem}
+\begin{pozn}
+Rátajú sa hrany, ktoré vzniknú hneď tj. pri ktorých agent otvorením portov
+vytvorí druhý (posledný) koniec.
+\end{pozn}
+\begin{proof}
+Je zrejmé: že vo všetkých vrcholoch, kam majú tieto hrany
+viesť, už agent bol; medzi dvomi vrcholmi vedie najviac jedna hrana. Z tohto
+a predošlej vety vyplýva, že po návšteve n vrcholov môže agent otvorením
+portu vytvoriť z vrcholu, kde sa nachádza, najviac $(frac{n-1}{2}) > \#dimenzii$ hrán. Z
+týchto $(frac{n-1}{2})$ vrcholov sa od neho každý líši v inej súradnici,
+lebo ak by sa dva líšili v rovnakej, museli by to byť totožné vrcholy. 
+\end{proof}
+\begin{lem}
+Existuje taká postupnosť $n$ vrcholov, že pri návšteve posledného agent
+vytvorí $(frac{n-1}{2}) > >\#dimenzii$ hrán.
+\end{lem}
+\begin{proof}
+Ak vezmeme takúto postupnosť odzadu, vyzerala by až na substitúciu dimenzií
+takto: 1, 2, 1, 3, 2, 4, 3, 5, 4, 6, 5, ...
+\end{proof}
+\begin{pozn}
+Avšak ľahko vidieť, že žiadne iné portové hrany by medzi vrcholmi v tejto
+postupnosti vzniknúť nemohli.
+\end{pozn}
+Skúsme teda nájsť postupnosť (cestu v hyperkocke) s najväčším možný počtom 
+portových hrán medzi jej vrcholmi.
+\begin{ozn}
+O hrane povieme, že vedie v dimenzii k, ak sa vrcholy, ktoré spája, líšia v
+práve tejto dimenzii. 
+\end{ozn}
+Je jasné, že v akomkoľvek súvislom slede vrcholov povedie hrana
+medzi dvojicami nasledujúcich vrcholov, ide o hrany po ktorých agent prejde
+z vrcholu do vrcholu.
+Portová hrana môže vzniknúť medzi vrcholmi, ktoré sa líšia v práve jednej
+súradnici, lebo iné hrany v hyperkocke nie sú. 
+\begin{ozn}
+Poloha agenta sa skladá z jeho polôh v jednotlivých dimenziách kocky. v
+každej dimenzii môže nadobúdať jednu z dvoch hodnôt. Označme ich $0$ a $1$.
+Pri prechode po hrane agent preklopý jednu z týchto hodnôt v práve jednej
+dimenzii na druhú.
+\end{ozn}
+
+\begin{lem}
+V ľubovoľnej postupnosti hrán medzi vrcholmi hyperkocky spojenými hranou, sa
+nachádza párny počet hrán v každej dimenzii okrem dimenzie v ktorej sa tieto
+vrcholy líšia a teda v nej vedie hrana medzi nimi.
+\end{lem}
+\begin{proof}
+Takéto dva vrcholy sa líšia v práve jednej dimenzii. Ak agent zmenil pri 
+pohybe svoju polohu v nejakej dimenzii nepárny počet 
+krát, tak je v tejto dimenzii v inej polohe ako bol na začiatku. Ak to nie je 
+dimenzia v ktorej sa líši koncový vrchol od začiatočného - agent sa
+nenachádza v koncovom vrchole, lebo polohy agenta a tohto vrcholu nie sú
+rovnaké.
+\end{proof}
+
+\begin{ozn}
+Ak viem súradnice vrchola, môžem postupnosť ťahov agenta zapísať ako postupnosť 
+zmien jeho súradníc v jednotlivých dimenziách. 
+\end{ozn}
+Ak sa nachádza v takejto postupnosti medzi
+vrcholmi, medzi ktorými vzniká portová hrana dvakrát hneď za sebou číslo
+nejakej dimenzie, znamená to, že agent šiel tam a späť a tieto dva prvky
+môžeme z postupnosti vylúčiť, lebo je to z pohľadu tejto dvojice vrcholov
+zbytočný pohyb. Ak takto zredukujeme niektorú postupnosť, získame inú, v
+ktorej ide agent po podmnožine hrán z pôvodnej a na rovný alebo menší počet
+pohybov.
+\begin{pozn}
+Pripomeniem, že hľadáme taký sled, že počet portových hrán medzi jeho
+vrcholmi je na daný počet značiek pre porty a počet portových hrán, ktoré
+vzniknú medzi jeho vrcholmi, najkratší možný.
+\end{pozn}
+
+Ak má agent dostatok značiek pre porty, nezaujíma nás poradie v akom vrcholy
+postupnosti navštívil. Úlohu teda môžeme zredukovať na hľadanie takej množiny
+vrcholov veľkosti m, ktorá tvorí zo všetkých takto veľkých množín najmenší rez
+od zvyšku grafu. Pri konštantnom stupni vrcholov to znamená, že v takej vedie 
+najviac hrán medzi vrcholmi v tejto množine.
+Keď sa pozrieme na vrcholy a pravidlá ich spájania hranami, zistíme, že
+tieto vedú len v nejakej kocke a čím viac rozmerov kocka má, tým viac hrán
+vedie medzi jej vrcholmi. Teda aj v n-rozmernej kocke povedie najviac hrán
+medzi vrcholmi takej množiny, ktorej indukovaný graf je izomorfný kocke.
+Vrchol k-rozmernej kocky sa nachádza v k (k-1)-rozmerných kockách, ktoré sú
+jej podgrafmi. Teda budeme hľadať množinu m bodov, ktoré sa dajú
+pokryť kockami čím vyššieho rozmeru a nemusíme si všímať kocky ktoré sú
+podgrafmi týchto kociek. tieto kocky sa však môžu prekrývať.
+
+\begin{lem}
+S každou hyperkockou v ktorej vrchol neleží ho spája najviac jedna hrana.
+Ktorá vedie v inej dimenzii ako sú dimenzie tejto hyperkocky.
+\end{lem}
+\begin{proof}
+Každý vrchol hyperkocky má hrany vo všetkých jej dimenziách. Vo zvyšných
+dimenziách sú vrcholy hyperkocky totožné, lebo sa dva susedné líšia práve v
+jednej. Vrchol mimo hyperkocky spojený s vrcholom v nej sa od neho líši v
+inej dimenzii a v tejto sa líši teda aj od všetkých ostatných. Zároveň je vo
+všetkých dimenziách hyperkocky totožný s vrcholom z nej a teda sa lííši v
+aspoň jednej dimenzii hyperkocky od jej ostatných vrcholov a má teda s nimi
+aspoň dve rodielne dimenzie. Nemôže ho preto s nimi spájať hrana.
+\end{proof}
+
+\begin{lem}
+Bijektívna substitúcia dimenzií na všetkých vrcholoch podgrafu hyperkocky zachováva
+hrany medzi vrcholmi. Rovnako aj preklopenie súradníc v niektorej dimenzii.
+\end{lem}
+\begin{proof}
+Ak sa dva vrcholy líšia práve v jednej dimenzii, budú sa v práve jednej
+dimenzii líšiť aj po tejto substitúcii, lebo dimenzie v ktorých boli rovnaké
+sa zobrazia na rovnaké a tá v ktorej sa kíšili sa u oboch zobrazí na rovnakú
+a budú sa v nej líšiť aj naďalej; teda medzi nimi povedie hrana.
+Pri preklopení súradníc sa medzi vrcholmi zachovajú rovnosti a rozdiely v
+danej dimenzii, teda aj hrany.
+\end{proof}
+
+\begin{lem}
+Vrcholy súvislého podgrafu hyperkocky s počtom vrcholov m sa navzájom líšia
+v najviac m-1 súradniciach.
+\end{lem}
+
+\begin{proof}
+Vezmime kostru tohto podgrafu. Táto má m-1 hrán. Každá vedie v niektorej
+dimenzii. Cesta v tejto kostre udáva v ktorých dimenziách sa daná dvojica
+jej koncových vrcholov líši. Všetky cesty v tejto kostre idú cez najviac m-1
+rôznych dimenzií, čo je jej počet hrán. V ostatných dimenziách sa dané
+vrcholy nelíšia, majú v nich teda navzájom rovnaké súradnice.
+\end{proof}
+
+\begin{lem}
+Podmnožina m bodov hyperkocky, ktoré indukujú graf s najvyšším počtom hrán je
+súvislá.
+\end{lem}
+
+\begin{proof}
+Nech existujú dva komponenty. Na jednom z nich urobíme 
+postupné popreklápanie súradníc tak, aby susedil niektorý jeho bod s bodom
+v druhom komponente a teda medzi nimi viedla hrana. Čiže vyberieme jednu
+dimenziu v ktorej sa líšia a vo všetkých ostatných dimenziách, kde majp
+rozdielne súradnice preklápame postupne súradnice jedného z vrcholov. 
+V prípade, že počas tohot postupu vznikne hrana spájajúca vyhrané dva
+komponenty, skončíme skôr. Pôvodné hrany sa
+zachovajú a jedna nová pribudne, čo je spor s najvyšším počtom hrán.
+Tieto kroky môžeme urobiť bez toho, aby sa dva vrcholy zobrazili na seba.
+Ak budeme robiť preklápanie súradníc po jednotlivých dimenziách,
+v tom prípade, ak by sa nejaký vrchol transformovaného komponentu
+podgrafu zobrazil na niektorý vrchol druhého komponentu, musela by 
+medzi nimi viesť predtým hrana, teda stav v ktorom by boli komponenty
+prepojené a preklápanie by teda už nepokračovalo.
+\end{proof}
+
+Potrebujeme vybrať m vrcholový indukovaný podgraf hyperkocky tak, aby počet 
+hrán v ňom bol maximálny možný.
+
+\begin{lem}
+Vrcholy podgrafu hyperkocky sa dajú rozdeliť na dve množiny A,B podľa súradnice vo
+vybranej dimenzii. Počet hrán vedúcich z vrcholov v jednej množine do
+vrcholov v druhej množine je rovný alebo menší ako mohutnosť menšej z nich.
+Čiže $|\{e|e = (a,b);a \in A; b \in B\}| <= min\{|A|,|B|\}$
+\end{lem}
+\begin{proof}
+Každý vrchol má v jednej dimenzii najviac jednu hranu a hrana vedie v
+danej dimenzii medzi dvomi vrcholmi vtedy ak je to jediná dimenzia v ktorej
+majú rozdielne súradnice. V inej dimenzii medzi A a B hrana viesť nemôže,
+lebo by musela viesť medzi vrcholmi líšiacimi sa v najmenej dvoch 
+dimenziách - v dimenzii hrany a v dimenzii podľa súradníc ktorej 
+sú A a B vytvorené. Teda hrany medzi A a B môžu viesť len v jednej dimenzii
+a do menšej z A,B môže viesť najviac toľko hrán v jednej dimenzii, koľko má
+vrcholov.
+\end{proof}
+
+\begin{lem}
+\label{izomorfne}
+Keď vezmeme z podgrafu hyperkocky len vrcholy, ktoré majú hranu v jednej
+vybranej dimenzii a označíme nimi indukovaný podgraf G. Vieme vrcholy G
+rozdeliť na dva izomorfné indukované podgrafy hyperkocky $G_{1}$ a $G_{2}$
+podľa súradnice vrchola v tejto dimenzii.
+\end{lem}
+
+\begin{proof}
+Vrcholy, medzi ktoými vedie hrana sa líšia v práve jednej dimenzii, v
+ostatných dimenziách sú rovnaké. Keď teda vezmeme hrany vedúce medzi 
+$G_{1}$ a $G_{2}$ a vytvoríme podľa nich bijektívne zobrazenie medzi týmito
+podgrafmi tak, aby sa dva vrcholy medzi ktorými vedie hrana vo vybranej
+dimenzii zobrazili na seba, dostaneme izomorfizmus. Ak totiž viedla medzi
+dvomi vrcholmi hrana, bude hrana viesť aj medzi ich obrazmi, lebo tieto majú
+rovnaké súradnice ako ich vzory vo všetkých dimenziách okrem jednej, kde sa
+oba obrazy od svojich vzorov líšia a teda majú súradnicu v tejto dimenzii 
+rovnakú; obaja sú v komponente, kde majú túto súradnicu rovnakú všetky
+vrcholy. Ak sa teda líšili v jednej súradnici vzory, budú sa aj obrazy a ak
+sa líšili vzory vo viacerých súradniciach, budú sa v rovnakých súradniciach
+líšiť aj obrazy. Zobrazenie  je teda izomorfizmus.
+\end{proof}
+
+\begin{lem}
+\label{delenie}
+Existuje indukovaný podgraf $G$ hyperkocky na m vrcholoch, ktorý je možné postupne rozdeliť
+podľa dimenzií až po jednovrcholové indukované podgrafy tak, že v každom
+kroku rozdelíme vrcholy každého podgrafu s počtom vrcholov aspoň dva do
+dvoch podmnožín $A$ a $B$. Takých, že $|A| - |B| <= 1$.
+\end{lem}
+
+\begin{proof}
+Dôkaz bude konštrukčný. Budeme postupne deliť m vrcholovú množinu i ďalšie z
+nej vzniknuté množiny na menšie, až kým nedostaneme m jednoprvkových množín
+vrcholov. Pritom budeme postupne určovať súradnice jednotlivých vrcholov.
+
+Budeme postupovať postupne po dimenziách, až kým budúd všetky množiny
+jednoprvkové. Vezmeme množinu $M$, rozdelíme ju na dve časti $M_{1}, M_{0}$
+také že $|M_{1}| - |M_{0}| <= 1$. Vrcholy v $M_{1}$ budú mať v tejto
+dimenzii súradnicu 1 a vrcholy v $M_{0}$ budú mať v tejto dimenzii súradnicu
+0. Ak je množina jednoprvková a delenie niektorých iných ešte pokračuje,
+dostane v každej ďalšej dimenzii súradnicu 1. Ak má kocka viac dimenzií ako
+je potrebných, aby obsiahla všetkých m vrcholov podgrafu, tak môžu dostať
+tieto vrcholy v týchto zvyšných dimenziách ľubovoľné súradnice, ale pre
+všetky vrcholy musí byť súradnica v každej z týchto dimenzií rovnaká.
+Tým sme zistili súradnice vrcholov vo všetkých dimenziách, podľa ktorých
+podgraf delíme. Pre účely tejto vety na súradniciach ostatných dimenzií
+nezáleží a môžu byť ľubovoľné.
+\end{proof}
+
+\begin{lem}
+Pri delení z vety \ref{delenie} vedie medzi množinami vrcholov $M_{1}$ a $M_{0}$,
+ktoré vznikli rozdelením jednej množiny M podľa tohto delenia, práve toľko
+hrán, ako je mohutnosť menšej z týchto množín. Pričom, ak má kocka viac dimenzií ako
+je potrebných, aby obsiahla všetkých m vrcholov podgrafu, tak môžu dostať
+tieto vrcholy v týchto zvyšných dimenziách ľubovoľné súradnice, ale pre
+všetky vrcholy musí byť, na rozdiel od predošlej vety, súradnica
+ v každej z týchto dimenzií rovnaká.
+\end{lem}
+
+\begin{proof}
+Stačí ukázať, že menší z indukovaných podgrafov má vo väčšom izomorfný obraz
+podľa vety \ref{izomorfne}. Vtedy vedie z každého vrchola v menšom podgrafe
+hrana do nejakého vrchola vo väčšom podgrafe a týchto hrán je presne toľko, koľko je
+vrcholov menšieho podgrafu.
+Teda potrebujeme dokázať, že vo väčšom podgrafe existuje skupina vrcholov,
+ktorej budú súradnice v dimenziách pridelené rovnako ako vrcholom v menšom
+podgrafe. Prideľovanie súradníc je deterministické, teda rovnako veľkým
+množinám vrcholov v rovnakej fáze budú poprideľované súradnice vo zvyšných
+dimenziách rovnako. Na menší a väčší podgraf sa rozdelia grafy s nepárnym
+počtom vrcholov.
+Použijeme úplnú indukciu. Báza indukcie bude množina veľkosti tri. Menšie
+podgrafy sú už len veľkosti dva a jedna. Jednovrcholový sa už ďalej nedelí a
+dvojvrcholový sa rozdelí na dva jednovrcholové.
+Predpokladáme, že pre delenie množín s mohutnosťou menšou ako n platí veta.
+Dokážeme, že potom musí platiť aj pre množinu M mohutnosti n: Ak je n párne,
+dá sa množina rozdeliť na dve množiny rovnakej mohutnosti, ktorých vrcholom
+sa zvyšné dimenzie poprideľujú rovnako. Teda každý vrchol v jednej bude mať
+iný vrchol v druhej množine s ktorým sa bude líšiť v práve jednej dimenzii
+a to v tej podľa ktorej sme M rozdelili.
+Ak n je nepárne, vzniknú dve množiny $M_{1}$, $M_{2}$. Obe z nich už
+podľa IP spĺňajú tvrdenie vety. Rozdelia sa každá na dve množiny, pričom z
+množiny s párnou mohutnosťou vzniknú dve rovnako veľké množiny
+$M_{11}$,$M_{12}$ a množina $M_{21}$
+tejto veľkosti vznikne aj z množiny s nepárnou mohutnosťou. Druhá množina
+$M_{22}$ z tejto množiny bude mať o prvok viac alebo menej.
+Prvé tri množiny sa už budú deliť rovnako, teda viem povyberať trojice
+vrcholov, každý z inej množiny, ktoré budú mať vo zvyšných dimenziách
+rovnaké súradnice. Medzi dvomi vrcholmi z $M_{11}$,$M_{12}$, označme ich 
+$m_{11}$,$m_{12}$,  povedie hrana,
+lebo sa líšia práve v jednej dimenzii. Tretí vrchol, označme ho $m_{21}$
+ bude spojený hranou s
+niektorý z tých dvoch, pretože pri druhom delení jeden z nich dostal rovnakú
+súradnicu ako on v dimenzii druhého delenia a teda sa líšia iba v dimenzii
+prvého delenia množiny M. Ak je prvok $m_{21}$ spojený s prvkom z
+$M_{22}$, označme ho $m_{22}$, potom je $m_{22}$ spojený aj s tým prvkom
+z dvojice $m_{11}$,$m_{12}$, s ktorým nie je spojený $m_{21}$.
+Prvok $m_{22}$ neexistuje iba vtedy, ak $|M_{22}|<|M_{21}|$. 
+Ak $|M_{22}|>|M_{21}|$ potom v $M_{22}$ majú všetky vrcholy z $M_{21}$
+izomorfný obraz a teda aj príslušná časť z párnej množiny.
+Z horeuvedeného vyplýva, že menšia množina z prvého delenia má obraz,
+izomorfný a spĺňajúci podmienky vety \ref{izomorfne}, 
+vo väčšej množine vzniknutej z tohto delenia a keďže 
+medzi vzorom a obrazom vedie hrana, veta platí.
+\end{proof}
+
+\begin{lem}
+Maximálny počet hrán, ktoré môžu viesť v podgrafe hyperkocky indukovanom m
+bodmi je daný postupnosťou $a_{m}$, kde $a_{1} = 0; a_{2} = 1;$ a pre 
+$\forall i < 2; a_{i} = \lfloor \frac {i}{2} \rfloor + a_{\lfloor \frac{i}{2}
+\rfloor}
++ a_{\lceil \frac {i}{2} \rceil } $
+\end{lem}
+\begin{proof}
+V dôkaze použijeme úplnú indukciu. Báza indukcie je očividná: hyperkocka
+nemá slučky a teda v jej jenovrcholovom indukovanom grafe nevedie 
+hrana a hyperkocka nemá
+násobné hrany, teda v jej indukovanom dvojvrcholovom podgrafe 
+môže viesť najviac jedna hrana. Predpokladáme, že pre všetky členy s
+indexom menším ako m platí, že udávajú najväčší možný počet hrán v
+indukovanom podgrafe hyperkocky zo všetkých množín jej bodov, ktorých 
+mohutnosť je rovná  indexu daného člena postupnosti. ďalej predpokladáme, že
+pre každého člena postupnosti s menším indexom platí tvrdenie vety.
+Ukážeme, že existuje indukovaný podgraf hyperkocky s m bodmi 
+s najvyšším možným počtom hrán G taký, ktorý niektorá dimenzia delí na
+polovice $G_{1}$ a $G_{2}$, teda na množiny vrcholov, ktorých mohutnosti sa líšia najviac o
+jedna. To vyplýva z toho, že neexistuje taký podgraf hyperkocky, 
+ktorý by delila inak a mal by zároveň vyšší počet hrán.
+Nech taký podgraf $G^{,}$ existuje. Potom ho vybraná dimenzia delí na podgrafy s
+počtom bodov $a_{i}$, $a_{j}$. Keďže sú obe neprázdne, sú menšie ako m a teda
+pre ne platí indukčný predpoklad. $a_{i} = \lfloor \frac {i}{2} \rfloor + 
+a_{\lfloor \frac{i}{2} \rfloor}+ a_{\lceil \frac {i}{2} \rceil }$ a $a_{j} = 
+\lfloor \frac {j}{2} \rfloor + 
+a_{\lfloor \frac{j}{2} \rfloor}+ a_{\lceil \frac {j}{2} \rceil }$
+Bez ujmy na všeobecnosti, nech i < j. Aby sme zjednodušili indexovanie
+označme $a_{\lfloor \frac{i}{2} \rfloor} = a_{i1}; a_{\lceil \frac {i}{2} \rceil }
+= a_{i2}; a_{\lfloor \frac{j}{2} \rfloor} = a_{j1}$ a $a_{\lceil \frac {j}{2} \rceil }
+= a_{j2}$.
+Je zrejmé, že $a_{i2} - a_{i1} <= 1$ a $a_{j2} - a_{j1} <= 1$. Ak teda
+rozdelíme G podľa dimenzie, ktorá ho delí na $G_{1}$ a $G_{2}$, ich mohutnosti
+budú bez ujmy na všeobecnosti $a_{i2} + a_{j1}; a_{j2} + a_{i1}$. Z IP
+zároveň platí, že $G_{1}$ a $G_{2}$ majú aspoň tak dobré rozdelenie ako na
+množiny veľkostí $a_{i2}, a_{j1}$ respektíve $a_{j2}, a_{i1}$.
+Počet hrán, ktoré vedú vo podgrafe $G^{,}$ je teda
+$a_{m^{,}}=i + \lfloor \frac{i}{2} \rfloor 
++ \lfloor \frac{j}{2} \rfloor + a_{i1} + a_{i2} + a_{j1} + a_{j2}$.
+Je zrejmé, že menšia z množín na ktoré sa rozdelí G bude mať veľkosť
+$\lfloor \frac{m}{2} \rfloor$ a v týchto podmnožinách vedie aspoň $a_{i1} +
+a_{j2} + \lfloor \frac{i}{2} \rfloor $ respektíve $a_{j1} + a_{i2} + 
+\lceil \frac{i}{2} \rceil$ hrán.
+Čiže $a_{m} >= \lfloor \frac{m}{2} \rfloor + a_{i1} +
+a_{j2} + \lfloor \frac{i}{2} \rfloor + a_{j1} + a_{i2} + 
+\lceil \frac{i}{2} \rceil$
+Z toho si ľahko ukážeme, že $a_{m} >= a_{m^{,}}$.
+ $a_{m} - a_{m^{,}} >= \lfloor \frac{m}{2}\rfloor + \lceil \frac{i}{2}
+\rceil - i - \lfloor \frac{j}{2} \rfloor$ a keďže 
+$\lfloor \frac{m}{2}\rfloor = \lfloor \frac{i+j}{2}\rfloor >= \lfloor \frac{i}{2} \rfloor + \lfloor \frac{j}{2} \rfloor$
+potom platí, že $a_{m} - a_{m^{,}} >=0$. Tým sme dokázali, že neexistuje
+lepšie rozdelenie podgrafu hyperkocky indukovaného m vrcholmi ako rozdelenie
+na polovice. Z predošlých viet vyplýva, že takéto rozdelenie je možné.
+\end{proof}
+
+
+
+
+\begin{proof}
+Zoberme jednu takúto dimenziu a rozdeľme body na dve množiny, podľa toho,
+či v nej majú 1 alebo 0. Platia dve veci: medzi týmito dvomi množinami vedie
+najviac toľko hrán, koľko má menšia z nich vrcholov; v iných dimenziách už
+medzi týmito vrcholmi hrany nevedú.
+Prvá vec vyplýva z toho, že každý vrchol má v jednej dimenzii najviac jednu
+hranu (pri nekompletnej hyperkocke, pri kompletnej práve jednu).
+Druhá vyplýva z toho, že hrana spája vrcholy, ktoré sa líšia práve v jednej
+súradnici a vedie v dimenzii tejto súradnice. Ak by mala viesť medzi týmito
+dvomi množinami hrana v nejakej inej súradnici, musela by spájať vrcholy,
+ktoré sa líšia v najmenej dvoch súradniciach (v tej ktorá rozdeľuje vrcholy
+na dve množiny a v tej v ktorej vedie táto hrana), čo nemôže.
+
+Na tieto dve množiny sa teda môžeme pozrieť na každú zvlášť a znova ich
+deliť podľa ďalších súradníc až kým sa nerozpadnú na jednovrcholové množiny.
+Najväčší možný počet hrán vedúcich v tejto množine vrcholov je ohraničený
+zhora sumov veľkosti menších množín cez všetky takéto delenia.
+
+Toto ohraničenie získame spätne. Na konci máme m izolovaných vrcholov. Ako
+mohli byť pospájané tak, aby medzi nimi viedol najväčší možný počet hrán?
+Začnime s m izolovanými vrcholmi. V každom momente je jasné, že nech sa
+najmenšia množina "odrezala" od ľubovoľnej inej, rátal sa ako maximálny
+počet hrán mohutnosť tejto množiny.
+Počet delení množín je konštantný, na čo sa dá ľahko použiť klasický príklad
+s lámaním čokolády na m kúskov. Horné ohraničenie počtu hrán vedúcich v
+množine bodov získame ako súčet miním cez všetky delenia. Pozrime sa na dve
+najmenšie množiny v ľubovoľnej fáze delenia a pozrime sa na ne odspodu, tj.
+pri spätnej konštrukcii delenia z konečných jednovrcholových množín - teda
+na ich postupné spájanie.
+Tvrdíme, že ľubovoľné spájanie nie je lepšie ako spojenie dvoch najmenších
+množín. Sporom, nech existuje také najlepšie spájanie, ktoré nespája dve najmenšie
+množiny a súčet jeho miním je ostro väčší ako takého, ktoré ich spája.
+
+- TODO lema
+\begin{lem}
+Majme množinu množín vrcholov, označme
+ju M. Nech existuje taká postupnosť spájania týchto množín,
+ktorého súčet bude najvyšší možný. Nech sa v ňom nenachádza spojenie
+najmenšej množiny s inou v prvom kroku, ukážeme že existuje poradie, kde sa
+nachádza o krok skôr, ktoré je aspoň také dobré alebo pôvodné nie je
+najlepšie.
+\end{lem}
+\begin{proof}
+Ak sa najmenší prvok spája s množinou, ktorá bola v M, vieme spojenie minima
+s ňou presunúť do úplne prvého kroku spájania.
+Ak sa spája s množinou, ktorá vznikla spojením dvoch množín, premiestnime
+krok pripojenia minima hneď za krok pri ktorom táto množina vznikla. Označme
+  množiny z ktorých táto množina vznikla A,B a mohutnosť minima 
+označme C, |A| = a; |B| = b; |C| = c.
+Bez ujmy na všeobecnosti a =< b. Spájanie nebolo optimálne, lebo v jeho súčte sa nachádza
+c+a, keby sa však spojila najprv množina A s C tak by bol celkový súčet
+väčší, lebo by obsahoval buď c+b alebo c+(a+c).
+
+\end{proof}
+
+
+
+
+
+
+Každý vrchol je 0-rozmernou kockou sám o sebe. Všetky hrany, ktoré medzi
+nimi môžu viesť v prvej dimenzii, v druhej, tretej atď. ... TODO
+výde z toho hyperkocka a elegantnejšie ako predtým :) -- stále sa mi to
+mezdá dokázané, že iný výber vrcholov nedá viac hrán ...
+
+Treba maximalizovať počet dvojíc líšiacich sa v práve jednej dimenzii ...
+V každej dimenzii má vrchol max jednu hranu
+
+To že medzi vrcholmi vedie hrana znamená, že sú spolu v nejakej hyperkocke.
+V čím väčšej sú, tým viac hrán z nich ide.
+
+Ukážeme že maximalizácia n-rozmerných kociek maximalizuje počet n-1
+rozmerných.
+Vezmeme najväčšiu maximálnu disjunktnú množinu n-1 rozmerných kociek. Aké je
+poprepájanie týchto kociek hranami pri ktorom je najviac n-1 rozmerných
+kociek? 
+
+Ak vedie hrana medzi vrcholmi a tieto sú spojené každý
+hranami rovnakej dimenzie s inými dvomi vrcholmi, vedie hrana aj medzi
+týmito dvomi vrcholmi. Je to dané tým, že ak odstránime dimenziu v ktorej
+vedie hrana, tieto vrcholy sa zobrazia na seba.
+
+Kocka vyššej dimenzie vznikne, ak spojíme dve n-1 rozmerné kocky
+hranami podľa nejakého izomorfného zobrazenia dostaneme n-rozmernú kocku,
+ktorá má $ {n choose {n-1}}$ n-1 rozmerných kociek.
+
+\end{proof}
+
+Izolované vrcholy -> jednorozmerné kocky -> dvojrozmerné kocky -> ... vždy
+dve spojíme na jednu s vyšším rozmerom ...
+
+
+
+Čiže trade-off medzi počtom značiek a pohybov ... stačí jedna návšteva
+vrcholu ... otvorí pri nej všetky porty ... počet značiek = počet mimokostrových
+(portových) hrán ... 
+
+Čím vyššia dimenzia kocky, tým je menej kostrových hrán oproti portovým ->
+stačí menej pohybov na požitie daného množstva značiek.
+
+Ak vrcholov nie je presne toľko, ako v nejakej n-rozmernej kocke tj. ${2}^{n}$
+tak ich vyberáme z vrcholov najmenšej kocky s väčším počtom vrcholov tak, že
+vezmeme vrcholy nejakej (n-1) rozmernej kocky, ktorá je jej podgrafom, v
+ďalšom kroku zvyšok vrcholov vyberieme z ešte nepoužitých tak, aby tvorili kocku
+čo najväčšej dimenzie a tak ďalej, kým nevyberieme všetky vrcholy. Každá
+n-rozmerná kocka sa dá rozdeliť na dve disjunktné (n-1)-rozmerné kocky.
+Každý vrchol takejto kocky je spojený s práve jedným vrcholom z druhej
+kocky. Agent teda vždy nájde kocku ktorá je najmenšia taká, že má viac
+vrcholov. Jednu z týchto kociek pokryje a zvyšné vrcholy umiestni do druhej
+kocky rekurzívnym spôsobom.
+
+Týmto sme vyriešili hľadanie postupnosti k vrcholov s nyjväčším počtom hrán
+medzi nimi. Teraz treba zistiť, ako veľká musí byť množina značiek potrebná
+na konštrukciu týchto hrán.
+Ak má agent minúť čo najmenej značiek pri tvorbe portových hrán, treba aby
+ostali porty otvorené čo najkratšie - čas meriame pohybmi agenta.
+
+Počet značiek, ktroé agent potrebuje pre konštrukciu n-rozmernej kocky je
+suma dva na i minus jedna pre i od jedna po n. (po konštrukcii jednej kocky
+ostávajú otorené porty do druhej a agent potrebuje rovnaký počet značiek ako
+na predošlú ... - lenže postupne sa uvoľnujú) pozn. bude to teda asi \#
+portov pre štvrtinovú kocku + dva na i munus jedna
+
+\subsection{2-rozmerná kocka}
+Elementárny prípad. Stačí jedna portová značka a tri pohyby - operácue NH.
+\subsection{3-rozmerná kocka}
+\paragraph{1 značka}
+Pri použití jednej zančky na porty vie agent trojrozmernú kocku zostrojiť na 15 pohybov:
+OP, NH, NH, NH, OP, OP, S1, NH, NH, OP, OP, S2, S2, NH, OP, OP, S1, S1, NH, OP, OP, S1, S2, S3, OP. Na
+menej sa to nedá. Agent potrebuje skonštruovať 5 mimokostrových hrán a na
+každú potrebuje aspoň 3 pohyby.
+
+\paragraph{2 značky}
+Trojrozmernú kocku pri použití dvoch značiek na porty dokáže agent zostrojiť
+na 11 pohybov a menej sa nedá. Operácie agenta:
+OP1, NH, NH, OP2, NH, OP1, NH, OP1, NH, OP2, NH, OP2, NH, OP1, OP1, S1, S1, S2, OP1, S1, OP2
+Na menej sa nedá, pretože porty treba otvoriť medzi dvojicou vrcholov
+líšiacich sa v práve jednej súradnici. Teda medzi otovrením portov jednej
+hrany potrebuje agent aspoň dve preklopenia na rovnakej súradnici a jedno na
+inej. Vie využiť najviac jedno preklopenie, ktoré nastalo pri konštrukcii
+predošlej hrany, čiže na konštrukciu hrany potrebuje najmenej dva ďalšie
+pohyby. Na konštrukciu prvej hrany potrebuje tri pohyby. $3 + 2 * 8 = 11$
+
+\paragraph{3 značky}
+Trojrozmernú kocku agent za použitia troch portových značiek zostrojí na 9
+pohybov. Na menej sa nedá.
+Operácie agenta: OP1, OP3, NH, NH, OP2, NH, OP1, NH, OP1, NH, OP2, NH, OP2,
+NH, OP1, OP3, S3(?), S1, OP2
+S použitím menšieho množstva pohybov to agent urobiť nemôže. Kým vznikne
+prvá portová hrana - značka sa uvoľní na ďalšie použitie,vytvorí agent tri
+nové vrcholy. Teda je vo štvrtom vrchole. Súčet  stupňov predošlých troch je
+deväť, z čoho päť zaberú nové hrany. To znamená, že do jedného z týchto
+vrcholov sa agent bude musieť vrátiť otvoriť port alebo z neho vytvoriť novú
+hranu. Keby tento vrchol bol tretí podľa vzniku, tak sa doň agent môže
+vrátiť na jeden ťah. Tu môžu nastať dve možnosti: pôjde tam otvoriť port
+alebo vytvoriť novú hranu. Ak otvoriť port, bude mu chýbať značka na štvrtom
+vrchole podľa vzniku a bude sa musieť vrátiť aj do neho. Ak otvorí port s
+novouvoľnenou značkou na štvrtom vrchole a z tretieho urobí NH. Ocitne sa vo
+vrchole v ktorom nemôže otvoriť port, lebo sa nelíši v práve jednej
+súradnici od žiadneho z vrcholov v ktorých sú porty pootvárané. Teda v oboch
+prípadoch potrebujem ďalšie dva pohyby, ktoré nie sú operáciou NH. Ak sa
+agent nevráti hneď do vrchola, v ktorom neotvoril port, bude musieť prejsť
+do niektorého z jeho dvoch susedov (lebo z nich už odišiel a z iného vrchola
+sa tam nedostane). To sú dva pohyby okrem operácií NH. Počet operácií NH je
+konštantný pre daný  graf a rovná sa počtu hrán kostry. V tomto prípade je
+to sedem. Teda agent vybavený tromi rôznymi značkami na porty potrebuje
+aspoň deväť krokov na konštrukciu trojrozmernej kocky.
+
+\paragraph{4 značky}
+4 rôzne značky portov agentovi na konštrukciu trojrozmernej kocky stačia:
+OP1, OP2, NH, OP3, NH, OP4, NH, OP1, NH, OP1, NH, OP4, NH, OP3, NH, OP2, OP1
+Agent vzkoná sedeme pohybov, čo je nevyhnutné minimum na konštrukciu
+trojrozmernej kocky. Pridanie ďalších značiek už teda nič nevylepší.
+
+\subsection{4-rozmerná kocka}
+\paragraph{1 značka}
+Ak chcem skonštruovať portové hrany použitím troch pohybov na hranu a žiadne
+ďalšie pohyby, tak musím vo vrchole, kam otvorením portu vznikne nová
+portová hrana, otvoriť port znovu. Portové hrany teda budú tvoriť súvislý
+ťah. 
+
+
+
+Všetkých hrán v štvorrozmernej kocke je 32, pričom kostrových je 15.
+Portových hrán je teda 17. Sled portových hrán sa nemôže pretínať, pretože
+nemôže existovať vrchol do ktorého nevedie kostrová hrana a každý vrchol má
+stupeň 4. Keďže stupeň vrcholov je párny, kostru treba zostrojiť tak, aby
+dva z nich mali nepárny stupeň a zvyšné párny. Čo je nutná podmienka zostrojenia
+jediného ťahu zo všetkých zvyšných hrán. Kostra má aposň dva listy a stupeň
+listov je nepárny. Ak teda kostra nemá mať väčší počet listov, musia mať
+zvyšné vrcholy stupeň dva. Kostra je teda cesta. Ukážeme, že nie je možné
+zostrojiť štvorrozmernú kocku na $3 * 17 = 51$ pohybov. Vrcholy v kotorých kostra-cesta začína
+majú tri portové hrany. Aby sme použili len tri pohyby na jednu portovú
+hranu, potrebujeme začať portové hrany konštruovať v jednom z týchto
+vrcholov. v týchto vrcholoch začína aj cesta-kostra. Keďže kostra vzniká
+tak, že na už existujúcom vrchole vykoná agent operáciu NH, v každom momente
+je práve jeden vrchol v ktorom môže byť agent, ak má skonštruovať graf na 51
+pohybov. Tým však, že agent odišiel z prvého vrchola a tomu chýbajú ešte dve
+hrany, sa doň bude musieť vrátiť a otvoriť v ňom port. V konštruovanom grafe
+(medzivýsledku) sa však agent od prvého vrchola vzďaľuje každou portovou hranou.
+Pri skonštruovaní posledného vrchola bude teda od prvého v medzivýsledku
+konštrukcie ďalej ako tri a teda nie je schopný skonštruovať graf týmto
+spôsobom. 
+Vrchol do ktorého ide agent konštruovať portovú hranu musí byť v
+medzivýsledku vzdialený práve tri od druhého vrchola s otvoreným portom a
+súčsne sa musí líšiť v práve jednej dimenzii. Pri tomto postupe žiadny
+takýto vrchol k poslednému skonštruovanému vrcholu v momente otvorenia portu nie je
+a jediný, ktorý sa tak dá vytvoriť je pomocou prechodu po novej portovej
+hrane a dvoch opráciách NH, alebo po troch operáciách NH.
+Ak použije prvý spôsob, kým sa dá, dostane sa do bodu z ktorého sa už
+tento nedá uplatniť a už nebude schopný skonštruovať ďalšiu hranu na tri
+pohyby.
+Pri použití druhého spôsobu z inicializačného vrchola trikrát sa dostane
+agent do situácie, kefy je od inicializačného vrchola vzdialený na
+medzivýsledku o tri hrany a zároveň sa ich polohy líšia v práve jednej
+dimenzii. Takže agent môže skonštruovať zvyšné dve hrany pre inicializačný
+vrchol.
+(TODO mohol by to urobiť aj neskôr, ale nejde to, lebo štvorrozmerná kocka má len
+15 vrcholov a už by mu nevydalo vytvoriť tri portové hrany pomocou operácií
+NH)
+Keď má agent z vrcholu vytvoriť portovú hranu a odchádza z neho operáciou
+NH, odíde po jednej dimenzii a portová hrana sa otvorí v druhej. Teda
+vytvorí hrany v dvoch dimenziách vrcholu.
+Po skonštruovaní prvej portovej hrany má vrchol v ktorom agent skončí ešte
+"voľné" dve dimenzie. Z jednej má ísť portová hrana a z druhej kostrová.
+Teda po jednej agent odíde a v druhej sa po troch pohyboch bude líšiť.
+Rovnakáá situácia nastane po vytvorení druhej portovej hrany. Tretia portová
+hrana musí mať rovnakú dimenziu ako prvá, aby sa agent po jej konštrukcii
+líšil s inicializačným vrcholom v práve jednej dimenzii. štvrtá portová
+hrana je teda tiež daná. Dimenzie sú navzájom zameniteľné, takže na ich
+výbere nezáleží.
+(TODO Začiatok konštrukcie štvorrozmernej kocky je deterministický - možno
+je celá konštrukcia ...)
+
+\iffalse
+TODO:
+1, pozrieť, čo všetko sa dá nájsť o hyperkocke a mriežke ..
+
+%tak toto sa ukazalo ako blbost :)
+Keďže tento spôsob ako jediný pripadal do úvahy na 51 ťahov a
+nefunguje, na komštrukciu štvorrozmernej kocky treba aspoň 52 ťahov pri
+jedinej portovej značke.
+Je jasné, že agent sa do prvého vrchola bude musieť vrátiť, lebo po skonštruovaní
+prvej portovej hrany mu ešte dve hrany chýbajú. Pri 52 pohyboch môže na
+konštrukciu jednej hrany minúť 4 pohyby a na zvyšné si musí opäť vystačiť s
+tromi. Teda portové hrany môžu tvoriť dva ťahy, ktorých dva konce sú
+vzdialené o jednu hranu alebo jeden ťah. Teda kostra môže mať tri listy a
+vrchol stupňa tri i štyri listy a vrchol stupňa štyri. Zvyšné vrcholy kostry
+majú stupeň dva. Teda kostra sa môže rozvetvovať na najviac jednom mieste.
+Po konštrukcii prvej hrany 
+\fi

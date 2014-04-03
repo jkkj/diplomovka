@@ -200,7 +200,7 @@ prejde agent ich súčet.
 
 
 \begin{lem}
-Po použití operácie NH, ktorou vznikne hrana h, sa agent užnedostane do
+Po použití operácie NH, ktorou vznikne hrana h, sa agent už nedostane do
 už existujúceho vrchola bez následného použitia
 operácie OP, ktorá vytvorí hranu do vrcholov starších ako h,
 alebo bez opätovného prejdenia hrany h.
@@ -208,7 +208,8 @@ alebo bez opätovného prejdenia hrany h.
 \begin{proof}
 Vrchol v, ktorý vznikne operáciou NH je so zvyškom grafu spojený len hranou
 h, ktorá tvorí most do vzniku hrany operáciou OP medzi komponentmi na oboch
-stranách tohto mostu.
+stranách tohto mostu. Teda jediný spôsob ako prejsť medzi týmito dvomi
+časťami grafu je po moste, ktorý ich spája - po hrane h.
 \end{proof}
 
 
@@ -216,16 +217,29 @@ stranách tohto mostu.
 \subsection{Dve a viac značiek pre porty}
 Ušetriť oproti situácii, keď agent môže použiť len jednu značku pre porty
 možno vtedy, ak konštruovaný graf obsahuje cykly, kotré majú spoločné hrany.
-Vtedy, ak agent prechádza vrcholom s ktorým bude incidentná nasledujúca
-hrana, v ňom otvorí port a následne sa doň už nemusí vracať ak existuje
-kratšia cesta.
+Vtedy, ak agent pri konštrukcii niektorej hrany, 
+prechádza vrcholom s ktorým bude incidentná niektorá
+portová
+hrana, ktorú bude konštruovať po tejto,
+ v ňom otvorí port. Následne sa do tohto vrchola už nemusí pri konštrukcii
+tejto nasledujúcej portovej hrany vracať otvoriť port, ak existuje
+kratšia cesta do druhého koncového vrchola tejto hrany. V metrike
+vzdialeností, kde sa počíta počet hrán najkratšej cesty medzi dvomi vrcholmi
+ako ich vzdialenosť platí trojuholníková nerovnosť. Z tohto dôvodu agent
+nevykoná viac krokov pri najlacnejšej (na najmenej krokov) 
+konštrukcii portovej hrany ak jeden port tejto hrany otvorí skôr oproti
+konštrukcii kde ho otvorí neskôr.
+Ako neskôr ukážeme, nie vždy spôsobí snaha skonštruovať jednu hranu na čo
+nejmenej krokov zlepšenie celkového počtu krokov agenta počas konštrukcie
+cieľového grafu.
+
 
 \section{Mriežka}
 \begin{defin}
-Mriežka je graf ...
+Mriežka veľkosti n je graf $P_{n} \times P_{n}$
 \end{defin}
 \begin{defin}
-Cyklická mriežka v eľkosti n je graf $C_{n} \times C_{n}$.
+Cyklická mriežka veľkosti n je graf $C_{n} \times C_{n}$.
 \end{defin}
 
 \begin{lem}

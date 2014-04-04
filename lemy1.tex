@@ -269,9 +269,9 @@ na označenie vrcholov produktu ako usporiadanej dvojice $(u,v)$, kde $u \in
 U$ a $v \in V$. i-tou dimenziou vrchola produktu tohto súčinu bude i-ty člen
 tejto dvojice. Súradnicou v dimenzii i je prvok na i-tej pozícii v
 usporiadanej dvojici. Pre zjednodušenie označíme vrcholy pôvodných grafov
-prirodzenými číslami od 1 po m respektíve od 1 po n. Vrchol produktu
-kartézskeho súčinu týchto dvoch grafov bude pre dosť veľké m,n napríklad
-$(2,4)$.
+prirodzenými číslami od 1 po m respektíve od 1 po n. Vrcholy produktu
+kartézskeho súčinu týchto dvoch grafov budú pre dosť veľké m,n napríklad
+$(2,4)$, $(5,17)$, $(9,1)$, atď.
 \end{ozn}
 
 \begin{lem}
@@ -287,14 +287,18 @@ existujúcich alebo vytvorí nové operáciou NH.
 \subsection{Jedna značka pre porty}
 
 \begin{lem}
-Pri ľubovoľnej konštrukcii cyklickej mriežky $n \times m$s jednou značkou
+Pri ľubovoľnej konštrukcii cyklickej mriežky $n \times m$ s jednou značkou
 pre porty, existuje aspoň jedna hrana pri konštrukcii ktorej agent vykoná 
 aspoň $n$ krokov
 a aspoň jedna portová hrana pri konštrukcii ktorej agent vykoná aspoň $m$
 krokov.
 \end{lem}
 \begin{proof}
-TODO ... pomocou kontrakcie ...
+Pozrime sa na vrcholy, ktoré majú rovnakú súradnicu v druhej dimenzii,
+označme ju $k$ a množinu týchto vrcholov označme $V_{k}$. 
+Ukážeme, že pre každé $k$ má jeden vrchol z množiny $V_{k}$ v
+podgrafe indukovanom vrcholmi $V_{k}$ vzdialenosť od jedného svojho suseda $n$.
+Pozrime sa na postupné vytváranie vrcholov $V_{k}$.
 \end{proof}
 
 

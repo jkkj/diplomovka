@@ -56,6 +56,22 @@ hrana je rovnako stará ako jej druhý port. Všeobecne prvky vzniknuté jednou
 operáciou sú rovnako staré.
 \end{ozn}
 
+\begin{ozn}
+Krokom agenta budeme nazývať vykonanie operácie, pri ktorej sa zmení vrchol,
+v ktorom sa agent nachádza.
+\end{ozn}
+
+\begin{ozn}
+Portová hrana je hrana, ktorá vznikla operáciou OPk, kde k je značka portu,
+ktorého otvorením hrana vznikla.
+\end{ozn}
+\begin{ozn}
+Kostrová hrana je hrana, ktorá vznikla operáciou NH.
+\end{ozn}
+\begin{pozn}
+Ako neskôr ukážeme - "kostrové hrany" tvoria kostru grafu.
+\end{pozn}
+
 \begin{lem}
 Agent na ceste do vrchola v grafe musí ísť po hranách, ktoré po jeho
 návšteve v grafe existujú.
@@ -236,46 +252,52 @@ cieľového grafu.
 
 \section{Mriežka}
 \begin{defin}
-Mriežka veľkosti n je graf $P_{n} \times P_{n}$
+Mriežka veľkosti $ m \times n$ je graf $P_{m} \times P_{n}$
 \end{defin}
 \begin{defin}
-Cyklická mriežka veľkosti n je graf $C_{n} \times C_{n}$.
+Cyklická mriežka veľkosti $m \times n$ je graf $C_{m} \times C_{n}$.
 \end{defin}
 
+Ďalej sa budeme zaoberať mriežkou a cyklickou mriežkou. Na to, aby sme sa v
+týchto dvoch grafoch dokázali dobre orientovať, zavedieme pojem dimenzie a
+jej súradnice. Pričom využujeme, že oba grafy sú produktmi kartézskeho
+súčinu.
+\begin{ozn}
+Pojem dimenzie v produkte kartézskeho súčinu $G$, grafov $U$ a $V$ 
+zavedieme prirodzene vzhľadom
+na označenie vrcholov produktu ako usporiadanej dvojice $(u,v)$, kde $u \in
+U$ a $v \in V$. i-tou dimenziou vrchola produktu tohto súčinu bude i-ty člen
+tejto dvojice. Súradnicou v dimenzii i je prvok na i-tej pozícii v
+usporiadanej dvojici. Pre zjednodušenie označíme vrcholy pôvodných grafov
+prirodzenými číslami od 1 po m respektíve od 1 po n. Vrchol produktu
+kartézskeho súčinu týchto dvoch grafov bude pre dosť veľké m,n napríklad
+$(2,4)$.
+\end{ozn}
+
 \begin{lem}
-Pri konštrukcii portovej hrany urobí agent medzi otvorením prvého a druhého
+Pri konštrukcii portovej hrany v mriežke aj v cyklickej mriežke urobí agent medzi otvorením prvého a druhého
 portu najmenej tri kroky.
 \end{lem}
 \begin{proof}
-Najmenší cyklus v mrižke má dĺžku štyri. Teda medzi otvorením dvoch portov
+Najmenší cyklus v oboch grafoch má dĺžku štyri. Teda medzi otvorením dvoch portov
 hrany vykoná agent najmenej tri pohyby po hranách. Buď prejde po už
 existujúcich alebo vytvorí nové operáciou NH.
 \end{proof}
 
 \subsection{Jedna značka pre porty}
 
-
-\begin{ozn}
-Krokom agenta budeme nazývať vykonanie operácie, pri ktorej sa zmení vrchol,
-v ktorom sa agent nachádza.
-\end{ozn}
-\begin{ozn}
-Portová hrana je hrana, ktorá vznikla operáciou OPk, kde k je značka portu,
-ktorého otvorením hrana vznikla.
-\end{ozn}
-\begin{ozn}
-Kostrová hrana je hrana, ktorá vznikla operáciou NH.
-\end{ozn}
-\begin{pozn}
-Ako neskôr ukážeme - "kostrové hrany" tvoria kostru grafu.
-\end{pozn}
-
 \begin{lem}
-TODO zovšeobecniť prečo sa pri cyklickej mriežke tak našlapem a pri kocke
-nie ... a dokázať :)
+Pri ľubovoľnej konštrukcii cyklickej mriežky $n \times m$s jednou značkou
+pre porty, existuje aspoň jedna hrana pri konštrukcii ktorej agent vykoná 
+aspoň $n$ krokov
+a aspoň jedna portová hrana pri konštrukcii ktorej agent vykoná aspoň $m$
+krokov.
 \end{lem}
 \begin{proof}
+TODO ... pomocou kontrakcie ...
 \end{proof}
+
+
 \begin{lem}
 Mriežku $m \times n$ je možné s použitím jedinej značky pre port zostrojiť
 pomocou $3mn + m$ pohybov. Kde m je menší z rozmerov.
@@ -291,12 +313,7 @@ TODO ... na menej to nejde ...
 \begin{proof}
 TODO
 \end{proof}
-\begin{lem}
-Pri rotačnej mriežke treba ''odšľapať'' oba ''rotačné cykly'' ... TODO
-\end{lem}
-\begin{proof}
-TODO ...
-\end{proof}
+
 
 
 

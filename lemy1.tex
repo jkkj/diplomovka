@@ -49,7 +49,7 @@ do vrchola $u$" len na rozlíšenie týchto dvoch vrcholov od seba.
 
 \begin{ozn}
 Nad prvkami grafu, konštruovaného jedným agentom,
-  sú to najmä vrcholy, hran i porty, existuje prirodzené úplné
+  sú to najmä vrcholy, hrany i porty, existuje prirodzené úplné
 usporiadanie podľa poradia ich vzniku, podľa ktorého môžeme o jednom prvku
 vyhlásiť, či je starší, mladší alebo rovnako starý ako iný prvok. Platí, že
 hrana je rovnako stará ako jej druhý port. Všeobecne prvky vzniknuté jednou
@@ -275,7 +275,9 @@ $(2,4)$, $(5,17)$, $(9,1)$, atď.
 \end{ozn}
 
 \begin{lem}
-Pri konštrukcii portovej hrany v mriežke aj v cyklickej mriežke urobí agent medzi otvorením prvého a druhého
+Pri konštrukcii portovej hrany v mriežke aj v cyklickej mriežke, ktoré
+nemajú žiaden rozmer menší ako štyri, 
+urobí agent medzi otvorením prvého a druhého
 portu najmenej tri kroky.
 \end{lem}
 \begin{proof}
@@ -287,20 +289,79 @@ existujúcich alebo vytvorí nové operáciou NH.
 \subsection{Jedna značka pre porty}
 
 \begin{lem}
-Pri ľubovoľnej konštrukcii cyklickej mriežky $n \times m$ s jednou značkou
+Pri ľubovoľnej konštrukcii cyklickej mriežky G rozmerov $n \times m$ s jednou značkou
 pre porty, existuje aspoň jedna hrana pri konštrukcii ktorej agent vykoná 
-aspoň $n$ krokov
-a aspoň jedna portová hrana pri konštrukcii ktorej agent vykoná aspoň $m$
+aspoň $n - 1$ krokov
+a aspoň jedna portová hrana pri konštrukcii ktorej agent vykoná aspoň $m - 1$
 krokov.
 \end{lem}
 \begin{proof}
+Ako sme už povedali kostrové hrany sú hrany, ktoré vznikli operáciou NH a
+tieto hrany tvoria kostru grafu; ako bolo spomenuté grafom nazývame každý
+medziprodukt konštrukcie počnúc počiatočným vrcholom až po konečný
+skonštruovaný graf.
+Najprv ukážeme, že pri každej konštrukcii grafu G, existuje portová hrana
+pri konštrukcii ktorej vykoná agent aspoň n krokov.
+Každej konštrukcii grafu G, zodpovedá nejaká jeho kostra z hrán vytvorených
+operáciou NH. Kadá kostrová hrana vznikla ako nová hrana do ešte
+neexistujúceho vrchola z už existujúceho. Pre každú portovú hranu $h$ platí, že
+agent od otvorenia prvého jej portu po otvorenie druhého prešiel po hranách,
+ktoré s ňou tvoria uzavretý sled. Keďže má k dispozícii len jednu značku pre
+porty, nemohol cestou otvoriť iné hrany. Všetky portové hrany z tohto sledu
+teda už museli existovať pred začiatkom konštrukcie hrany $h$.
+
+Ukážeme, že každá hrana bola skonštruovaná cyklom v ktorom bol nepárny
+výskyt len súradnice tejto hrany, čiže súradnice inej dimenzie mali párny
+výskyt a v tejto dimenzii tiež všetky súradnice okrem súradnice h.
+
+Keby sme mali len hrany kostry, existujú na každej úrovni aspoň dva vrcholy
+kde cesta obsahuje všetky ostatné súradnice okrem tej v ktorej medzi nimi
+vedie portová hrana. Inak by bol cyklus v kostre.
+
+agent totiž môže prejsť medzi dvomi susednými súradnicami len vtedy, ak
+prejde po tejto súradnici v inej úrovni alebo prejde nepárny počet krát
+všetkými ostatnými.
+
+Každú portovú hranu medzi blízkymi vrcholmi dokáže agent skonštruovať. Jej
+skonštruovaním sa zachovajú vzdialené dvojice. Lebo každý tvoriaci cyklus
+viem nahradiť kostrovými hranami.
+
+Do rovnakej súradnice sa dostanem ak majú návštevy všetkých súradníc v danej
+dimenzii rovnakú paritu ...
+
+
+
+
+
+
+
+
+Uvažujme len hrany prvej dimenzie.  Teda hrana $h$ vedie medzi vrcholmi,
+ktoré sa líšia v súradnici v prvej dimenzii buď o 1 alebo sú to vrcholy $n$
+a 1. Vezmime takú metriku dĺžok ciest, kde budeme rátať každú
+hranu v prvej dimenzii s váhou jedna. Vzdialenosť dvoch vrcholov bude dĺžka najkratšej
+takejto cesty. Uvažujme najprv len kostrové hrany. Vrchol na úrovni $k$ je
+vrchol so súradnicou k v druhej dimenzii. 
+Na úrovni $k$ existuje aspoň jedna dvojica vrcholv, medzi ktorými vedie
+portová hrana. V opačnom prípade by v kostre bol cyklus.
+Aký je najmenší počet hrán, ktoré majú nepárny výskyt na ceste medzi
+takouto dvojicou vrcholov?
+Ukážeme, že pre cesty kratšie ako $n - 1$ je tento počet jedna a je to hrana
+medzi súradnicami, medzi ktorými vedie aj portová hrana.
+Ukážeme, že ak by to bola jendna hrana pre každú dvojicu, vznikne cyklus.
+Agent je v želanom vrchole, kde otvára prvý port. Teraz potrebuje zmeniť
+svoju súradnicu
+
+
+
+
 Pozrime sa na vrcholy, ktoré majú rovnakú súradnicu v druhej dimenzii,
 označme ju $k$ a množinu týchto vrcholov označme $V_{k}$. 
 TODO Keď vezmeme ľubovoľnú kostru a skontrahujeme hrany v druhej dimenzii
 ...
 Portová hrana vznikne na tri kroky len ak je už hrana v rovnakej súradnici v
 tejto dimenzii medzi vrcholmi vpravo alebo vľavo ...
-... aby sme sa nezakoktali budeme písmenkovať tj. hrana medzoi vrcholmi
+... aby sme sa nezakoktali budeme písmenkovať tj. hrana medzi vrcholmi
 (u,v) a (u,v+1) vznikne ak ...
 \end{proof}
 

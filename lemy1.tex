@@ -525,7 +525,7 @@ konštrukcii musí vykonať aspoň $n - 1$ krokov pre prvú dimenziu a iných $m
 
 \begin{lem}
 Mriežku $m \times n$ je možné s použitím jedinej značky pre port zostrojiť
-pomocou $3mn + m$ pohybov. Kde m je menší z rozmerov.
+pomocou $3m(n - 1) + m$ pohybov, kde $m <= n$.
 \end{lem}
 \begin{proof}
 Agent vykonáva: OP,NH,NH,NH,OP,(n-2)krát (OP,S1,NH,NH,OP),S1,NH,HN,OP čím
@@ -533,10 +533,23 @@ vytvorí prvý riadok mriežky. Následne vykoná
 (m-1)krát (NH,OP,S1,S2,NH,OP,(n-1)krát (OP,S1,S2,NH,OP))
 \end{proof}
 \begin{lem}
-TODO ... na menej to nejde ...
+Na zostrojenie mriežky $m \times n$, kde $m <=  n$ potrebuje agent s jednou
+značkou pre porty vykonať aspoň $3m(n - 1) + m$ krokov.
 \end{lem}
 \begin{proof}
-TODO
+Mriežka $m \times n$ má $2*(m+n) - 4$ vrcholov nepárneho stupňa. Tvoriacu
+cetu portovej hrany v mriežke tvoria tri hrany. Agent teda musí na
+konštrukciu ľubovoľnej portovej hrany vykonať aspoň tri kroky, keďže má k
+dispozícii len jednu značku pre porty.
+Ďalšie kroky agent vykonáva, keď sa pohybuje po grafe a nie je otvorený
+žiadny port. Preto najväčší možný počet portových hrán na daný počet krokov 
+tvorí agent vtedy, keď konštruuje portovú hranu na tri kroky a v tom istom
+vrchole otvorí port pre novú hranu. Takto vie konštruovať každé tri kroky
+jednu portovú hranu. Lenže. Keďže v tomto prípade jedna portová hrana začína
+tam, kde predošlá končí, tvoria ťah. Aby teda bolo možné týmto spôsobom
+skonštruovať všetky portové hrany mriežky, musely by sa jej hrany dať 
+rozdeliť na kostru a ťah. Mriežka má však priveľa vrcholov nepárneho srtupňa
+na to, aby bolo takéto rozdelenie možné. 
 \end{proof}
 
 

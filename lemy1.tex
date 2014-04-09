@@ -334,6 +334,7 @@ $h$.
 
 
 \begin{lem}
+\label{cyklus}
 Každý tvoriaci cyklus je možné nahradiť tvoriacim cyklom, ktorý obsahuje len
 hrany kostry a príslušnú portovú hranu.
 \end{lem}
@@ -342,6 +343,8 @@ Majme tvoriaci cyklus hrany $h$. Každú portovú hranu, okrem $h$  v ňom nahra
 cyklom, až kým nemáme uzavretý sled na kostrových hranách a hrane $h$. Z
 neho vieme vybrať tvoriaci cyklus hrany $h$.
 \end{proof}
+
+
 
 \begin{ozn}
 Graf prislúchajúci dimenzii d grafu G je d-ty činiteľ kartézskeho súčinu, ktorého
@@ -369,6 +372,13 @@ Prechodom po súradnici budeme volať prechod agenta po hrane danej súradnice.
 Susedná súradnica súradnice k v dimenzii d, je každá súradnica vrchola
 spojeného hranou v grafe prislúchajúcom dimenzii d s vrcholom so súradnicou
 k.
+\end{ozn}
+
+\begin{ozn}
+Medzi otovrením prvého a druhého portu portovej hrany $h$, prejde agent po slede
+vrcholov. Najmenší cyklus z tohto uzavretého sledu obsahujúci
+ hranu $h$ budeme označovať tvorivý cyklus hrany $h$. Hrany tohto cyklu bez
+hrany $h$ tvoria konštrukčnú cestu hrany $h$.
 \end{ozn}
 
 \begin{lem}
@@ -419,9 +429,6 @@ hrane majú odlišnú paritu počtu svojich výskytov.
 \end{proof}
 
 
-Najprv ukážeme, že pri každej konštrukcii grafu G, existuje portová hrana
-pri konštrukcii ktorej
-
 
 \begin{lem}
 Pri ľubovoľnej konštrukcii cyklickej mriežky G rozmerov $n \times m$ s jednou značkou
@@ -443,7 +450,44 @@ vrchola u, v ktorom otvoril druhý port hrany,
 tento sled z u do v tvoria s portovou
 hranou uzavretý sled. Tento sled obsahuje tvoriaci cyklus danej portovej
 hrany.
-Majme ľubovoľnú konštrukciu mriežky. Ukážeme, že pre ňu platí tvrdenie vety.
+Majme ľubovoľnú konštrukciu cyklickej mriežky $G$ a k nej zodpovedajúcu
+kostru. Ukážeme, že pre ňu platí tvrdenie vety.
+Táto kostra určuje aj, ktoré hrany grafu sú portové - tie, ktoré nie sú v
+kostre. Pripomeňme si, že kostra zodpovedajúca konštrukcii je kostra tvorená
+práve všetkými hranami, ktoré vznikli operáciami NH.
+Ukážeme, že existuje aspoň jedna hrana, ktorej tvorivý cyklus bez tejto
+hrany obsahuje jej
+súradnicu párny počet krát - teda ostatné súradnice v tejto dimenzii nepárny
+počet krát. Rovnako to dokážeme pre obe dimenzie. Možné sú dva prípdy, buď
+ide o dve rôzne hrany, alebo o jedinú hranu.
+Keďže agent musel prejsť do susednej súradnice vrchola s prvým portom hrany
+a nemohol tak urobiť v jej súradnici, musel prejsť po všetkých ostatných
+súradniciach a teda vykonať aspoň n-1 respektíve m-1 krokov v prípade, že
+platí alternatíva s dvomi rôznymi hranami. Alebo n+m - 1 ak platí
+alternatíva s jedinou hranou. Nazvyme ich pre lepšiu orientáciu dotknuté
+hrany.
+Pozrieme sa na ľubovoľnú kostru. V tejto kostre sa nachádzajú všetky vrcholy
+grafu. Aký je tvorivý cyklus jednotlivých portových hrán. V tvorivom cykle
+portovej hrany $h$
+je možné nahradiť niektorú portovú hranu jej tvorivou cestou. Takýmto
+nahrádzaním postupne vieme nahradiť všetky portové hrany. Keď z výsledného
+sledu vyberieme konštrukčnú cestu, tento už obsahuje iba kostrové hrany.
+Pozrime sa na paritu počtu prechodov jednotlivých súradníc v tejto ceste.
+Tvrdíme, že ak sme nenahrádzali hranu, ktorej konštrukčná cesta obsahovala
+súradnicu tejto hrany párny počet krát, výsledná tvorivá cesta na
+kostrových hranách bude obsahovať nepárny počet prechodov po súradnici 
+hrany $h$.
+Toto je zrejmé
+
+Zmena parity prechodov v jednej dimenzii sa druhej netýka ...
+
+
+
+Pozrime sa na portové hrany, ktoré vznikli pred dotknutými hranami. 
+
+
+
+
 Vezmime kostru grafu $G$ zodpovedajúcu tejto konštrukcii. Táto kostra
 určuje, ktoré hrany sú portové - zvyšné hrany G. Pozrieme sa, ktoré mohli
 vzniknúť bez toho, aby agent predtým splnil tvrdenie vety.

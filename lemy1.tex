@@ -433,10 +433,10 @@ hrane majú odlišnú paritu počtu svojich výskytov.
 \begin{lem}
 Pri ľubovoľnej konštrukcii cyklickej mriežky G rozmerov $n \times m$ s jednou značkou
 pre porty, existuje aspoň jedna hrana pri konštrukcii ktorej agent vykoná 
-aspoň $n - 1$ krokov
-a súčasne aspoň jedna portová hrana pri konštrukcii ktorej agent vykoná aspoň $m - 1$
-krokov, alebo aspoň jedna hrana pri ktorej konštrukcii agent vykonal aspoň
-$n+m - 1$ krokov.
+aspoň $n - 1$ krokov v prvej dimenzii
+a súčasne aspoň jedna portová hrana,
+ pri konštrukcii ktorej agent vykoná aspoň $m - 1$ krokov v druhej dimenzii,
+môže ísť o tú istú hranu.
 \end{lem}
 \begin{proof}
 Ako sme už povedali kostrové hrany sú hrany, ktoré vznikli operáciou NH a
@@ -473,86 +473,53 @@ je možné nahradiť niektorú portovú hranu jej tvorivou cestou. Takýmto
 nahrádzaním postupne vieme nahradiť všetky portové hrany. Keď z výsledného
 sledu vyberieme konštrukčnú cestu, tento už obsahuje iba kostrové hrany.
 Pozrime sa na paritu počtu prechodov jednotlivých súradníc v tejto ceste.
-Tvrdíme, že ak sme nenahrádzali hranu, ktorej konštrukčná cesta obsahovala
+Tvrdíme, že ak sme nenahrádzali hranu, ktorej tvorivá cesta obsahovala
 súradnicu tejto hrany párny počet krát, výsledná tvorivá cesta na
 kostrových hranách bude obsahovať nepárny počet prechodov po súradnici 
 hrany $h$.
-Toto je zrejmé
+Toto je zrejmé. Ak výskyt hrany nahradíme cestou, kde sa táto hrana nachádza
+nepárny počet krát, počet prechodov po súradnici hrany sa nezmení. Toto
+zároveň implikuje, že prechody po ostatných súradniciach sa na tejto ceste
+nachádzajú párny počet krát zvlášť pre každú súradnicu. Teda nezmení sa ani
+parita prechodov po ostatných súradniciach.
+Čo sa týka parít počtov prechodov v ostatnej dimenzii, tak tu platí to isté,
+ak nahrádzame hranu jej tvorivou cestou, kde je počet prechodov po súradnici
+tejto hrany párny, tak aj vo výslednom slede je počet prechodov párny pre každú
+súradnicu tejti dimenzie.
 
-Zmena parity prechodov v jednej dimenzii sa druhej netýka ...
+Keďže výsledný sled, krorý vznikol nahradením tvorivej cesty portovej hrany
+$h$ vedie len po kostrových hranách a na tých neexistuje cyklus, tvorivá
+cesta hrany $h$ vybraná z tohto sledu zachováva paritu prechodov po
+jednotlivých súradniciach takú, aká je v tomto slede.
+Kostra je totiž strom a ak sa na slede vyskytne dvakrát ten istý vrchol, tak
+medzi dvomi jeho susednými výskytmi je párny výskyt prechodov po
+jednotlivých súradniciach a teda ho môžeme zo sledu vybrať - skontrahovať na
+jeden výskyt tohot vrchola. Jediná šanca ako pri pohybe po strome navštíviť
+opätovne niektorý vrchol je vrátiť sa doň.
 
-
-
-Pozrime sa na portové hrany, ktoré vznikli pred dotknutými hranami. 
-
-
-
-
-Vezmime kostru grafu $G$ zodpovedajúcu tejto konštrukcii. Táto kostra
-určuje, ktoré hrany sú portové - zvyšné hrany G. Pozrieme sa, ktoré mohli
-vzniknúť bez toho, aby agent predtým splnil tvrdenie vety.
- vykoná agent aspoň n krokov.
-Každej konštrukcii grafu G, zodpovedá nejaká jeho kostra z hrán vytvorených
-operáciou NH. Kadá kostrová hrana vznikla ako nová hrana do ešte
-neexistujúceho vrchola z už existujúceho. Pre každú portovú hranu $h$ platí, že
-agent od otvorenia prvého jej portu po otvorenie druhého prešiel po hranách,
-ktoré s ňou tvoria uzavretý sled. Keďže má k dispozícii len jednu značku pre
-porty, nemohol cestou otvoriť iné hrany. Všetky portové hrany z tohto sledu
-teda už museli existovať pred začiatkom konštrukcie hrany $h$.
-
-Ukážeme, že každá hrana bola skonštruovaná cyklom v ktorom bol nepárny
-výskyt len súradnice tejto hrany, čiže súradnice inej dimenzie mali párny
-výskyt a v tejto dimenzii tiež všetky súradnice okrem súradnice h.
-
-Keby sme mali len hrany kostry, existujú na každej úrovni aspoň dva vrcholy
-kde cesta obsahuje všetky ostatné súradnice okrem tej v ktorej medzi nimi
-vedie portová hrana. Inak by bol cyklus v kostre.
-
-agent totiž môže prejsť medzi dvomi susednými súradnicami len vtedy, ak
-prejde po tejto súradnici v inej úrovni alebo prejde nepárny počet krát
-všetkými ostatnými.
-
-Každú portovú hranu medzi blízkymi vrcholmi dokáže agent skonštruovať. Jej
-skonštruovaním sa zachovajú vzdialené dvojice. Lebo každý tvoriaci cyklus
-viem nahradiť kostrovými hranami.
-
-Do rovnakej súradnice sa dostanem ak majú návštevy všetkých súradníc v danej
-dimenzii rovnakú paritu ...
-
-
-
-
-
-
-
-
-Uvažujme len hrany prvej dimenzie.  Teda hrana $h$ vedie medzi vrcholmi,
-ktoré sa líšia v súradnici v prvej dimenzii buď o 1 alebo sú to vrcholy $n$
-a 1. Vezmime takú metriku dĺžok ciest, kde budeme rátať každú
-hranu v prvej dimenzii s váhou jedna. Vzdialenosť dvoch vrcholov bude dĺžka najkratšej
-takejto cesty. Uvažujme najprv len kostrové hrany. Vrchol na úrovni $k$ je
-vrchol so súradnicou k v druhej dimenzii. 
-Na úrovni $k$ existuje aspoň jedna dvojica vrcholv, medzi ktorými vedie
-portová hrana. V opačnom prípade by v kostre bol cyklus.
-Aký je najmenší počet hrán, ktoré majú nepárny výskyt na ceste medzi
-takouto dvojicou vrcholov?
-Ukážeme, že pre cesty kratšie ako $n - 1$ je tento počet jedna a je to hrana
-medzi súradnicami, medzi ktorými vedie aj portová hrana.
-Ukážeme, že ak by to bola jendna hrana pre každú dvojicu, vznikne cyklus.
-Agent je v želanom vrchole, kde otvára prvý port. Teraz potrebuje zmeniť
-svoju súradnicu
-
-
-
-
-Pozrime sa na vrcholy, ktoré majú rovnakú súradnicu v druhej dimenzii,
-označme ju $k$ a množinu týchto vrcholov označme $V_{k}$. 
-TODO Keď vezmeme ľubovoľnú kostru a skontrahujeme hrany v druhej dimenzii
-...
-Portová hrana vznikne na tri kroky len ak je už hrana v rovnakej súradnici v
-tejto dimenzii medzi vrcholmi vpravo alebo vľavo ...
-... aby sme sa nezakoktali budeme písmenkovať tj. hrana medzi vrcholmi
-(u,v) a (u,v+1) vznikne ak ...
+Na kostre existuje pre každú portovú hranu jediná tvorivá cesta, inak by na
+nej bol cyklus, čo je spor.
+Vezmime si teraz dimenziu $d$ a vrcholy, ktoré majú v ostatnej dimenzii
+rovnakú súradnicu, označme ju $k$. Indukovaný podgraf na týchto vrcholoch je
+cyklus. Niektoré jeho hrany sú kostrové, ostatné sú portové. Pokiaľ má každá
+portová hrana tvorivú cestu na kostre s nepárnym počtom prechodov po jej
+súradnici, existuje na kostre cyklus, čo je spor.
+Tento cyklus získame z uzavretého sledu vytvoreného z indukovaného grafu
+týchto vrcholov, kde portové hrany nahradíme ich tvorivými cestami na
+kostre. Vo výslednom slede sa každá hrana bude nachádzať nepárny počet krát
+a ako sme už ukázali, ak vyberieme niektorú portovú hranu $f$, vieme z tohto
+cyklu vybrať jej tvorivú cestu, ktorá zachová paritu prechodov po
+jednotlivých hranách. Keďže sa však v tomto slede nachádza prechod po
+súradnici hrany $f$ párny počet krát, bude sa aj v ceste, čo je spor.
+Napríklad s tým, že táto hrana má tvorivú cestu na kostre s nepárnym počtom
+výskytov jej súradnice, alebo že v kostre existuje medzi dvomi vrcholmi -
+koncovými vrcholmi hrany $f$, práve jedna cesta.
+Z toho vyplýva, že niektorá nahrádzaná hrana mala tvorivú cestu s párnym
+počtom prechodov po jej súradnici.
+Teda pre každú dimenziu existuje hrana, ktorej tvorivá cesta obsahuje
+nepárne počty prechodov po súradniciach tejto dimenzie. A agent pri jej
+konštrukcii musí vykonať aspoň $n - 1$ krokov pre prvú dimenziu a iných $m -
+1$ krokov pre druhú dimenziu.
 \end{proof}
 
 

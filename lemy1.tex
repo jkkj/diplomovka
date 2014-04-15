@@ -289,6 +289,10 @@ Ako neskôr ukážeme, nie vždy spôsobí snaha skonštruovať jednu hranu na �
 nejmenej krokov zlepšenie celkového počtu krokov agenta počas konštrukcie
 cieľového grafu.
 
+
+TODO ... lemy o tvoriacom cykle grafu pri viacerých značkách pre porty ...
+
+\iffalse
 \begin{lem}
 Najmenší počet krokov na ktoré môže agent skonštruovať nejakú množinu
 portových hrán M, ak dovtedy skonštruoval graf G, je dĺžka najkratšieho
@@ -302,18 +306,18 @@ Agent musí najprv navštíviť konce portovej hrany, aby ju mohol vytvoriť.
 Keďže nejde o kostrovú hranu, jej konce sú staršie ako ona. Ak by existoval
 kratší taký sled, agent by mohol vykonať menej krokov.
 \end{proof}
-
+\fi
 
 
 \section{Mriežka}
 \begin{defin}
-Mriežka veľkosti $ m \times n$ je graf $P_{m} \times P_{n}$
+Mriežka veľkosti $ n \times m$ je graf $P_{n} \times P_{m}$
 \end{defin}
 \begin{defin}
-Cyklická mriežka veľkosti $m \times n$ je graf $C_{m} \times C_{n}$.
+Cyklická mriežka veľkosti $n \times m$ je graf $C_{n} \times C_{m}$.
 \end{defin}
 
-Ďalej sa budeme zaoberať mriežkou a cyklickou mriežkou. Na to, aby sme sa v
+V tejto sa budeme zaoberať mriežkou a cyklickou mriežkou. Na to, aby sme sa v
 týchto dvoch grafoch dokázali dobre orientovať, zavedieme pojem dimenzie a
 jej súradnice. Pričom využujeme, že oba grafy sú produktmi kartézskeho
 súčinu.
@@ -328,6 +332,13 @@ prirodzenými číslami od 1 po m respektíve od 1 po n. Vrcholy produktu
 kartézskeho súčinu týchto dvoch grafov budú pre dosť veľké m,n napríklad
 $(2,4)$, $(5,17)$, $(9,1)$, atď.
 \end{ozn}
+
+\begin{pozn}
+Pri mriežke a cyklickej mriežke budeme číslovať vrcholy pôvodných grafov
+tak, aby sa označenia susedných vrcholov líšili o jedna, v prípade cyklickej
+mriežky budú v pôvodných grafoch - cykloch spojené aj vrcholy 1 a n,
+repektíve 1 a m.
+\end{pozn}
 
 \begin{lem}
 Pri konštrukcii portovej hrany v mriežke aj v cyklickej mriežke, ktoré

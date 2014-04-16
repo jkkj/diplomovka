@@ -264,6 +264,23 @@ stranách tohto mostu. Teda jediný spôsob ako prejsť medzi týmito dvomi
 časťami grafu je po moste, ktorý ich spája - po hrane h.
 \end{proof}
 
+\begin{lem}
+Existuje graf, pri ktorého konštrukcii na najmenej krokov, agent
+skonštruuje kostrové hrany, ktoré s konštruovanou portovou hranou netvoria
+tvoriaci cyklus.
+\end{lem}
+\begin{proof}
+Napríklad cyklus, kde do každého vrchola pridáme hranu do vrchola stupňa
+jedna. Je zrejmé, že pri konšrukcii týchto vrcholov stupňa jedna, agent
+urébí operácie NH a S1, lebo nemôže ostať vo vrchole ak ešte nedokončil graf
+a iná hrana z neho nevedie. Tiež je zrejmé, že takýto graf má práve jednu
+portovú hranu a to ľubovoľnú hranu cyklu. Pri jej konštrukcii prejde agent
+cez všetky vrcholy v cykle a ak by neskonštruoval príslušný vrchol stupňa
+jedna incidentný s vrcholom cyklu, pri jeho prvej návšteve, musel by sa doň
+vrátiť a teda vykonať viac krokov. Agent treda otvorí port a skonštruuje
+vrcholy cyklu, pričom v každom skonštuuje aj príslušný vrchol stupňa jedna s
+ktorým je tento incidentný.
+\end{proof}
 
 
 \subsection{Dve a viac značiek pre porty}
@@ -317,10 +334,11 @@ Mriežka veľkosti $ n \times m$ je graf $P_{n} \times P_{m}$
 Cyklická mriežka veľkosti $n \times m$ je graf $C_{n} \times C_{m}$.
 \end{defin}
 
-V tejto sa budeme zaoberať mriežkou a cyklickou mriežkou. Na to, aby sme sa v
+V tejto kapitole sa budeme zaoberať mriežkou a cyklickou mriežkou. Na to, aby sme sa v
 týchto dvoch grafoch dokázali dobre orientovať, zavedieme pojem dimenzie a
 jej súradnice. Pričom využujeme, že oba grafy sú produktmi kartézskeho
 súčinu.
+
 \begin{ozn}
 Pojem dimenzie v produkte kartézskeho súčinu $G$, grafov $U$ a $V$ 
 zavedieme prirodzene vzhľadom
@@ -347,7 +365,8 @@ urobí agent medzi otvorením prvého a druhého
 portu najmenej tri kroky.
 \end{lem}
 \begin{proof}
-Najmenší cyklus v oboch grafoch má dĺžku štyri. Teda medzi otvorením dvoch portov
+Najmenší cyklus v oboch grafoch má dĺžku štyri. 
+Teda medzi otvorením dvoch portov
 hrany vykoná agent najmenej tri pohyby po hranách. Buď prejde po už
 existujúcich alebo vytvorí nové operáciou NH.
 \end{proof}
@@ -365,37 +384,15 @@ vznikol spolu s kostrovou hranou a preto doň predtým nemohli viesť žiadne
 hrany.
 \end{proof}
 
-\begin{ozn}
-Tvoriacim cyklom portovej hrany budeme nazývať najmenší cyklus, ktorý sa dá vybrať z
-uzavretého sledu, po ktorom agent prešiel medzi otvorením prvého a druhého
-portu danej portovej hrany.
-\end{ozn}
-
-\begin{lem}
-Existuje graf, pri konštrukcii ktorého konštrukcii na najmenej krokov, agent
-skonštruuje kostrové hrany, ktoré s konštruovanou portovou hranou netvoria
-tvoriaci cyklus.
-\end{lem}
-\begin{proof}
-Napríklad cyklus, kde do každého vrchola pridáme hranu do vrchola stupňa
-jedna. Je zrejmé, že pri konšrukcii týchto vrcholov stupňa jedna, agent
-urébí operácie NH a S1, lebo nemôže ostať vo vrchole ak ešte nedokončil graf
-a iná hrana z neho nevedie. Tiež je zrejmé, že takýto graf má práve jednu
-portovú hranu a to ľubovoľnú hranu cyklu. Pri jej konštrukcii prejde agent
-cez všetky vrcholy v cykle a ak by neskonštruoval príslušný vrchol stupňa
-jedna incidentný s vrcholom cyklu, pri jeho prvej návšteve, musel by sa doň
-vrátiť a teda vykonať viac krokov. Agent treda otvorí port a skonštruuje
-vrcholy cyklu, pričom v každom skonštuuje aj príslušný vrchol stupňa jedna s
-ktorým je tento incidentný.
-\end{proof}
 
 \begin{lem}
 Tvoriaci cyklus hrany $h$ obsahuje len hrany staršie ako $h$.
 \end{lem}
 \begin{proof}
 Tvoriaci cyklus obsahuje hrany, po ktorých agent prešiel, keď konštuoval
-hranu $h$. Museli teda v tom čase už existovať a sú preto staršie ako hrana
-$h$.
+hranu $h$. Museli teda v čase po prechode agenta už existovať a sú preto 
+staršie ako hrana $h$, ktorú agent vytvoril až potom, ako po týchto hranách
+prešiel.
 \end{proof}
 
 
@@ -405,7 +402,8 @@ Každý tvoriaci cyklus je možné nahradiť tvoriacim cyklom, ktorý obsahuje l
 hrany kostry a príslušnú portovú hranu.
 \end{lem}
 \begin{proof}
-Majme tvoriaci cyklus hrany $h$. Každú portovú hranu, okrem $h$  v ňom nahradíme jej tvoriacim
+Majme tvoriaci cyklus hrany $h$. Každú portovú hranu, okrem $h$  v ňom nahradíme 
+jej tvoriacim
 cyklom, až kým nemáme uzavretý sled na kostrových hranách a hrane $h$. Z
 neho vieme vybrať tvoriaci cyklus hrany $h$.
 \end{proof}
@@ -593,11 +591,15 @@ Agent vykonáva: OP,NH,NH,NH,OP,(n-2)krát (OP,S1,NH,NH,OP),S1,NH,HN,OP čím
 vytvorí prvý riadok mriežky. Následne vykoná
 (m-1)krát (NH,OP,S1,S2,NH,OP,(n-1)krát (OP,S1,S2,NH,OP))
 \end{proof}
+
 \begin{lem}
 Na zostrojenie mriežky $m \times n$, kde $m <=  n$ potrebuje agent s jednou
 značkou pre porty vykonať aspoň $3m(n - 1) + m$ krokov.
 \end{lem}
 \begin{proof}
+
+
+\iffalse
 Mriežka $m \times n$ má $2*(m+n) - 4$ vrcholov nepárneho stupňa. Tvoriacu
 cetu portovej hrany v mriežke tvoria tri hrany. Agent teda musí na
 konštrukciu ľubovoľnej portovej hrany vykonať aspoň tri kroky, keďže má k
@@ -654,7 +656,7 @@ konštruovanom grafe stupeň:
 
 ...
 Ako sa správa konštrukcia na okrajoch mriežky?
-
+\fi
 \end{proof}
 
 

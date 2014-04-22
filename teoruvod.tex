@@ -1,0 +1,190 @@
+
+\chapter{Grafové gramatiky}%alias "čo sa už skúšalo"
+\thispagestyle{empty}
+\section{Úvod}
+Naša práca sa zaoberá vytváraním grafov a preto je nutné spomenúť 
+najpoužívanejší formalizmus vytvárania grafov - grafové gramatiky.
+Cieľom tejto kapitoly je uviesť čitateľa do problematiky grafových 
+gramatík a poskytnúť mu stručný prehľad tejto oblasti.
+Pri vypracovávaní tejto časti nám boli vo veľkej miere nápomocné práce 
+týkajúce sa grafových gramatík, ktoré boli na našej fakulte vypracované 
+v predošlých rokoch.
+Predpokladáme, že čitateľ má základné vedomosti z teórie formálnych 
+jazykov a automatov.
+
+\section{Definície}
+Teória okolo grafových gramatík sa budovala podobne ako pri formálnych
+jazykoch a automatoch z viacerých prístupov pri ktorých boli neskôr dokázané
+určité ekvivalencie. Z toho vyplýva množstvo tried gramatík, prístupov a
+definícií.
+V konečnom dôsledku však možno rozlíšiť dva hlavné prístupy ku grafovým
+gramatikám - algoritmický (spájací) a algebraický (lepiaci).
+Pre ilustráciu uvedieme niekoľko tried a skúmaných problémov.
+Grafové gramatiky sa týkajú našej práce len okrajovo, v prípade hlbšieho 
+záujmu oporúčame čitateľovi publikáciu Handbook of Graph Grammars \cite{GG} ,
+z ktorej sme aj my čerpali.
+
+\section{Všeobecné pojmy}
+Za účelom uvedenia čitateľa do problematiky grafových gramatík sme si
+vybrali skupinu grafových gramatík založenú na prepisovaní vrcholov. Vo
+všeobecnosti má pravidlo odvodenia v grafovej gramatike tvar $(M, D, E)$,
+kde $M$ a $D$ sú grafy a $E$ je vkladací mechanizmus. Takéto odvodenie môže
+byť použité na ľubovoľný graf $H$, ktorý obsahuje podgraf $M$. Jeden výskyt
+podgrafu $M$ je nahradený grafom $D$ a spojený so zvyškom grafu $H$
+mechanizmom popísaným $E$. Zvyšok grafu H označujeme $H^{-}$.
+Na základe mechanizmu $E$ sa rozlišujú spomínané dva prístupy. Pri lepiacom
+prístupe sa časti $H^{-}$ stotožnia s časťami $M$ a následne $D$. Graf $D$
+je skrz ne následne "vlepený" do grafu $H^{-}$.
+Pri spájacom prístupe vznikajú podľa $E$ nové "spájacie" hrany medzi $D$ a 
+$H^{-}$.
+V spájacom prístupe sa v bezkontextových gramatikách skladá graf $M$ len z
+jedného vrcholu. Teda vrchol je nahrádzaný grafom. Požaduje sa tiež, aby
+postupnosť nahrádzania vrcholov nemala vplyv na konečný výsledok. Pritom je
+viacero prirodzených spôsobov definovania mechanizmu $E$ a obmedzení na
+"pravé strany" pravidiel - graf $D$.
+
+
+\section{NLC gramatiky}
+NLC (Node Label Controlled) grafové gramatiky sú jedným 
+z najjednoduchších mechanizmov prepisovania grafov. Pravidlá NLC gramatiky 
+sú tvaru $X \to D$, kde X je značka (label) prepisovaného vrchola a D je 
+dcérsky graf. Pre použitie pravidie v NLC neexistujú žiadne obmedzenia, teda 
+pravidlo sa môže použiť na ľubovoľný vrchol so značkou X.
+Vkladanie je v NLC lokálne, tj. vrcholy grafu D môžu byť spojené len s tými 
+vrcholmi, s ktorými bol spojený prepísaný vrchol X.
+O NLC gramatikách, kde odvodenie je nezávislé na poradí použitia pravidiel 
+odvodenia, hovoríme, že majú Church-Rosserovu vlastnosť 
+- sú konfluentné (confluent). 
+Vo všeobecnosti NLC túto vlastnosť nemajú a pri použití rovnakej sady 
+pravidiel môžu vzniknúť rôzne grafy. 
+
+\begin{defin}
+NLC grafová gramatika je 5-tica $G = (\Sigma ;\Delta ; P;C; S)$ kde
+$\Sigma  - \Delta$  je abeceda neterminálnych znaciek uzlov a
+ $\Delta  (\Delta  \subseteq  \Sigma )$ je abeceda
+terminálnych znaciek uzlov. P je konecná množina NLC pravidiel, C je
+binárna relácia spojení nad $\Sigma$  a S je pociatocný graf.
+\end{defin}
+
+\begin{defin}
+Grafový jazyk generovaný G je $L(G) = \{H \in GR_\Delta  | S \Rightarrow ^*H\}
+, kde GR_\Delta $  je množina neorientovaných grafov so značkami uzlov 
+v $\Delta ,\Rightarrow $  reprezentuje jeden prepisovací krok, 
+a $\Rightarrow ^* $ reprezentuje odvodenie, t.j. postupnosť prepisovacích 
+krokov.
+\end{defin}
+
+\section{NCE}
+NCE (Neighborhood Controlled Embeding) grafové gramatiky sú rozšírením NLC 
+grafových gramatík.V NCE mechanizme prepisovania je, 
+na rozdiel od NLC, množina spájacích inštrukcií C definovaná 
+pre každé pravidlo zvlášť a NCE gramatika môže k uzlom podgrafu D 
+pristupovať priamo napr. ich očíslovaním; nemusí používať len značky týchto
+vrcholov. Toto už nie je možné pri vrcholoch hosťovského grafu (graf $H$),
+pretože v ňom môže byť počet susedov nahrádzaného vrchola neohraničený.
+Existujú rôzne rozšírenia NCE gramatík.
+edNCE gramatiky sú rozšírením NCE gramatík s dynamickým 
+preznačovaním hrán pri prepisovaní. 
+Písmenko e znamená, že sa  budú značiť hrany a písmenko d označuje 
+použitie orientovaných grafov.
+
+\begin{defin}
+edNCE grafová gramatika je definovaná ako 6-tica 
+$G =(\Sigma ;\Delta ;\Gamma ;\Omega ; P; S)$. 
+Kde $\Sigma $  je abeceda značiek uzlov, 
+$\Delta  \subseteq  \Sigma $ je abeceda terminálnych značiek uzlov, 
+$\Gamma $ je abeceda značiek hrán, 
+$\Omega \subseteq  \Sigma $  je abeceda terminálnych
+značiek hrán, P je konečná množina pravidiel a $S \in  \Sigma - \Delta $ je
+počiatočný neterminál. Pravidlá sú tvaru $X \to (D,C), kde X \in  \Sigma - \Delta $ a
+$(D,C) \in  GRE_{\Sigma ,\Gamma }$. Relácia spojení je 
+$C \subseteq  \Sigma \times \Gamma \times \Gamma V_H \times {in,out}$.
+\end{defin}
+
+Vo všeobecnosti množinu grafov izomorfných s grafom H budeme značit
+$[ H ] $. Niekedy sa hovorí o H ako „konkrétnom“ grafe a o $[ H ]$ ako „abstraktnom“
+grafe.
+
+\begin{defin}
+Množinu všetkých konkrétnych grafov nad $\Sigma$ a $\Gamma $ značíme
+$GR_{\Sigma ,\Gamma }$ a množinu všetkých abstraktných grafov značíme 
+$[GR_{\Sigma ,\Gamma }]$. $GRE_{\Sigma ,\Gamma }$ označuje množinu grafov 
+s vnorením nad $\Sigma ,\Gamma $. Obyčajný graf môžeme považovať
+za graf s prázdnym vnorením, teda $GR_{\Sigma ,\Gamma } 
+\subseteq GRE_{\Sigma ,\Gamma }$.
+\end{defin}
+
+\begin{defin}
+Grafový jazyk generovaný G je $L(G) = \{[H] | H \in GR_{\Sigma ,\Omega }$ 
+a $sn(S,z) \Rightarrow ^* H pre nejaké z \} $
+(t.j. všetky grafy v odvodení G, ktoré majú iba terminálne značky hrán aj uzlov).
+\end{defin}
+
+Teraz si definujeme hlavnú triedu bezkontextových grafových gramatík so
+spájacím prístupom. Označujeme ju C-edNCE. Táto je najrozšírenejšia v
+spájacom prístupe má značne všeobecný mechanizmus vkladania a žiadne
+reštrikcie na pravé strany.
+
+\begin{defin}
+edNCE gramatika $G =(\Sigma ;\Delta ;\Gamma ;\Omega ; P; S)$ je konfluentná
+(confluent), alebo C-edNCE gramatika, ak pre všetky pravidlá $X_1 \to (D1,C1)$
+a $X_2 \to (D_2,C_2)$ z P, všetky uzly $x_1 \in V_{D_1} a x_2 \in V_{D_2}$ , a všetky hrany so
+značkami $\alpha ,\delta \in \Gamma $, platia nasledujúce ekvivalencie:
+$\exists \beta \in \Gamma  : (X_2, \alpha /\beta , x_1, out) \in C_1 a (\lambda _{D_1}(x_1), \beta /\delta , x_2, in) \in C_2
+\Leftrightarrow 
+( \exists \gamma \in \Gamma  : (X_1, \alpha /\gamma , x_2, in) \in C_2 a (\lambda _{D_2}(x_2),\gamma /\delta , x_1, out) \in C_1$.
+\end{defin}
+
+\begin{pozn}
+Existuje charakterizácia C-edNCE nezávislá na gramatikách pomocou Monadic Second Order (MSO) logiky.
+Veľa výsledkov ju pre jednoduchosť využíva v dôkazoch.
+\end{pozn}
+
+\section{Rozličné známe výsledky}
+
+Hodno spomenúť, že vlastnosti, ktoré poznáme ako bezkontextové nemusia byť
+nutne konfluentné. \cite{GG} spomína pomerne jednoduchú lemu o
+konfluentnosti gramatiky, kde každý vrchol má "svoju" polovicu značky hrany a
+pri odvodení mení len tú. Následne nezáleží na poradí odvodenia dvoch
+vrcholov spojených hranou, lebo tieto menia len "svoju" časť značky hrany.
+Medzi zaujímavé veci v teórii o C-edNCE gramatikách patrí existencia
+takzvaných zakázaných (forbidden) hrán. Sú to hrany označené neterminálnym
+symbolom spájajúce dvojice terminálnych vrcholov. Z grafu obsahujúceho čo
+len jedinú takúto hranu sa už konečný graf nestane.
+Existujú mnohé modifikácie gramatík, ktoré sme si bližšie nespomínali.
+Skúmali sa aj problémy rozpoznávania, či graf patrí do jazyka; 
+napríklad existuje NP-úplný LIN-A-edNCE jazyk.
+Taktiež sú preskúmané rôzne normálne formy. Veta o medzere hovorí, že
+existuje $c$ pre ktoré sa nedá odvodiť v danom jazyku dosť grafov a tak
+ďalej.
+
+\section{Grafové gramatiky s nahrádzaním hyperhrán}
+Pre úplnosť venujeme krátky priestor aj vlepovaciemu prístupu v grafových
+gramatikách.
+Grafové gramatiky s nahrádzaním hyperhrán sú považované za grafovú
+ekvivalenciu k reťazcovým gramatikám. Ich začiatky siahajú do skorých 70.
+rokov. Základom je hyperhrana. Hyperhrana je atomický prvok s fixným počtom
+chápadiel - typov. Môže byť pripojená k ľubovoľnej štruktúre odvodenej z
+množiny vrcholov pripojením chápadla do vrcholu. Hyperhrana môže byť
+prepísaná štruktúrou $R$. $R$ však musí mať, kvôli lepiacemu prístupu,
+rovnaký počet externých vrcholov ako nahrádzaná hrana typov.
+Gramatiky v tejto skupine majú konečný počet pravidiel a počiatočnú
+štruktúru. Jazyk tvoria množiny konečných štruktúr odvodených takouto
+gramatikou. Prepísanie hyperhrany je bezkontexotvé, pretože nezasahuje do
+okolia. Bolo dokázaných niekoľko výsledkov, ktoré majú blízko k podobným
+bezkontextovým gramatikám na reťazcoch. Ukázalo sa, že veľa zaujímavých
+problémov je pre tieto gramatiky rozhodnuteľných.
+Môžeme sa pýtať dva typy otázok: či hypergrafy generované príslušnou
+gramatikou spĺňajú vybrané vlastnosti alebo klasickú otázku príslušnosti do
+jazyka. Otázka príslušmosti je vo všeobecnosti NP-kompletná a len niektoré
+obmedzené  triedy sú polynomiálne ťažké.
+\iffalse
+/? TODO
+regulárne grafové gramatiky
+TODO ?/
+
+Zaujímajú nás predovšetkým výsledky týkajúce sa "náročnosti" generovania 
+grafov, ktoré je možné porovnávať s výsledkami nášho prístupu.
+\fi
+
+

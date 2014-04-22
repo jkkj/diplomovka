@@ -1,0 +1,96 @@
+\chapter{Konštrukcia grafu pomocou mobilného agenta}
+\thispagestyle{empty}
+/TODO slušnejšie spracovanie/
+Tu začína text samotnej práce\\
+Agent predstavuje v drvivej väčšine prípadov subjekt vykonávajúci nejakú činnosť alebo skupinu činností. Túto činnosť vykonáva podľa určitých algoritmov, majú/nemajú na neho vplyv vonkajšie podnety a príkazy. Nezriedka ide o skupinu agentov, ktorý môžu ale nemusia byť inštanciami rovnakej triedy. Príkladom použitia agentov sú simulácie ekonomických systémov, v ktorých agenti predstavujú jednotlivých účastníkov trhového mechanizmu.
+Vo všeobecnosti sa na základe svojich výpočtových obmedzení dajú zaradiť do chomského hierarchie výpočtových modelov z Teórie formálnych jazykov a automatov.
+V súvislosti s grafmi sa agenti najčastejšie používajú na prehľadávanie (vo význame objavovanie - exploration) a mapovanie grafu, hľadanie čiernych dier v ňom a podobne.
+Problematika prehľadávania grafu (graph exploration) je v súčasnosti už v značnej miere preskúmaná a preskúmané sú aj rôzne špeciálne prípady a modifikácie.
+Cieľom našej práce bude preskúmať možnosti využitia agentov na vytváranie grafu. Začneme s čo možno najjednoduchším modelom na najkrajších triedach grafov (kompletný, hyperkocka, mriežka, ...) a budeme si všímať horné a dolné odhady a ohraničenia zdrojov, ktoré agent pri generovaní grafov danej triedy potrebuje vzhľadom na triedu a jej konkrétnu inštanciu.
+\section{Všeobecné pravidlá pre agenta}
+\subsection{Obmedzenia agenta}
+Ako sme už spomínali sila agenta sa bude líšiť podľa obmedzení v závislosti od triedy. Niktoré pravidlá však budú pre všetky triedy (alebo aspoň väčšinu) rovnaké. Sú to tieto:
+- agent je v jednom konkrétnom vrchole
+- agent vidí hrany vychádzajúce z vrcholu (vo väčšine prípadov neorientované)
+- agent si môže zvoliť po ktorej hrane odíde (ak obmedzenia nehovoria inak)
+- z pohľadu agenta sa elementy jedného druhu v grafe (hrany, konce hrán, ...) navzájom líšia len značením definovaným buď spôsobom vzniku grafu alebo určeným agentom, teda nemajú žiadne ID
+- ak agent nevie rozlíšiť ktorú z možností si má vybrať, vyberie si nedeterministicky
+- agent vo všeobecnosti vie, po ktorej hrane do vrchola prišiel
+- agent môže značiť každý (zmysluplný) element grafu (najmä hrany, konce hrán, vrcholy) ak obmedzenia nehovoria inak
+- ak má medzi portmi vzniknúť hrana, vzniká hneď ako sú splnené podmienky
+- agent má pamäť
+- agent má algoritmus
+- ak nie je dané, čo má agent vykonať, nekoná nič
+
+Agent môže vo všeobecnosti a vzhľadom na dané obmedzenia vykonať tieto akcie:
+- otvoriť port vo vrchole
+- prejsť po existujúcej hrane do iného vrcholu
+- vytvoriť hranu z vrcholu, v ktorom je a na jej konci nový vrchol incidentný len s touto hranou, po vykonaní tejto akcie sa agent automaticky nachádza v tomto novom vrchole (ak nie je povedané inak)
+- označiť, preznačiť, označiť podľa obmedzení hocičo na čo vidí z miesta kde sa nachádza
+	-nemôže označiť vrchol "niekde v paži"
+	- podľa obmedzení môže upravovať značenie hrán buď v incidentnom vrchole alebo pri prechode hranou
+- ak nie je povedané inak, viditeľnosť agenta sa vzťahuje na daný vrchol, konce incidentných hrán a poľažmä aj na tieto hrany
+
+\begin{defin}
+Agent je -ica /TODO nech sme kompatibilný aspoň s niečím, najprv dáme šancu definíciám z graph exploration/
+(chceme aby agent mal variabilnú počiatočnú informáciu určujúcu, aký graf má zostrojiť, napr. o dimenzii hyperkocky ...)
+\end{defin}
+
+\begin{defin}
+Konfigurácia agenta je dvojica (v,w) kde v je vrchol v ktorom sa agent nachádza a w je konfigurácia výpočtového stroja agenta.
+\end{defin}
+
+\begin{defin}
+Krok výpočtu agenta je binárna relácia na množine konfigurácií /TODO formálne značenie/ medzi konfiguráciami $(v_1,w_1)$ a $(v_2,w_2)$ ak $v_1 = v_2$ a $w_2$ patrí do $\delta -funkcie$ $w_1$ výpočtového stroja agenta.
+\end{defin}
+
+\begin{defin}
+Konfigurácia systému agentov je -ica $(G,M_1,...,M_k,n,A_1,...,A_n,...)$, kde G je graf, $M_1$ až $M_k$ sú značenia grafu (TODO spresniť asi zahrnúť do definície grafu alebo inak zapuzdriť), n je počet agentov, $A_i$ je konfigurácia i-teho agenta, ...
+\end{defin}
+
+\begin{defin}
+Dosiahnuteľná konfigurácia agenta ...
+\end{defin}
+
+\begin{defin}
+Graf skonštruovaný agentom je graf
+\end{defin}
+
+TODO umiestnenie nasl. definície
+\begin{defin}
+/TODO/ Kamienok (pebble) je značka, ktorú môže agent položiť do vrchola a zase ju zdvihnúť. (Agent ma k dispozícii multimnožinu značiek zväčša jedného druhu).
+\end{defin}
+
+
+\subsection{Metriky}
+Základnou otázkou pri našich modeloch bude, aké grafy vôbec vedia skonštruovať. Ako ďalšia prirodzene vyvstáva otázka, ako sú v tejto konštrukcii dobré. Na to, aby sme to boli schopní určiť, si teraz stanovíme, podľa čoho budeme určovať, ako je ktorý model dobrý. (Aby sme sa mali s čím hrať a robiť trade-of, definujeme si takýchto metrík niekoľko, zo všetkého, čo sa čo i len trochu dá)
+Podrobne sa stanoveniu metrík venujeme v časti definície.
+\section{Definície}
+
+\subsection{agent}
+
+
+\subsection{Definície metrík}
+Prvá metrika, ktorú si zavedieme sa týka potrebného počtu prechodov z vrcholu do vrcholu potrebných na skonštruovanie grafov danej triedy a jeho závislosti od vstupu. Táto metrika meria samotný výpočet a je "známa" až po jeho skončení. Teda nie je to niečo, čo by sme nejakým spôsobom aktívne obmedzovali ani to nevyžaduje žiadne pamäťové alebo iné nároky na agenta (okrem maximálneho počtu dosiahnuteľných konfigurácií bez zacyklenia).
+\begin{defin}
+Počet prechodov agenta pri konštrukcii /TODO značenie/ je počet krokov výpočtu agenta, v ktorých zmení vrchol v ktorom sa nachádza, ktoré nastali počas konštrukcie grafu.
+\end{defin}
+Ďalšie metriky sa týkajú obmedzení agenta a sú "známe" pred výpočtom. Najdôležitejšia je výpočtová sila agenta. V tomto prípade si poslúžime rozpoznávacími modelmi z Chomského hierarchie (DKA, PDA, DTS, ...). Ako základným členením si poslúžime už spomínanou Chomského hierarchiou a na jemnejšie delenie môžeme použiť počítanie stavov (v gramatikách neterminálov) a ďalšími používanými metrikami. Obmedzenie na pamäť agenta zahrnieme do výpočtovej sily agenta a budeme ho definovať v rámci stroja.
+\begin{defin}
+/TODO/ Výpočtová sila agenta je určená množinou jazykov, ktoré dokáže rozpoznať výpočtový stroj používaný agentom.
+\end{defin}
+Ďalšími metrikami budú značenia, ktoré agent môže používať. Teda, či sa porty číslujú za radom ako vznikali, inak deterministicky či nedeterministicky. Taktiež to či môže agent preznačovať porty a akú množinu značiek má k dispozícii , či sú čísla pevne dané od vzniku portu alebo sa menia (napr. podľa poradia kedy boli naposledy navštívené). Tiež obmedzenia na prípadné značenie vrcholov, množinu ich značiek a možnosť preznačovať ich.
+
+\begin{defin}
+/TODO/
+- značenie je množina dvojíc (objekt,značka) kde objekt $\in $ množina\_objektov a značka $\in $ množina značiek
+- súčasť konfigurácie systému
+\end{defin}
+
+Ako už bolo spomenuté vyššie, ak chce agent vytvoriť hranu medzi vrcholmi, ktoré už oba existujú musí v oboch otvoriť porty s rovnakou značkou. Aby boli spojené požadované vrcholy, musí otvoriť porty tak, aby od okamihu otvorenia prvého z nich vrátane nebol, až po otvorenie prislúchajúceho portu v druhom zo spájaných vrcholov, otvorený port v inom vrchole s rovnakou značkou (teda taký, že by medzi ním a týmto vrcholom vznikla hrana a tento port by sa uzavrel).
+Na množinu značiek s ktorými môže tieto porty otvárať sa vzťahuje ďalšia metrika.
+Keďže môže byť otvorený naraz len jeden port s danou značkou (v okamihu otvorenia druhého vznikne medzi nimi hrana), táto metrika sa vzťahuje na mohutnosť množiny značiek portov.
+
+
+\section{Algoritmy na vybraných triedach}
+\section{}

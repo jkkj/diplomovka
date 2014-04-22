@@ -1,19 +1,74 @@
-%\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{Úvod}
-\chapter*{Úvod}\label{chap:intro}
-Notebooky sú často využívané na prezentácie, či už prednášok spracovaných v~rôznych aplikáciách, alebo jednoduchého zobrazenia fotiek fotiek. Pri prezentáciách sa často využíva diaľkový ovládač, aby prezentujúci nemusel sedieť pri počítači alebo k~nemu stále chodiť.
+\chapter{Úvod}
+\thispagestyle{empty}
+Graf je vhodnou reprezentáciu údajov potrebných na riešenie mnohých problémov.
+V tomto smere našiel široké uplatnenie aj v informatike a oblastiach 
+matematiky, ktoré sú s ňou úzko späté.
+My sa budeme zaoberať pojmom graf tak, ako je chápaný v Teórii grafov.
+V našom ponímaní je graf abstraktnou štruktúrou obsahujúcou vrcholy a hrany.
+Pričom každá hrana má práve dva konce - vrcholy, ktoré spája. Ak rozlišujeme
+počiatočný a koncový vrchol pri hranách grafu, hovoríme, že hrany sú
+orientované. Ak sú počiatočný a koncový vrchol hrany totožné, hovoríme, že
+táto hrana je slučka. Hrana vedie medzi počiatočným a koncovým vrcholom. Ka
+medzi niektorou dvojicou vrcholov vedie viacero hrán, hovoríme, že tieto
+hrany sú násobné.
+V rámci Teórie grafov sa skúmajú grafy z rôznych pohľadov a riešia sa na 
+nich najrôznejšie úlohy. My sa budeme zaoberať grafmi bez slučiek,
+orientovaných a násobných hrán.
+Grafy boli na základe vybraných vlastností roztriedené do viacerých tried.
+Roztriedenie grafov medzi jednotlivé triedy umožnilo 
+pozrieť sa na konkrétne prípady mnohých problémov pre ktoré nebolo známe 
+všeobecné riešenie a dosiahnuť aspoň čiastočné výsledky. Taktiež to umožnilo 
+optimalizovať všeobecné algoritmy a dosiahnuť na špecifickejších vstupoch 
+rádovo lepšiu časovú náročnosť výpočtu.
 
-V~dnešnej dobe väčšina notebookov obsahuje webovú kameru, takže sa ponúka otázka, či sa nedá kamera využiť na elimináciu potreby ovládača. Počítač by sa mohol ovládať pomocou pohybu ruky, ktorý by sa snímal webkamerou.
 
-V~čase, keď vznikol nápad písať túto prácu\footnote{v roku 2010} sa takéto riešenia v~praxi nevyužívali, hoci niečim podobným sa už zaoberali viacerí. Nenašli sme však žiadne dokončené riešenia, ktoré by boli voľne prístupné.
+Medzi významné problémy týkajúce sa grafov patria problémy ich
+konštrukcie a prehľadávania. V súčasntosti sa problému konštrukcie grafov
+venuje takmer výlučne teória grafových gramatík. Tento prístup používa
+podobné prostriedky a postupy ako známejšia teória formálnych jazykov a
+automatov s tým rozdielom, že grafové gramatiky sa týkajú grafov a sú teda o
+dosť zložitejšie. Napríklad pojem bezkontextovej grafovej gramatiky má
+viacero rozdielnych prirodzených interpretácií. V tejto teórii sa vyvinulo
+viacero prístupov a skúmaných modelov.
+Ďalším spomínaným problémom týkajúcim sa grafov je problém ich prehľadávania.
+V rámci teórie prehľadávania grafov sa skúmajú viaceré modely. Väčšina z
+nich má však spoločný základ. Týmto základom je entita nazývaná agent
+prípadne robot, automat atď., ktorá sa pohybuje po vrcholoch daného grafu 
+a jeho úlohou
+je tento graf prehľať. Jednotlivé modely sa môžu líšiť vo viacerých 
+vlastnostiach.
+Medzi najdôležitejšie z nich patrí vlastnosti agenta i spôsob jeho pohybu 
+po grafe, vlastnosti grafu a definícia pojmu prehľadať. Prehľadanie grafu môže
+znamenať navštíviť každý vrchol grafu, ale tiež prejsť po každej hrane.
+Taktiež je dôležité, aké informácie získa agent o svojom okolí pri návšteve
+niektorého vrchola. Môže napríklad vidieť všetky vrcholy spojené hranou alebo
+len lokálne čísla portov.
+Naša práca skúma možnosti konštrukcie grafov pomocou mobilných agentov.
+Spája teda obe bližšie spomínané teórie. Teórie grafových gramatík sa týka v
+tom, že sa tiež zaoberá konštrukcio grafov. S prehľadávaním grafu pomocou
+agentov má spoločného viac. Ide totiž o akýsi duálny problém. Pri
+prehľadávaní ide často o získanie akejsi mapy neznámeho grafu a v našej
+práci sa naopak zaoberáme konštrukciou grafu pri znalosti mapy. V prvom
+prípade teda máme graf a chceme mapu, kdežto v druhom máme mapu a chceme
+graf.
+Keďže problém konštrukcie grafov pomocou mobilných agentov nebol dosiaľ
+skúmaný, zvolili sme si na skúmenie jednoduchý model.
+Na ňom sme skúmali možnosti konštrukcie grafov z jednotlivých tried. Zvlášť
+sme sa venovali skúmaniu konštrukcie hyperkocky a tried grafov $P_{n} \times
+P_{m}$ i $C_{n} \times C_{m}$. Výsledky na týchto triedach nájdete v
+hlavných kapitolách práce.
+Náš model sa skladá z
+agenta nachádzajúceho sa v počiatočnom vrchole grafu, ktorý ide konštruovať.
+Tento agent môže vždy vykonať jednu z troch možných operácií. Agent pozná
+lokálne značenie koncov hrán - portov vo vrchole, v ktorom sa nachádza.
+Toto značenie je dané poradím ich vzniku a agent nemá možnosť ho meniť.
+Operácie, ktoré môže agent vykonať, sú: otvorenie portu s danou značkou,
+prejdenie po hrane s lokálnou značkou portu $k$ i vytvorenie novej hrany do
+dosiaľ neskonštruovaného vrchola; v ktorom sa agent vzápätí ocitne. K
+vlastnostiam modelu tiež patrí, že v momente, keď sú otvorené dva porty s
+rovnakou značkou, vznikne medzi nimi hrana.
+Krok agenta sme si definovali ako zmenu vrchola, v ktorom sa agent nachádza.
+Skúmali sme aký minimálny počet krokov agenta je potrebný na konštrukciu
+daného grafu pri rôzne veľkých množinách značiek, ktoré má agent k
+dispozícii.
 
-Ešte pred dokončením tejto práce bol uvedený na trh inteligentný televízor, ktorý bolo možné ovládať kombináciou hlasu a pohybu ruky, čo naznačuje, že táto myšlienka nie je zlá. 
-
-Narozdiel od spracovania v~televízore, kde sa ruka používala na ovládanie kurzora myši, my budeme pohyby ruky interpretovať ako gestá a následne prekladať na príkazy pre počítač - pomocou simulácie stlačení klávesov.
-
-Práca je zameraná na problém rozpoznania pohybujúcej sa ruky v~obraze, ktorý je získaný z~webkamery. Rozpoznávanie realizujeme pomocou neurónových sietí. Popíšeme  návrh architektúry siete a rôzne spôsoby predspracovania dát, aby sme dosiahli čo najlepšiu úspešnosť rozpoznávania. Ukážeme, aké prístupy môžu pomôcť a čo sa stane ak do siete pridáme rekurentné spojenia. 
-
-Nakoniec popíšeme implementáciu aplikácie, ktorá bude rozpoznávať jednoduché gestá ruky a bude umožňovať ovládať iné aplikácie rozpoznanými gestami.
-
-Výsledný produkt sa bude dať použiť napríklad na ovládanie prezentačnej aplikácie alebo prehliadača fotiek, či prehrávača videa.

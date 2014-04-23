@@ -46,6 +46,21 @@ kde graf je známy dopredu a vrcholy, ktoré majú byť navštívené sa o
 bjavujú postupne. 
 Zodpovedajúci offline problém pre túto triedu problémov je TSP s dátumami
 uvoľnenia (release dates).
+
+Predpoklad, že konečný automat s konečným počtom 
+kamienkov nedokáže prehľadať každý graf bol dlho otvoreným problémom až
+\cite{ROLL} dokázal o niečo širšie tvrdenie. Rollik \cite{ROLL} dokázal, 
+že žiadna konečná množina konečných automatov nedokáže prehľadať všetky 
+kubické planárne grafy.
+
+Labyrint je šachovnica $Z^2$ so zakázanými políčkami. 
+Labyrint je konečný. Prehľadávaním labyrintov sa vo veľkej miere zaoberal 
+Budach.
+Prehľadať konečný labyrint znamená, že robot je schopný odísť ľubovoľne 
+ďaleko zo svojej štartovnej pozície pre každú štartovnú pozíciu. 
+Hrany labyrintu sú konzistentne označené svetovými stranami (východ, juh, 
+západ, sever).
+
 \section{Vybrané práce v prehľadávaní grafov}
 \cite{OGE} sa zaoberá problémom prehľadávania na neorientovaných 
 spojitých grafoch s hranami ováhovanými nezápornými reálnymi číslami a 
@@ -56,12 +71,11 @@ Problém obchodného cestujúceho (TSP).
 
 Ďalši článok \cite{GEFA}
 skúma prehľadávanie grafu konečným automatom (robotom). 
-Graf je neoznačený s hranami lokálne označenými v každom uzle.
-(TODO čo sa ešte viac približuje duálnemu problému nášho poňatia 
-konštrukcie grafu)
+Graf je neoznačený s hranami lokálne označenými v každom uzle; rovnako ako v
+našom modely konštrukcie.
 Úlohou robota je prehľadať každú hranu v grafe bez akejkoľvek predošlej 
 znalosti o veľkosti a topológii grafu. Medzi zaujímavé výsledky tohto článku 
-patrí, že existujú planárne grafy, pre ktoré sa to nedá.
+patrí dôkaz existencie planárnych grafov, pre ktoré sa to nedá.
 V prípade unikátneho značenia hrán a vrcholov môže byť prehľadanie 
 dosiahnuté ľahko. Existujú neznáme prostredia, v ktorých takéto značenie 
 nemusí byť k dispozícii, alebo robot nemusí byť schopný rozlíšiť od seba dve 
@@ -75,14 +89,13 @@ Keďže v mnohých aplikáciách sa požaduje, aby bol robot malé lacné zariad
 autori článku optimalizujú pamäť. Takže hľadajú robota schopného preskúmať 
 graf danej neznámej veľkosti s tak malou pamäťou, ako je to len možné. 
 Robot s k-bitovou konečnou pamäťou sa modeluje konečným automatom. 
-Je dokázané /TODO/, že konečný automat s konečným počtom kamienkov nedokáže 
-prehľadať každý graf.
 
-Labyrint je šachovnica /TODO/ $Z^2$ so zakázanými políčkami. Labyrint je konečný. Prehľadávaním labyrintov sa vo veľkej miere zaoberal 
-Budach /TODO/.
-Prehľadať konečný labyrint znamená, že robot je schopný odísť ľubovoľne ďaleko zo svojej štartovnej pozície pre každú štartovnú pozíciu. Hrany labyrintu sú konzistentne označené svetovými stranami (východ,juh,západ,sever).
-Rollik [TODO ref. 45] dokázal, že žiadna konečná množina konečných automatov nedokáže prehľadať všetky kubické planárne grafy.
 
-Výsledkom článku /TODO ... Pierre Fraigniauda .../ je veľmi blízke ohraničenie trapu pre K-stavový automat. Trap je graf, ktorý nie je možné celý prehľadať uatomatom bez kamienkov (pebbles). Výsledok článku hovorí, že pre každý K-stavový automat a $d\geq 3$ existuje K+1 vrcholový graf s max. stupňom d, ktorý sa nedá prehľadať týmto automatom.
+
+
+Trap je graf, ktorý nie je možné 
+celý prehľadať automatom bez kamienkov (pebbles). Výsledok článku hovorí, 
+že pre každý K-stavový automat a $d\geq 3$ existuje K+1 vrcholový graf -trap
+s max. stupňom d, ktorý sa nedá prehľadať týmto automatom.
 \section{Definície}
 \section{Výsledky}

@@ -1,29 +1,83 @@
 \chapter{Prehľadávanie grafu}
 \thispagestyle{empty}
-Jednou zo skúmaných otázok o našom prístupe ku konštrukcii grafu je otázka či a v akej miere sa jedná o duálny problém k prehľadávaniu grafu. V tejto kapitole uvádzame čitateľa do problematiky prehľadávania grafu, príslušných definícií a pre nás zaujímavých výsledkov.
-\section{Tu bude Úvod}
-<TODO> Zatiaľ je tu všetok prehľad, potom to porozhadzujem.</TODO>\\
-Ako uvádza /TODO cit. Online Graph Exploration ... Nicole Megow1, Kurt Mehlhorn1, and Pascal Schweitzer2 .../
-v problémoch prehľadávania má agent zostrojiť kompletnú mapu grafu (prostredia) bez akejkoľvek počiatočnej a priori informácii o topológii.
-Tento článok sa zaoberá problémom prehľadávania na neorientovaných spojitých grafoch s hranami ováhovanými nezápornými reálnymi číslami a označenými (labeled) vrcholmi (agent ich vie rozlíšiť).
-Efektivita online algoritmov sa zisťuje ich porovnávaním s  prislúchajúcimi offline riešeniami. V tomto prípade je prislúchajúcim offline problémom TSP.
+\section{Úvod}
+Jednou z motivácií nášho prístupu ku konštrukcii grafu je možnosť využitia
+takejto konštrukcie ako duálneho problému k prehľadávaniu grafu. Náš model
+konštrukcie vychádza z modelov používaných pri prehľadávaní grafov s tým
+rozdielom, že kým v niektorých úlohách z prehľadávania je daný neznámy graf
+a úlohov agenta je skonštruovať jeho mapu, v našom modely je dané ako má
+graf vyzerať a úlohou agenta je skonštruovať ho pomocou operácií, ktoré má k
+dispozícii.
+V tejto kapitole uvádzame čitateľa do problematiky prehľadávania grafu, 
+príslušných definícií a zaujímavých výsledkov z tejto oblasti. Nájde tu
+prehľad vybraných prístupov k tejto problematike a používaných modelov.
 
-/TODO pozrieť zdroje článku/ Medzi súvisiacimi prácami spomína: prvý formálny model na prehľadávanie grafu [27].
-Prvý raz bolo skúmané prehľadávanie celého grafu v [10] avšak uvažovali preskúmanie každej hrany v označenom orientovanom grafe. Teda, keď agent prišiel do vrcholu, dostal počet neobjavených hrán odchádzajúcich z vrcholu ale už nie kam vedú.
-Zodpovedajúcim offline problémom pre tento problém však nie je TSP ale polvnomiálne riešiteľný Chinese postman problem.
-(/TODO/ Takéto zadanie má bližšie aj k nášmu prvotnému poňatiu problému konštrukcie grafu pomocou jedného mobilného agenta)
-(/TODO/ je spomínané intenzívne štúdium na orientovaných aj neorientovaných grafoch - pozrieť)
-/TODO/ Je aj iná trieda problémov, v literatúre označovaných ako online TSP, kde graf je známy dopredu a vrcholy, ktoré majú byť navštívené sa objavujú postupne. Zodpovedajúci offline problém pre túto triedu problémov je TSP s dátumami uvedenia (release dates).
-\newline
+V problémoch prehľadávania má agent zostrojiť kompletnú mapu grafu 
+(prostredia) bez akejkoľvek počiatočnej informácie o jeho topológii,
+prípadne len navštíviť každý vrchol alebo prejsť každou hranou.
+Tiež sú známe tri typy riešených úloh podľa toho, ako agent ukončí
+prehľadávanie. Prvým typom je prehľadávanie s návratom, keď agent po
+skončení musí zastať v počiatočnom vrchole. Druhým typom je prehľadávanie so
+zastavením, kedy agent musí v konečnom čase po prehľadaní celého grafu
+zastaviť. Posledným, tretím, typom úloh o prehľadávaní grafu je trvalé
+prehľadávanie. V tomto prípade agent pokračuje v prechádzaní grafu aj po
+jeho úplnom prehľadaní. Patria sem tiež úlohy, v ktorých má agent
+navštevovať každý daný prvok grafu (vrchol alebo hranu) s určitou periódou.
+Význam takejto úlohy je napríklad pri neustálej kontrole siete, ktorá sa
+môže kaziť počas prevádzky.
+Úspešnosť algoritmov prehľadávania grafov sa porovnáva s takzvanými offline
+problémami. Pri offline probléme agent graf pozná a jeho úlohou je navštíviť
+každý jeho vrchol, prípadne hranu podľa rovnakého zadania ako pri
+prehľadávaní. Napríklad ak má agent navštíviť každý vrchol v neznámom
+ohodnotenom grafe, online problémom je problém obchodného cestujúceho (TSP).
 
-Ďalši článok /TODO citácia Graph exploration by a finite automaton ... Pierre Fraigniauda,1, David Ilcinkasa .../
-skúma prehľadávanie grafu konečným automatom (robotom). Graf je neoznačený s hranami lokálne označenými v každom uzle.
-(TODO čo sa ešte viac približuje duálnemu problému nášho poňatia konštrukcie grafu)
-Úlohou robota je prehľadať každú hranu v grafe bez akejkoľvek predošlej znalosti o veľkosti a topológii grafu. Medzi zaujímavé výsledky tohto článku patrí, že existujú planárne grafy, pre ktoré sa to nedá.
-V prípade unikátneho značenia hrán a vrcholov môže byť prehľadanie dosiahnuté ľahko. Existujú neznáme prostredia, v ktorých takéto značenie nemusí byť k dispozícii, alebo robot nemusí byť schopný rozlíšiť od seba dva podobné lable. Z tohto dôvodu sa skúma prehľadávanie anonymných grafov; tj. grafov bez unikátne označených hrán a vrcholov.
-Je len samozrejmé, že bez možnosti rozlíšiť lokálne porty by nebolo možné prehľadať dokonca ani hviezdu s tromi listami.
-Predpokladá sa teda v každom vrchole označenie portov 1 .. d, kde d je stupeň vrchola. Avšak nepožaduje sa žiadna konzistencia tohto značenia. Keďže v mnohých aplikáciách sa požaduje, aby bol robot malé lacné zariadenie, autori článku optimalizujú pamäť. Takže hľadajú robota schopného preskúmať graf danej neznámej veľkosti s tak malou pamäťou, ako je to len možné. Robot s k-bitovou konečnou pamäťou sa modeluje konečným automatom. Je dokázané /TODO/, že konečný automat s konečným počtom kamienkov nedokáže prehľadať každý graf.
-\newline
+Prvý formálny model na prehľadávanie grafu uviedol \cite{SPWM}.
+Prvý raz bolo skúmané prehľadávanie celého grafu v \cite{EUG}, 
+avšak uvažovali preskúmanie každej hrany v označenom orientovanom grafe. 
+Teda, keď agent prišiel do vrcholu, dostal informáciu o počte neobjavených
+hrán odchádzajúcich z vrcholu ale už nie informáciu, kam tieto hrany vedú.
+Zodpovedajúcim offline problémom pre tento problém však nie je TSP 
+ale polynomiálne riešiteľný Problém čínskeho poštára.
+Takéto zadanie problému prehľadávania má blízko k nášmu poňatiu 
+problému konštrukcie grafu pomocou jedného mobilného agenta. V tejto oblasti
+prebieha rozsiahli výskum na orientovaných aj neorientovaných grafoch.
+Existuje aj iná trieda problémov, v literatúre označovaných ako online TSP, 
+kde graf je známy dopredu a vrcholy, ktoré majú byť navštívené sa o
+bjavujú postupne. 
+Zodpovedajúci offline problém pre túto triedu problémov je TSP s dátumami
+uvoľnenia (release dates).
+\section{Vybrané práce v prehľadávaní grafov}
+\cite{OGE} sa zaoberá problémom prehľadávania na neorientovaných 
+spojitých grafoch s hranami ováhovanými nezápornými reálnymi číslami a 
+označenými (labeled) vrcholmi (agent ich vie rozlíšiť).
+Efektivita online algoritmov sa zisťuje ich porovnávaním s  prislúchajúcimi 
+offline riešeniami. V tomto prípade je prislúchajúcim offline problémom
+Problém obchodného cestujúceho (TSP).
+
+Ďalši článok \cite{GEFA}
+skúma prehľadávanie grafu konečným automatom (robotom). 
+Graf je neoznačený s hranami lokálne označenými v každom uzle.
+(TODO čo sa ešte viac približuje duálnemu problému nášho poňatia 
+konštrukcie grafu)
+Úlohou robota je prehľadať každú hranu v grafe bez akejkoľvek predošlej 
+znalosti o veľkosti a topológii grafu. Medzi zaujímavé výsledky tohto článku 
+patrí, že existujú planárne grafy, pre ktoré sa to nedá.
+V prípade unikátneho značenia hrán a vrcholov môže byť prehľadanie 
+dosiahnuté ľahko. Existujú neznáme prostredia, v ktorých takéto značenie 
+nemusí byť k dispozícii, alebo robot nemusí byť schopný rozlíšiť od seba dve 
+podobné značky. Z tohto dôvodu sa skúma prehľadávanie anonymných grafov; 
+tj. grafov bez unikátne označených hrán a vrcholov.
+Je len samozrejmé, že bez možnosti lokálne rozlíšiť konce hrán by nebolo možné 
+prehľadať dokonca ani hviezdu s tromi listami.
+Predpokladá sa teda v každom vrchole označenie portov $1 .. d$, kde d je 
+stupeň vrchola. Avšak nepožaduje sa žiadna konzistencia tohto značenia. 
+Keďže v mnohých aplikáciách sa požaduje, aby bol robot malé lacné zariadenie, 
+autori článku optimalizujú pamäť. Takže hľadajú robota schopného preskúmať 
+graf danej neznámej veľkosti s tak malou pamäťou, ako je to len možné. 
+Robot s k-bitovou konečnou pamäťou sa modeluje konečným automatom. 
+Je dokázané /TODO/, že konečný automat s konečným počtom kamienkov nedokáže 
+prehľadať každý graf.
+
 Labyrint je šachovnica /TODO/ $Z^2$ so zakázanými políčkami. Labyrint je konečný. Prehľadávaním labyrintov sa vo veľkej miere zaoberal 
 Budach /TODO/.
 Prehľadať konečný labyrint znamená, že robot je schopný odísť ľubovoľne ďaleko zo svojej štartovnej pozície pre každú štartovnú pozíciu. Hrany labyrintu sú konzistentne označené svetovými stranami (východ,juh,západ,sever).

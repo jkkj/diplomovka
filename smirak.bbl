@@ -11,6 +11,12 @@ Shantanu Das, Paola Flocchini, Shay Kutten, Amiya Nayak, and Nicola Santoro.
 \newblock Distributed exploration of unlabelled graphs by multiple agents.
 \newblock 2005.
 
+\bibitem[DKM12]{Kral}
+Stefan Dobrev, Rastislav Kr{\'a}lovi{\v{c}}, and Euripides Markou.
+\newblock Online graph exploration with advice.
+\newblock In {\em Structural Information and Communication Complexity}, pages
+  267--278. Springer, 2012.
+
 \bibitem[DP90]{EUG}
 Xiaotie Deng and Christos~H Papadimitriou.
 \newblock Exploring an unknown graph.

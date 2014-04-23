@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  23 APR 2014 17:43
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  24 APR 2014 00:38
 entering extended mode
  %&-line parsing enabled.
 **smirak
@@ -889,17 +889,17 @@ Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 122.
 
-) (./agent.tex [12]
+[12]) (./agent.tex [13]
 Kapitola 5.
-[13
+[14
 
-] [14]
+] [15]
 Overfull \hbox (2.0323pt too wide) in paragraph at lines 78--79
 []\T1/lmr/m/n/12 „al²ie metriky sa týkajú obmedzení agenta a sú "známe"pred výp
 o£-tom. Na-jdôleºite-
  []
 
-[15]) (./lemy1.tex (./mriezka.tex [16]
+[16]) (./lemy1.tex (./mriezka.tex [17]
 Kapitola 6.
 
 Overfull \hbox (5.32848pt too wide) in paragraph at lines 17--26
@@ -919,7 +919,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 48.
 
-[17
+[18
 
 ]
 Overfull \hbox (3.80257pt too wide) in paragraph at lines 79--83
@@ -928,19 +928,19 @@ Overfull \hbox (3.80257pt too wide) in paragraph at lines 79--83
 adíme
  []
 
-[18] [19] [20]
+[19] [20] [21]
 Overfull \hbox (18.04059pt too wide) in paragraph at lines 264--267
 []\T1/lmr/m/n/12 Agent vykonáva: OP,NH,NH,NH,OP,(n-2)krát (OP,S1,NH,NH,OP),S1,N
 H,HN,OP
  []
 
-[21] [22]
+[22] [23]
 Overfull \hbox (1.33829pt too wide) in paragraph at lines 353--355
 []\T1/lmr/m/n/12 Je zre-jmé, ºe spolu môºu susedi´ len rov-naké prí-pady alebo 
 prvý prí-pad s ©ubovo©ným
  []
 
-[23]) [24]
+[24]) [25]
 Kapitola 7.
 
 Overfull \hbox (12.20767pt too wide) in paragraph at lines 37--39
@@ -948,7 +948,7 @@ Overfull \hbox (12.20767pt too wide) in paragraph at lines 37--39
 áv²tevy vr-cholu otváraním
  []
 
-[25
+[26
 
 ]
 Overfull \hbox (1.51439pt too wide) in paragraph at lines 79--83
@@ -956,25 +956,25 @@ Overfull \hbox (1.51439pt too wide) in paragraph at lines 79--83
  súrad-ni-cami v jed-notlivých di-men-z-iách kocky.
  []
 
-[26] [27] [28] [29]
+[27] [28] [29] [30]
 Overfull \hbox (1.37337pt too wide) in paragraph at lines 273--316
 \T1/lmr/m/n/12 vr-cholov, ktorej budú súrad-nice v di-men-z-iách pride-lené rov
 -nako ako vr-cholom v men²om
  []
 
-[30] [31]
+[31] [32]
 Overfull \hbox (3.193pt too wide) in paragraph at lines 432--437
 []\T1/lmr/m/n/12 Ukáºeme ºe max-i-mal-izá-cia n-rozmerných ko-ciek max-i-mal-iz
 uje po£et n-1 rozmerných.
  []
 
-[32]
+[33]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 487.
 
-[33]
+[34]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
@@ -990,15 +990,15 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 529.
 
-[34] [35]) [36] (./smirak.bbl) [37
+[35] [36]) [37] (./smirak.bbl) [38
 
 
 ] (./smirak.aux) ) 
 Here is how much of TeX's memory you used:
- 9377 strings out of 494936
- 134826 string characters out of 1181020
+ 9380 strings out of 494936
+ 134848 string characters out of 1181020
  250391 words of memory out of 3000000
- 12273 multiletter control sequences out of 15000+50000
+ 12274 multiletter control sequences out of 15000+50000
  77884 words of font info for 63 fonts, out of 3000000 for 9000
  24 hyphenation exceptions out of 8191
  38i,8n,58p,698b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1014,9 +1014,9 @@ mf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/
 type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on smirak.pdf (44 pages, 433235 bytes).
+Output written on smirak.pdf (45 pages, 435639 bytes).
 PDF statistics:
- 615 PDF objects out of 1000 (max. 8388607)
- 171 named destinations out of 1000 (max. 500000)
+ 621 PDF objects out of 1000 (max. 8388607)
+ 173 named destinations out of 1000 (max. 500000)
  369 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4,45 +4,45 @@ The style file: alpha.bst
 Database file #1: literatura.bib.bib
 Warning--empty journal in DEA
 Warning--empty journal in DEU
-You've used 8 entries,
+You've used 9 entries,
             2543 wiz_defined-function locations,
-            611 strings with 5622 characters,
-and the built_in function-call counts, 3776 in all, are:
-= -- 379
-> -- 195
-< -- 5
-+ -- 69
-- -- 68
-* -- 270
-:= -- 620
-add.period$ -- 28
-call.type$ -- 8
-change.case$ -- 56
-chr.to.int$ -- 7
-cite$ -- 10
-duplicate$ -- 149
-empty$ -- 260
-format.name$ -- 74
-if$ -- 784
+            618 strings with 5799 characters,
+and the built_in function-call counts, 4363 in all, are:
+= -- 443
+> -- 220
+< -- 6
++ -- 78
+- -- 77
+* -- 308
+:= -- 706
+add.period$ -- 32
+call.type$ -- 9
+change.case$ -- 63
+chr.to.int$ -- 8
+cite$ -- 11
+duplicate$ -- 176
+empty$ -- 304
+format.name$ -- 84
+if$ -- 916
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 9
-newline$ -- 45
-num.names$ -- 24
-pop$ -- 61
+missing$ -- 10
+newline$ -- 50
+num.names$ -- 27
+pop$ -- 70
 preamble$ -- 1
-purify$ -- 65
+purify$ -- 73
 quote$ -- 0
-skip$ -- 124
+skip$ -- 147
 stack$ -- 0
-substring$ -- 204
-swap$ -- 36
-text.length$ -- 5
+substring$ -- 243
+swap$ -- 46
+text.length$ -- 6
 text.prefix$ -- 1
 top$ -- 0
-type$ -- 60
+type$ -- 68
 warning$ -- 2
-while$ -- 35
-width$ -- 12
-write$ -- 108
+while$ -- 41
+width$ -- 13
+write$ -- 122
 (There were 2 warnings)

@@ -121,4 +121,19 @@ je napríklad voľba šéfa.
 
 \section{Prehľadávanie s radou}
 Z praxe sú známe situácie, keď graf, ktorý má agent prehľadať, nie je úplne
-neznámy. Teda je o ňom dostupná nejaká informácia. 
+neznámy. Teda je o ňom dostupná nejaká informácia. V \cite{Kral} skúmajú
+autori predovšetkým zložitosť rady. Teda aký je vzťah medzi veľkosťou
+informácie, ktorú agent o grafe dostane a kvalitou riešenia. Úlohou agenta
+je prehľadať s návratom do počiatočného vrchola neznámy neorientovaný graf.
+Čiže agent má navštíviť každý vrchol grafu a vrátiť sa do počiatočného
+vrchola s čo najnižším súčtom cien prechodov po hranách. V tomto modely
+agent pri návšteve vrchola vidí ceny všetkých s ním incidentných hrán a kam
+tieto hrany vedú.
+
+Výsledky sa týkajú dolnej hranice, kde autori ukázali, že $\Omega (n log n)$
+bitov rady je potrebných na dosiahnutie pomeru porovnania 1 oproti algoritmu
+pozanjúcemu topológiu grafu. Taktiež dokázali, že s radou $O(n)$ bitov pri
+ohraničených váhach je možné dosiahnuť konštantný pomer.
+
+Autori sa venovali aj klasickej otázke prehľadania grafu a posunuli dolnú
+hranicu prehľadania grafu deterministickým algoritmom bez rady.

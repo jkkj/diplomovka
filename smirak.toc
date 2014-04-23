@@ -1,0 +1,48 @@
+\select@language {slovak}
+\contentsline {chapter}{\numberline {1}\IeC {\'U}vod}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Grafy}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Z\IeC {\'a}kladn\IeC {\'e} pojmy a def\IeC {\'\i }n\IeC {\'\i }cie}{3}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Graf}{3}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Zna\IeC {\v c}enia v grafe}{3}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Vybran\IeC {\'e} triedy grafov}{4}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}\IeC {\'U}pln\IeC {\'y} graf}{4}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}N-partitn\IeC {\'y} graf}{4}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Hyperkocka}{4}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Mrie\IeC {\v z}ka}{5}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Kubick\IeC {\'y} graf}{5}{subsection.2.2.5}
+\contentsline {section}{\numberline {2.3}Agent}{5}{section.2.3}
+\contentsline {chapter}{\numberline {3}Grafov\IeC {\'e} gramatiky}{6}{chapter.3}
+\contentsline {section}{\numberline {3.1}\IeC {\'U}vod}{6}{section.3.1}
+\contentsline {section}{\numberline {3.2}Defin\IeC {\'\i }cie}{6}{section.3.2}
+\contentsline {section}{\numberline {3.3}V\IeC {\v s}eobecn\IeC {\'e} pojmy}{6}{section.3.3}
+\contentsline {section}{\numberline {3.4}NLC gramatiky}{7}{section.3.4}
+\contentsline {section}{\numberline {3.5}NCE}{7}{section.3.5}
+\contentsline {section}{\numberline {3.6}Rozli\IeC {\v c}n\IeC {\'e} zn\IeC {\'a}me v\IeC {\'y}sledky}{8}{section.3.6}
+\contentsline {section}{\numberline {3.7}Grafov\IeC {\'e} gramatiky s nahr\IeC {\'a}dzan\IeC {\'\i }m hyperhr\IeC {\'a}n}{9}{section.3.7}
+\contentsline {chapter}{\numberline {4}Preh\IeC {\v l}ad\IeC {\'a}vanie grafu}{10}{chapter.4}
+\contentsline {section}{\numberline {4.1}\IeC {\'U}vod}{10}{section.4.1}
+\contentsline {section}{\numberline {4.2}Preh\IeC {\v l}ad\IeC {\'a}vanie jedn\IeC {\'y}m agentom}{11}{section.4.2}
+\contentsline {section}{\numberline {4.3}Distribuovan\IeC {\'e} preh\IeC {\v l}ad\IeC {\'a}vanie}{12}{section.4.3}
+\contentsline {section}{\numberline {4.4}Preh\IeC {\v l}ad\IeC {\'a}vanie s radou}{12}{section.4.4}
+\contentsline {chapter}{\numberline {5}Kon\IeC {\v s}trukcia grafu pomocou mobiln\IeC {\'e}ho agenta}{13}{chapter.5}
+\contentsline {section}{\numberline {5.1}V\IeC {\v s}eobecn\IeC {\'e} pravidl\IeC {\'a} pre agenta}{13}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Obmedzenia agenta}{13}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Metriky}{15}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Defin\IeC {\'\i }cie}{15}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}agent}{15}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Defin\IeC {\'\i }cie metr\IeC {\'\i }k}{15}{subsection.5.2.2}
+\contentsline {section}{\numberline {5.3}Algoritmy na vybran\IeC {\'y}ch triedach}{16}{section.5.3}
+\contentsline {section}{\numberline {5.4}}{16}{section.5.4}
+\contentsline {chapter}{V\IeC {\v s}eobecn\IeC {\'a} kon\IeC {\v s}trukcia}{16}{section*.4}
+\contentsline {chapter}{\numberline {6}Kon\IeC {\v s}trukcia mrie\IeC {\v z}ky}{17}{chapter.6}
+\contentsline {section}{\numberline {6.1}Jedna zna\IeC {\v c}ka pre porty}{18}{section.6.1}
+\contentsline {chapter}{\numberline {7}N-rozmern\IeC {\'a} kocka}{25}{chapter.7}
+\contentsline {section}{\numberline {7.1}2-rozmern\IeC {\'a} kocka}{33}{section.7.1}
+\contentsline {section}{\numberline {7.2}3-rozmern\IeC {\'a} kocka}{33}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}1 zna\IeC {\v c}ka}{33}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}2 zna\IeC {\v c}ky}{34}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}3 zna\IeC {\v c}ky}{34}{subsection.7.2.3}
+\contentsline {subsection}{\numberline {7.2.4}4 zna\IeC {\v c}ky}{35}{subsection.7.2.4}
+\contentsline {section}{\numberline {7.3}4-rozmern\IeC {\'a} kocka}{35}{section.7.3}
+\contentsline {paragraph}{1 zna\IeC {\v c}ka}{35}{section*.5}
+\contentsline {chapter}{Literat\IeC {\'u}ra}{37}{section*.6}

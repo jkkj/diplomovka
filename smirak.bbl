@@ -1,0 +1,50 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{DFK{\etalchar{+}}05b}
+
+\bibitem[DFK{\etalchar{+}}05a]{DEA}
+Shantanu Das, Paola Flocchini, Shay Kutten, Amiya Nayak, and Nicola Santoro.
+\newblock Distributed exploration of anonymous graphs by multiple agents.
+\newblock 2005.
+
+\bibitem[DFK{\etalchar{+}}05b]{DEU}
+Shantanu Das, Paola Flocchini, Shay Kutten, Amiya Nayak, and Nicola Santoro.
+\newblock Distributed exploration of unlabelled graphs by multiple agents.
+\newblock 2005.
+
+\bibitem[DP90]{EUG}
+Xiaotie Deng and Christos~H Papadimitriou.
+\newblock Exploring an unknown graph.
+\newblock In {\em Foundations of Computer Science, 1990. Proceedings., 31st
+  Annual Symposium on}, pages 355--361. IEEE, 1990.
+
+\bibitem[FIP{\etalchar{+}}05]{GEFA}
+Pierre Fraigniaud, David Ilcinkas, Guy Peer, Andrzej Pelc, and David Peleg.
+\newblock Graph exploration by a finite automaton.
+\newblock {\em Theoretical Computer Science}, 345(2–3):331 -- 344, 2005.
+\newblock Mathematical Foundations of Computer Science 2004 Mathematical
+  Foundations of Computer Science 2004.
+
+\bibitem[MMS11]{OGE}
+Nicole Megow, Kurt Mehlhorn, and Pascal Schweitzer.
+\newblock Online graph exploration: new results on old and new algorithms.
+\newblock In {\em Automata, Languages and Programming}, pages 478--489.
+  Springer, 2011.
+
+\bibitem[PY91]{SPWM}
+Christos~H Papadimitriou and Mihalis Yannakakis.
+\newblock Shortest paths without a map.
+\newblock {\em Theoretical Computer Science}, 84(1):127--150, 1991.
+
+\bibitem[RE97]{GG}
+Grzegorz Rozenberg and Hartmut Ehrig.
+\newblock {\em Handbook of graph grammars and computing by graph
+  transformation}, volume~1.
+\newblock World Scientific Singapore, 1997.
+
+\bibitem[Rol79]{ROLL}
+Hans-Anton Rollik.
+\newblock Automaten in planaren graphen.
+\newblock In {\em Theoretical Computer Science 4th GI Conference}, pages
+  266--275. Springer, 1979.
+
+\end{thebibliography}

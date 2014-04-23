@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: smirak.aux
+The style file: alpha.bst
+Database file #1: literatura.bib.bib
+Warning--empty journal in DEA
+Warning--empty journal in DEU
+You've used 8 entries,
+            2543 wiz_defined-function locations,
+            611 strings with 5622 characters,
+and the built_in function-call counts, 3776 in all, are:
+= -- 379
+> -- 195
+< -- 5
++ -- 69
+- -- 68
+* -- 270
+:= -- 620
+add.period$ -- 28
+call.type$ -- 8
+change.case$ -- 56
+chr.to.int$ -- 7
+cite$ -- 10
+duplicate$ -- 149
+empty$ -- 260
+format.name$ -- 74
+if$ -- 784
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 9
+newline$ -- 45
+num.names$ -- 24
+pop$ -- 61
+preamble$ -- 1
+purify$ -- 65
+quote$ -- 0
+skip$ -- 124
+stack$ -- 0
+substring$ -- 204
+swap$ -- 36
+text.length$ -- 5
+text.prefix$ -- 1
+top$ -- 0
+type$ -- 60
+warning$ -- 2
+while$ -- 35
+width$ -- 12
+write$ -- 108
+(There were 2 warnings)

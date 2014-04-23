@@ -1,0 +1,90 @@
+\chapter{Grafy}
+\thispagestyle{empty}
+
+\section{Základné pojmy a defínície}
+\subsection{Graf}
+Graf sa dá vo všeobecnosti charakterizovať ako diagram obsahujúci body - vrcholy a čiary, ktoré ich spájajú - hrany. Hrana je úsek spojitej krivky začínajúci a končiaci v bode. Pričom väčšinou vyžadujeme, aby medzi dvomi vrcholmi viedla najviac jedna hrana. O vrcholoch, medzi ktorými hrana vedie, hovoríme, že sú s ňou incidentné. Niektoré definície povoľujú aby hrana začínala a končila v tom istom vrchole; takúto hranu nazývame slučka. Pokiaľ vedie medzi dvoma vrcholmi viac hrán, hovoríme o násobných hranách. Striktné definície grafu nepovoľujú násobné hrany a slučky a ani my sa nimi nebudeme zaoberať.\\
+Na reprezentáciu vrcholov sa používajú prvky množiny a hrana je v množine hrán reprezentovaná dvojicou vrcholov, ktoré spája. Teda na množine vrcholov predpokladáme ľubovoľné úplné usporiadanie. Toto zabezpečí, aby medzi dvomi vrcholmi viedla najviac jedna hrana.\\
+
+\begin{defin}
+Graf $G$ je usporiadaná dvojica $(V,E)$, kde\\
+$E \subseteq V \times  V$\\
+Vrcholy označujeme malými písmenami prevažne z konca latinskej abecedy (okolo písmena v). Hrany označujeme malými písmenami zo začiatku latinskej abecedy (okolo písmena e) alebo ako dvojicu vrcholov, ktoré spája a platí $(u,v) \equiv (v,u)$.
+\end{defin}
+
+%  \begin{defin}
+%  Hovoríme, že hrana $e$ je incidentná s vrcholom $v$, ak\\
+%  $\exists  u \in  V : e=(u,v)$
+%  \end{defin}
+
+%  \begin{defin}
+%  Stupeň v vrchola je počet hrán s ktorými je incidentný. ozn. deg(v) \\
+%  \end{defin}
+%  
+% \begin{defin}
+
+% \end{defin}
+
+% \begin{defin}
+% \end{defin}
+
+% \begin{defin}
+% \end{defin}
+
+\subsection{Značenia v grafe}
+Ďalej si zavedieme rôzne značenia - zobrazenia do množín značiek. Značenia používajú najmä na reprezentáciu rôznych vlastností prvku reprezentovaného daným vrcholom grafu alebo vzťahu reprezentovaného hranou. V našej práci budeme značiť najmä konce hrán.\\
+
+\begin{defin}
+Značenie f (mapping) je zobrazenie z množiny objektov O (zobrazovaná množina) do množiny značiek Z.\\
+$f: O -> Z ; \forall o \in O  \exists z \in Z  : f(o)=z$
+\end{defin}
+
+\begin{defin}
+Značenie konca hrán je značenie kde zobrazovanú množinu tvoria dvojice pozostávajúce z vrcholu a s ním incidentnej hrany.
+\end{defin}
+
+\section{Vybrané triedy grafov}
+Následne si zadefinujeme triedy grafov, ktorými sa budeme bližšie zaoberať a ďalšie potrebné pojmy z teórie grafov použité v tejto práci. 
+
+\subsection{Úplný graf}
+\begin{defin}
+Úplný graf G = (V,E) je graf v ktorom pre každú dvojicu rôznych vrcholov existuje hrana s ktorou sú oba incidentné.\\
+tj. $\forall u,v \in V\ \exists e \in  E :\ e=(u,v)$, kde $u \neq v$\\
+ozn. $G \equiv K_n;\ n=|V|$
+\end{defin}
+\subsection{N-partitný graf}
+\begin{defin}
+N-partitný graf G = (V,E) je graf v ktorom sa dá množina vrcholov V rozdeliť na n neprázdnych disjunktných podmnožín - partícií, ktoré ju pokrývajú a zároveň pre každú z nich platí, že neobsahuje dvojicu vrcholov incidentných s rovnakou hranou, teda ľubovoľná hrana je incidentná najviac s jedným vrcholom tejto množiny.\\
+ozn. Pre 2-partitný graf sa zaužívalo pomenovanie bipartitný.
+\end{defin}
+
+\begin{defin}
+Úplný n-partitný graf G = (V,E) je graf v ktorom pre každú dvojicu vrcholov, ktoré nie sú v rovnakej partícii existuje v E hrana s ktorou sú oba incidentné.\\
+ozn. $K_{a_1,...a_n}$, kde $a_i$ je počet vrcholov v i-tej partícii
+\end{defin}
+
+\subsection{Hyperkocka}
+Hyperkocka, inak nazývaná aj n-rozmerná kocka je graf inšpirovaný geometrickým významom svojho názvu. Každému vrcholu v telese zodpovedá vrchol v grafe. Dva vrcholy v grafe sú incidentné s rovnakou hranou vtedy a len vtedy ak medzi vrcholmi v telese, ktoré reprezentujú, vedie hrana.
+\begin{defin}
+TODO formálne
+\end{defin}
+\subsection{Mriežka}
+Mriežka je graf reprezentujúci diagram mriežku.
+\begin{defin}
+TODO
+\end{defin}
+\subsection{Kubický graf}
+\begin{defin}
+Kubický graf G je graf v ktorom majú všetky vrcholy stupeň tri.
+\end{defin}
+\section{Agent}
+Ďalej si zadefinujeme agenta. Agent je pre nás objekt vykonávajúci určité inštrukcie, majúci určitú výpočtovú silu, určitú pamäť, možnosti akcie a nachádzajúci sa v konkrétnom vrchole grafu. Následne si zadefinujeme agenta s možnosťou meniť vrchol v ktorom sa nachádza a pravidlá pre takúto zmenu.\\
+\begin{defin}
+Agent je -ica ... TODO tu bude možno len všeobecný pokec v závislosti od toho, či bude vhodné zjednocovať definície agentov
+\end{defin}
+
+\begin{defin}
+Mobilný agent je agent, ktorý má v množine pravidiel aj pravidlá na pohyb vo vrcholoch.
+TODO
+\end{defin}
+

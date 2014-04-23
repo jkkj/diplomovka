@@ -1,0 +1,97 @@
+
+\chapter{Grafové gramatiky}%alias "čo sa už skúšalo"
+\thispagestyle{empty}
+\section{Úvod}
+Naša práca sa zaoberá vytváraním grafov a preto je nutné spomenúť 
+najpoužívanejší formalizmus vytvárania grafov - grafové gramatiky.
+Cieľom tejto kapitoly je uviesť čitateľa do problematiky grafových 
+gramatík a poskytnúť mu stručný prehľad tejto oblasti.
+Pri vypracovávaní tejto časti nám boli vo veľkej miere nápomocné práce 
+týkajúce sa grafových gramatík, ktoré boli na našej fakulte vypracované 
+v predošlých rokoch.
+Predpokladáme, že čitateľ má základné vedomosti z teórie formálnych 
+jazykov a automatov.
+
+\section{Definície}
+Teória okolo grafových gramatík sa budovala podobne ako pri formálnych
+jazykoch a automatoch z viacerých prístupov pri ktorých boli neskôr dokázané
+určité ekvivalencie. Z toho vyplýva množstvo tried gramatík, prístupov a
+definícií.
+V konečnom dôsledku však možno rozlíšiťdva hlavné prístupy ku grafovým
+gramatikám - algoritmický (spájací) a algebraický (lepiaci).
+Pre ilustráciu uvedieme niekoľko základných tried a skúmaných problémov.
+Grafové gramatiky sa týkajú našej práce len okrajovo, v rpípade hlbšieho 
+záujmu oporúčame čitateľovi publikáciu Handbook of Graph Grammars \cite{GG},
+ z ktorej sme aj my čerpali.
+
+
+\subsection{NLC gramatiky}
+NLC (Node Label Controlled) grafové gramatiky sú jedným z najjednoduchších mechanizmov prepisovania grafov. Pravidlá NLC gramatiky sú tvaru $X \to D$, kde X je značka (label) prepisovaného vrchola a D je dcérsky graf. Pre použitie pravidie v NLC neexistujú žiadne obmedzenia, teda pravidlo sa môže použiť na ľubovoľný vrchol so značkou X.
+Spájanie je v NLC lokálne, tj. vrcholy grafu D môžu byť spojené len s tými vrcholmi, s ktorými bol spojený prepísaný vrchol X.
+O NLC gramatikách, kde odvodenie je nezávislé na poradí použitia pravidiel po hovoríme, že majú Church-Rosserovu vlastnosť - sú konfluentné (confluent). Vo všeobecnosti NLC túto vlastnosť nemajú a pri použití rovnakej sady pravidiel môžu vzniknúť rôzne grafy.
+
+\begin{defin}
+NLC grafová gramatika je 5-tica $G = (\Sigma ;\Delta ; P;C; S)$ kde
+$\Sigma  - \Delta$  je abeceda neterminálnych znaciek uzlov a $\Delta  (\Delta  \subseteq  \Sigma )$ je abeceda
+terminálnych znaciek uzlov. P je konecná množina NLC pravidiel, C je
+binárna relácia spojení nad $\Sigma$  a S je pociatocný graf.
+\end{defin}
+
+\begin{defin}
+Grafový jazyk generovaný G je $L(G) = \{H \in GR_\Delta  | S \Rightarrow ^*H\}, kde GR_\Delta $  je množina neorientovaných grafov so značkami uzlov v $\Delta ,\Rightarrow $  reprezentuje jeden prepisovací krok, a $\Rightarrow ^* $ reprezentuje odvodenie, t.j. postupnosť prepisovacích krokov.
+\end{defin}
+
+\subsection{NCE}
+NCE (Neighborhood Controlled Embeding)/TODO skontrolovať význam skratky(alebo sa na vysvetlenie vykašľať ako to robí väčšina článkov grrr )/ grafové gramatiky sú rozšírením NLC grafových gramatík.V NCE mechanizme prepisovania je, na rozdiel od NLC, množina spájacích inštrukcií C definovaná pre každé pravidlo zvlášť a NCE gramatika môže k uzlom podgrafu D pristupovať priamo napr. ich očíslovaním.
+Existujú rôzne rozšírenia NCE gramatík /?TODO?/
+edNCE gramatiky sú rozšírením NCE gramatík s dynamickým preznačovaním hrán pri prepisovaní. Písmenko e znamená, že sa  budú značiť hrany a písmenko d indikuje použitie orientovaných grafov.
+
+\begin{defin}
+Definícia 2.2.1. edNCE grafová gramatika je definovaná ako 6-tica $G =(\Sigma ;\Delta ;\Gamma ;\Omega ; P; S)$. Kde $\Sigma $  je abeceda značiek uzlov, $\Delta  \subseteq  \Sigma $ je abeceda terminálnych
+značiek uzlov, $\Gamma $ je abeceda značiek hrán, 
+ $\Omega \subseteq  \Sigma $  je abeceda terminálnych
+značiek hrán, P je konečná množina pravidiel a $S \in  \Sigma - \Delta $ je
+počiatočný neterminál. Pravidlá sú tvaru $X \to (D,C), kde X \in  \Sigma - \Delta $ a
+$(D,C) \in  GRE_{\Sigma ,\Gamma }$. Relácia spojení je 
+$C \subseteq  \Sigma \times \Gamma \times \Gamma V_H \times {in,out}$.
+\end{defin}
+
+Vo všeobecnosti množinu grafov izomorfných s grafom H budeme značit
+[H]. Niekedy sa hovorí o H ako „konkrétnom“ grafe a o [H] ako „abstraktnom“
+grafe.
+
+\begin{defin}
+Množinu všetkých konkrétnych grafov nad $\Sigma  a \Gamma $ značíme
+$GR_{\Sigma ,\Gamma }$ a množinu všetkých abstraktných grafov značíme $[GR_{\Sigma ,\Gamma }]$. $GRE_{\Sigma ,\Gamma }$
+označuje množinu grafov s vnorením nad $\Sigma ,\Gamma $. Obyčajný graf môžeme považovať
+za graf s prázdnym vnorením, teda $GR_{\Sigma ,\Gamma } \subseteq GRE_{\Sigma ,\Gamma }$.
+\end{defin}
+
+\begin{defin}
+Grafový jazyk generovaný G je $L(G) = \{[H] | H \in GR_{\Sigma ,\Omega }$ a $sn(S,z) \Rightarrow ^* H$ pre nejaké z \} (t.j. všetky grafy v odvodení G, ktoré majú
+terminálne značky hrán aj uzlov).
+\end{defin}
+
+\begin{defin}
+edNCE gramatika $G =(\Sigma ;\Delta ;\Gamma ;\Omega ; P; S)$ je konfluentná
+(confluent), alebo C-edNCE gramatika, ak pre všetky pravidlá $X_1 \to (D1,C1)$
+a $X_2 \to (D_2,C_2)$ z P, všetky uzly $x_1 \in V_{D_1} a x_2 \in V_{D_2}$ , a všetky hrany so
+značkami $\alpha ,\delta \in \Gamma $, platia nasledujúce ekvivalencie:
+$\exists \beta \in \Gamma  : (X_2, \alpha /\beta , x_1, out) \in C_1 a (\lambda _{D_1}(x_1), \beta /\delta , x_2, in) \in C_2
+\Leftrightarrow 
+( \exists \gamma \in \Gamma  : (X_1, \alpha /\gamma , x_2, in) \in C_2 a (\lambda _{D_2}(x_2),\gamma /\delta , x_1, out) \in C_1$.
+\end{defin}
+
+/TODO
+Existuje charakterizácia C-edNCE nezávislá na gramatikách pomocou Monadic Second Order (MSO) logiky.
+Veľa výsledkov ju pre jednoduchosť využíva v dôkazoch.
+TODO/
+
+/? TODO
+regulárne grafové gramatiky
+TODO ?/
+\section{Výsledky}
+Zaujímajú nás predovšetkým výsledky týkajúce sa "náročnosti" generovania grafov, ktoré je možné porovnávať s výsledkami nášho prístupu.
+
+
+

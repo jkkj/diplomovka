@@ -1,0 +1,22 @@
+
+@book{GG,
+title={Handbook of graph grammars and computing by graph transformation},
+  author={Rozenberg, Grzegorz and Ehrig, Hartmut},
+  volume={1},
+  year={1997},
+  publisher={World Scientific Singapore}
+}
+
+@article{GEFA,
+title = "Graph exploration by a finite automaton ",
+journal = "Theoretical Computer Science ",
+volume = "345",
+number = "2–3",
+pages = "331 - 344",
+year = "2005",
+note = "Mathematical Foundations of Computer Science 2004 Mathematical Foundations of Computer Science 2004 ",
+issn = "0304-3975",
+doi = "http://dx.doi.org/10.1016/j.tcs.2005.07.014",
+url = "http://www.sciencedirect.com/science/article/pii/S0304397505003993",
+author = "Pierre Fraigniaud and David Ilcinkas and Guy Peer and Andrzej Pelc and David Peleg",
+}

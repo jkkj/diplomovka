@@ -1,0 +1,46 @@
+\BOOKMARK [0][-]{chapter.1}{\332vod}{}
+\BOOKMARK [0][-]{chapter.2}{Grafy}{}
+\BOOKMARK [1][-]{section.2.1}{Z\341kladn\351 pojmy a def\355n\355cie}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.1.1}{Graf}{section.2.1}
+\BOOKMARK [2][-]{subsection.2.1.2}{Znacenia v grafe}{section.2.1}
+\BOOKMARK [1][-]{section.2.2}{Vybran\351 triedy grafov}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.2.1}{\332pln\375 graf}{section.2.2}
+\BOOKMARK [2][-]{subsection.2.2.2}{N-partitn\375 graf}{section.2.2}
+\BOOKMARK [2][-]{subsection.2.2.3}{Hyperkocka}{section.2.2}
+\BOOKMARK [2][-]{subsection.2.2.4}{Mrie\236ka}{section.2.2}
+\BOOKMARK [2][-]{subsection.2.2.5}{Kubick\375 graf}{section.2.2}
+\BOOKMARK [1][-]{section.2.3}{Agent}{chapter.2}
+\BOOKMARK [0][-]{chapter.3}{Grafov\351 gramatiky}{}
+\BOOKMARK [1][-]{section.3.1}{\332vod}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{Defin\355cie}{chapter.3}
+\BOOKMARK [1][-]{section.3.3}{V\235eobecn\351 pojmy}{chapter.3}
+\BOOKMARK [1][-]{section.3.4}{NLC gramatiky}{chapter.3}
+\BOOKMARK [1][-]{section.3.5}{NCE}{chapter.3}
+\BOOKMARK [1][-]{section.3.6}{Rozlicn\351 zn\341me v\375sledky}{chapter.3}
+\BOOKMARK [1][-]{section.3.7}{Grafov\351 gramatiky s nahr\341dzan\355m hyperhr\341n}{chapter.3}
+\BOOKMARK [0][-]{chapter.4}{Prehlad\341vanie grafu}{}
+\BOOKMARK [1][-]{section.4.1}{\332vod}{chapter.4}
+\BOOKMARK [1][-]{section.4.2}{Prehlad\341vanie jedn\375m agentom}{chapter.4}
+\BOOKMARK [1][-]{section.4.3}{Distribuovan\351 prehlad\341vanie}{chapter.4}
+\BOOKMARK [1][-]{section.4.4}{Prehlad\341vanie s radou}{chapter.4}
+\BOOKMARK [0][-]{chapter.5}{Kon\235trukcia grafu pomocou mobiln\351ho agenta}{}
+\BOOKMARK [1][-]{section.5.1}{V\235eobecn\351 pravidl\341 pre agenta}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.1.1}{Obmedzenia agenta}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.2}{Metriky}{section.5.1}
+\BOOKMARK [1][-]{section.5.2}{Defin\355cie}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.2.1}{agent}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.2}{Defin\355cie metr\355k}{section.5.2}
+\BOOKMARK [1][-]{section.5.3}{Algoritmy na vybran\375ch triedach}{chapter.5}
+\BOOKMARK [1][-]{section.5.4}{}{chapter.5}
+\BOOKMARK [0][-]{section*.4}{V\235eobecn\341 kon\235trukcia}{}
+\BOOKMARK [0][-]{chapter.6}{Kon\235trukcia mrie\236ky}{}
+\BOOKMARK [1][-]{section.6.1}{Jedna znacka pre porty}{chapter.6}
+\BOOKMARK [0][-]{chapter.7}{N-rozmern\341 kocka}{}
+\BOOKMARK [1][-]{section.7.1}{2-rozmern\341 kocka}{chapter.7}
+\BOOKMARK [1][-]{section.7.2}{3-rozmern\341 kocka}{chapter.7}
+\BOOKMARK [2][-]{subsection.7.2.1}{1 znacka}{section.7.2}
+\BOOKMARK [2][-]{subsection.7.2.2}{2 znacky}{section.7.2}
+\BOOKMARK [2][-]{subsection.7.2.3}{3 znacky}{section.7.2}
+\BOOKMARK [2][-]{subsection.7.2.4}{4 znacky}{section.7.2}
+\BOOKMARK [1][-]{section.7.3}{4-rozmern\341 kocka}{chapter.7}
+\BOOKMARK [0][-]{section*.6}{Literat\372ra}{}

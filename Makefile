@@ -25,7 +25,10 @@ smirak.pdf: *.tex *.bib komlogo-new.pdf Makefile images/*
 	pdfcslatex smirak
 	pdfcslatex smirak
 
-smirak: smirak.pdf
+smirak: smirak.pdf commit
+
+commit:
+	git commit -a
 
 dvi: main.dvi
 

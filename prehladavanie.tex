@@ -61,7 +61,7 @@ Prehľadať konečný labyrint znamená, že robot je schopný odísť ľubovoľ
 Hrany labyrintu sú konzistentne označené svetovými stranami (východ, juh, 
 západ, sever).
 
-\section{Vybrané práce v prehľadávaní grafov}
+\section{Prehľadávanie jedným agentom}
 \cite{OGE} sa zaoberá problémom prehľadávania na neorientovaných 
 spojitých grafoch s hranami ováhovanými nezápornými reálnymi číslami a 
 označenými (labeled) vrcholmi (agent ich vie rozlíšiť).
@@ -89,13 +89,36 @@ Keďže v mnohých aplikáciách sa požaduje, aby bol robot malé lacné zariad
 autori článku optimalizujú pamäť. Takže hľadajú robota schopného preskúmať 
 graf danej neznámej veľkosti s tak malou pamäťou, ako je to len možné. 
 Robot s k-bitovou konečnou pamäťou sa modeluje konečným automatom. 
-
-
-
-
 Trap je graf, ktorý nie je možné 
 celý prehľadať automatom bez kamienkov (pebbles). Výsledok článku hovorí, 
-že pre každý K-stavový automat a $d\geq 3$ existuje K+1 vrcholový graf -trap
+že pre každý K-stavový automat a $d\geq 3$ existuje K+1 vrcholový graf - trap
 s max. stupňom d, ktorý sa nedá prehľadať týmto automatom.
-\section{Definície}
-\section{Výsledky}
+
+\section{Distribuované prehľadávanie}
+Autori článku \cite{DEA} používajú pre prehľadávanie neznámeho prostredia
+viacero totožných agentov. Neznáme prostredie je v tomto prípade opäť
+modelované grafom a úlohou agentov je skonštruovať totožnú mapu grafu pre
+každého agenta. Bolo dosiahnuté deterministické riešenie za čo najslabších možných
+nastavení, pričom agenty \footnote{Na návrh staršieho kolegu skloňujeme
+slovo agent v našom kontexte ako neživotné} poznali iba veľkosť grafu alebo
+počet agentov.
+
+Autori skúmajú distribuovanú verziu
+klasického problému prehľadania garfu s návratom do počiatočného vrchola,
+pričom agent má prejsť všetky hrany neoznačeného (anonymného) grafu. Počas
+tohto procesu je úlohou agenta vytvoriť mapu grafu. Model pozostáva z
+neoznačeného grafu a $k$ agentov roztrúsených po $n$ vrcholoch grafu.
+Komunikácia medzi agentmi prebieha prostredníctvom zápisov na malé tabuľky
+nachádzajúce sa v každom vrchole grafu. Tento problém je zložitejší od
+prehľadania grafu jediným agentom, pretože vyžaduje kooperáciu medzi
+agentmi. Keďže je tento problém vo všeobecnosti deterministicky
+neriešiteľný, článok predstavuje deterministický algoritmus za podmienky, že
+$n$ a $k$ sú nesúdeliteľné.
+
+Vo svojej práci dávajú autori
+svoj výskum do súvisu s ostatnými problémami distribuovaných výpočtov, ako
+je napríklad voľba šéfa.
+
+\section{Prehľadávanie s radou}
+Z praxe sú známe situácie, keď graf, ktorý má agent prehľadať, nie je úplne
+neznámy. Teda je o ňom dostupná nejaká informácia. 

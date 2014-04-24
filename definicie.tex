@@ -1,21 +1,47 @@
-\chapter{Grafy}
+\chapter{Základné pojmy a defínície}
 \thispagestyle{empty}
 
-\section{Základné pojmy a defínície}
-\subsection{Graf}
-Graf sa dá vo všeobecnosti charakterizovať ako diagram obsahujúci body - vrcholy a čiary, ktoré ich spájajú - hrany. Hrana je úsek spojitej krivky začínajúci a končiaci v bode. Pričom väčšinou vyžadujeme, aby medzi dvomi vrcholmi viedla najviac jedna hrana. O vrcholoch, medzi ktorými hrana vedie, hovoríme, že sú s ňou incidentné. Niektoré definície povoľujú aby hrana začínala a končila v tom istom vrchole; takúto hranu nazývame slučka. Pokiaľ vedie medzi dvoma vrcholmi viac hrán, hovoríme o násobných hranách. Striktné definície grafu nepovoľujú násobné hrany a slučky a ani my sa nimi nebudeme zaoberať.\\
-Na reprezentáciu vrcholov sa používajú prvky množiny a hrana je v množine hrán reprezentovaná dvojicou vrcholov, ktoré spája. Teda na množine vrcholov predpokladáme ľubovoľné úplné usporiadanie. Toto zabezpečí, aby medzi dvomi vrcholmi viedla najviac jedna hrana.\\
+
+\section{Graf}
+V teórii grafov sa používa viacero rozdielnych definícii grafu, preto v
+tejto kapitole uvádzame základné definície pojmov použitých v našej práci.
+
+Graf je obrazová reprezentácia údajov obsahujúca body - vrcholy a čiary,
+ktoré body spájajú - hrany. Hrana je úsek spojitej krivky začínajúci a 
+končiaci v bode. Hrana vedie medzi vrcholmi v ktorých má konce.
+O vrchole, do/z ktorého hrana vedie a tejto hrane, hovoríme, 
+že sú navzájom incidentné. Niektoré definície povoľujú aby hrana začínala a 
+končila v tom istom vrchole; takúto hranu nazývame slučka. 
+Pokiaľ vedie medzi dvoma vrcholmi viac hrán, hovoríme o násobných hranách. 
+Striktné definície grafu nepovoľujú násobné hrany a slučky a ani my sa nimi 
+nebudeme zaoberať.
+
+Na reprezentáciu vrcholov sa v teórii grafov používajú prvky množiny a 
+hrana je v množine 
+hrán reprezentovaná dvojicou vrcholov, ktoré spája, teda dvojprvkovou
+podmnožinou množiny vrcholov. Ak rozlišujeme začiatočný a koncový vrchol
+hrany, hovoríme, že hrana je orientovaná. Takéto hrany potom zvykneme
+reprezentovať usporiadanou dvojicou vrcholov.
+
+Nasledujú formálne definície dôležitých pojmov z teórie grafov.
 
 \begin{defin}
-Graf $G$ je usporiadaná dvojica $(V,E)$, kde\\
-$E \subseteq V \times  V$\\
-Vrcholy označujeme malými písmenami prevažne z konca latinskej abecedy (okolo písmena v). Hrany označujeme malými písmenami zo začiatku latinskej abecedy (okolo písmena e) alebo ako dvojicu vrcholov, ktoré spája a platí $(u,v) \equiv (v,u)$.
+Graf $G$ je usporiadaná dvojica $(V,E)$, kde
+$E = \{u,v | u \in V, v \in V\}$.
+
+Množine $V$ hovoríme množina vrcholov a množine $E$ množina hrán.
+
+Vrcholy označujeme malými písmenami prevažne z konca latinskej abecedy 
+(okolo písmena v). Hrany označujeme malými písmenami zo začiatku latinskej 
+abecedy (okolo písmena e) alebo ako dvojicu vrcholov, ktoré spája. Keďže sa
+zaoberáme neorientovanými grafmi, platí
+$(u,v) \equiv (v,u)$.
 \end{defin}
 
-%  \begin{defin}
-%  Hovoríme, že hrana $e$ je incidentná s vrcholom $v$, ak\\
-%  $\exists  u \in  V : e=(u,v)$
-%  \end{defin}
+\begin{defin}
+Hovoríme, že hrana $e \in E$ je incidentná s vrcholom $v \in V$, ak
+$\exists  u \in  V : e = (u,v) $
+\end{defin}
 
 %  \begin{defin}
 %  Stupeň v vrchola je počet hrán s ktorými je incidentný. ozn. deg(v) \\

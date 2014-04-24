@@ -123,66 +123,28 @@ $V_{G \times H} = V_{G} \times V_{H}$
 $E_{G \times H} = E_{G} \times V_{H} \cup E_{H} \times V_{G} $
 
 Koncové vrcholy hrany $(d,v) \in E(G) \times V(H)$ sú vrcholy $(x,v)$ a
-$(y,v)$, kde $x,v \in d; d \in E(G)$. Pre hranu $(e,u) \in E(H) \times V(G)$
+$(y,v)$, kde $x,v \in d; d \in E(G)$, jedná sa teda o hranu $\{(x,v), (y,v)\}$.
+Pre hranu $(e,u) \in E(H) \times V(G)$
 podobne.
 \end{defin}
 
-\iffalse
-\subsection{Značenia v grafe}
-Ďalej si zavedieme rôzne značenia - zobrazenia do množín značiek. Značenia používajú najmä na reprezentáciu rôznych vlastností prvku reprezentovaného daným vrcholom grafu alebo vzťahu reprezentovaného hranou. V našej práci budeme značiť najmä konce hrán.\\
-
-\begin{defin}
-Značenie f (mapping) je zobrazenie z množiny objektov O (zobrazovaná množina) do množiny značiek Z.\\
-$f: O -> Z ; \forall o \in O  \exists z \in Z  : f(o)=z$
-\end{defin}
-
-\begin{defin}
-Značenie konca hrán je značenie kde zobrazovanú množinu tvoria dvojice pozostávajúce z vrcholu a s ním incidentnej hrany.
-\end{defin}
 
 \section{Vybrané triedy grafov}
-Následne si zadefinujeme triedy grafov, ktorými sa budeme bližšie zaoberať a ďalšie potrebné pojmy z teórie grafov použité v tejto práci. 
-
-\subsection{Úplný graf}
-\begin{defin}
-Úplný graf G = (V,E) je graf v ktorom pre každú dvojicu rôznych vrcholov existuje hrana s ktorou sú oba incidentné.\\
-tj. $\forall u,v \in V\ \exists e \in  E :\ e=(u,v)$, kde $u \neq v$\\
-ozn. $G \equiv K_n;\ n=|V|$
-\end{defin}
-\subsection{N-partitný graf}
-\begin{defin}
-N-partitný graf G = (V,E) je graf v ktorom sa dá množina vrcholov V rozdeliť na n neprázdnych disjunktných podmnožín - partícií, ktoré ju pokrývajú a zároveň pre každú z nich platí, že neobsahuje dvojicu vrcholov incidentných s rovnakou hranou, teda ľubovoľná hrana je incidentná najviac s jedným vrcholom tejto množiny.\\
-ozn. Pre 2-partitný graf sa zaužívalo pomenovanie bipartitný.
-\end{defin}
+Niektoré grafy majú spoločné vlastnosti na základe ktorých ich delíme do
+množín - tried grafov.
+Teraz si predstavíme niekoľko tried grafov potrebných v ďalších častiach
+diplomovky. 
 
 \begin{defin}
-Úplný n-partitný graf G = (V,E) je graf v ktorom pre každú dvojicu vrcholov, ktoré nie sú v rovnakej partícii existuje v E hrana s ktorou sú oba incidentné.\\
-ozn. $K_{a_1,...a_n}$, kde $a_i$ je počet vrcholov v i-tej partícii
+Cesta dĺžky $n$ je graf, v ktorom existuje cesta na $n$ vrcholoch a neobsahuje
+žiadne ďalšie hrany ani vrcholy. Takýto graf označujeme $P_{n}$.
 \end{defin}
 
-\subsection{Hyperkocka}
-Hyperkocka, inak nazývaná aj n-rozmerná kocka je graf inšpirovaný geometrickým významom svojho názvu. Každému vrcholu v telese zodpovedá vrchol v grafe. Dva vrcholy v grafe sú incidentné s rovnakou hranou vtedy a len vtedy ak medzi vrcholmi v telese, ktoré reprezentujú, vedie hrana.
-\begin{defin}
-TODO formálne
-\end{defin}
-\subsection{Mriežka}
-Mriežka je graf reprezentujúci diagram mriežku.
-\begin{defin}
-TODO
-\end{defin}
-\subsection{Kubický graf}
-\begin{defin}
-Kubický graf G je graf v ktorom majú všetky vrcholy stupeň tri.
-\end{defin}
-\section{Agent}
-Ďalej si zadefinujeme agenta. Agent je pre nás objekt vykonávajúci určité inštrukcie, majúci určitú výpočtovú silu, určitú pamäť, možnosti akcie a nachádzajúci sa v konkrétnom vrchole grafu. Následne si zadefinujeme agenta s možnosťou meniť vrchol v ktorom sa nachádza a pravidlá pre takúto zmenu.\\
-\begin{defin}
-Agent je -ica ... TODO tu bude možno len všeobecný pokec v závislosti od toho, či bude vhodné zjednocovať definície agentov
-\end{defin}
+Podobne definujeme triedu grafov cykly.
 
 \begin{defin}
-Mobilný agent je agent, ktorý má v množine pravidiel aj pravidlá na pohyb vo vrcholoch.
-TODO
+Cyklus dĺžky $n$ je graf s $n$ vrcholmi, v ktorom existuje cyklus s $n$
+vrcholmi obsahujúci všetky hrany tohto grafu. Cyklus dĺžky $n$ označujeme
+$C_{n}$.
 \end{defin}
 
-\fi

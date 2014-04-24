@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  24 APR 2014 09:57
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  24 APR 2014 09:59
 entering extended mode
  %&-line parsing enabled.
 **smirak
@@ -776,20 +776,21 @@ Kapitola 1.
 
 ]) (./definicie.tex [2]
 Kapitola 2.
+[3
+
+]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 60.
+(hyperref)                removing `\textasciicaron' on input line 61.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
-[3
-
-] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
 
@@ -812,7 +813,7 @@ sú roz²írením NLC grafových
 
 [7]
 Overfull \hbox (3.81435pt too wide) in paragraph at lines 92--102
-[][]\T1/lmr/bx/n/12 Definícia 15. []\T1/lmr/m/it/12 ed-NCE grafová gra-matika j
+[][]\T1/lmr/bx/n/12 Definícia 16. []\T1/lmr/m/it/12 ed-NCE grafová gra-matika j
 e defi-no-vaná ako 6-tica $\OML/lmm/m/it/12 G \OT1/lmr/m/n/12 = (^^F; ^^A; ^^@;
  
 ; \OML/lmm/m/it/12 P\OT1/lmr/m/n/12 ; \OML/lmm/m/it/12 S\OT1/lmr/m/n/12 )$\T1/l
@@ -990,8 +991,8 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 
 ] (./smirak.aux) ) 
 Here is how much of TeX's memory you used:
- 9379 strings out of 494936
- 134822 string characters out of 1181020
+ 9380 strings out of 494936
+ 134830 string characters out of 1181020
  250391 words of memory out of 3000000
  12273 multiletter control sequences out of 15000+50000
  77884 words of font info for 63 fonts, out of 3000000 for 9000
@@ -1009,9 +1010,9 @@ mf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/
 type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on smirak.pdf (45 pages, 436222 bytes).
+Output written on smirak.pdf (45 pages, 436637 bytes).
 PDF statistics:
- 617 PDF objects out of 1000 (max. 8388607)
- 173 named destinations out of 1000 (max. 500000)
+ 618 PDF objects out of 1000 (max. 8388607)
+ 174 named destinations out of 1000 (max. 500000)
  361 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -27,7 +27,7 @@ Nasledujú formálne definície dôležitých pojmov z teórie grafov.
 
 \begin{defin}
 Graf $G$ je usporiadaná dvojica $(V,E)$, kde
-$E = \{u,v | u \in V, v \in V\}$.
+$E \subset \{u,v | u \in V, v \in V\}$.
 
 Množine $V$ hovoríme množina vrcholov a množine $E$ množina hrán.
 
@@ -43,9 +43,10 @@ Hovoríme, že hrana $e \in E$ je incidentná s vrcholom $v \in V$, ak
 $\exists  u \in  V : e = (u,v) $
 \end{defin}
 
-%  \begin{defin}
-%  Stupeň v vrchola je počet hrán s ktorými je incidentný. ozn. deg(v) \\
-%  \end{defin}
+\begin{defin}
+Stupeň vrchola $v$ je počet hrán s ktorými je incidentný; označujeme deg(v).
+Teda $deg(v) = ||$
+\end{defin}
 %  
 % \begin{defin}
 

@@ -25,6 +25,8 @@ smirak.pdf: *.tex *.bib komlogo-new.pdf Makefile images/*
 	pdfcslatex smirak
 	pdfcslatex smirak
 
+only: smirak.pdf
+
 smirak: smirak.pdf commit
 
 commit:

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  24 APR 2014 09:59
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  24 APR 2014 18:30
 entering extended mode
  %&-line parsing enabled.
 **smirak
@@ -779,22 +779,19 @@ Kapitola 2.
 [3
 
 ]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 51.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 51.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 51.
 
-Package hyperref Warning: Composite letter `\textasciicaron+c'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 61.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
-
+Overfull \hbox (4.13136pt too wide) in paragraph at lines 92--94
+[]\T1/lmr/m/it/12 Indukovaný pod-graf je taký graf, ktorého mnoºina hrán ob-sah
+uje v²etky hrany, ktorých
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
-
- []
-
-) (./teoruvod.tex [5]
+[4]) (./teoruvod.tex [5]
 Kapitola 3.
 [6
 
@@ -813,7 +810,7 @@ sú roz²írením NLC grafových
 
 [7]
 Overfull \hbox (3.81435pt too wide) in paragraph at lines 92--102
-[][]\T1/lmr/bx/n/12 Definícia 16. []\T1/lmr/m/it/12 ed-NCE grafová gra-matika j
+[][]\T1/lmr/bx/n/12 Definícia 18. []\T1/lmr/m/it/12 ed-NCE grafová gra-matika j
 e defi-no-vaná ako 6-tica $\OML/lmm/m/it/12 G \OT1/lmr/m/n/12 = (^^F; ^^A; ^^@;
  
 ; \OML/lmm/m/it/12 P\OT1/lmr/m/n/12 ; \OML/lmm/m/it/12 S\OT1/lmr/m/n/12 )$\T1/l
@@ -862,12 +859,6 @@ Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 97.
 
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 103.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 103.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 103.
 
 Overfull \hbox (16.83899pt too wide) in paragraph at lines 106--117
 []\T1/lmr/m/n/12 Autori skú-majú dis-tribuo-vanú verziu kla-sick-ého prob-lému 
@@ -991,16 +982,16 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 
 ] (./smirak.aux) ) 
 Here is how much of TeX's memory you used:
- 9380 strings out of 494936
- 134830 string characters out of 1181020
+ 9367 strings out of 494936
+ 134605 string characters out of 1181020
  250391 words of memory out of 3000000
- 12273 multiletter control sequences out of 15000+50000
+ 12265 multiletter control sequences out of 15000+50000
  77884 words of font info for 63 fonts, out of 3000000 for 9000
  24 hyphenation exceptions out of 8191
- 38i,8n,58p,595b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/te
-xmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy
-.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts
+ 38i,8n,58p,595b,428s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/shar
+e/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec
+.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts
 /type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb
 ></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/
@@ -1010,9 +1001,9 @@ mf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/
 type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on smirak.pdf (45 pages, 436637 bytes).
+Output written on smirak.pdf (45 pages, 434776 bytes).
 PDF statistics:
- 618 PDF objects out of 1000 (max. 8388607)
- 174 named destinations out of 1000 (max. 500000)
- 361 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 582 PDF objects out of 1000 (max. 8388607)
+ 169 named destinations out of 1000 (max. 500000)
+ 297 words of extra memory for PDF output out of 10000 (max. 10000000)
 

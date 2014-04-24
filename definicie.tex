@@ -23,11 +23,13 @@ podmnožinou množiny vrcholov. Ak rozlišujeme začiatočný a koncový vrchol
 hrany, hovoríme, že hrana je orientovaná. Takéto hrany potom zvykneme
 reprezentovať usporiadanou dvojicou vrcholov.
 
-Nasledujú formálne definície dôležitých pojmov z teórie grafov.
+Nasledujú formálne definície dôležitých pojmov z teórie grafov. Ak chceme
+rozlíšiť, ktorý graf máme na mysli, používame onačenie tohot grafu ako dolný
+index. Napríklad množina hrán $E$ grafu $G$ sa označuje $E_{G}$.
 
 \begin{defin}
 Graf $G$ je usporiadaná dvojica $(V,E)$, kde
-$E \subset \{u,v | u \in V, v \in V\}$.
+$E \subseteq \{u,v | u \in V, v \in V\}$.
 
 Množine $V$ hovoríme množina vrcholov a množine $E$ množina hrán.
 
@@ -45,19 +47,87 @@ $\exists  u \in  V : e = (u,v) $
 
 \begin{defin}
 Stupeň vrchola $v$ je počet hrán s ktorými je incidentný; označujeme deg(v).
-Teda $deg(v) = ||$
+Teda $deg(v) = |\{e | v \in e\}|$ \footnote{Keďže sme si hranu definovali ako
+dvojprvkovú podmnožinu množiny vrcholov, môžeme si dovoliť tento zápis}
 \end{defin}
-%  
-% \begin{defin}
+  
+\begin{defin}
+Sled $S$ v grafe $G$ je postupnosť vrcholov a hrán končiaca a začínajúca vrcholom taká,
+že dva jej susedné prvky sú navzájom incidentné.
 
-% \end{defin}
+Čiže $S = v_{0},e_{0},v_{1},e_{1}, ... ,e_{n-1},v_{n}$; kde $\forall i:$ 
+$v_{i} \in V, e_{i} \in E$ ; $\{v_{i},v_{i+1}\} = e_{i}$.
+\end{defin}
 
-% \begin{defin}
-% \end{defin}
+\begin{defin}
+Ťah $T$ v grafe $G$ je taký sled $S$ v tomto grafe, v ktorom sa neopakujú hrany.
+$T = S : \forall e_{i},e_{j} \in S : e_{i} \equiv e_{j} \Rightarrow i = j$
+\end{defin}
 
-% \begin{defin}
-% \end{defin}
+\begin{defin}
+Hovoríme, že ťah alebo sled sú uzavreté, ak je ich posledný vrchol totožný s
+prvým vrcholom.
+\end{defin}
 
+\begin{defin}
+Cesta $P$ v grafe $G$ je taký ťah $T$ v tomto grafe, že sa v ňom neopakujú
+vrcholy. 
+\end{defin}
+
+\begin{defin}
+Cyklus $C$ v grafe $G$ je taký uzavretý ťah $T$ v tomto grafe, že sa v ňom
+neopakujú vrcholy.
+\end{defin}
+
+\begin{defin}
+Graf je súvislý, ak v ňom existuje sled obsahujúci všetky vrcholy.
+\end{defin}
+
+\begin{defin}
+Podgraf $H$ grafu $G$ je taký graf, ktorého množina vrcholov $V_{H}$ je
+podmnožinou vrcholov $V_{G}$ grafu $G$. Množina hrán grafu $H$ je
+podmnožinou tých hrán grafu $G$, ktoré sú incidentné len s vrcholmi z
+množiny $V_{H}$.
+
+Indukovaný podgraf je taký graf, ktorého množina hrán obsahuje všetky hrany,
+ktorých koncové vrcholy patria do jeho množiny vrcholov.
+\end{defin}
+
+\begin{defin}
+Most v grafe $G$je taká hrana $e = \{ u,v \}$ v grafe $G$, že ľubovoľný sled 
+obsahujúci vrcholy $u$ a $v$ obsahuje hranu $e$.
+\end{defin}
+
+\begin{defin}
+Hovoríme, že vrcholy $v, u$ grafu $G$ sú susedné vrcholy, ak $\exists e \in
+E_{G}: u,v, \in e$.
+\end{defin}
+
+\begin{defin}
+Komponent $K$ grafu $G$ je taký jeho indukovaný súvislý podgraf, že v gafe 
+$G$ nevedie hrana medzi vrcholom v $K$ a žiadnym vrcholom ležiacim vo 
+zvyšku grafu $G$.
+\end{defin}
+
+\begin{defin}
+Kostra súvislého grafu $G$ je taký jeho súvislý podgraf, kde každá hrana je
+most.
+\end{defin}
+
+\begin{defin}
+Produkt kartézskeho súčinu grafov $G$ a $H$ označujeme $G \times H$, pričom
+platí:
+
+$V_{G \times H} = V_{G} \times V_{H}$
+
+$E_{G \times H} = E_{G} \times V_{H} \cup E_{H} \times V_{G} $
+
+Koncové vrcholy hrany $(d,v) \in E(G) \times V(H)$ sú vrcholy $(x,v)$ a
+$(y,v)$, kde $x,v \in d; d \in E(G)$. Pre hranu $(e,u) \in E(H) \times V(G)$
+podobne.
+\end{defin}
+
+\iffalse
 \subsection{Značenia v grafe}
 Ďalej si zavedieme rôzne značenia - zobrazenia do množín značiek. Značenia používajú najmä na reprezentáciu rôznych vlastností prvku reprezentovaného daným vrcholom grafu alebo vzťahu reprezentovaného hranou. V našej práci budeme značiť najmä konce hrán.\\
 
@@ -115,3 +185,4 @@ Mobilný agent je agent, ktorý má v množine pravidiel aj pravidlá na pohyb v
 TODO
 \end{defin}
 
+\fi

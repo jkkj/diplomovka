@@ -15,16 +15,13 @@
 \BOOKMARK [1][-]{section.4.2}{Prehlad\341vanie jedn\375m agentom}{chapter.4}
 \BOOKMARK [1][-]{section.4.3}{Distribuovan\351 prehlad\341vanie}{chapter.4}
 \BOOKMARK [1][-]{section.4.4}{Prehlad\341vanie s radou}{chapter.4}
-\BOOKMARK [0][-]{chapter.5}{Kon\235trukcia grafu pomocou mobiln\351ho agenta}{}
-\BOOKMARK [1][-]{section.5.1}{V\235eobecn\351 pravidl\341 pre agenta}{chapter.5}
-\BOOKMARK [2][-]{subsection.5.1.1}{Obmedzenia agenta}{section.5.1}
-\BOOKMARK [2][-]{subsection.5.1.2}{Metriky}{section.5.1}
-\BOOKMARK [1][-]{section.5.2}{Defin\355cie}{chapter.5}
-\BOOKMARK [2][-]{subsection.5.2.1}{agent}{section.5.2}
-\BOOKMARK [2][-]{subsection.5.2.2}{Defin\355cie metr\355k}{section.5.2}
-\BOOKMARK [1][-]{section.5.3}{Algoritmy na vybran\375ch triedach}{chapter.5}
-\BOOKMARK [1][-]{section.5.4}{}{chapter.5}
-\BOOKMARK [0][-]{section*.4}{V\235eobecn\341 kon\235trukcia}{}
+\BOOKMARK [0][-]{section*.4}{\332vod}{}
+\BOOKMARK [1][-]{section.4.5}{Defin\355cia}{section*.4}
+\BOOKMARK [1][-]{section.4.6}{Z\341kladn\351 vlastnosti}{section*.4}
+\BOOKMARK [2][-]{subsection.4.6.1}{Jedna znacka pre porty}{section.4.6}
+\BOOKMARK [2][-]{subsection.4.6.2}{Dve a viac znaciek pre porty}{section.4.6}
+\BOOKMARK [0][-]{chapter.5}{V\235eobecn\341 kon\235trukcia}{}
+\BOOKMARK [0][-]{section*.6}{V\235eobecn\341 kon\235trukcia}{}
 \BOOKMARK [0][-]{chapter.6}{Kon\235trukcia mrie\236ky}{}
 \BOOKMARK [1][-]{section.6.1}{Jedna znacka pre porty}{chapter.6}
 \BOOKMARK [0][-]{chapter.7}{N-rozmern\341 kocka}{}
@@ -35,4 +32,4 @@
 \BOOKMARK [2][-]{subsection.7.2.3}{3 znacky}{section.7.2}
 \BOOKMARK [2][-]{subsection.7.2.4}{4 znacky}{section.7.2}
 \BOOKMARK [1][-]{section.7.3}{4-rozmern\341 kocka}{chapter.7}
-\BOOKMARK [0][-]{section*.6}{Literat\372ra}{}
+\BOOKMARK [0][-]{section*.8}{Literat\372ra}{}

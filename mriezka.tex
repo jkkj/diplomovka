@@ -32,12 +32,12 @@ mriežky budú v pôvodných grafoch - cykloch spojené aj vrcholy 1 a n,
 repektíve 1 a m.
 \end{pozn}
 
-\begin{lem}
+\begin{veta}
 Pri konštrukcii portovej hrany v mriežke aj v cyklickej mriežke, ktoré
 nemajú žiaden rozmer menší ako štyri, 
 urobí agent medzi otvorením prvého a druhého
 portu najmenej tri kroky.
-\end{lem}
+\end{veta}
 \begin{proof}
 Najmenší cyklus v oboch grafoch má dĺžku štyri. 
 Teda medzi otvorením dvoch portov
@@ -47,10 +47,10 @@ existujúcich alebo vytvorí nové operáciou NH.
 
 \section{Jedna značka pre porty}
 
-\begin{lem}
+\begin{veta}
 Kostrové hrana je staršia, vznikla skôr, ako všetky portové hrany incidentné
 s jej mladším koncovým vrcholom.
-\end{lem}
+\end{veta}
 \begin{proof}
 Aby agent mohol otvoriť vo vrchole port, musel už tento vrchol existovať.
 Jediná operácia ktorou mohol vrchol vzniknúť je operácia NH. Mladší vrchol
@@ -59,9 +59,9 @@ hrany.
 \end{proof}
 
 
-\begin{lem}
+\begin{veta}
 Tvoriaci cyklus hrany $h$ obsahuje len hrany staršie ako $h$.
-\end{lem}
+\end{veta}
 \begin{proof}
 Tvoriaci cyklus obsahuje hrany, po ktorých agent prešiel, keď konštuoval
 hranu $h$. Museli teda v čase po prechode agenta už existovať a sú preto 
@@ -70,11 +70,11 @@ prešiel.
 \end{proof}
 
 
-\begin{lem}
+\begin{veta}
 \label{cyklus}
 Každý tvoriaci cyklus je možné nahradiť tvoriacim cyklom, ktorý obsahuje len
 hrany kostry a príslušnú portovú hranu.
-\end{lem}
+\end{veta}
 \begin{proof}
 Majme tvoriaci cyklus hrany $h$. Každú portovú hranu, okrem $h$  v ňom nahradíme 
 jej tvoriacim
@@ -114,13 +114,13 @@ k.
 
 
 
-\begin{lem}
+\begin{veta}
 Portová hrana v súradnici k v cyklickej mriežke má v tvoriacom cykle 
 odlišnú paritu počtu prechodov po súradnici k ako majú počty prechodov 
 po ostatných súradniciach
 V ostatnej dimenzii majú všetky počty prechodov po každej súradnici 
 rovnakú paritu.
-\end{lem}
+\end{veta}
 \begin{proof}
 Aby otvoril druhý port hrany, agent musí svoju pozíciu zmeniť tak, 
 aby sa nachádzal na susednej súradnici v diemnzii v ktorej sa líši s
@@ -163,14 +163,14 @@ hrane majú odlišnú paritu počtu svojich výskytov.
 
 
 
-\begin{lem}
+\begin{veta}
 Pri ľubovoľnej konštrukcii cyklickej mriežky G rozmerov $n \times m$ s jednou značkou
 pre porty, existuje aspoň jedna hrana pri konštrukcii ktorej agent vykoná 
 aspoň $n - 1$ krokov v prvej dimenzii
 a súčasne aspoň jedna portová hrana,
  pri konštrukcii ktorej agent vykoná aspoň $m - 1$ krokov v druhej dimenzii,
 môže ísť o tú istú hranu.
-\end{lem}
+\end{veta}
 \begin{proof}
 Ako sme už povedali kostrové hrany sú hrany, ktoré vznikli operáciou NH a
 tieto hrany tvoria kostru grafu; ako bolo spomenuté grafom nazývame každý
@@ -256,10 +256,10 @@ konštrukcii musí vykonať aspoň $n - 1$ krokov pre prvú dimenziu a iných $m
 \end{proof}
 
 
-\begin{lem}
+\begin{veta}
 Mriežku $m \times n$ je možné s použitím jedinej značky pre port zostrojiť
 pomocou $3m(n - 1) + m$ pohybov, kde $m <= n$.
-\end{lem}
+\end{veta}
 \begin{proof}
 Agent vykonáva: OP,NH,NH,NH,OP,(n-2)krát (OP,S1,NH,NH,OP),S1,NH,HN,OP čím
 vytvorí prvý riadok mriežky. Následne vykoná
@@ -408,7 +408,7 @@ prechádzať postupnosť vypĺňania. Bez ujmy na všeobecnosti nech prechádza 
 
 \end{proof}
 
-
+\iffalse
 \begin{lem}
 Pri konštrukcii mriežky je najvýhodnejšie konštruovať portové hrany tvorivou
 cestou dĺžky 3.
@@ -428,19 +428,95 @@ hrany do nich vedúce sa musia napájať na túto tvorivú cestu.
 treba ukázať, že aj keď sa vezmú do úvahy presuny, tak sú trojkrokové cesty
 výhodnejšie ...
 \end{proof}
+\fi
 
 \begin{lem}
 Na zostrojenie mriežky $m \times n$, kde $m <=  n$ potrebuje agent s jednou
 značkou pre porty vykonať aspoň $3m(n - 1) + m$ krokov.
 \end{lem}
 \begin{proof}
-Premietnime si mriežku do roviny (mriežka je planárny graf), 
-potom každý minimálny cyklus ohraničuje časť roviny. 
-Ak minimalizujeme dĺžky tvorivých cyklov
-hrán, nič nepokazíme./TODO - možno to vyplynie samo/
-Medzi otvorením prvého a druhého portu hrany agent 
+V mriežke pri konštrukcii portovej hrany vykoná agent medzi otvorením jej
+prvého a druhého portu najmenej tri kroky. Počet portových hrán je
+konštantný a teda sa budeme zaoberať len krokymi, ktoré agent musí urobiť
+navyše okrem týchto troch krokov na hranu. Kroky, ktoré agent vykoná medzi
+otvorením prvého portu hrany a druhého portu predošlej hrany budeme počítať
+do počtu krokov novšej z nich.
 
+Pomenujme si vrcholy mriežky, ktoré majú jednu súradnicu maximálnu alebo
+minimálnu ako okraje mriežky, a vrcholy, ktoré majú extrémy v oboch
+dimenziách nazveme rohmi. Na jednom okraji ležia všetky vrcholy, ktoré majú
+daný extrém rovnako veľký. Roh patrí do oboch okrajov.
+Rohy majú stupeň dva a ostatné vrcholy na okrajoch majú stupeň tri.
 
+Ak medzi otvorením druhého portu predošlej hrany a prvého portu hrany
+nasledujúcej agent nevykonal žiadny krok, tak tvoria tieto dve hrany spolu
+súvislý ťah. Pod ťahom portových hrán budeme rozumieť v tomto dôkaze takú
+postupnosť portových hrán, kde tieto nasledujú podľa poradia svojho vzniku a
+agent medzi otvorením portov dvoch susedných hrán nevykonal žiadne ďalšie
+kroky.
+
+Tieto ťahy vieme zoradiť podľa poradia vzniku a následne prepojiť pridaním
+hrán, ktorá prešiel agent medzi koncom jedného ťahu a začiatko
+nasledujúceho do sledu. Medzi dvomi ťahmi mohol agent behať ľubovoľne, ale
+keďže hľadáme najkratšiu konštrukciu, môžeme vybrať z tohto sledu ťah.
+Pretože ak aj agent skonštruoval nejaké kostrové hrany (portové nemohol,
+lebo hovovríme o úseku, kedy ich neskonštruoval), boli to mosty, musel sa z
+nich vrátiť a ak sa bude vracať do vrcholov, ktoré vznikli s nimi, bude
+musieť po nich prejsť rovnako ako pri konštrukcii. Ic konštrukciu teda môže
+vynechať a skonštruovať ich neskôr.
+
+Pri optimalizácii počtu krokov sa snažíme tento "konštrukčný" ťah skrátiť čo
+najviac.
+
+Mriežka obsahuje vrcholy stupňa nanajvýš 4. Z toho vyplýva, že ťahy z
+portových hrán sa nemôžu križovať v žiadnom vrchole, lebo jeden stupeň
+vrchola je určite kostrová hrana. Miesta v konštrukčnom ťahu nezveme
+prerušenia. Snažíme sa súčet ich dĺžok minimalizovať, pričom každé má dĺžku
+minimálne 1 hrana.
+
+Kostra má konštantný počet hrán. Je to toľko akoby bola ťah s dvomi listami.
+Vnútorné vrcholy mriežky (doplnková množina ku krajom) majú stupeň 4. Ak by
+do nich viedol nepárny počet portových hrán, boli by to prerušenia
+konštrukčného ťahu (miesta, kde v ňom nie sú portové hrany). Teda v ideálnom
+prípade do nich vedú dve portové hrany a dve kostrové hrany alebo 4 kostrové
+hrany a žiadna portová.
+
+Definujem si v mriežke smery hore, dole, vpravo, vľavo. Vrchol je tým vyššie
+čím má väčšiu súradnicu druhej dimenzie a tým viac vpravo, čím má vyššiu
+prvú súradnicu.
+
+Mriežka má dva vrcholy. Cez tieto nemôže prechádzať portový ťah, pretože
+majú stupeň dva. Ak sa agent dostane na okraj mriežky a vytvorí doň portovú
+hranu, môže buď prerušiť ťah, alebo konštruovať portový ťah vedúci ďalej už
+len po okraji. Agent totiž na tri kroky príde do vrchola po hrane inej
+dimenzie ako konštruuje portovú hranu. Keď teda príde prvý raz do portového
+vrchola i skonštruuje doň jednu portovú a jednu kostrovú hranu, ostane mu
+"voľná" - dosiaľ neskonštriovaná len hrana po okraji. ďalšie dve možnosti
+pre vrchol na okraji sú, aby doň viedli tri kostrové hrany, alebo v ňom bolo
+prerušenie. Ak cez vrchol na okraji vedú dve portové hrany, kostrová hrana,
+ktorá doň vedie musela vzniknúť pri ich konštrukcii, inak by to bola
+zbytočná zachádzka agenta dĺžky minimálne dva kroky (tam a späť), keby ju
+vynechal, nič by sa nepokazilo, lebo agent do tohto vrchola musí prísť
+rovnakou hranou. Teda vrchol z ktorého táto kostrová hrana vedie, musel mať
+o jednu hranu menej.
+
+Ak do vrchola stupňa 4 vedú práve tri kostrové hrany je v ňom prerušený portový
+ťah. Ak po okraji vedie portový ťah, tak do vrcholov stupňa 4 z ktorých vedú do
+týchto okrajový vrcholov kostrové hrany, mali pred jeho konštrukciou stupeň
+max. 3 a teda sa správali ako okrajvé vrcholy. Sú to vrcholy susediace s
+vrcholmi tohto ťahu okrem jeho začiatočného a koncového vrchola.
+
+Pomenujme skonštruovanou plochou tú časť mriežky, ktorá už je skonštruovaná
+a jej okraje a rohy definujme rovnako ako pri mriežke. Je zrejmé, že ak
+medzi niektoré dva jej okrajové vrcholy bude treba skonštruvať hranu po tom,
+ako ich agent opustí, v oboch koncoch tejto hrany bude mať konštrukčný ťah 
+prerušenie. Teda všetky vrcholy, ktoré ešte neboli vytvorené a v cieľovom
+grafe susedia s aktuálnym okrajom skonštruaovanej plochy, budú buď
+prerušením, alebo z nich pôjdu do týchto susedov kostrové hrany. Keby to
+boli portové, nastalo by v týchto vrcholoch prerušenie, lebo už majú tri
+hrany zo štyroch.
+
+\end{proof}
 
 
 
@@ -502,4 +578,4 @@ konštruovanom grafe stupeň:
 ...
 Ako sa správa konštrukcia na okrajoch mriežky?
 \fi
-\end{proof}
+

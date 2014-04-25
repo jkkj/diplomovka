@@ -4,7 +4,6 @@
 \chapter*{Model}\label{chap:intro}
 
 \section{Definícia}
-\section{Definícia}
 \begin{defin}
 Model sa skladá z grafu a agenta. Graf má nemeniteľné lokálne číslovanie koncov hrán vo
 vrchole, podľa poradia vzniku. Koniec hrany, ktorý vznikol ako prvý, má

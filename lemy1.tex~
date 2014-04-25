@@ -8,12 +8,19 @@
 \chapter{N-rozmerná kocka}
 Vrcholy spojené hranou sa líšia práve v jednej súradnici. Každej hrane z
 vrcholu možno priradiť súradnicu v ktorej sa jej druhý vrchol od tohto
-odlišuje. Toto priradenie je injekcia.
-Susedia vrchola sa navzájom líšia v práve dvoch súradniciach. Pri pohybe po
-hrane mením jednu súradnicu svojej pozície. Z tohto vyplývajú obmedzenia
-pre úsporu pohybov pridávaním značiek pre porty. Napríklad pri použití dvoch
+odlišuje. Toto priradenie je vzhľadom na hrany incidentné s jedným vrcholom
+ injekcia.
+
+Susedia vrchola sa navzájom líšia v práve dvoch súradniciach. Polohu agenta
+môžeme vyjadriť vrcholom, v ktorom sa práve nachádza. Zodpovedá jej teda
+binárny reťazec, ktorého hodnoty bitov budeme volať súradnice. Súradnica v
+hyperkocke môže mať hodnotu 0 alebo 1. Po dvoch zmenách je teda rovnaká.
+ Pri pohybe po hrane mení agent práve jednu súradnicu svojej pozície. 
+Z tohto vyplývajú obmedzenia
+pre úsporu pohybov zväčšovaním množiny značiek pre porty. 
+Napríklad pri použití dvoch
 značiek pre porty potrebuje agent na vytvorenie dvoch nových portových hrán
-aspoň 5 ťahov. Úspora nastáva, keď port pre druhú hranu otvorím už počas
+aspoň 5 ťahov. Úspora nastáva, keď port pre druhú hranu otvorí už počas
 cesty za otvorením portu prvej hrany.
 
 \begin{lem}

@@ -409,10 +409,11 @@ prechádzať postupnosť vypĺňania. Bez ujmy na všeobecnosti nech prechádza 
 \end{proof}
 
 \iffalse
-\begin{lem}
-Pri konštrukcii mriežky je najvýhodnejšie konštruovať portové hrany tvorivou
+\begin{veta}
+Pri konštrukcii mriežky je najvýhodnejšie (vzhľadom na počet krokov agenta)
+ konštruovať portové hrany tvorivou
 cestou dĺžky 3.
-\end{lem}
+\end{veta}
 \begin{proof}
 Ukážeme, že pre každú kostru existuje taká postupnosť konštrukcie portových
 hrán, že ich tvorivá cesta má dĺžku 3. Tvorivá cesta po kostre je pre každú
@@ -430,10 +431,10 @@ výhodnejšie ...
 \end{proof}
 \fi
 
-\begin{lem}
+\begin{veta}
 Na zostrojenie mriežky $m \times n$, kde $m <=  n$ potrebuje agent s jednou
 značkou pre porty vykonať aspoň $3m(n - 1) + m$ krokov.
-\end{lem}
+\end{veta}
 \begin{proof}
 V mriežke pri konštrukcii portovej hrany vykoná agent medzi otvorením jej
 prvého a druhého portu najmenej tri kroky. Počet portových hrán je
@@ -514,7 +515,8 @@ prerušenie. Teda všetky vrcholy, ktoré ešte neboli vytvorené a v cieľovom
 grafe susedia s aktuálnym okrajom skonštruaovanej plochy, budú buď
 prerušením, alebo z nich pôjdu do týchto susedov kostrové hrany. Keby to
 boli portové, nastalo by v týchto vrcholoch prerušenie, lebo už majú tri
-hrany zo štyroch.
+hrany zo štyroch a my hľadáme konštrukciu, v ktorej budú len tie
+najnutnejšie prerušenia s čo najkratšou celkovou sumou.
 
 \end{proof}
 

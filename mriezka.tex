@@ -516,7 +516,80 @@ grafe susedia s aktuálnym okrajom skonštruaovanej plochy, budú buď
 prerušením, alebo z nich pôjdu do týchto susedov kostrové hrany. Keby to
 boli portové, nastalo by v týchto vrcholoch prerušenie, lebo už majú tri
 hrany zo štyroch a my hľadáme konštrukciu, v ktorej budú len tie
-najnutnejšie prerušenia s čo najkratšou celkovou sumou.
+najnutnejšie prerušenia s čo najkratšou celkovou sumou. Ťah teda ide vždy po
+okraji skonštruovanej plochy.
+
+Agent musí niekde začať a vytvoriť tak prvú portovú hranu. Od tejto hrany
+vieme odvodiť akési vrstvy podľa toho, ako sa súradnica danej hrany líši od
+súradnice prvej portovej hrany smerom ku krajom do všetkých štyroch 
+definovaných smerov.
+Ukázali sme, že pre dosiahnutie čo najmenšieho počtu prerušení konštrukčného
+ťahu je výhodné, aby bližšie vrstvy boli staršie. Najstaršou vrstvou v danom
+smere sú teda hrany vedúce po okraji. Pozrime sa na okraj, na ktorom bola
+skonštruovaná posledná portová hrana. Každý portový ťah na okraji je
+najmenej jedno prerušenie, najmenší počet prerušení, ktoré sa dajú pre daný
+okraj dosiahnuť je teda jedno.
+
+Najmenej prerušení pri okraji, po ktorom vedie ťah, dosiahneme, ak bude
+súvislý a bude prechádzať cez čo najviac hrán na okraji. Aby bol počet
+prerušení čo najmenší, ťah bude končiť v rohu mriežky. Začať môže buď v rohu
+alebo v jeho susednom vrchole. V prvom prípade je jasné, že bol ťah z
+portových hrán prerušený, ôebo cez roh nemôže prechádzať. V druhom prípade
+sú dve možnosti, buď vedie do príslušného rohu portová hrana po druhom
+okraji a vtedy je tiež prerušenie, alebo vedú do rohu len kostrové hrany a
+portový ťah "prišiel na okraj" zo súradnice o jena nižšej portovou hranou v
+inej dimenzii. Ukážeme, že ani v tomto prípade nebol neprerušený.
+
+Všimnime si, že ak chce agent skončiť vpravo, musí začať konštruovať vľavo a
+naopak.
+
+O úroveň nižšie k prvej portovej hraneto vyzerá podobne ako na okraji,
+pretože keď z mriežky odoberieme graf indukovaný týmto ťahom po okraji
+vedeným na čo najmenej prerušení, dostaneme buď mriežku o jednu dimenziu
+nižšiu alebo takú mriežku s jedným "štvorčekom prilepeným v rohu", nazvyme
+si ho výbežok. Mriežku v
+jednej dimenzii o jedna menšiu vyriešime rrekurzívne. V tom druhom prípade
+vieme, že ťah  po jednej jeho
+strane smerujúcej od zvyšku mriežky musí ísť. Ťah môže bez prerušenia ísť po
+okraji zvyšku mriežky, podísť výbežok a po jeho okraji skončiť v rohu
+konštruovaného grafu, kde sa preruší. Druhá možnosť je ísť až po výbežok a
+po jeho druhej - tej bližšej strane hore. V prvom prípade je situácia
+rovnaká ako pri mriežke o jedna nižšej, lebo keď odoberieme túto ďalšiu
+"vrstvu" ťahu máme rovnaké možnosti. V druhom prípade však máme útvar s
+jedným ďalším výbežkom, pričom ťah o úroveň vyššie ide tentokrát na duhom
+konci. Teda agent, aby minimalizoval počet krokov, musí skonštruovať výbežok 
+a potom zvyšok okraja. Keby tam výbežok nebol, tak o úroveň vyššie by sme
+mali dve možnosti - výbežok bez prerušenia alebo "rovný okraj" (agent skončí
+v rohu) s prerušením. Keď výbežok máme prerušenie sa predĺži. Výbežok má
+totiž dva rohy, ak agent skončí v bližšom, budem to mať o jedna k začiatu
+ďalšej portovej hrany, ale buď sa na začiatok tejto portovej hrany dostane
+na krok navyše, alebo o úroveň nižšie bude výbežok. Ak však skončí vo
+vzdialenejšom, bude to síce bez výbežku, ale na dva kroky od prvého portu
+nasledovnej hrany.
+
+Takže sme si ukázali, ako sa dá skonštruovať okraj na čo najmenej prerušení a aké
+to má následky na konštrukciu zvyšných častí mriežky. Pri takejto
+konštrukcii môžu byť všetky vnúttorné vrcholy konštruované bez prerušení,
+lebo verzia s výbežko nič neušetrí a tak môže ťah pohodlne končiť na okraji
+mriežky. Takže, ak sa má jeden okraj zaobísť bez prerušení, musia byť
+prerušenia na tom druhom až po úroveň prvej portovej hrany. Vlastne prvá
+portová hrana v tomto prípade je najlepšie na súradnici o jedna vyššie ako
+dolný okraj (bez ujmy na všeobecnosti konštruujeme horný okraj mriežky
+jedným ťahom). Keby bola vyššie, agent by po skonštruovaní hrán nižšie od
+nej sa musel vracať hore, čo sú kroky navyše.
+
+Prerušenia, ktoré vzniknú pri takejto konštrukcii majú dĺžku jeden krok a je
+ich toľko ako je veľká dimenzia (koľko má súradníc), v ktorej nekonštruujeme
+okraj jedným ťahom z portových hrán. Teda je výhodné týmto spôsobom
+konštruovať dlhší okraj mriežky.
+
+Pre úplnosť chýba argumentácia, prečo ide portový ťah po celom okraji a či
+nie je možné ušetriť kroky prerušenia jeho skrátením na tomto okraji.
+Skracovať, či prerušovať ho niekde v strede nemá zmysel, boli by to kroky
+navyše. Aj po skrátení vyzerajú vrstvy pod súvislým ťahom rovnako, môžu sa
+skracovať smerom do stredu mriežky bez prerušenia najviac však o jedno na
+každej strane (vždy vznikne výbežok a treba na "okraj" nižšej úrovni orejsť
+na čo najmenej krokov).
 
 \end{proof}
 

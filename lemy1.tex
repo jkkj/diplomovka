@@ -444,30 +444,14 @@ v kotrých vedie najvyšší možný počet hrán. Veta \ref{mensia} hovorí o p
 hrán, ktoré vedú medzi dvomi množinami vrcholov rozdelenými podľa nejakej
 dimenzie. Veta \ref{izomorfne} zas hovorí, že menšia množina má vo väčšej
 izomorfný obraz, v ktorom má každý vrchol menšej dvojice vo väčšej susedný 
-vrchol, s ktorým má všetky ostatné dimenzie rovnaké. Z týchto viet tiež
-vyplýva, že množiny, na ktoré sa rozdelí $n$ prvková množina vrcholov s
-najvyšším možným počtom hrán v indukovanom podgrafe, indukujú podgrafy s
-najvyšším možným počtom hrán pri danom počte vrcholov.
+vrchol, s ktorým má všetky ostatné dimenzie rovnaké.
 
 Potrebujeme nájsť takú postupnosť prechádzania tejto množiny vrcholov
 agentom, že
 v každom momente bude medzi dovtedy prejdenou množina vrcholov najvyšší
 možný počet hrán pre danú množinu vrcholov.
-
-Ako sme ukázali, po rozdelení podľa dimenzie vedie v každej z dvoch množín
-najvyšší možný počet hrán. Teda ak agent najprv prejde väčšiu množinu a
-potom menšiu (ak sú rovnaké, je to jedno), tak v momente prejdenia väčšej
-prešiel množinu vrcholov s najvyšším možným počtom hrán a je to v poriadku.
-Tento lokálny predpoklad platí rekurzívne, teda tieto dve množiny bude 
-prechádzať tak, že najprv
-prejde väčšiu množinu z tých, na ktoré sa táto množina rozdelí. V nich opäť
-začne prechádzať väčšiu atď. až kým nie sú množiny nedeliteľné -
-jednovrcholové.
-
-Potrebujeme ukázať, že  takto konštruovaná postupnosť je vhodná a spĺňa
-tvrdenie vety. A to neslňa ... grrrrrrrrrrrrrrrr ........
-
-Potrebujeme, aby prejdená množina spĺňala tvrdenie vety \ref{delenie} a vety
+Teda potrebujeme, aby prejdená množina spĺňala tvrdenie vety \ref{delenie}
+ a vety
 \ref{mensia}, teda aby sa dala rozdeliť po dimenziách na polovice +/- 1
 vrchol a pritom, aby medzi týmito polovicami viedol počet hrán rovný
 mohutnosti menšej z nich.
@@ -499,13 +483,29 @@ agentom tak, aby prejdená množina vrcholov obsahovala najvyšší možný poč
 hrán v indukovanom podgrafe. Pre úplnosť treba dokázať, že agent môže
 vrcholy v tomto poradí navštíviť. Teda, že odobratý vrchol susedí s
 vrcholom, ktorý bude odobratý najbližšie.
+V prípade, že sú obe množiny rovnako veľké bude najprv odobratý prvok z
+množiny so súradnicou 0, čím sa táto množina zmenší a následne bude odobratý
+prvok z množiny so súradnicou 1 v prvej dimenzii delenia. Keďže obe množiny
+majú rovnakú veľkosť výber súradníc vo zvyšných dimenziách dopadne zhodne
+pre oba vrcholy. Líšia sa teda práve len v súradnici prvej dimenzie a teda ich
+spája hrana. Vyplýva to aj z toho, že menšia množina má izomorfný obraz vo
+väčšej.
+
+V prípade, že jedna množina vrcholov je väčšia, tak to nemusí nutne platiť.
+Preto urobíme úpravu v postupe výberu vrchola. Ako sme ukázali vo vete
+\ref{substitucia} substitúcia súradníc nemá vplyv na počet hrán vedúcich
+medzi vrcholmi danej množiny, ak sa vymenia všetky súradnice v danej
+dimenzii na opačné. Ak preklopíme súradnice vo všetkých dimenziách, v
+ktorých má odoberaný vrchol súradnicu 1, tak nasledujúcim vybraným v takto
+substituovaných súradniciach bude jeho sused na najnižšej úrovni stromu.
+
+Na konci môžeme spätne vypočítať skutočné súradnice vrcholov postupnosti.
 
 \iffalse
 Ak vynecháme vrchol s nanižším počtom hrán, ktoré doň vedú, získame množinu
 s najvyšším počtom hrán medzi $n-1$ vrcholmi?
-\fi
 
-TODO ...
+\fi
 \end{proof}
 
 \iffalse

@@ -25,12 +25,47 @@ značiek pre porty potrebuje agent na vytvorenie dvoch nových portových hrán
 aspoň 5 ťahov. Úspora nastáva, keď port pre druhú hranu otvorí už počas
 cesty za otvorením portu prvej hrany.
 
+Indukovaný graf pomnožiny z bodov hyperkocky má počet hrán závislý na ich
+vzájomnej polohe. Ak má agent dosť veľkú množinu značiek pre porty, môže
+tieto vrcholy prejsť v ľubovoľnom poradí a v každom otvoriť potrebný počet
+hrán. Agent nedokáže skonštruovať graf, ktorý by nebol súvislý v nejakej
+fáze svojej konštrukcie.
+
+V tejto kapitole skúmame možnosti efektívnej konštrukcie hyperkociek rôznych
+rozmerov. Agent je pri konštrukcii limitovaný veľkosťou množiny značiek pre
+porty, ktoré môže použiť. Počet hrán, ktoré agent vytvorí jednotlivými
+operáciami je konštantný, ako sme ukázali vo všeobecnej kapitole o
+konštrukcii grafu. Efektivitu algoritmu meriame počtom krokov, ktoré agent
+musí pri konštrukcii vykonať. Za krok sa považuje zmena vrchola, v ktorom sa
+agent nachádza a teda zmena polohy agenta.
+
+K hlavným výsledkom v tejto kapitole patrí postupnosť vrcholov hyperkocky, ktorá
+obsahuje najvyšším možný počet hrán v indukovanom podgrafe v takto veľkej
+množine vrcholov hyperkocky. Zároveň sme dokázali, že toto platí aj o každej
+podpostupnosti, ktorá je jej prefixom.
+
+Ak má agent k dispozícii dostatočne veľkú množinu značiek pre porty, dokáže
+skonštruovať hyperkocku tak, že každý vrchol navštívi práve raz - pri jeho
+vytvorení. Veľkosť množiny potrebných značiek pri takejto konštrukcii vieme 
+určiť zo spomenutej postupnosti. Počet hrán, ktoré vychádzajú z vrchola
+hyperkocky je totiž konštantný a teda aj počet portov, ktoré agent otvorí
+pri návšteve vrcholu. Akonáhle však vznikne portová hrana, značka jej portov
+sa uvoľní a agent ju môže znovu použiť. Počet portov, ktoré musia byť
+otovrené v danom momente určuje aj počet potrebných značiek pre ne, keďže
+žiadne dva nemôžu mať rovnakú značku, inak by medzi nimi vznikla hrana. Teda
+čím viac hrán vedie medzi doteraz prejdenými vrcholmi, tým menej značiek pre
+porty je použitých.
+
+Z tejto postupnosti je možné zistiť aj počet značiek pre porty potrebných
+pri takejto konštrukcii hyperkocky. Je ním maximum rozdielu súčtu stupňov
+prejdených vrcholov a počtu hrán vedúcich medzi nimi.
+
 \section{Všeobecné výsledky}
 
-\begin{veta}
+\begin{lem}
 Dva vrcholy, ktoré sa navzájom líšia v práve dvoch súradniciach majú práve dvoch
 spoločných susedov.
-\end{veta}
+\end{lem}
 \begin{proof}
 Susedné vrcholy sa líšia práve v jednej súradnici. Spločný sused dvoch
 vrcholov sa líši v práve jednej súradnici od každého z nich. Teda má všeky
@@ -92,11 +127,11 @@ Pri prechode po hrane agent preklopý jednu z týchto súradníc v práve jednej
 dimenzii na druhú.
 \end{ozn}
 
-\begin{veta}
+\begin{lem}
 V ľubovoľnej postupnosti hrán medzi vrcholmi hyperkocky spojenými hranou, sa
 nachádza párny počet hrán v každej dimenzii okrem dimenzie v ktorej sa tieto
 vrcholy líšia a teda v nej vedie hrana medzi nimi.
-\end{veta}
+\end{lem}
 \begin{proof}
 Takéto dva vrcholy sa líšia v práve jednej dimenzii. Ak agent zmenil pri 
 pohybe svoju polohu v nejakej dimenzii nepárny počet 
@@ -123,24 +158,12 @@ vrcholmi je na daný počet značiek pre porty a počet portových hrán, ktoré
 vzniknú medzi jeho vrcholmi, najkratší možný.
 \end{pozn}
 
-Ak má agent dostatok značiek pre porty, nezaujíma nás poradie v akom vrcholy
-postupnosti navštívil. Úlohu teda môžeme zredukovať na hľadanie takej množiny
-vrcholov veľkosti m, ktorá tvorí zo všetkých takto veľkých množín najmenší rez
-od zvyšku grafu. Pri konštantnom stupni vrcholov to znamená, že v takej vedie 
-najviac hrán medzi vrcholmi v tejto množine.
-Keď sa pozrieme na vrcholy a pravidlá ich spájania hranami, zistíme, že
-tieto vedú len v nejakej kocke a čím viac rozmerov kocka má, tým viac hrán
-vedie medzi jej vrcholmi. Teda aj v n-rozmernej kocke povedie najviac hrán
-medzi vrcholmi takej množiny, ktorej indukovaný graf je izomorfný kocke.
-Vrchol k-rozmernej kocky sa nachádza v k (k-1)-rozmerných kockách, ktoré sú
-jej podgrafmi. Teda budeme hľadať množinu m bodov, ktoré sa dajú
-pokryť kockami čím vyššieho rozmeru a nemusíme si všímať kocky ktoré sú
-podgrafmi týchto kociek. tieto kocky sa však môžu prekrývať.
 
-\begin{veta}
+
+\begin{lem}
 S každou hyperkockou v ktorej vrchol neleží ho spája najviac jedna hrana.
 Ktorá vedie v inej dimenzii ako sú dimenzie tejto hyperkocky.
-\end{veta}
+\end{lem}
 \begin{proof}
 Každý vrchol hyperkocky má hrany vo všetkých jej dimenziách. Vo zvyšných
 dimenziách sú vrcholy hyperkocky totožné, lebo sa dva susedné líšia práve v
@@ -151,11 +174,11 @@ aspoň jednej dimenzii hyperkocky od jej ostatných vrcholov a má teda s nimi
 aspoň dve rodielne dimenzie. Nemôže ho preto s nimi spájať hrana.
 \end{proof}
 
-\begin{veta}
+\begin{lem}
 Bijektívna substitúcia dimenzií na všetkých vrcholoch podgrafu hyperkocky 
 zachováva
 hrany medzi vrcholmi. Rovnako aj preklopenie súradníc v niektorej dimenzii.
-\end{veta}
+\end{lem}
 \begin{proof}
 Ak sa dva vrcholy líšia práve v jednej dimenzii, budú sa v práve jednej
 dimenzii líšiť aj po tejto substitúcii, lebo dimenzie v ktorých boli rovnaké
@@ -165,10 +188,10 @@ Pri preklopení súradníc sa medzi vrcholmi zachovajú rovnosti a rozdiely v
 danej dimenzii, teda aj hrany.
 \end{proof}
 
-\begin{veta}
+\begin{lem}
 Vrcholy súvislého podgrafu hyperkocky s počtom vrcholov m sa navzájom líšia
 v najviac m-1 súradniciach.
-\end{veta}
+\end{lem}
 
 \begin{proof}
 Vezmime kostru tohto podgrafu. Táto má m-1 hrán. Každá vedie v niektorej
@@ -178,10 +201,10 @@ rôznych dimenzií, čo je jej počet hrán. V ostatných dimenziách sa dané
 vrcholy nelíšia, majú v nich teda navzájom rovnaké súradnice.
 \end{proof}
 
-\begin{veta}
+\begin{lem}
 Podmnožina m bodov hyperkocky, ktoré indukujú graf s najvyšším počtom hrán je
 súvislá.
-\end{veta}
+\end{lem}
 
 \begin{proof}
 Nech existujú dva komponenty. Na jednom z nich urobíme 
@@ -203,12 +226,12 @@ prepojené a preklápanie by teda už nepokračovalo.
 Potrebujeme vybrať m vrcholový indukovaný podgraf hyperkocky tak, aby počet 
 hrán v ňom bol maximálny možný.
 
-\begin{veta}
+\begin{lem}
 Vrcholy podgrafu hyperkocky sa dajú rozdeliť na dve množiny A,B podľa súradnice vo
 vybranej dimenzie. Počet hrán vedúcich z vrcholov v jednej množine do
 vrcholov v druhej množine je rovný alebo menší ako mohutnosť menšej z nich.
 Čiže $|\{e|e = (a,b);a \in A; b \in B\}| <= min\{|A|,|B|\}$
-\end{veta}
+\end{lem}
 \begin{proof}
 Každý vrchol má v jednej dimenzii najviac jednu hranu a hrana vedie v
 danej dimenzii medzi dvomi vrcholmi vtedy ak je to jediná dimenzia v ktorej
@@ -220,13 +243,13 @@ a do menšej z A,B môže viesť najviac toľko hrán v jednej dimenzii, koľko 
 vrcholov.
 \end{proof}
 
-\begin{veta}
+\begin{lem}
 \label{izomorfne}
 Keď vezmeme z podgrafu hyperkocky len vrcholy, ktoré majú hranu v jednej
 vybranej dimenzii a označíme nimi indukovaný podgraf G. Vieme vrcholy G
 rozdeliť na dva izomorfné indukované podgrafy hyperkocky $G_{1}$ a $G_{2}$
 podľa súradnice vrchola v tejto dimenzii.
-\end{veta}
+\end{lem}
 
 \begin{proof}
 Vrcholy, medzi ktoými vedie hrana sa líšia v práve jednej dimenzii, v
@@ -500,13 +523,39 @@ ktorých má odoberaný vrchol súradnicu 1, tak nasledujúcim vybraným v takto
 substituovaných súradniciach bude jeho sused na najnižšej úrovni stromu.
 
 Na konci môžeme spätne vypočítať skutočné súradnice vrcholov postupnosti.
-
-\iffalse
-Ak vynecháme vrchol s nanižším počtom hrán, ktoré doň vedú, získame množinu
-s najvyšším počtom hrán medzi $n-1$ vrcholmi?
-
-\fi
 \end{proof}
+
+Otázkou ostáva ako taká postupnosť vyzerá. Keď sa na strom delenia pozrieme
+odspodu, uvidíme, že agent vlastne prechádza vrcholy vždy väčšej a väčšej 
+hyperkocky.
+Po každej hyperkocke zrkadlovo opakuje svoje predošlé pohyby. Najprv vytvorí
+jednorozmernú kocku podľa dimenzie, podľa ktorej sa prvý raz delí množina
+vrcholov. Následne sa pohne v druhej dimenzii a tam zopakuje konštrukciu
+jednorozmernej kocky. Vzniknú štyri vrcholy, ktoré majú hrany len v dvoch
+dimenziách a súradnice v ostatných dimenziách majú rovnaké - 1. Teda tvoria
+dvojrozmernú kocku. Keď sa pozrieme na strom delenia tak v každom vetvení
+pridá agent vrchol najprv na jednu a potom na druhú stranu - najprv so
+súradnicou 1 v danej dimenzii a potom so súradnicou dva. Odzadu potom
+odoberáme najprv vrchol so súradnocou 0 (pri rovnosti mohutností množín 
+na oboch stranách) a potom so súradnicou 1.
+
+Ukázali sme, že vrchol s hyperkockou, do ktorej nepatrí, spája najviac jedna
+hrana. Ideme zistiť, kde v postupnosti konštrukcie n-rozmernej hyperkocky,
+optimálnej na počet krokov a následne potrebu značiek pre porty, potrbuje
+agent najviac portov otvorených súčasne. Teda chceme postupnosť vrcholov z
+ optimálnej konštrukcie n-rozmernej hyperkocky rozdeliť na dve časti, medzi
+ktorými povedie najväčší možný počet hrán. Každá i-rozmerná hyperkocka sa dá
+rozdeliť na dve (i-1)-rozmerné hyperkocky. Medzi nimi vedie $2^{i-1}$
+hrán v dimenzii, ktorú označíme ako prvá. Pokiaľ toto nie je maximum, 
+nachádzajú sa maximá symetricky ďaleko odtiaľto na jednu aj druhú stranu,
+pretože postupnosť je symetrická. Ak odhliadneme od hrán v prvej dimenzii a
+rozdelíme prvú (n-1)-rozmernú hyperkocku opäť v polovici, dostaneme rovnaký
+prípad symetrie. Keď opäť zarátame hrany aj v prvej dimenzii, zistíme, že v
+prvej polovici postupnosti leží maximum v jej druhej polovici - teda druhej
+štvrtine celej postupnosti. Vrcholy tejto štvrtiny spája po jednej hrane v
+druhej dimenzii s prvou štvrtinou a po jednej hrane v druhej dimenzii s
+treťou štvrtinou postupnosti. Na tieto môžeme teda zabudnúť a zúžiť hľadanie
+jedného z maxím na vrcholy druhej štvrtiny postupnosti.
 
 \iffalse
 Čiže trade-off medzi počtom značiek a pohybov ... stačí jedna návšteva

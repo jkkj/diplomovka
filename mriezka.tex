@@ -588,9 +588,76 @@ nie je možné ušetriť kroky prerušenia jeho skrátením na tomto okraji.
 Skracovať, či prerušovať ho niekde v strede nemá zmysel, boli by to kroky
 navyše. Aj po skrátení vyzerajú vrstvy pod súvislým ťahom rovnako, môžu sa
 skracovať smerom do stredu mriežky bez prerušenia najviac však o jedno na
-každej strane (vždy vznikne výbežok a treba na "okraj" nižšej úrovni orejsť
-na čo najmenej krokov).
+každej strane (vždy vznikne výbežok a treba "okraj" nižšej úrovni
+skonštruovať na čo najmenej krokov), pretože ako sme už spomínali, tvoria
+tieto hrany na nižšej úrovni "okraj".
 
+Prerušenia, ktroí môžeme ušetriť ležia na oboch zvyšných okrajoch. Ušetrenie
+takéhoto prerušenia by znamenalo, že cez niektoré vrcholy tohto okraja by
+museli ísť dve portové hrany, alebo žiadna. Tiež sme ukázali, že ak spolu
+susedia vrcholy, ktoré majú stupeň o jedna nižší ako v cieľovom grafe,
+ a hrana medzi nimi ešte nie je skonštruovaná, znamená to prerušenie a cestu
+agenta cez aspoň jednu hranu tam a jednu odtiaľ (keďže už oba existujú
+nemôže to byť kostrová hrana). Susedstvo vrcholov na okraji kde jeden má dve
+portové hrany a druhý žiadnu znamená, že ten s kostrovými hranami je starší
+a kostrová hrana vedúca z neho do vrchola s dvomi portovými vznikla spolu s
+ním až potom, ako bol úsek okraja bez portových hrán hotový.
+
+Zároveň platí že vrcholy susediace s okrajovými vrcholmi bez portových hrán
+nesmú byť navzájom spojené kostrovými hranami a taktiež to, že sú mladšie
+ako tie okrajové a po dokončení tejto časti okraja majú stupeň tri. To
+znamená na každý vrchol, ktorého sused do ktorého má viesť štvrtá hrana
+existuje, prerušenie. Keby úsek okrajových vrcholov bez portových hrán
+susedil z oboch strán s úsekmi s portovými hranami. Jeden z nich by musel
+byť skonštruovaný skôr ako druhý a z neho by sa agent musel dostať ku
+konštrukcii toho druhého, čo by stálo minimálne toľko ako keby boli portove
+hrany v týchto ťahoch konštruované tak, aby vrstvy pribúdali len jedným
+smerom.
+
+Keby mladšia vrstva bola širšia ako tá pod ňou, vytvárala by pre vrstvy
+priradené k druhému okraju rovný bok a prechod na ňom medzi vrstvami stojí
+aspoň jeden krok navyše, ako sme si ukázali. Čím viac by sa teda zužovali,
+tým plytšie by bola najstaršia z nich, ale tým viac by bolo prechodov ceny
+aspoň jedna pri vrtvách susedného okraja., čiže sa to neoplatí.
+
+Keby medzi vrstvami prechádzal agent bez medzikrokov, tak by vznikol výbežok
+do boku, čo by prerušilo danú vrstvu príslušného susedného okraja a pridalo
+jeden krok. Teda by sme nič neušetrili.
+
+Pozrime sa na jednu vrstvu, či už otočenú portovými hranami hore alebo dole
+(na vrchnejšej alebo spodnejšej strane). Vieme, že od nej mladšie vrstvy sa
+nebudú zužovať a staršie rozširovať bez pridania prerušení a tým aj krokov.
+
+Nech susedia dva okraje, ktoré obsahujú vrcholy bez prerušenia. Vrstvy
+smerom k stredu kocky, ktoré sú pod nimi sa musia zužovať, alebo medzi nimi
+dochádza k prerušeniam. Ak na ich hranici sú "schody" tj oba sa zužujú o
+jedno smerom do stredu, môže agent na tomto ich spoji prechádzať medzi
+vrstvami bez prerušenia. Problém, ktorý vytvorí kroky navyše je, že keď
+agent skonštruuje najmladšiu vrstvu na okraji mriežky, musí prejsť smerom do
+stredu do najstaršej vrstvy susedného kraja, čo sú kroky navyše. Ide podľa
+toho ako veľmi sa zužovali vrstvy susedného okraju, čím menej, tým je
+najstaršia vrstva bližšie. Ak sa však nezužovali, má okraj týchto vrstiev
+okraj plný výbežkov so vzdialenosťou jedna medzi dvomi susednými a keďže je
+to minimálne jedno prerušenie na výbežok a šetrili sme ním prerušenie dĺžky
+jedna, neušetrili sme nič..
+
+Ak by sa vrszvy roširovali rýchlešie, mal by susedný okraj pre svoje  vrstvy
+rovný bok, čo stojí minimálne prerušenie dĺžky jedna na prechod medzi
+vrstvami. Ak majú tri okraje portové ťahy, tak sa vedia zbiehať po jednom
+smerom do stredua ten medzi nimi bude mať najstaršiu vrstvu v polke svojej
+šírky od seba. Ak by agent konštruoval vrstvy okrajov portupne, tj. najprv.
+všetky jedného okraja a potom druhého atď., tak by vždy skončil na okraji a
+musel by minimálne trikrát ísť do stredu, čo je o cca polovicu viac ako
+výsledok z vety a teda sa to neoplatí. Ak by agent tieto vrstvy konštruoval
+postupne, teda najprv všetky štyri najstaršie atď., stálo by ho to jeden
+krok na prechod medzi dvomi vrstvami, čo sa opäť neoplatí. Agent by tu
+nemohol využiť "bezplatné" prechody medzi vrstvami.
+
+Z toho všetkého vyplýva, že optimum pri konštukcii mriežky je skonštruovať
+na jedom okraji ťah z portových hrán, na druhom okraji tejto diemnzie sa
+bude vetviť kostra a na zvyšných dvoch budú končiť ťahy z portových hrán.
+Stojú to tri kroky na každú portovú hranu plus počet vrstiev mínus jedna,
+teda menší z rozmerov kocky mínus jedna.
 \end{proof}
 
 

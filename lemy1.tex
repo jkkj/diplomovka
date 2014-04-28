@@ -542,7 +542,7 @@ zvyšné vrcholy stupeň dva. Kostra je teda tiež cesta. Ukážeme, že je mož
 zostrojiť štvorrozmernú kocku na $3 * 17 = 51$ pohybov s jedinou značkou pre
 porty. 
 \begin{veta}
-Existuje konštrukcia štvorrozmernej kocky, pri ktorej agent vykoná 17 krokov
+Existuje konštrukcia štvorrozmernej kocky, pri ktorej agent vykoná 51 krokov
 a použije tri rôzne značky pre porty.
 \end{veta}
 \begin{proof}
@@ -557,87 +557,8 @@ rovnakej hrany do zátvoriek po troch: (121), (343), (121), (242), (434),
 NH, OP, OP, 3 $\times$ NH, OP, OP, S2, S2, S2, OP, OP, S2, NH, NH, OP, OP,
 ...
 \end{proof}
+
+
 \iffalse
-Vrcholy v kotorých 
-kostra-cesta začína
-majú tri portové hrany. Aby sme použili len tri pohyby na jednu portovú
-hranu, potrebujeme začať portové hrany konštruovať v jednom z týchto
-vrcholov. v týchto vrcholoch začína aj cesta-kostra. Keďže kostra vzniká
-tak, že na už existujúcom vrchole vykoná agent operáciu NH, v každom momente
-je práve jeden vrchol v ktorom môže byť agent, ak má skonštruovať graf na 51
-pohybov. Tým však, že agent odišiel z prvého vrchola a tomu chýbajú ešte dve
-hrany, sa doň bude musieť vrátiť a otvoriť v ňom port. V konštruovanom grafe
-(medzivýsledku) sa však agent od prvého vrchola vzďaľuje každou portovou hranou.
-Pri skonštruovaní posledného vrchola bude teda od prvého v medzivýsledku
-konštrukcie ďalej ako tri a teda nie je schopný skonštruovať graf týmto
-spôsobom. 
-Vrchol do ktorého ide agent konštruovať portovú hranu musí byť v
-medzivýsledku vzdialený práve tri od druhého vrchola s otvoreným portom a
-súčsne sa musí líšiť v práve jednej dimenzii. Pri tomto postupe žiadny
-takýto vrchol k poslednému skonštruovanému vrcholu v momente otvorenia portu nie je
-a jediný, ktorý sa tak dá vytvoriť je pomocou prechodu po novej portovej
-hrane a dvoch opráciách NH, alebo po troch operáciách NH.
-Ak použije prvý spôsob, kým sa dá, dostane sa do bodu z ktorého sa už
-tento nedá uplatniť a už nebude schopný skonštruovať ďalšiu hranu na tri
-pohyby.
-Pri použití druhého spôsobu z inicializačného vrchola trikrát sa dostane
-agent do situácie, kefy je od inicializačného vrchola vzdialený na
-medzivýsledku o tri hrany a zároveň sa ich polohy líšia v práve jednej
-dimenzii. Takže agent môže skonštruovať zvyšné dve hrany pre inicializačný
-vrchol.
-(TODO mohol by to urobiť aj neskôr, ale nejde to, lebo štvorrozmerná kocka 
-má len
-15 vrcholov a už by mu nevydalo vytvoriť tri portové hrany pomocou operácií
-NH)
-Keď má agent z vrcholu vytvoriť portovú hranu a odchádza z neho operáciou
-NH, odíde po jednej dimenzii a portová hrana sa otvorí v druhej. Teda
-vytvorí hrany v dvoch dimenziách vrcholu.
-Po skonštruovaní prvej portovej hrany má vrchol v ktorom agent skončí ešte
-"voľné" dve dimenzie. Z jednej má ísť portová hrana a z druhej kostrová.
-Teda po jednej agent odíde a v druhej sa po troch pohyboch bude líšiť.
-Rovnakáá situácia nastane po vytvorení druhej portovej hrany. Tretia portová
-hrana musí mať rovnakú dimenziu ako prvá, aby sa agent po jej konštrukcii
-líšil s inicializačným vrcholom v práve jednej dimenzii. štvrtá portová
-hrana je teda tiež daná. Dimenzie sú navzájom zameniteľné, takže na ich
-výbere nezáleží.
-(TODO Začiatok konštrukcie štvorrozmernej kocky je deterministický - možno
-je celá konštrukcia ...)
-
-
-TODO:
-1, pozrieť, čo všetko sa dá nájsť o hyperkocke a mriežke ..
-
-%tak toto sa ukazalo ako blbost :)
-Keďže tento spôsob ako jediný pripadal do úvahy na 51 ťahov a
-nefunguje, na komštrukciu štvorrozmernej kocky treba aspoň 52 ťahov pri
-jedinej portovej značke.
-Je jasné, že agent sa do prvého vrchola bude musieť vrátiť, lebo po skonštruovaní
-prvej portovej hrany mu ešte dve hrany chýbajú. Pri 52 pohyboch môže na
-konštrukciu jednej hrany minúť 4 pohyby a na zvyšné si musí opäť vystačiť s
-tromi. Teda portové hrany môžu tvoriť dva ťahy, ktorých dva konce sú
-vzdialené o jednu hranu alebo jeden ťah. Teda kostra môže mať tri listy a
-vrchol stupňa tri i štyri listy a vrchol stupňa štyri. Zvyšné vrcholy kostry
-majú stupeň dva. Teda kostra sa môže rozvetvovať na najviac jednom mieste.
-Po konštrukcii prvej hrany 
-
-Na tieto dve množiny sa teda môžeme pozrieť na každú zvlášť a znova ich
-deliť podľa ďalších súradníc až kým sa nerozpadnú na jednovrcholové množiny.
-Najväčší možný počet hrán vedúcich v tejto množine vrcholov je ohraničený
-zhora sumov veľkosti menších množín cez všetky takéto delenia.
-
-Toto ohraničenie získame spätne. Na konci máme m izolovaných vrcholov. Ako
-mohli byť pospájané tak, aby medzi nimi viedol najväčší možný počet hrán?
-Začnime s m izolovanými vrcholmi. V každom momente je jasné, že nech sa
-najmenšia množina "odrezala" od ľubovoľnej inej, rátal sa ako maximálny
-počet hrán mohutnosť tejto množiny.
-Počet delení množín je konštantný, na čo sa dá ľahko použiť klasický príklad
-s lámaním čokolády na m kúskov. Horné ohraničenie počtu hrán vedúcich v
-množine bodov získame ako súčet miním cez všetky delenia. Pozrime sa na dve
-najmenšie množiny v ľubovoľnej fáze delenia a pozrime sa na ne odspodu, tj.
-pri spätnej konštrukcii delenia z konečných jednovrcholových množín - teda
-na ich postupné spájanie.
-Tvrdíme, že ľubovoľné spájanie nie je lepšie ako spojenie dvoch najmenších
-množín. Sporom, nech existuje také najlepšie spájanie, ktoré nespája dve najmenšie
-množiny a súčet jeho miním je ostro väčší ako takého, ktoré ich spája.
 
 \fi

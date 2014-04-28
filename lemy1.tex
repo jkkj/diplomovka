@@ -275,7 +275,7 @@ nezáleží a môžu byť ľubovoľné.
 \label{mensia}
 Pri delení z vety \ref{delenie} vedie medzi množinami vrcholov $M_{1}$ a $M_{0}$,
 ktoré vznikli rozdelením jednej množiny M podľa tohto delenia, práve toľko
-hrán, ako je mohutnosť menšej z týchto množín. Pričom, ak má kocka viac 
+hrán, ako je mohutnosť menšej z týchto množín. Pokiaľ, ak má kocka viac 
 dimenzií ako
 je potrebných, aby obsiahla všetkých m vrcholov podgrafu, tak môžu dostať
 tieto vrcholy v týchto zvyšných dimenziách ľubovoľné súradnice, ale pre
@@ -453,6 +453,19 @@ Potrebujeme nájsť takú postupnosť prechádzania tejto množiny vrcholov
 agentom, že
 v každom momente bude medzi dovtedy prejdenou množina vrcholov najvyšší
 možný počet hrán pre danú množinu vrcholov.
+
+Ako sme ukázali, po rozdelení podľa dimenzie vedie v každej z dvoch množín
+najvyšší možný počet hrán. Teda ak agent najprv prejde väčšiu množinu a
+potom menšiu (ak sú rovnaké, je to jedno), tak v momente prejdenia väčšej
+prešiel množinu vrcholov s najvyšším možným počtom hrán a je to v poriadku.
+Tento lokálny predpoklad platí rekurzívne, teda tieto dve množiny bude 
+prechádzať tak, že najprv
+prejde väčšiu množinu z tých, na ktoré sa táto množina rozdelí. V nich opäť
+začne prechádzať väčšiu atď. až kým nie sú množiny nedeliteľné -
+jednovrcholové.
+
+Potrebujeme ukázať, že  takto konštruovaná postupnosť je vhodná a spĺňa
+tvrdenie vety. A to neslňa ... grrrrrrrrrrrrrrrr ........
 
 TODO ...
 \end{proof}

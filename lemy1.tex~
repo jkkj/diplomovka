@@ -328,6 +328,7 @@ medzi vzorom a obrazom vedie hrana, veta platí.
 \end{proof}
 
 \begin{veta}
+
 Maximálny počet hrán, ktoré môžu viesť v podgrafe hyperkocky indukovanom m
 bodmi je daný postupnosťou $a_{m}$, kde $a_{1} = 0; a_{2} = 1;$ a pre 
 $\forall i < 2; a_{i} = \lfloor \frac {i}{2} \rfloor + a_{\lfloor \frac{i}{2}
@@ -426,6 +427,13 @@ Bez ujmy na všeobecnosti a =< b. Spájanie nebolo optimálne, lebo v jeho súč
 c+a, keby sa však spojila najprv množina A s C tak by bol celkový súčet
 väčší, lebo by obsahoval buď c+b alebo c+(a+c).
 \end{proof}
+
+\begin{veta}
+Pre $\forall n, k: n < k$ platí, že existuje taká postupnosť $n$
+vrcholov hyperkocky, medzi ktorými vedie najvyšší možný počet hrán, 
+že medzi prvými $k$
+prvkami tejto postupnosti vedie bnajvyšší možný počet hrán.
+\end}veta}
 
 \iffalse
 Čiže trade-off medzi počtom značiek a pohybov ... stačí jedna návšteva
@@ -558,45 +566,9 @@ NH, OP, OP, 3 $\times$ NH, OP, OP, S2, S2, S2, OP, OP, S2, NH, NH, OP, OP,
 ...
 \end{proof}
 
+\section{Konštrukcie kociek vyšších rozmerov}
+
 
 \iffalse
-
-
-
-TODO:
-1, pozrieť, čo všetko sa dá nájsť o hyperkocke a mriežke ..
-
-%tak toto sa ukazalo ako blbost :)
-Keďže tento spôsob ako jediný pripadal do úvahy na 51 ťahov a
-nefunguje, na komštrukciu štvorrozmernej kocky treba aspoň 52 ťahov pri
-jedinej portovej značke.
-Je jasné, že agent sa do prvého vrchola bude musieť vrátiť, lebo po skonštruovaní
-prvej portovej hrany mu ešte dve hrany chýbajú. Pri 52 pohyboch môže na
-konštrukciu jednej hrany minúť 4 pohyby a na zvyšné si musí opäť vystačiť s
-tromi. Teda portové hrany môžu tvoriť dva ťahy, ktorých dva konce sú
-vzdialené o jednu hranu alebo jeden ťah. Teda kostra môže mať tri listy a
-vrchol stupňa tri i štyri listy a vrchol stupňa štyri. Zvyšné vrcholy kostry
-majú stupeň dva. Teda kostra sa môže rozvetvovať na najviac jednom mieste.
-Po konštrukcii prvej hrany 
-
-Na tieto dve množiny sa teda môžeme pozrieť na každú zvlášť a znova ich
-deliť podľa ďalších súradníc až kým sa nerozpadnú na jednovrcholové množiny.
-Najväčší možný počet hrán vedúcich v tejto množine vrcholov je ohraničený
-zhora sumov veľkosti menších množín cez všetky takéto delenia.
-
-Toto ohraničenie získame spätne. Na konci máme m izolovaných vrcholov. Ako
-mohli byť pospájané tak, aby medzi nimi viedol najväčší možný počet hrán?
-Začnime s m izolovanými vrcholmi. V každom momente je jasné, že nech sa
-najmenšia množina "odrezala" od ľubovoľnej inej, rátal sa ako maximálny
-počet hrán mohutnosť tejto množiny.
-Počet delení množín je konštantný, na čo sa dá ľahko použiť klasický príklad
-s lámaním čokolády na m kúskov. Horné ohraničenie počtu hrán vedúcich v
-množine bodov získame ako súčet miním cez všetky delenia. Pozrime sa na dve
-najmenšie množiny v ľubovoľnej fáze delenia a pozrime sa na ne odspodu, tj.
-pri spätnej konštrukcii delenia z konečných jednovrcholových množín - teda
-na ich postupné spájanie.
-Tvrdíme, že ľubovoľné spájanie nie je lepšie ako spojenie dvoch najmenších
-množín. Sporom, nech existuje také najlepšie spájanie, ktoré nespája dve najmenšie
-množiny a súčet jeho miním je ostro väčší ako takého, ktoré ich spája.
 
 \fi

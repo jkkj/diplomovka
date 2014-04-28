@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  28 APR 2014 09:48
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  28 APR 2014 09:52
 entering extended mode
  %&-line parsing enabled.
 **smirak
@@ -1005,33 +1005,33 @@ Overfull \hbox (1.37337pt too wide) in paragraph at lines 285--328
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 473.
+(hyperref)                removing `\textasciicaron' on input line 485.
 
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 480.
+(hyperref)                removing `\textasciicaron' on input line 492.
 
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 493.
+(hyperref)                removing `\textasciicaron' on input line 505.
 
 [40]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 518.
+(hyperref)                removing `\textasciicaron' on input line 530.
 
 [41]) [42] (./smirak.bbl) [43
 
 
 ] (./smirak.aux) ) 
 Here is how much of TeX's memory you used:
- 9398 strings out of 494936
- 134846 string characters out of 1181020
+ 9401 strings out of 494936
+ 134877 string characters out of 1181020
  251391 words of memory out of 3000000
- 12274 multiletter control sequences out of 15000+50000
+ 12275 multiletter control sequences out of 15000+50000
  77884 words of font info for 63 fonts, out of 3000000 for 9000
  24 hyphenation exceptions out of 8191
  38i,9n,58p,247b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1048,9 +1048,9 @@ mr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/font
 s/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1
 /public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on smirak.pdf (50 pages, 459876 bytes).
+Output written on smirak.pdf (50 pages, 460924 bytes).
 PDF statistics:
- 620 PDF objects out of 1000 (max. 8388607)
- 191 named destinations out of 1000 (max. 500000)
- 273 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 627 PDF objects out of 1000 (max. 8388607)
+ 193 named destinations out of 1000 (max. 500000)
+ 281 words of extra memory for PDF output out of 10000 (max. 10000000)
 

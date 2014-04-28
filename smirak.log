@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  28 APR 2014 09:52
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  28 APR 2014 12:37
 entering extended mode
  %&-line parsing enabled.
 **smirak
@@ -996,7 +996,7 @@ Overfull \hbox (12.20767pt too wide) in paragraph at lines 45--47
  []
 
 [33] [34] [35] [36]
-Overfull \hbox (1.37337pt too wide) in paragraph at lines 285--328
+Overfull \hbox (1.37337pt too wide) in paragraph at lines 287--330
 \T1/lmr/m/n/12 vr-cholov, ktorej budú súrad-nice v di-men-z-iách pride-lené rov
 -nako ako vr-cholom v men²om
  []
@@ -1005,33 +1005,33 @@ Overfull \hbox (1.37337pt too wide) in paragraph at lines 285--328
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 485.
+(hyperref)                removing `\textasciicaron' on input line 503.
 
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 492.
-
-
-Package hyperref Warning: Composite letter `\textasciicaron+c'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 505.
+(hyperref)                removing `\textasciicaron' on input line 510.
 
 [40]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 530.
+(hyperref)                removing `\textasciicaron' on input line 523.
+
+
+Package hyperref Warning: Composite letter `\textasciicaron+c'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 548.
 
 [41]) [42] (./smirak.bbl) [43
 
 
 ] (./smirak.aux) ) 
 Here is how much of TeX's memory you used:
- 9401 strings out of 494936
- 134877 string characters out of 1181020
+ 9403 strings out of 494936
+ 134894 string characters out of 1181020
  251391 words of memory out of 3000000
- 12275 multiletter control sequences out of 15000+50000
+ 12277 multiletter control sequences out of 15000+50000
  77884 words of font info for 63 fonts, out of 3000000 for 9000
  24 hyphenation exceptions out of 8191
  38i,9n,58p,247b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1048,9 +1048,9 @@ mr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/font
 s/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1
 /public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on smirak.pdf (50 pages, 460924 bytes).
+Output written on smirak.pdf (50 pages, 462321 bytes).
 PDF statistics:
- 627 PDF objects out of 1000 (max. 8388607)
+ 630 PDF objects out of 1000 (max. 8388607)
  193 named destinations out of 1000 (max. 500000)
  281 words of extra memory for PDF output out of 10000 (max. 10000000)
 

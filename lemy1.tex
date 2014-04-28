@@ -272,9 +272,11 @@ nezáleží a môžu byť ľubovoľné.
 \end{proof}
 
 \begin{veta}
+\label{mensia}
 Pri delení z vety \ref{delenie} vedie medzi množinami vrcholov $M_{1}$ a $M_{0}$,
 ktoré vznikli rozdelením jednej množiny M podľa tohto delenia, práve toľko
-hrán, ako je mohutnosť menšej z týchto množín. Pričom, ak má kocka viac dimenzií ako
+hrán, ako je mohutnosť menšej z týchto množín. Pričom, ak má kocka viac 
+dimenzií ako
 je potrebných, aby obsiahla všetkých m vrcholov podgrafu, tak môžu dostať
 tieto vrcholy v týchto zvyšných dimenziách ľubovoľné súradnice, ale pre
 všetky vrcholy musí byť, na rozdiel od predošlej vety, súradnica
@@ -328,7 +330,7 @@ medzi vzorom a obrazom vedie hrana, veta platí.
 \end{proof}
 
 \begin{veta}
-
+\label{maximum}
 Maximálny počet hrán, ktoré môžu viesť v podgrafe hyperkocky indukovanom m
 bodmi je daný postupnosťou $a_{m}$, kde $a_{1} = 0; a_{2} = 1;$ a pre 
 $\forall i < 2; a_{i} = \lfloor \frac {i}{2} \rfloor + a_{\lfloor \frac{i}{2}
@@ -347,7 +349,8 @@ mohutnosť je rovná  indexu daného člena postupnosti. ďalej predpokladáme, 
 pre každého člena postupnosti s menším indexom platí tvrdenie vety.
 Ukážeme, že existuje indukovaný podgraf hyperkocky s m bodmi 
 s najvyšším možným počtom hrán G taký, ktorý niektorá dimenzia delí na
-polovice $G_{1}$ a $G_{2}$, teda na množiny vrcholov, ktorých mohutnosti sa líšia najviac o
+polovice $G_{1}$ a $G_{2}$, teda na množiny vrcholov, ktorých mohutnosti 
+sa líšia najviac o
 jedna. To vyplýva z toho, že neexistuje taký podgraf hyperkocky, 
 ktorý by delila inak a mal by zároveň vyšší počet hrán.
 Nech taký podgraf $G^{,}$ existuje. Potom ho vybraná dimenzia delí na podgrafy s
@@ -381,7 +384,7 @@ Z toho si ľahko ukážeme, že $a_{m} >= a_{m^{,}}$.
 $\lfloor \frac{m}{2}\rfloor = \lfloor \frac{i+j}{2}\rfloor >= \lfloor \frac{i}{2} \rfloor + \lfloor \frac{j}{2} \rfloor$
 potom platí, že $a_{m} - a_{m^{,}} >=0$. Tým sme dokázali, že neexistuje
 lepšie rozdelenie podgrafu hyperkocky indukovaného m vrcholmi ako rozdelenie
-na polovice. Z predošlých viet vyplýva, že takéto rozdelenie je možné.
+na polovice. Z predošlých viet vyplýva, že takéto rozdelenie možné je.
 \end{proof}
 
 
@@ -436,7 +439,22 @@ vrcholmi tejto postupnosti vedie najvyšší možný počet hrán.
 \end{veta}
 
 \begin{proof}
+Veta \ref{maximum} a predošlé vety hovoria, ako vyzerajú množiny vrcholov,
+v kotrých vedie najvyšší možný počet hrán. Veta \ref{mensia} hovorí o počte
+hrán, ktoré vedú medzi dvomi množinami vrcholov rozdelenými podľa nejakej
+dimenzie. Veta \ref{izomorfne} zas hovorí, že menšia množina má vo väčšej
+izomorfný obraz, v ktorom má každý vrchol menšej dvojice vo väčšej susedný 
+vrchol, s ktorým má všetky ostatné dimenzie rovnaké. Z týchto viet tiež
+vyplýva, že množiny, na ktoré sa rozdelí $n$ prvková množina vrcholov s
+najvyšším možným počtom hrán v indukovanom podgrafe, indukujú podgrafy s
+najvyšším možným počtom hrán pri danom počte vrcholov.
 
+Potrebujeme nájsť takú postupnosť prechádzania tejto množiny vrcholov
+agentom, že
+v každom momente bude medzi dovtedy prejdenou množina vrcholov najvyšší
+možný počet hrán pre danú množinu vrcholov.
+
+TODO ...
 \end{proof}
 
 \iffalse

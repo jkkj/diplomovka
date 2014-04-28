@@ -467,6 +467,44 @@ jednovrcholové.
 Potrebujeme ukázať, že  takto konštruovaná postupnosť je vhodná a spĺňa
 tvrdenie vety. A to neslňa ... grrrrrrrrrrrrrrrr ........
 
+Potrebujeme, aby prejdená množina spĺňala tvrdenie vety \ref{delenie} a vety
+\ref{mensia}, teda aby sa dala rozdeliť po dimenziách na polovice +/- 1
+vrchol a pritom, aby medzi týmito polovicami viedol počet hrán rovný
+mohutnosti menšej z nich.
+
+Majme množinu $n$ vrcholov z vety \ref{maximum}, teda vedie v jej
+indukovanom grafe najvyšší možný počet hrán. Keď ju delíme podľa vety
+\ref{mensia}, tak získame strom delenia. Pri každom vetvení bola od vrchola
+v ňom "odrezaná" najviac jedna hrana; ak bol v menšej množine, tak práve
+jedna. Ak je jedna množina väčšia, tak v nej existuje vrchol, ktorý nebol
+spojený s vrcholom v menšej. My potrebujeme nájsť vrchol, po ktorého
+odobratí získame opäť množinu s najvyšším počtom hrán. Súradnice vrchola sú
+presne určené jeho polohou v strome delenia podľa dimenzií, keďže vo vete
+\ref{mensia} sme určili všetky súradnice, na ktorých záleží. Budeme teda
+tento vrchol hľadať prechádzaním tohto stromu. Začneme na najvyššej úrovni a
+pôjdeme vždy po niektorej hrane nižšie. Vyberieme si vždy vetvu s väčšou
+množinou, ak budú obe množiny rovnaké, tak tú ktorá má v danje dimenzii
+súradnicu 0. Týmto sme jednoznačne určili výber vrchola. Tvrdíme, že po jeho
+odobratí bude mať množina vrcholov tento strom delenia izomorfný so stromom
+delenia množiny na $n-1$ vrcholoch s najvyšším možným počtom hrán v
+indukovanom podgrafe. Dve rovnako veľké množiny majú rovnaký podstrom
+delenia podľa dimenzií, čo sme už ukázali. Keď sa pozrieme na strom
+odvodenia po odobratí vybraného vrchola, zistíme, že nebola porušená veta
+\ref{delenie} o rozdiele veľkostí dvoch množín. Keďže sú v každom vetvení
+množiny buď rovnaké alebo je menšia tá s vrcholmi so súradnicou 0 v danej
+dimenzii, zostáva zachované priradenie súradníc z vety \ref{mensia}.
+
+Našli sme teda spôsob, ako určiť odzadu poradie prechádzania vrcholov
+agentom tak, aby prejdená množina vrcholov obsahovala najvyšší možný počet
+hrán v indukovanom podgrafe. Pre úplnosť treba dokázať, že agent môže
+vrcholy v tomto poradí navštíviť. Teda, že odobratý vrchol susedí s
+vrcholom, ktorý bude odobratý najbližšie.
+
+\iffalse
+Ak vynecháme vrchol s nanižším počtom hrán, ktoré doň vedú, získame množinu
+s najvyšším počtom hrán medzi $n-1$ vrcholmi?
+\fi
+
 TODO ...
 \end{proof}
 

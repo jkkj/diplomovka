@@ -32,12 +32,21 @@ mriežky budú v pôvodných grafoch - cykloch spojené aj vrcholy 1 a n,
 repektíve 1 a m.
 \end{pozn}
 
-\begin{veta}
-Pri konštrukcii portovej hrany v mriežke aj v cyklickej mriežke, ktoré
-nemajú žiaden rozmer menší ako štyri, 
+Nasledujúcu lemu budeme používať neskôr. Hovorí o tom, že ak mriežka má oba
+rozmery väčšie ako tri, agent pri konštrukcii každej hrany vykoná najmenej
+tri pohyby. Cyklická mriežka s rozmerom dva nemôže existovať, lebo by
+obsahovala násobné hrany. Pokiaľ má cyklická mriežka niektorý rozmer tri,
+tak vie agent niektoré jej hrany skonštruovať na dva kroky. Hrany, 
+ktoré pri tom
+prejde však musia byť buď kostrové alebo ich skonštruuje na tri kroky. Toto
+je veľmi špeciálny prípad.
+
+\begin{lem}
+Pri konštrukcii portovej hrany v mriežke aj v cyklickej mriežke, ktorá
+nemá žiaden rozmer menší ako štyri, 
 urobí agent medzi otvorením prvého a druhého
 portu najmenej tri kroky.
-\end{veta}
+\end{lem}
 \begin{proof}
 Najmenší cyklus v oboch grafoch má dĺžku štyri. 
 Teda medzi otvorením dvoch portov
@@ -47,10 +56,34 @@ existujúcich alebo vytvorí nové operáciou NH.
 
 \section{Jedna značka pre porty}
 
-\begin{veta}
+Z výsledkov pre konštrukciu cyklickej mriežky v prípade, keď má agent k
+dispozícii len jednu značku pre port, je najdôležitejšie zistenie, že pri
+konštrukcii musí agent pri niektorej z portových hrán od otvorenia prvého po
+otvorenie jej druhého portu prejsť po všetkých súradniciach okrem tej, v
+ktorej táto hrana vedie. Toto platí pre obe dimenzie.
+
+Pre konštrukciu mriežky s jednou značkou pre porty sme dokázali, že sa dá
+skonštruovať na tri kroky pre každý port plus agent vykonal navyše $m-1$
+krokov, kde m je menší z rozmerov. Vyslovili sme hypotézu, že na menej
+krokov to nie je možné. Aj keď sa nám ju nepodarilo uspokojivo dokázať,
+urobili sme viacero zaujímavých pozorovaní.
+
+Teraz nasledujú prípravné lemy k týmto výsledkom. Pripomenieme, že pojem
+tvoriaci cyklus portovej hrany označujenajmenší cyklus obsahujúci danú hranu
+vybraný zo sledu, ktorý agent prešiel medzi otvorením jej prvého a druhého
+portu.
+
+Pri dokazovaní výsledku o cyklickej mriežke využijeme fakt, že nahradením
+hrany v tvoriacom cykle s párnym počtom výskytov ostatných súradníc sa nemení 
+ich parita. Pokiaľ sa teda zmení, musela byť nahrádzaná hrana s nepárnym
+počtom výskytov ostatných súradníc v tvoriacom cykle a tento nepárny výskyt
+musel agent $"$odšľapať$"$.
+
+
+\begin{lem}
 Kostrové hrana je staršia, vznikla skôr, ako všetky portové hrany incidentné
 s jej mladším koncovým vrcholom.
-\end{veta}
+\end{lem}
 \begin{proof}
 Aby agent mohol otvoriť vo vrchole port, musel už tento vrchol existovať.
 Jediná operácia ktorou mohol vrchol vzniknúť je operácia NH. Mladší vrchol
@@ -59,9 +92,9 @@ hrany.
 \end{proof}
 
 
-\begin{veta}
+\begin{lem}
 Tvoriaci cyklus hrany $h$ obsahuje len hrany staršie ako $h$.
-\end{veta}
+\end{lem}
 \begin{proof}
 Tvoriaci cyklus obsahuje hrany, po ktorých agent prešiel, keď konštuoval
 hranu $h$. Museli teda v čase po prechode agenta už existovať a sú preto 
@@ -70,11 +103,11 @@ prešiel.
 \end{proof}
 
 
-\begin{veta}
+\begin{lem}
 \label{cyklus}
 Každý tvoriaci cyklus je možné nahradiť tvoriacim cyklom, ktorý obsahuje len
 hrany kostry a príslušnú portovú hranu.
-\end{veta}
+\end{lem}
 \begin{proof}
 Majme tvoriaci cyklus hrany $h$. Každú portovú hranu, okrem $h$  v ňom nahradíme 
 jej tvoriacim
@@ -83,10 +116,12 @@ neho vieme vybrať tvoriaci cyklus hrany $h$.
 \end{proof}
 
 
+Teraz si zavedieme pojem dimenzie v kartézskom súčine, čo budeme potrebovať
+pri mriežke aj cyklickej mriežke.
 
 \begin{ozn}
-Graf prislúchajúci dimenzii d grafu G je d-ty činiteľ kartézskeho súčinu, ktorého
-je G produktom.
+Graf prislúchajúci dimenzii d grafu G je d-ty činiteľ kartézskeho súčinu, 
+ktorého je G produktom.
 \end{ozn}
 
 \begin{ozn}
@@ -95,7 +130,7 @@ ktoré sa líšia v práve jednej dimenzii a v tejto majú súradnice vrcholov,
 ktoré spolu susedia v grafe, ktorý prislúcha danej dimenzii. Teda ak je to
 prvá dimenzia jedná sa o prvý člen kartézskeho súčinu a ak je to druhá
 dimenzia o druhý. Súradnica hrany budeme volať súradnicu k, ak k je
-najvyššia súradnica v danej dimenzii a hrana spája vrchol s najnižšou a
+najvyššia súradnica v danej dimenzii a hrana spája vrcholy s najnižšou a
 najvyššou súradnicou dimenzie, alebo nižšia zo súradníc v ktorých sa líšia
 vrcholy spojené touto hranou.
 
@@ -107,20 +142,21 @@ Prechodom po súradnici budeme volať prechod agenta po hrane danej súradnice.
 \end{ozn}
 
 \begin{ozn}
-Susedná súradnica súradnice k v dimenzii d, je každá súradnica vrchola
-spojeného hranou v grafe prislúchajúcom dimenzii d s vrcholom so súradnicou
-k.
+Susedná súradnica k súradnici k v dimenzii d, je každá súradnica vrchola,
+ktorý
+spája nejaká hrana s vrcholom so súradnicou k 
+v grafe prislúchajúcom dimenzii d.
 \end{ozn}
 
 
 
-\begin{veta}
+\begin{lem}
 Portová hrana v súradnici k v cyklickej mriežke má v tvoriacom cykle 
 odlišnú paritu počtu prechodov po súradnici k ako majú počty prechodov 
 po ostatných súradniciach
-V ostatnej dimenzii majú všetky počty prechodov po každej súradnici 
+V ostatnej dimenzii majú všetky počty prechodov po jednotlivých súradniciach
 rovnakú paritu.
-\end{veta}
+\end{lem}
 \begin{proof}
 Aby otvoril druhý port hrany, agent musí svoju pozíciu zmeniť tak, 
 aby sa nachádzal na susednej súradnici v diemnzii v ktorej sa líši s
@@ -153,7 +189,6 @@ skontrahovať. Na takto upravenom slede postup opakujeme, až kým nemáme každ
 vrchol najviac raz okrem koncového a začiatočného, čo je ten istý. Preň
 platia rovnaké pravidlá a teda pre túto dimenziu je veta dokázaná.
 
-
 V dimenzii konštruovanej hrany sa bude pri otváraní druhého portu nachádzať
 vo vrchole susednej súradnice k súradnici vrchola s prvým portom.
 Ak pridáme do sledu aj konštruovanú portovú hranu, dostaneme uzavretý sled, pre ktorý
@@ -164,7 +199,8 @@ hrane majú odlišnú paritu počtu svojich výskytov.
 
 
 \begin{veta}
-Pri ľubovoľnej konštrukcii cyklickej mriežky G rozmerov $n \times m$ s jednou značkou
+Pri ľubovoľnej konštrukcii cyklickej mriežky G rozmerov $n \times m$ 
+s jednou značkou
 pre porty, existuje aspoň jedna hrana pri konštrukcii ktorej agent vykoná 
 aspoň $n - 1$ krokov v prvej dimenzii
 a súčasne aspoň jedna portová hrana,
@@ -176,18 +212,21 @@ Ako sme už povedali kostrové hrany sú hrany, ktoré vznikli operáciou NH a
 tieto hrany tvoria kostru grafu; ako bolo spomenuté grafom nazývame každý
 medziprodukt konštrukcie počnúc počiatočným vrcholom až po konečný
 skonštruovaný graf.
-Každej kinštrukcii grafu G zodpovedá nejaká kostra z kostrových hrán. Počet
+
+Každej konštrukcii grafu G zodpovedá nejaká kostra z kostrových hrán. Počet
 krokov, ktoré agent vykonal pri konštrukcii hrany h je súčet počtu krokov do
 vrchola v, v ktorom otvoril prvý port hrany a počet krokov z vrchola v do
 vrchola u, v ktorom otvoril druhý port hrany, 
 tento sled z u do v tvoria s portovou
 hranou uzavretý sled. Tento sled obsahuje tvoriaci cyklus danej portovej
 hrany.
+
 Majme ľubovoľnú konštrukciu cyklickej mriežky $G$ a k nej zodpovedajúcu
 kostru. Ukážeme, že pre ňu platí tvrdenie vety.
-Táto kostra určuje aj, ktoré hrany grafu sú portové - tie, ktoré nie sú v
+Táto kostra určuje aj to, ktoré hrany grafu sú portové - tie, ktoré nie sú v
 kostre. Pripomeňme si, že kostra zodpovedajúca konštrukcii je kostra tvorená
 práve všetkými hranami, ktoré vznikli operáciami NH.
+
 Ukážeme, že existuje aspoň jedna hrana, ktorej tvorivý cyklus bez tejto
 hrany obsahuje jej
 súradnicu párny počet krát - teda ostatné súradnice v tejto dimenzii nepárny
@@ -197,8 +236,9 @@ Keďže agent musel prejsť do susednej súradnice vrchola s prvým portom hrany
 a nemohol tak urobiť v jej súradnici, musel prejsť po všetkých ostatných
 súradniciach a teda vykonať aspoň n-1 respektíve m-1 krokov v prípade, že
 platí alternatíva s dvomi rôznymi hranami. Alebo n+m - 1 ak platí
-alternatíva s jedinou hranou. Nazvyme ich pre lepšiu orientáciu dotknuté
-hrany.
+alternatíva s jedinou hranou. 
+
+
 Pozrieme sa na ľubovoľnú kostru. V tejto kostre sa nachádzajú všetky vrcholy
 grafu. Aký je tvorivý cyklus jednotlivých portových hrán. V tvorivom cykle
 portovej hrany $h$
@@ -218,7 +258,7 @@ parita prechodov po ostatných súradniciach.
 Čo sa týka parít počtov prechodov v ostatnej dimenzii, tak tu platí to isté,
 ak nahrádzame hranu jej tvorivou cestou, kde je počet prechodov po súradnici
 tejto hrany párny, tak aj vo výslednom slede je počet prechodov párny pre každú
-súradnicu tejti dimenzie.
+súradnicu tejto dimenzie.
 
 Keďže výsledný sled, krorý vznikol nahradením tvorivej cesty portovej hrany
 $h$ vedie len po kostrových hranách a na tých neexistuje cyklus, tvorivá
@@ -227,7 +267,7 @@ jednotlivých súradniciach takú, aká je v tomto slede.
 Kostra je totiž strom a ak sa na slede vyskytne dvakrát ten istý vrchol, tak
 medzi dvomi jeho susednými výskytmi je párny výskyt prechodov po
 jednotlivých súradniciach a teda ho môžeme zo sledu vybrať - skontrahovať na
-jeden výskyt tohot vrchola. Jediná šanca ako pri pohybe po strome navštíviť
+jeden výskyt tohoto vrchola. Jediná šanca ako pri pohybe po strome navštíviť
 opätovne niektorý vrchol je vrátiť sa doň.
 
 Na kostre existuje pre každú portovú hranu jediná tvorivá cesta, inak by na
@@ -240,19 +280,15 @@ súradnici, existuje na kostre cyklus, čo je spor.
 Tento cyklus získame z uzavretého sledu vytvoreného z indukovaného grafu
 týchto vrcholov, kde portové hrany nahradíme ich tvorivými cestami na
 kostre. Vo výslednom slede sa každá hrana bude nachádzať nepárny počet krát
-a ako sme už ukázali, ak vyberieme niektorú portovú hranu $f$, vieme z tohto
-cyklu vybrať jej tvorivú cestu, ktorá zachová paritu prechodov po
-jednotlivých hranách. Keďže sa však v tomto slede nachádza prechod po
-súradnici hrany $f$ párny počet krát, bude sa aj v ceste, čo je spor.
-Napríklad s tým, že táto hrana má tvorivú cestu na kostre s nepárnym počtom
-výskytov jej súradnice, alebo že v kostre existuje medzi dvomi vrcholmi -
-koncovými vrcholmi hrany $f$, práve jedna cesta.
+a teda v ňom existuje cyklus, ktorý minimálne raz prejde po každej súradnici
+danej dimenzie.
+
 Z toho vyplýva, že niektorá nahrádzaná hrana mala tvorivú cestu s párnym
 počtom prechodov po jej súradnici.
 Teda pre každú dimenziu existuje hrana, ktorej tvorivá cesta obsahuje
 nepárne počty prechodov po súradniciach tejto dimenzie. A agent pri jej
-konštrukcii musí vykonať aspoň $n - 1$ krokov pre prvú dimenziu a iných $m -
-1$ krokov pre druhú dimenziu.
+konštrukcii musí vykonať aspoň $n - 1$ krokov pre prvú dimenziu a $m - 1$
+iných  krokov pre druhú dimenziu.
 \end{proof}
 
 
@@ -641,7 +677,7 @@ okraj plný výbežkov so vzdialenosťou jedna medzi dvomi susednými a keďže 
 to minimálne jedno prerušenie na výbežok a šetrili sme ním prerušenie dĺžky
 jedna, neušetrili sme nič..
 
-Ak by sa vrszvy roširovali rýchlešie, mal by susedný okraj pre svoje  vrstvy
+Ak by sa vrstvy rozširovali rýchlešie, mal by susedný okraj pre svoje  vrstvy
 rovný bok, čo stojí minimálne prerušenie dĺžky jedna na prechod medzi
 vrstvami. Ak majú tri okraje portové ťahy, tak sa vedia zbiehať po jednom
 smerom do stredua ten medzi nimi bude mať najstaršiu vrstvu v polke svojej

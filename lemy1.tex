@@ -176,7 +176,7 @@ Pripomeniem, že hľadáme najkratší sled v hyperkocke, prejdením ktorého
 mohol agent skonštruovať medzi jeho vrcholmi 
 s danou množinou značiek daný počet portových hrán. Čím viac hrán agent
 skonštruuje pri jednej návšteve vrcholu, tým menej krát ho bude musieť
-navštíviť a tým menej krokv sa započíta do konštrukcie hyperkocky.
+navštíviť a tým menej krokov sa započíta do konštrukcie hyperkocky.
 Hľadáme najnižší počet značiek pre porty, ktoré agent potrebuje na
 konštrukciu hyperkocky, pri ktorej navštívi každý vrchol len raz. V každom
 vrchole, ktorý agent navštívi otvorí rovnako veľa portov. Preto hľadáme
@@ -252,20 +252,20 @@ prepojené a preklápanie by teda už nepokračovalo.
 \end{proof}
 
 Potrebujeme zistiť ako vybrať m vrcholový indukovaný podgraf hyperkocky tak, 
-aby počet hrán v ňom bol maximálny možný. Po konštrukcii tohto podrafu, bude
+aby počet hrán v ňom bol maximálny možný. Po konštrukcii tohto podgrafu, bude
 totiž otvorený najnižší možný počet portov pre dané m, ak sa agent už nebude
 vracať do jeho vrcholov.
 
 Teraz ukážeme, že vieme z vrcholov hyperkocky vybrať pre každé m m-vrcholovú
 podmnožinu, ktorej indukovaný graf obsahuje pre dané m najvyšší možný počet
-hrán tak, aby obsahovala ľubovoľnej podmonožiny s touto vlastnosťou.
+hrán tak, aby obsahovala ľubovoľnej podmnožiny s touto vlastnosťou.
 
 Ďalej ukážeme, že agent môže vrcholy tejto množiny prechádzať v takom
 poradí, aby prejdené vrcholy vytvárali v každom momente takúto množinu. Pri
 takomto prechádzaní vrcholov počas konštrukcie bude vždy použitý najmenší
 možný počet značiek pre porty. Počet portov, ktoré agent dovtedy otvoril je
 pre danú hyperkocku a počet už prejdených vrcholov vždy rovnaký a teda
-otvorené sú tie, ktoré sa ešte netavreli, teda ktoré nepatrili hrane medzi
+otvorené sú tie, ktoré sa ešte nezavreli, teda ktoré nepatrili hrane medzi
 doteraz prejdenými vrcholmi.
 
 \begin{lem}
@@ -398,7 +398,7 @@ Teraz dokážeme, že neexistuje podmnožina vrcholov hyperkocky, vnútri ktorej
 by viedlo viac hrán, ako v nami predstavenej množine. Snahou je nájsť pre
 danú mohutnosť takú množinu vrcholov hyperkocky, z ktorej odchádza najmenší
 počet hrán. Vtedy totiž vedie najväčší možný počet hrán vnútri nej a agent
-má potom k dispozícii viac nepožívaných značiek.
+má potom k dispozícii viac nepoužívaných značiek.
 
 \begin{veta}
 \label{maximum}
@@ -410,7 +410,7 @@ $\forall i < 2; a_{i} = \lfloor \frac {i}{2} \rfloor + a_{\lfloor \frac{i}{2}
 \end{veta}
 \begin{proof}
 V dôkaze použijeme úplnú indukciu. Báza indukcie je očividná: hyperkocka
-nemá slučky a teda v jej jenovrcholovom indukovanom grafe nevedie 
+nemá slučky a teda v jej jednovrcholovom indukovanom grafe nevedie 
 hrana a hyperkocka nemá
 násobné hrany, teda v jej indukovanom dvojvrcholovom podgrafe 
 môže viesť najviac jedna hrana. Predpokladáme, že pre všetky členy s
@@ -478,7 +478,7 @@ ktoré sa líšia v najmenej dvoch súradniciach (v tej ktorá rozdeľuje vrchol
 na dve množiny a v tej v ktorej vedie táto hrana), čo nemôže.
 \end{proof}
 
-Už sme nalši spôsob, ako zostrojiť množinu vrcholov hyperkocky, vnútri ktorej
+Už sme našli spôsob, ako zostrojiť množinu vrcholov hyperkocky, vnútri ktorej
 povedie najvyšší možný počet hrán. Teraz ešte ostáva nájsť spôsob, ako ju má
 agent skonštruovať tak, aby potreboval čo najnižší počet značiek. Na to
 potrebuje, aby vznikali portové hrany čo najskôr od otvorenia ich prvého
@@ -577,7 +577,7 @@ optimálnej konštrukcie, vidíme, že veta preň platí. Teda jediná podmienka
 aby bola podpostupnosť optimálna je, aby to bol súvislý úsek.
 
 Vrcholy sú totiž do každej množiny v strome delenia pridávané na striedačku
-po jednom do ľavého aj pravého podstraomu v každom uzle. Neporuší sa teda
+po jednom do ľavého aj pravého podstromu v každom uzle. Neporuší sa teda
 nikdy rovnováha, keď rozdiel mohutnosti množín v podstromoch ostáva najviac
 1.
 \end{pozn}
@@ -787,7 +787,7 @@ NH, OP, OP, 3 $\times$ NH, OP, OP, S2, S2, S2, OP, OP, S2, NH, NH, OP, OP,
 \section{Konštrukcie kociek vyšších rozmerov}
 Ako sme už spomínali, z postupnosti konštrukcie hyperkocky na jednu návštevu
 v každom vrchole - označme ju P, vieme odvodiť pravidlá aj pre efektívnu konštrukciu
-jyperkocky v prípadoch, keď treba niektorý vrchol navštíviť viackrát ako
+hyperkocky v prípadoch, keď treba niektorý vrchol navštíviť viackrát ako
 raz. Táto postupnosť totiž určuje aj to, koľko krokov musí agent vykonať na
 to, aby vytvoril daný počet portových hrán. Jedna z možností pre agenta je
 opakovane prechádzať túto postupnosť a otvoriť port v prípade, že má voľnú
@@ -795,7 +795,7 @@ značku až kým nebudú všetky portové hrany skonštruované. Ako však ukazu
 konštrukcie hyperkociek nižších dimenzií, nie  je to vždy optimálne
 riešenie.
 
-Limitujúcim faktorom je ore agenta mohutnosť množiny značiek, ktorú má k
+Limitujúcim faktorom je pre agenta mohutnosť množiny značiek, ktorú má k
 dispozícii. Pre ňu následne hľadá čo najkratšiu postupnosť R prechádzania
 vrcholov a otvárania portov pri konštrukcii danej hyperkocky. Postupnosť P
 je optimálna, teda nie je možné na $k$ krokov zostrojiť viac

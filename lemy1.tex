@@ -456,7 +456,9 @@ $\lfloor \frac{m}{2}\rfloor = \lfloor \frac{i+j}{2}\rfloor >= \lfloor \frac{i}{2
 potom platí, že $a_{m} - a_{m^{,}} >=0$. Tým sme dokázali, že neexistuje
 lepšie rozdelenie podgrafu hyperkocky indukovaného m vrcholmi po dimenziách 
 ako keď sa rozdelí
-na polovice. Z predošlých viet vyplýva, že takéto rozdelenie možné je.
+na polovice. Lepšie sa berie s ohľadom na počet hrán, ktoré vedú medzi
+jednotlivými množinami vrcholov v každom uzle delenia.
+Z predošlých viet vyplýva, že takéto rozdelenie možné je.
 \end{proof}
 
 \begin{lem}
@@ -476,36 +478,20 @@ ktoré sa líšia v najmenej dvoch súradniciach (v tej ktorá rozdeľuje vrchol
 na dve množiny a v tej v ktorej vedie táto hrana), čo nemôže.
 \end{proof}
 
+Už sme nalši spôsob, ako zostrojiť množinu vrcholov hyperkocky, vnútri ktorej
+povedie najvyšší možný počet hrán. Teraz ešte ostáva nájsť spôsob, ako ju má
+agent skonštruovať tak, aby potreboval čo najnižší počet značiek. Na to
+potrebuje, aby vznikali portové hrany čo najskôr od otvorenia ich prvého
+portu. Teraz si ukážeme ako vyzerá postupnosť vrcholov medzi ktorými vedie
+najvyšší možný počet hrán a zároveň to platí aj o každom jej prefixe, teda
+podpostupnosti z jej prvých $k$ prvkov.
 
-\begin{veta}
-Majme množinu množín vrcholov, označme
-ju M. Nech existuje taká postupnosť spájania týchto množín,
-ktorého súčet bude najvyšší možný. Súčtom spájania nazývame najvyšší možný
-počet hrán, ktoré môžu viesť medzi množinami vrcholov, ak sú rozdelená po
-dimenziách ako vo vete \ref{rozdel}.
-Nech sa v ňom nenachádza spojenie
-najmenšej množiny s inou v prvom kroku, ukážeme že existuje poradie, kde sa
-nachádza o krok skôr, ktoré je aspoň také dobré alebo pôvodné nie je
-najlepšie.
-\end{veta}
-\begin{proof}
-Ak sa najmenší prvok spája s množinou, ktorá bola v M, vieme spojenie minima
-s ňou presunúť do úplne prvého kroku spájania.
-Ak sa spája s množinou, ktorá vznikla spojením dvoch množín, premiestnime
-krok pripojenia minima hneď za krok pri ktorom táto množina vznikla. Označme
-  množiny z ktorých táto množina vznikla A,B a mohutnosť minima 
-označme C, |A| = a; |B| = b; |C| = c.
-Bez ujmy na všeobecnosti a =< b. Spájanie nebolo optimálne, lebo v jeho súčte sa nachádza
-c+a, keby sa však spojila najprv množina A s C tak by bol celkový súčet
-väčší, lebo by obsahoval buď c+b alebo c+(a+c).
-\end{proof}
-
-\begin{veta}
+\begin{lem}
 Pre $\forall n, k: n < k$ platí, že existuje taká postupnosť $n$
 vrcholov hyperkocky, medzi ktorými vedie najvyšší možný počet hrán, 
 že medzi prvými $k$
 vrcholmi tejto postupnosti vedie najvyšší možný počet hrán.
-\end{veta}
+\end{lem}
 
 \begin{proof}
 Veta \ref{maximum} a predošlé vety hovoria, ako vyzerajú množiny vrcholov,
@@ -525,22 +511,32 @@ Teda potrebujeme, aby prejdená množina spĺňala tvrdenie vety \ref{delenie}
 vrchol a pritom, aby medzi týmito polovicami viedol počet hrán rovný
 mohutnosti menšej z nich.
 
-Majme množinu $n$ vrcholov z vety \ref{maximum}, teda vedie v jej
-indukovanom grafe najvyšší možný počet hrán. Keď ju delíme podľa vety
-\ref{mensia}, tak získame strom delenia. Pri každom vetvení bola od vrchola
+Majme množinu $n$ vrcholov z vety \ref{maximum}, teda v jej
+indukovanom grafe vedie najvyšší možný počet hrán. Keď ju delíme podľa vety
+\ref{mensia}, tak získame strom delenia.
+Pri každom vetvení bola od vrchola
 v ňom $"$odrezaná$"$ najviac jedna hrana; ak bol v menšej množine, tak práve
 jedna. Ak je jedna množina väčšia, tak v nej existuje vrchol, ktorý nebol
 spojený s vrcholom v menšej. My potrebujeme nájsť vrchol, po ktorého
-odobratí získame opäť množinu s najvyšším počtom hrán. Súradnice vrchola sú
+odobratí získame opäť množinu s najvyšším počtom hrán pre danú mohutnosť.
+
+Súradnice vrchola sú
 presne určené jeho polohou v strome delenia podľa dimenzií, keďže vo vete
-\ref{mensia} sme určili všetky súradnice, na ktorých záleží. Budeme teda
-tento vrchol hľadať prechádzaním tohto stromu. Začneme na najvyššej úrovni a
+\ref{mensia} sme určili všetky súradnice, na ktorých záleží (tie ktoré
+nemajú všetky vrcholy rovnaké). Budeme
+tento vrchol hľadať prechádzaním stromu delenia a cesty k nemu určíme
+jeho súradnice v relevantných dimenziách. 
+Začneme na najvyššej úrovni a
 pôjdeme vždy po niektorej hrane nižšie. Vyberieme si vždy vetvu s väčšou
 množinou, ak budú obe množiny rovnaké, tak tú ktorá má v danej dimenzii
-súradnicu 0. Týmto sme jednoznačne určili výber vrchola. Tvrdíme, že po jeho
+súradnicu 0. Týmto sme jednoznačne určili výber vrchola. 
+
+Tvrdíme, že po jeho
 odobratí bude mať množina vrcholov tento strom delenia izomorfný so stromom
-delenia množiny na $n-1$ vrcholoch s najvyšším možným počtom hrán v
-indukovanom podgrafe. Dve rovnako veľké množiny majú rovnaký podstrom
+delenia množiny danej mohutnosti s najvyšším možným počtom hrán v
+indukovanom podgrafe. 
+
+Dve rovnako veľké množiny majú rovnaký podstrom
 delenia podľa dimenzií, čo sme už ukázali. Keď sa pozrieme na strom
 odvodenia po odobratí vybraného vrchola, zistíme, že nebola porušená veta
 \ref{delenie} o rozdiele veľkostí dvoch množín. Keďže sú v každom vetvení
@@ -552,6 +548,7 @@ agentom tak, aby prejdená množina vrcholov obsahovala najvyšší možný poč
 hrán v indukovanom podgrafe. Pre úplnosť treba dokázať, že agent môže
 vrcholy v tomto poradí navštíviť. Teda, že odobratý vrchol susedí s
 vrcholom, ktorý bude odobratý najbližšie.
+
 V prípade, že sú obe množiny rovnako veľké bude najprv odobratý prvok z
 množiny so súradnicou 0, čím sa táto množina zmenší a následne bude odobratý
 prvok z množiny so súradnicou 1 v prvej dimenzii delenia. Keďže obe množiny
@@ -562,7 +559,8 @@ väčšej.
 
 V prípade, že jedna množina vrcholov je väčšia, tak to nemusí nutne platiť.
 Preto urobíme úpravu v postupe výberu vrchola. Ako sme ukázali vo vete
-\ref{substitucia} substitúcia súradníc nemá vplyv na počet hrán vedúcich
+\ref{substitucia} substitúcia súradníc v niektorej dimenzii nemá vplyv 
+na počet hrán vedúcich
 medzi vrcholmi danej množiny, ak sa vymenia všetky súradnice v danej
 dimenzii na opačné. Ak preklopíme súradnice vo všetkých dimenziách, v
 ktorých má odoberaný vrchol súradnicu 1, tak nasledujúcim vybraným v takto
@@ -577,39 +575,47 @@ Otázkou ostáva ako optimálna postupnosť konštrukcie hyperkocky vyzerá.
 Keď sa na strom delenia pozrieme
 odspodu, uvidíme, že agent vlastne prechádza vrcholy vždy väčšej a väčšej 
 hyperkocky.
-Po každej hyperkocke zrkadlovo opakuje svoje predošlé pohyby. Najprv vytvorí
+Po skonštruovaní každej hyperkocky zrkadlovo opakuje svoje predošlé pohyby. 
+Najprv vytvorí
 jednorozmernú kocku podľa dimenzie, podľa ktorej sa prvý raz delí množina
 vrcholov. Následne sa pohne v druhej dimenzii a tam zopakuje konštrukciu
 jednorozmernej kocky. Vzniknú štyri vrcholy, ktoré majú hrany len v dvoch
 dimenziách a súradnice v ostatných dimenziách majú rovnaké - 1. Teda tvoria
 dvojrozmernú kocku. Keď sa pozrieme na strom delenia tak v každom vetvení
-pridá agent vrchol najprv na jednu a potom na druhú stranu - najprv so
-súradnicou 1 v danej dimenzii a potom so súradnicou dva. Odzadu potom
+pridá agent vrchol najprv do pravého a potom do ľavého podstromu pre každý
+podstrom - najprv so
+súradnicou 1 v danej dimenzii a potom so súradnicou 0. Odzadu potom
 odoberáme najprv vrchol so súradnicou 0 (pri rovnosti mohutností množín 
 na oboch stranách) a potom so súradnicou 1.
 
 Ukázali sme, že vrchol s hyperkockou, do ktorej nepatrí, spája najviac jedna
 hrana. Ideme zistiť, kde v postupnosti konštrukcie n-rozmernej hyperkocky,
-optimálnej na počet krokov a následne potrebu značiek pre porty, potrebuje
-agent najviac portov otvorených súčasne. Teda chceme postupnosť vrcholov z
- optimálnej konštrukcie n-rozmernej hyperkocky rozdeliť na dve časti, medzi
-ktorými povedie najväčší možný počet hrán. Každá i-rozmerná hyperkocka sa dá
+optimálnej na počet krokov a následne optimálnej na potrebu značiek pre porty,
+ potrebuje
+agent najviac portov otvorených súčasne. Teda zistiť kde postupnosť vrcholov z
+ optimálnej konštrukcie n-rozmernej hyperkocky rozdeliť na dve časti tak,
+aby medzi nimi viedol najväčší počet hrán. 
+
+Každá i-rozmerná hyperkocka sa dá
 rozdeliť na dve (i-1)-rozmerné hyperkocky. Medzi nimi vedie $2^{i-1}$
 hrán v dimenzii, ktorú označíme ako prvá. Pokiaľ toto nie je maximum, 
-nachádzajú sa maximá symetricky ďaleko odtiaľto na jednu aj druhú stranu,
+nachádzajú sa maximá symetricky ďaleko odtiaľto v začiatku aj konci
+postupnosti,
 pretože postupnosť je symetrická. Ak odhliadneme od hrán v prvej dimenzii a
 rozdelíme prvú (n-1)-rozmernú hyperkocku opäť v polovici, dostaneme rovnaký
 prípad symetrie. Keď opäť zarátame hrany aj v prvej dimenzii, zistíme, že v
 prvej polovici postupnosti leží maximum v jej druhej polovici - teda druhej
 štvrtine celej postupnosti. Vrcholy tejto štvrtiny spája po jednej hrane v
-druhej dimenzii s prvou štvrtinou a po jednej hrane v druhej dimenzii s
-treťou štvrtinou postupnosti. Po prvej štvrtine postupnosti sa teda súčet
-hrán v prvých doch dimenziách odchádzajúcich z prefixu postupnosti a teda aj
-počet im zodpovedajúcich portov nemení. Na tieto môžeme teda zabudnúť 
+druhej dimenzii s prvou štvrtinou a po jednej hrane v prvej dimenzii s
+treťou štvrtinou postupnosti. Pri konštrukcii štvrtiny postupnosti sa teda 
+súčet hrán v prvých doch dimenziách odchádzajúcich z prefixu postupnosti 
+a teda aj
+počet im zodpovedajúcich portov nemení. Na tieto môžeme teda na čas zabudnúť 
 a zúžiť hľadanie
 jedného z maxím na vrcholy druhej štvrtiny postupnosti, čo je postupnosť
 konštrukcie (n-2)-rozmernej hyperkocky, čím sme získali rekurzívny spôsob
 hľadania maxima. Hrán, na ktoré sme "zabudli" v prvej rekurzii je $2^{n-1}$.
+
 Ak je n párne skončíme pri štyroch 0-rozmerných hyperkockách, kde maximum
 otvorených portov sa bude dosahovať v prvom alebo druhom vrchole. Pri
 nepárnom n skončíme pri 1-rozmernej hyperkocke, kde maximum bude v jej prvom
@@ -765,7 +771,11 @@ NH, OP, OP, 3 $\times$ NH, OP, OP, S2, S2, S2, OP, OP, S2, NH, NH, OP, OP,
 \end{proof}
 
 \section{Konštrukcie kociek vyšších rozmerov}
-
+Ako sme už spomínali, z postupnosti konštrukcie hyperkocky na jednu návštevu
+v každom vrchole, vieme odvodiť pravidlá aj pre efektívnu konštrukciu
+jyperkocky v prípadoch, keď treba niektorý vrchol navštíviť viackrát ako
+raz. Táto postupnosť totiž určuje aj to, koľko krokov musí agent vykonať na
+to, aby vytvoril daný počet portových hrán.
 
 \iffalse
 

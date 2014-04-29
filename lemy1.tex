@@ -554,8 +554,19 @@ prípad symetrie. Keď opäť zarátame hrany aj v prvej dimenzii, zistíme, že
 prvej polovici postupnosti leží maximum v jej druhej polovici - teda druhej
 štvrtine celej postupnosti. Vrcholy tejto štvrtiny spája po jednej hrane v
 druhej dimenzii s prvou štvrtinou a po jednej hrane v druhej dimenzii s
-treťou štvrtinou postupnosti. Na tieto môžeme teda zabudnúť a zúžiť hľadanie
-jedného z maxím na vrcholy druhej štvrtiny postupnosti.
+treťou štvrtinou postupnosti. Po prvej štvrtine postupnosti sa teda súčet
+hrán v prvých doch dimenziách odchádzajúcich z prefixu postupnosti a teda aj
+počet im zodpovedajúcich portov nemení. Na tieto môžeme teda zabudnúť 
+a zúžiť hľadanie
+jedného z maxím na vrcholy druhej štvrtiny postupnosti, čo je postupnosť
+konštrukcie (n-2)-rozmernej hyperkocky, čím sme získali rekurzívny spôsob
+hľadania maxima. Hrán, na ktoré sme "zabudli" v prvej rekurzii je $2^{n-1}$.
+Ak je n párne skončíme pri štyroch 0-rozmerných hyperkockách, kde maximum
+otvorených portov sa bude dosahovať v prvom alebo druhom vrchole. Pri
+nepárnom n skončíme pri 1-rozmernej hyperkocke, kde maximum bude v jej prvom
+vrchole, lebo vtedy je otvorený ešte aj port do druhého z jej vrcholov.
+Teda pre nepárne n potrebuje agent $\frac{2^{n+1} - 1}{3}$ a pre
+párne n potrebuje $\frac{2^{n+1} - 2}{3}$ značiek pre porty.
 
 \iffalse
 Čiže trade-off medzi počtom značiek a pohybov ... stačí jedna návšteva

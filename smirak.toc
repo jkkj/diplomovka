@@ -28,9 +28,9 @@
 \contentsline {section}{\numberline {6.2}2-rozmern\IeC {\'a} kocka}{42}{section.6.2}
 \contentsline {section}{\numberline {6.3}3-rozmern\IeC {\'a} kocka}{42}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}1 zna\IeC {\v c}ka}{42}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}2 zna\IeC {\v c}ky}{42}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.2}2 zna\IeC {\v c}ky}{43}{subsection.6.3.2}
 \contentsline {subsection}{\numberline {6.3.3}3 zna\IeC {\v c}ky}{43}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}4 zna\IeC {\v c}ky}{43}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.4}4 zna\IeC {\v c}ky}{44}{subsection.6.3.4}
 \contentsline {section}{\numberline {6.4}4-rozmern\IeC {\'a} kocka}{44}{section.6.4}
 \contentsline {paragraph}{1 zna\IeC {\v c}ka}{44}{section*.7}
 \contentsline {section}{\numberline {6.5}Kon\IeC {\v s}trukcie kociek vy\IeC {\v s}\IeC {\v s}\IeC {\'\i }ch rozmerov}{44}{section.6.5}

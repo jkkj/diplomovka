@@ -569,6 +569,20 @@ substituovaných súradniciach bude jeho sused na najnižšej úrovni stromu.
 Na konci môžeme spätne vypočítať skutočné súradnice vrcholov postupnosti.
 \end{proof}
 
+\iffalse
+Tak toto je blbosť
+\begin{pozn}
+Keď sa pozrieme na dôkaz predošlej vety a ľubovoľný súvislý úsek postupnosti
+optimálnej konštrukcie, vidíme, že veta preň platí. Teda jediná podmienka,
+aby bola podpostupnosť optimálna je, aby to bol súvislý úsek.
+
+Vrcholy sú totiž do každej množiny v strome delenia pridávané na striedačku
+po jednom do ľavého aj pravého podstraomu v každom uzle. Neporuší sa teda
+nikdy rovnováha, keď rozdiel mohutnosti množín v podstromoch ostáva najviac
+1.
+\end{pozn}
+\fi
+
 \begin{proof} hlavnej vety \ref{hlavna}.
 
 Otázkou ostáva ako optimálna postupnosť konštrukcie hyperkocky vyzerá. 
@@ -772,11 +786,23 @@ NH, OP, OP, 3 $\times$ NH, OP, OP, S2, S2, S2, OP, OP, S2, NH, NH, OP, OP,
 
 \section{Konštrukcie kociek vyšších rozmerov}
 Ako sme už spomínali, z postupnosti konštrukcie hyperkocky na jednu návštevu
-v každom vrchole, vieme odvodiť pravidlá aj pre efektívnu konštrukciu
+v každom vrchole - označme ju P, vieme odvodiť pravidlá aj pre efektívnu konštrukciu
 jyperkocky v prípadoch, keď treba niektorý vrchol navštíviť viackrát ako
 raz. Táto postupnosť totiž určuje aj to, koľko krokov musí agent vykonať na
-to, aby vytvoril daný počet portových hrán.
+to, aby vytvoril daný počet portových hrán. Jedna z možností pre agenta je
+opakovane prechádzať túto postupnosť a otvoriť port v prípade, že má voľnú
+značku až kým nebudú všetky portové hrany skonštruované. Ako však ukazujú
+konštrukcie hyperkociek nižších dimenzií, nie  je to vždy optimálne
+riešenie.
 
-\iffalse
+Limitujúcim faktorom je ore agenta mohutnosť množiny značiek, ktorú má k
+dispozícii. Pre ňu následne hľadá čo najkratšiu postupnosť R prechádzania
+vrcholov a otvárania portov pri konštrukcii danej hyperkocky. Postupnosť P
+je optimálna, teda nie je možné na $k$ krokov zostrojiť viac
+portových hrán ako je medzi prvými $k$ vrcholmi postupnosti P. Žiadny
+súvislý úsek postupnosti R preto nemôže obsahovať vrcholy s väčším počtom
+hrán medzi nimi, ako obsahuje úsek postupnosti P danej dĺžky.
+Mohutnosť množiny značiek tiež určuje, koľko môže vzniknúť hrán v
+postupnosti R na danom úseku, limituje počet portov, ktoré môžu byť otvorené
+naraz.
 
-\fi

@@ -34,4 +34,4 @@
 \contentsline {section}{\numberline {6.4}4-rozmern\IeC {\'a} kocka}{45}{section.6.4}
 \contentsline {paragraph}{1 zna\IeC {\v c}ka}{45}{section*.7}
 \contentsline {section}{\numberline {6.5}Kon\IeC {\v s}trukcie kociek vy\IeC {\v s}\IeC {\v s}\IeC {\'\i }ch rozmerov}{45}{section.6.5}
-\contentsline {chapter}{Literat\IeC {\'u}ra}{46}{section*.8}
+\contentsline {chapter}{Literat\IeC {\'u}ra}{47}{section*.8}

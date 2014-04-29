@@ -302,7 +302,12 @@ vytvorí prvý riadok mriežky. Následne vykoná
 (m-1)krát (NH,OP,S1,S2,NH,OP,(n-1)krát (OP,S1,S2,NH,OP))
 \end{proof}
 
+
+Domnievame sa, že ide o optimum. Teda že neexistuje konštrukcia, pri ktorej
+agent používa jedinú znakču pre porty a vykoná menej krokov.
+
 \begin{proof}
+\iffalse
 Pokrytie jednou dlaždicou stojí minimálne tri kroky plus cesta do vechola
 prvého portu. Dĺžka tejto cesty závisí od polohy agenta v predošlej
 dlaždici, jeho polohy v novej dlaždici a od vzájomnej polohy týchto dlaždíc. 
@@ -310,7 +315,7 @@ dlaždici, jeho polohy v novej dlaždici a od vzájomnej polohy týchto dlaždí
 Vzhľadom na dimenzie môžeme určiť štyri smery pohybu v grafe. Podľa toho, či
 súradnica v danej dimenzii stúpa alebo klesá.
 
-Pri konštrukcii na tri kroky agent príde do vrchola s duhým portom a otvorí
+Pri konštrukcii na tri kroky agent príde do vrchola s druhým portom a otvorí
 ho v inej dimenzii ako je tá v ktorej prišiel. Agent sa pohol v smere
 portovej hrany.
 Ak agent konštruuje dlaždice tak, že dve po sebe skonštruované majú jednu 
@@ -345,12 +350,16 @@ susediť s predošlou dlaždicou, musí urobiť kroky navyše, ak všetky vrchol
 dlaždice sú incidentné so 4 hranami, buď som skončil alebo sa niečo pokazilo
 ... ak dokazujeme konštrukciu postupne, do takéhoto stavu sa snáď
 nedostaneme ...) 
-
+\fi
+\begin{ozn}
 Okraje mriežky sú vrcholy, ktoré majú jednu súradnicu buď minimálnu alebo
 maximálnu. Rohy mriežky sú vrcholy, ktoré majú maximálne alebo minimálne obe
 svoje súradnice.
 Rohy mriežky majú stupeň dva a vrcholy na okraji, ktoré nie sú rohmi, majú
 stupeň tri.
+Zvyšné vrcholy majú stupeň štyri a voláme ich vnútorné
+\end{ozn}
+
 Keď prvý raz príde agent do vrchola, tak hrana po ktorej prišiel musí byť
 kostrová.
 Každé prerušenie ťahu tvoreného portovými hranami, znamená, že agent okrem

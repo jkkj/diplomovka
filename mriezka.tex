@@ -306,7 +306,7 @@ vytvorí prvý riadok mriežky. Následne vykoná
 Domnievame sa, že ide o optimum. Teda že neexistuje konštrukcia, pri ktorej
 agent používa jedinú znakču pre porty a vykoná menej krokov.
 
-\begin{proof}
+
 \iffalse
 Pokrytie jednou dlaždicou stojí minimálne tri kroky plus cesta do vechola
 prvého portu. Dĺžka tejto cesty závisí od polohy agenta v predošlej
@@ -462,12 +462,28 @@ vrcholov s tromi kostrovými hranami je na okraji prerušenie. Na každý úsek
 Vrcholy na jendom okraji majú jednu súradnicu rovnakú a v druhej sa líšia.
 Každému z nich vieme priradiť stĺpec alebo riadok vrdholov, ktoré sa s ním
 zhodujú v tejto jednej súradnici. Ak vo vrchole nie je prerušenie, tak po
-tomto tĺpci z neho odchádza kostrová hrana, ak to nie je vrchol cez ktorý na
-okraj prišiel ťah z portových hrán.
+tomto stĺpci z neho odchádza kostrová hrana, ak to nie je vrchol cez ktorý na
+okraj prišiel ťah z portových hrán. Takýto stĺpec musí byť niekde napojený
+na kostru, pokiaľ nezačína vo vrchole s tromi kostrovými hranami. Podľa
+kostry tiež vieme v akom poradí vrcholy vznikali. Každé vetvenie kostry
+znamená list na kostre.
+
+Prvú portovú hranu do vrchola mriežky vytvoril agent pri jeho prvej
+návšteve, alebo urobil najmenej jeden krok navyše nad tri kroky na portovú
+hranu.
+
+Ak je v mriežke menej prerušení ako dve na každý vrchol kratšieho okraja,
+tak z dirichletovho princípu musí existovať úsek vrcholov dlhý ako väčší
+rozmer mriežky, ktorý obsahuje najviac jedno prerušenie.
+Vrcholy, ktoré nevznikli tesne pred portovými hranami, ktoré z nich vedú,
+znamenajú krok navyše a teda "prerušenie". Majme teda takýto úsek s najviac
+jedným prerušením a zvyšné úseky s najviac dvomi prerušeniami na úsek.
+Pokiaľ má úsek viac ako dve prerušenia, zvyšné môžeme zarátať iným úsekom.
 
 
 TODO
 \iffalse
+\begin{proof}
 Vrcholov podľa druhého prípadu nevytvárajúcich prerušenia je obmedzene veľa.
 Ak totiž podgraf kostry spojený na hranu idúcu do vnútra mriežky neobsahuje
 vrchol s nepárnym počtom portových hrán, musí mať všetky listy na okraji.
@@ -534,9 +550,9 @@ na začiatok a koniec minúť len dva z nich, cez zvyšné dva musí teda
 prechádzať postupnosť vypĺňania. Bez ujmy na všeobecnosti nech prechádza cez
 ľavý dolný roh a príde zľava.
 
-
-\fi
 \end{proof}
+\fi
+
 
 \iffalse
 \begin{veta}

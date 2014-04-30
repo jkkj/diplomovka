@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  30 APR 2014 10:42
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  30 APR 2014 12:49
 entering extended mode
  %&-line parsing enabled.
 **smirak
@@ -969,24 +969,24 @@ H,HN,OP
  []
 
 [25] [26]
-Overfull \hbox (1.33829pt too wide) in paragraph at lines 443--445
-[]\T1/lmr/m/n/12 Je zre-jmé, ºe spolu môºu susedi´ len rov-naké prí-pady alebo 
-prvý prí-pad s ©ubovo©ným
+Overfull \hbox (2.21938pt too wide) in paragraph at lines 443--452
+[]\T1/lmr/m/n/12 Z úseku e²te neskon²truo-vaných vr-cholov, ktorý susedí s úsek
+om vr-cholov so stup¬om
  []
 
-[27]
-Overfull \hbox (6.59206pt too wide) in paragraph at lines 549--558
+
+Overfull \hbox (6.59206pt too wide) in paragraph at lines 583--592
 \T1/lmr/m/n/12 Medzi dvomi ´ahmi mo-hol agent be-ha´ ©ubovo©ne, ale ke¤ºe h©adá
 me na-jkrat²iu kon²truk-
  []
 
-[28] [29] [30]
-Overfull \hbox (6.88629pt too wide) in paragraph at lines 685--695
+[27] [28] [29]
+Overfull \hbox (6.88629pt too wide) in paragraph at lines 719--729
 []\T1/lmr/m/n/12 Preru²enia, ktré môºeme u²etri´ leºia na oboch zvy²ných okra-j
 och. U²e-tre-nie takéhoto
  []
 
-[31]) [32]
+[30] [31]) [32]
 Kapitola 6.
 
 Overfull \hbox (1.99701pt too wide) in paragraph at lines 16--29
@@ -1044,9 +1044,9 @@ LaTeX Warning: There were undefined references.
  ) 
 Here is how much of TeX's memory you used:
  9413 strings out of 494936
- 134950 string characters out of 1181020
+ 134942 string characters out of 1181020
  250391 words of memory out of 3000000
- 12280 multiletter control sequences out of 15000+50000
+ 12279 multiletter control sequences out of 15000+50000
  77884 words of font info for 63 fonts, out of 3000000 for 9000
  24 hyphenation exceptions out of 8191
  38i,9n,58p,247b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1063,9 +1063,9 @@ are/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on smirak.pdf (55 pages, 480613 bytes).
+Output written on smirak.pdf (55 pages, 479106 bytes).
 PDF statistics:
- 661 PDF objects out of 1000 (max. 8388607)
- 200 named destinations out of 1000 (max. 500000)
+ 662 PDF objects out of 1000 (max. 8388607)
+ 201 named destinations out of 1000 (max. 500000)
  281 words of extra memory for PDF output out of 10000 (max. 10000000)
 

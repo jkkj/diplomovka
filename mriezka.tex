@@ -411,23 +411,57 @@ $"$zaplatí$"$ aspoň dva kroky navyše. Na tri kroky totiž môže pokračovať
 po okraji. Teda každému ťahu idúcemu po okraji môžeme zarátať jedno aspoň
 prerušenie.
 
+\begin{ozn}
+Úsekom vrcholov ozančujeme množinu vrcholov, ktoré majú jednu dimenziu
+rovnakú a tvoria ťah.
+
+Úroveň je množina vrcholov s ronakou súradnicou v niektorej dimenzii.
+\end{ozn}
+
 Ak agent prišiel do vrchola na okraji, cez ktorý prechádza ťah, a neotvoril
-v ňom port, tak urobil dva kroky navyše, môžeme ich teda vynechať. Vrchol na
-okraji, cez ktorý prechádza ťah, bol teda skonštruovaný aj so svojou
-kostrovou hranou tesne pred otvorením portov pre ťahy v ňom.
+v ňom port, tak urobil dva kroky navyše, môžeme ich teda vynechať. Teda vrchol
+na okraji, cez ktorý prechádza ťah, bol skonštruovaný aj so svojou kostrovou 
+hranou tesne pred otvorením portov pre ťahy v ňom. Z toho vyplýva, že
+vnútorný vrchol, s ktorým susedí, mal predtým stupeň tri alebo v ňom bolo
+prerušenie. Toto platí o všetkých vnútorných vrcholoch susediacich s ťahom
+na okraji; rátame susedov tých okrajových vrcholov, kde obe portové hrany
+idú po okraji. Teda máme úsek vnútorných vrcholov, ktoré boli stupňa tri
+alebo v nich je prerušenie.
+
+
+Ak tieto vrcholy neexistovali pred konštrukciou
+ťahu po okraji, tak teraz sú stupňa tri a majú tri kostrové hrany. Teda
+štvrtá je buď kostrová alebo je v nich prerušenie.
+Všetky vrcholy, ktoré už existujú sú v kostre, lebo vznikli operáciou NH a
+touto operáciou sa môže agent dostať do vrchola raz. Ak teda existuje v
+grafe úsek
+vrcholov, ktoré sú stupňa tri potom do neho budú viesť kostrové hrany alebo
+portové. Každá porotvá je jedno prerušenie, pretože tieto vrcholy už sú
+stupňa tri. kostrové hrany môžu viesť iba do vrcholov, kotré ešte
+neexistujú.
+
+Z úseku ešte neskonštruovaných vrcholov, ktorý susedí s úsekom vrcholov so
+stupňom tri v grafe, môže do tohto úseku viesť kostrová hrana alebo porotvá
+hrana. Pričom opäť každá portová hrana znamená prerušenie, lebo z vrcholov,
+ktoré už majú stupeň tri nebude môcť ťah pokračovať. Ak z niektorých dvoch
+budú viesť kostrové hrany, už nemôže viesť kostrová hrana medzi nimi. Pokiaľ
+sú to teda portové vrcholy a nemá v nich byť prerušenie, musí viesť kostrová
+hrana do druhého susedného úseku. Zvyšné dve hrany sú potom portové a tvoria
+ťah. Z tohto tiež vidno, ktorý úsek vznikol skôr a môžeme ich teda rozlíšiť
+podľa veku.
+
+Poďme teraz hľadať prerušenia k vrcholom na  okraji mriežky. 
+Chceme ich nájsť $2m$ rôznych. Ak
+k okrajovému vrcholu nie sú prerušenia má, ako sme ukázali vyššie, 
+dve možnosti: 
+buď ide portový ťah cez neho alebo cez je icidentný s tromi kostrovými
+hranami. Inak mu priradíme prerušenie ťahu v ňom. Medzi každým úsekom
+vrcholov s tromi kostrovými hranami je na okraji prerušenie. Na každý úsek
+ťahu na okraji pripadá jedno prerušenie.
+
 
 TODO
-
-Vrchol na kraji má tri možnosti:
-- vedie doň jedna portová hrana -> prerušenie
-- žiadna portová hrana -> všetky tri sú kostrové
-- dve portové hrany
-
-V druhom prípade, ak sú vedľa seba dva takéto vrcholy, tak vnútorné vrcholy
-s nimi spojené už sú v kostre a teda medzi nimi vedie portová hrana.
-Tiež je jasné, že vnútorný vrchol môže susediť najviac s jedným takýmto
-krajným vrcholom.
-
+\iffalse
 Vrcholov podľa druhého prípadu nevytvárajúcich prerušenia je obmedzene veľa.
 Ak totiž podgraf kostry spojený na hranu idúcu do vnútra mriežky neobsahuje
 vrchol s nepárnym počtom portových hrán, musí mať všetky listy na okraji.
@@ -495,7 +529,7 @@ prechádzať postupnosť vypĺňania. Bez ujmy na všeobecnosti nech prechádza 
 ľavý dolný roh a príde zľava.
 
 
-
+\fi
 \end{proof}
 
 \iffalse

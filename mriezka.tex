@@ -468,7 +468,12 @@ na kostru, pokiaľ nezačína vo vrchole s tromi kostrovými hranami. Podľa
 kostry tiež vieme v akom poradí vrcholy vznikali. Každé vetvenie kostry
 znamená list na kostre.
 
-Prvú portovú hranu do vrchola mriežky vytvoril agent pri jeho prvej
+Pokiaľ má úsek viac ako dve prerušenia, zvyšné môžeme zarátať iným úsekom.
+Tiež vieme, že všetky tieto portové hrany museli byť skonštruované na tri kroky.
+Konštrukciu hrany na päť krokov môžeme rátať ako štyri prerušenia, lebo
+medzi dvomi vrcholmi s prerušením rátame jedinú hranu.
+
+Prvú portovú hranu do vrchola v mriežke vytvoril agent pri jeho prvej
 návšteve, alebo urobil najmenej jeden krok navyše nad tri kroky na portovú
 hranu.
 
@@ -478,7 +483,21 @@ rozmer mriežky, ktorý obsahuje najviac jedno prerušenie.
 Vrcholy, ktoré nevznikli tesne pred portovými hranami, ktoré z nich vedú,
 znamenajú krok navyše a teda "prerušenie". Majme teda takýto úsek s najviac
 jedným prerušením a zvyšné úseky s najviac dvomi prerušeniami na úsek.
-Pokiaľ má úsek viac ako dve prerušenia, zvyšné môžeme zarátať iným úsekom.
+
+Spôsob akým sú pospájané vrcholy úseku čiastočne určuje, ako budú pospájané
+vrcholy v susedných úsekoch. Navyše požiadavka, aby bolo na úseku najviac
+jedno prerušenie a na zvyšných najviac po dve na úsek, značne limituje
+možnosti pospájania vrcholov.
+Ak sa v nierktorom úseku vyskytne viac ako dve prerušenia, musia existovať
+ďalšie úseky s menej ako dvomi prerušeniami. Teda môžeme predpokladať, že
+hľadáme také pospájanie úseku, že si nevynucuje zvýšený počet prerušení v
+iných úsekoch. Úsekov je totiž obmedzený počet a niektoré si skrátka už
+nebudú mať kde vynucovať viac prerušení.
+
+Nech teda existuje úsek s najviac jedným prerušením. Hľadáme také vedenie
+hrán do neho, že z neho nevyplýva zvýšenie počtu prerušení v ostatných
+úsekoch. Keďže má dva okrajové vrcholy jeden musí byť incidentný s dvomi
+portovými hranami.
 
 
 TODO

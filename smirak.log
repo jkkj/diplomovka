@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  30 APR 2014 12:49
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  30 APR 2014 14:14
 entering extended mode
  %&-line parsing enabled.
 **smirak
@@ -975,13 +975,19 @@ om vr-cholov so stup¬om
  []
 
 
-Overfull \hbox (6.59206pt too wide) in paragraph at lines 583--592
+Overfull \hbox (1.7636pt too wide) in paragraph at lines 462--467
+[]\T1/lmr/m/n/12 Vrcholy na jen-dom okraji majú jednu súrad-nicu rov-nakú a v d
+ruhej sa lí²ia. Kaºdému
+ []
+
+[27]
+Overfull \hbox (6.59206pt too wide) in paragraph at lines 589--598
 \T1/lmr/m/n/12 Medzi dvomi ´ahmi mo-hol agent be-ha´ ©ubovo©ne, ale ke¤ºe h©adá
 me na-jkrat²iu kon²truk-
  []
 
-[27] [28] [29]
-Overfull \hbox (6.88629pt too wide) in paragraph at lines 719--729
+[28] [29]
+Overfull \hbox (6.88629pt too wide) in paragraph at lines 725--735
 []\T1/lmr/m/n/12 Preru²enia, ktré môºeme u²etri´ leºia na oboch zvy²ných okra-j
 och. U²e-tre-nie takéhoto
  []
@@ -1063,7 +1069,7 @@ are/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on smirak.pdf (55 pages, 479106 bytes).
+Output written on smirak.pdf (55 pages, 479417 bytes).
 PDF statistics:
  662 PDF objects out of 1000 (max. 8388607)
  201 named destinations out of 1000 (max. 500000)

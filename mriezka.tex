@@ -364,15 +364,60 @@ Keď prvý raz príde agent do vrchola, tak hrana po ktorej prišiel musí byť
 kostrová.
 Každé prerušenie ťahu tvoreného portovými hranami, znamená, že agent okrem
 krokov medzi otvorením prvého a druhého portu niektorej portovej hrany,
-musel vykonať aspoň jeden krok medzi otvorením druhého portu niektorej hrany
-a prvého portu nasledujúcej. Počet týchto krokov nazvime cena prerušenia.
+musel vykonať aspoň jeden krok navyše, keď nebol otvorený žiadny port. 
+Počet krokov, ktoré prešiel medzi konštrukciami dvoch hrán, nazvime 
+cena prerušenia. Budeme za ňu počítať aj všetky kroky, ktoré vykoná medzi
+otvorením dvoch portov rovnakej hrany, ktoré presahujú počet tri kroky na
+portovú hranu. Toto nám umožní dať prednosť portovej hrane, konštruovanej na
+tri s následným jedným krokom pre otvorením portu nasledujúcej hrany, pred
+portovou hranou konštruovanou na päť krokov medzi konštrukciou jej dvoch
+portov.
+
 Čím je menšia suma cien všetkých prerušení, na tým menej krokov agent
-skonštruoval mriežku (za predpokladu, že počet krokov na hranu je konštantný
-- 3).
-Vrchol s nepárnym počtom incidentných portových hrán - prerušenie
-vnútorný vrchol ako list - prerušenie
-Z tohto vyplýva, že v rohu je buď prerušený ťah, alebo doň nevedie portová
-- hrana.
+skonštruoval mriežku.
+Vieme, že na každú portovú hranu musí agent vykonať aspoň tri kroky, tiež
+sme dokázali horný odhad potrebných krokov.
+
+Prerušenie určite vznikne vo vrcholoch, ktoré majú nepárny počet portových
+hrán. Teda všetky vnútorné vrcholy, ktoré sú listami kostry tvoria
+prerušenia.
+
+Pokiaľ agent skonštruoval hranu na tri kroky medzi otvorením jej portov,
+potom do vrchola s druhým portom príde agent po inej dimenzii, ako je tá,
+v ktorej vedie portová hrana. Ak agent pri konštruovaní portových hrán príde
+do okrajového vrchola má dve možnosti: buď preruší konštruovanie portových
+hrán alebo bude pokračovať po okraji. Každý súvislý ťah na okraji teda
+vytvára prerušenie a stojí aspoň jeden krok navyše.
+
+Keďže vnútorné vrcholy sú stupňa štyri, ťah porotvých hrán sa nemôže v
+žiadnom vrchole pretínať, pretože každý vrchol má aspoň jednu hranu kostrovú.
+Taktiež v rohu je buď porotvý ťah prerušený, alebo doň porotvá hrana
+nevedie, v tom prípade však vedie do aspoň jedného s ním susedného vrchola a
+teda na okraj.
+
+Poďme sa teraz pozrieť na okraje. Roh na okraji má stupeň tri, z čoho jedna
+hrana je nutne kostra. má teda tri možnosti: buď cez neho ťah porotvých hrán
+prechádza, porotvý ťah v ňom má koniec, portový ťah doň nevedie - má všetky
+tri incidentné hrany kostrové.
+
+Pokiaľ sa nám podarí dokázať, že na veľa okrajových vrcholov pripadá
+prerušenie, dostaneme dolnú hranicu. Teda nemusí byť nutne v nich, ale že 
+každému z nich viem priradiť iné. Aby sme dokázali, že nami predstavená
+horná hranica je aj dolnou, potrebujeme zarátať prerušenia aspoň $2m$
+vrcholom, kde $m$ je menší z rozmerov.
+
+Portový ťah keď už vedie po okraji, tak z neho môže odísť len ak
+$"$zaplatí$"$ aspoň dva kroky navyše. Na tri kroky totiž môže pokračovať len
+po okraji. Teda každému ťahu idúcemu po okraji môžeme zarátať jedno aspoň
+prerušenie.
+
+Ak agent prišiel do vrchola na okraji, cez ktorý prechádza ťah, a neotvoril
+v ňom port, tak urobil dva kroky navyše, môžeme ich teda vynechať. Vrchol na
+okraji, cez ktorý prechádza ťah, bol teda skonštruovaný aj so svojou
+kostrovou hranou tesne pred otvorením portov pre ťahy v ňom.
+
+TODO
+
 Vrchol na kraji má tri možnosti:
 - vedie doň jedna portová hrana -> prerušenie
 - žiadna portová hrana -> všetky tri sú kostrové
@@ -637,7 +682,7 @@ každej strane (vždy vznikne výbežok a treba "okraj" nižšej úrovni
 skonštruovať na čo najmenej krokov), pretože ako sme už spomínali, tvoria
 tieto hrany na nižšej úrovni "okraj".
 
-Prerušenia, ktroí môžeme ušetriť ležia na oboch zvyšných okrajoch. Ušetrenie
+Prerušenia, ktré môžeme ušetriť ležia na oboch zvyšných okrajoch. Ušetrenie
 takéhoto prerušenia by znamenalo, že cez niektoré vrcholy tohto okraja by
 museli ísť dve portové hrany, alebo žiadna. Tiež sme ukázali, že ak spolu
 susedia vrcholy, ktoré majú stupeň o jedna nižší ako v cieľovom grafe,

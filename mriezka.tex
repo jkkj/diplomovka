@@ -497,7 +497,15 @@ nebudú mať kde vynucovať viac prerušení.
 Nech teda existuje úsek s najviac jedným prerušením. Hľadáme také vedenie
 hrán do neho, že z neho nevyplýva zvýšenie počtu prerušení v ostatných
 úsekoch. Keďže má dva okrajové vrcholy jeden musí byť incidentný s dvomi
-portovými hranami.
+portovými hranami. Ak by sa na tomto úseku vyskytol vnútorný vrchol so
+štyrmi kostrovými hranami, museli by kostrové hrany viesť medzi všetkými
+susednými vrcholmi úseku, až po okraj minimálne na jednej jeho strane, lebo
+vnútorný vrchol ako list kostra je prerušenie.
+
+Pozrime sa teraz na úsek idúci po dlhšom okraji mriežky. Aj naňho pripadajú
+najviac dve prerušenia. Ak ich obsahuje viac, tak musia za každé ďalšie
+existovať ďalšie úseky s jediným prerušením, alebo za každé dve prerušenia
+jeden úsek bez neho.
 
 
 TODO

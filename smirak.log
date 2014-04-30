@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  30 APR 2014 22:36
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  30 APR 2014 23:10
 entering extended mode
  %&-line parsing enabled.
 **smirak
@@ -981,18 +981,18 @@ ruhej sa lí²ia. Kaºdému
  []
 
 [27]
-Overfull \hbox (6.59206pt too wide) in paragraph at lines 624--633
+Overfull \hbox (6.59206pt too wide) in paragraph at lines 632--641
 \T1/lmr/m/n/12 Medzi dvomi ´ahmi mo-hol agent be-ha´ ©ubovo©ne, ale ke¤ºe h©adá
 me na-jkrat²iu kon²truk-
  []
 
 [28] [29] [30]
-Overfull \hbox (6.88629pt too wide) in paragraph at lines 760--770
+Overfull \hbox (6.88629pt too wide) in paragraph at lines 768--778
 []\T1/lmr/m/n/12 Preru²enia, ktré môºeme u²etri´ leºia na oboch zvy²ných okra-j
 och. U²e-tre-nie takéhoto
  []
 
-[31]) [32]
+[31] [32]) [33]
 Kapitola 6.
 
 Overfull \hbox (1.99701pt too wide) in paragraph at lines 16--29
@@ -1000,7 +1000,7 @@ Overfull \hbox (1.99701pt too wide) in paragraph at lines 16--29
 ch. Polohu agenta môºeme
  []
 
-[33
+[34
 
 ]
 Overfull \hbox (12.20767pt too wide) in paragraph at lines 98--100
@@ -1008,17 +1008,17 @@ Overfull \hbox (12.20767pt too wide) in paragraph at lines 98--100
 áv²tevy vr-cholu otváraním
  []
 
-[34] [35] [36] [37] [38]
+[35] [36] [37] [38] [39]
 Overfull \hbox (1.37337pt too wide) in paragraph at lines 352--395
 \T1/lmr/m/n/12 vr-cholov, ktorej budú súrad-nice v di-men-z-iách pride-lené rov
 -nako ako vr-cholom v men²om
  []
 
-[39] [40] [41]
+[40] [41] [42]
 
-LaTeX Warning: Reference `substitucia' on page 42 undefined on input line 562.
+LaTeX Warning: Reference `substitucia' on page 43 undefined on input line 562.
 
-[42] [43]
+[43] [44]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
@@ -1029,7 +1029,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 691.
 
-[44]
+[45]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
@@ -1040,7 +1040,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 738.
 
-[45] [46]) [47] (./smirak.bbl) [48
+[46] [47]) [48] (./smirak.bbl) [49
 
 
 ] (./smirak.aux)
@@ -1049,8 +1049,8 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 9413 strings out of 494936
- 134942 string characters out of 1181020
+ 9414 strings out of 494936
+ 134949 string characters out of 1181020
  250391 words of memory out of 3000000
  12279 multiletter control sequences out of 15000+50000
  77884 words of font info for 63 fonts, out of 3000000 for 9000
@@ -1069,9 +1069,9 @@ are/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on smirak.pdf (55 pages, 480922 bytes).
+Output written on smirak.pdf (56 pages, 482000 bytes).
 PDF statistics:
- 662 PDF objects out of 1000 (max. 8388607)
- 201 named destinations out of 1000 (max. 500000)
+ 666 PDF objects out of 1000 (max. 8388607)
+ 202 named destinations out of 1000 (max. 500000)
  281 words of extra memory for PDF output out of 10000 (max. 10000000)
 

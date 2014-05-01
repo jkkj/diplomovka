@@ -513,6 +513,18 @@ ktoré majú stupeň portových hrán dva, môžeme
 ho rátať za dve prerušenia. Buď je totiž najbližší koniec ťahu ďaleko alebo
 je niekde v  susednom vrchole a potom je prerušenie aj v ňom.
 
+Na dôkaz, že potrebujeme aspoň $2m$ prerušení nestačí statický pohľad. Teda
+cez ktoré vrcholy a ako prechádza ťah z portových hrán. Napríklad mriežka $3
+\times 3$ má kostru pri ktorej tvoria portové hrany súvislý ťah. Napriek
+tomu ju agent nevie skonštruovať na 12 krokov a potrebuje trinásty.
+
+Preto bude v dôkaze potrebné využiť aj algoritmickú stránku veci a pozrieť
+sa na to, ako sa správa ťah z porotvých hrán pri konštrukcii a ako jeho
+úseky $"$ukladať$"$ vedľa seba tak, aby pokryli mriežku. Takiež na to, koľko
+ťahov na to treba a aká je vzdialenosť koncového bodu predošlého od
+začiatočného bodu nasledujúceho podľa postupnosti konštrukcie týchto ťahov.
+
+
 TODO
 \iffalse
 \begin{proof}
@@ -608,7 +620,7 @@ treba ukázať, že aj keď sa vezmú do úvahy presuny, tak sú trojkrokové ce
 výhodnejšie ...
 \end{proof}
 \fi
-
+\iffalse
 \begin{veta}
 Na zostrojenie mriežky $m \times n$, kde $m <=  n$ potrebuje agent s jednou
 značkou pre porty vykonať aspoň $3m(n - 1) + m$ krokov.
@@ -837,7 +849,7 @@ bude vetviť kostra a na zvyšných dvoch budú končiť ťahy z portových hrá
 Stojú to tri kroky na každú portovú hranu plus počet vrstiev mínus jedna,
 teda menší z rozmerov kocky mínus jedna.
 \end{proof}
-
+\fi
 
 
 \iffalse

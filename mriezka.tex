@@ -505,8 +505,13 @@ vnútorný vrchol ako list kostra je prerušenie.
 Pozrime sa teraz na úsek idúci po dlhšom okraji mriežky. Aj naňho pripadajú
 najviac dve prerušenia. Ak ich obsahuje viac, tak musia za každé ďalšie
 existovať ďalšie úseky s jediným prerušením, alebo za každé dve prerušenia
-jeden úsek bez neho.
+jeden úsek bez neho. Z konca vrchola na okraji tiež vieme určiť, z ktorého
+smeru doň prišiel portový ťah, keďže bez prerušenia sa opustiť okraj nedá.
 
+Ak je niektorý vnútorný vrchol list kostry susedí len s vrcholmi, 
+ktoré majú stupeň portových hrán dva, môžeme
+ho rátať za dve prerušenia. Buď je totiž najbližší koniec ťahu ďaleko alebo
+je niekde v  susednom vrchole a potom je prerušenie aj v ňom.
 
 TODO
 \iffalse

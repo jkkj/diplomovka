@@ -1,23 +1,34 @@
 %\cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{Úvod}
-\chapter*{Model}\label{chap:intro}
+\chapter*{Model a všeobecné výsledky o konštrukcii}\label{chap:intro}
 
 \section{Definícia}
+V tejto kapitole uvedieme nami používaný model a všeobecné výsledky o ňom.
+Obsahuje definície používaných pojmov a označení. Začneme predstavením
+agenta a vlastností grafu, v ktorom operuje.
+
 \begin{defin}
 Model sa skladá z grafu a agenta. Graf má nemeniteľné lokálne číslovanie koncov hrán vo
 vrchole, podľa poradia vzniku. Koniec hrany, ktorý vznikol ako prvý, má
-číslo 1. Prvý koniec vznikne spolu s vrcholom, zvyšné otvorením portu.
+číslo 1. 
+Prvý koniec vznikne spolu s vrcholom, zvyšné otvorením portu. Port je
+vlastne jeden z koncov ešte nevytvorenej hrany. Každá entita v modely môže
+byť nejako dodatočne označená. Napríklad aj vrcholy alebo hrany grafu. V
+našom modely však pracujeme len so značením portov. Značky portov slúžia na
+to, aby mohlo byť naraz otvorených viacero portov bez toho, aby medzi nimi
+vznikla hrana a aby sa dalo určiť, do ktorého vrchola má hrana ísť v
+prípade, že je otvorených viacero portov.
 Počiatočný graf obsahuje práve jeden izolovaný vrchol a nič viac. Akonáhle
 sú otvorené dva porty s rovnakými značkami, vznikne medzi nimi nová hrana a
 tieto porty tým zaniknú.
-\\
+
 Agent môže vo vrchole, v ktorom sa nachádza, vykonávať tieto operácie: pohnúť sa po hrane do susedného
 vrcholu, otvoriť port so značkou, vytvoriť hranu do nového vrchola v ktorom sa následne
 ocitne. Agent rozlišuje hrany podľa lokálneho číslovania ich koncov vo
 vrchole, kde sa práve nachádza. Agent vie ktorý koniec patrí hrane po ktorej
 prišiel do vrcholu. Agent začína vo vrchole počiatočného grafu.
-\\
+
 Agent pri vykonávaní algoritmu konštrukcie grafu nemá obmedzenú výpočtovú
 silu ani pamäť. Množina značiek portov je konečná a vopred daná. Efektivita
 algoritmu konštrukcie daného grafu sa pri tomto modely meria počtom pohybov
@@ -25,8 +36,10 @@ agenta (tj. sumou počtu návštev cez všetky vrcholy) pri danej množine znač
 portov, tento počet sa snažíme minimalizovať.
 \end{defin}
 
+Nasleduje uvedenie označení a použitých pojmov.
+
 \begin{ozn}
-Označenie operácií agenta:
+Použité skratky operácií agenta:
 - nová hrana = NH
 - otvoriť port (s číslom n) = OP(n)
 - prejsť sa po hrane s lokálnym číslom konca k = Sk
@@ -35,7 +48,7 @@ Označenie operácií agenta:
 \begin{ozn}
 Agent začína v grafe, ktorý sme už nazvali počiatočný graf - v našom prípade
 obsahuje jeden izolovaný vrchol. Graf, ktorý má agent skonštruovať, budeme
-volať cieľový, konečný alebo konštrupvaný. Graf existujúci v danom kroku
+volať cieľový, konečný alebo konštruovaný. Graf existujúci v danom kroku
 konštrukcie v modely budeme volať aktuálny graf alebo len graf.
 \end{ozn}
 
@@ -51,7 +64,9 @@ Nad prvkami grafu, konštruovaného jedným agentom
 usporiadanie podľa poradia ich vzniku, podľa ktorého môžeme o jednom prvku
 vyhlásiť, či je starší, mladší alebo rovnako starý ako iný prvok. Platí, že
 hrana je rovnako stará ako jej druhý port. Všeobecne prvky vzniknuté jednou
-operáciou sú rovnako staré.
+operáciou sú rovnako staré. Pri modely s jediným agentom sú operácie
+vykonávané sekvenčne a podľa ich poradia vieme určiť aj "vek" objektov,
+ktoré ic vykonaním vzniknú.
 \end{ozn}
 
 \begin{ozn}
@@ -81,11 +96,16 @@ hrany $h$ tvoria konštrukčnú cestu hrany $h$.
 Postupnosť návštev vrcholov a hrán v poradí v akom ich agent vykonal počas
 konštrukcie cieľového grafu budeme volať tvorivý sled grafu.
 \end{ozn}
+
 \section{Základné vlastnosti}
-\begin{lem}
+V tejto časti kapitoly sú umiestnené výsledky platné, pre konštrukciu grafov
+pomocou mobilných agentov za použitia nášho modelu, všeobecne pre každý
+graf.
+
+\begin{veta}
 Agent počas pohybu v grafe musí ísť po hranách grafu. 
 Tieto po momente keď po nich prešiel, už v grafe trvale existujú.
-\end{lem}
+\end{veta}
 
 \begin{proof}
 Žiadna operácia agentovi nedovoľuje priamo prejsť medzi dvoma vrcholmi, ktoré
@@ -94,12 +114,12 @@ vznikne hrana, ktorá mu umožní dostať sa do vrcholov grafe, ktoré vytvoril
 predtým. Neexistuje spôsob ako v našom modely odstrániť hranu z grafu.
 \end{proof}
 
-\begin{lem}
+\begin{veta}
 Ak agent odíde z vrcholu v ktorom je súčet počtov incidentných hrán a
 otvorených portov nižší, ako je počet hrán s ktorými má byť vrchol
 incidentný v cieľovom grafe, tak sa doň počas konštrukcie musí agent neskôr
 ešte vrátiť.
-\end{lem}
+\end{veta}
 
 \begin{proof}
 Neexistuje postupnosť operácií agenta, pomocou ktorej môže agent vytvoriť
@@ -113,9 +133,9 @@ v danom vrchole agent nenachádza a nemá v ňom otvorený port pre hranu,
 ktorú ide skonštruovať, nemôže to urobiť bez návštevy tohto vrchola.
 \end{proof}
 
-\begin{lem}
+\begin{veta}
 Hrany vytvorené operáciou "nová hrana" tvoria kostru grafu.
-\end{lem}
+\end{veta}
 \begin{proof}
 Okrem inicializačného vrcholu, všetky vrcholy vzniknú operáciou "nová hrana"
 (NH). Každý vrchol okrem inicializačného je spojený hranou, s lokálnym číslom
@@ -129,28 +149,33 @@ Počet týchto hrán je zároveň o jeden menší ako počet
 vrcholov, teda ide o kostru.
 \end{proof}
 
-\begin{lem}
+\begin{veta}
 \label{uzavrety_sled}
 Hrany, ktoré agent prejde od otvorenia prvého portu hrany po otvorenie druhého,
 tvoria v grafe s novovzniknutou hranou uzavretý sled.
-\end{lem}
+\end{veta}
 \begin{proof}
 Je to dané operáciami, ktoré môže agent vykonať. Agent totiž prechádza len
 po hranách v grafe. Z vrchola ide do incidentnej hrany a z hrany do
 incidentného vrchola. Pričom žiadna hrana nemôže zaniknúť, teda medzi otvorením
 dvoch portov prejde agent po nejakom slede v grafe. Novovzniknutá hrana
-spája koncový a začiatočný bod tohot sledu; tvorí s ním teda uzavretý sled.
+spája koncový a začiatočný bod tohoto sledu; tvorí s ním teda uzavretý sled.
 \end{proof}
 \begin{pozn}
-Zo sledu z vety \ref{uzavrety_sled} vieme vybrať kružnicu.
+Zo sledu z vety \ref{uzavrety_sled} vieme vybrať kružnicu obsahujúcu práve
+konštruovanú hranu. Ak totiž sled nie je kružnica, obsahuje viacnásobný
+výskyt niektorého vrchola okrem počiatočného a koncového, ktoré sú pri
+uzavretom slede totožné. Ak prvky sledu medzi dvomi takýmito výskytmi
+odstránime a tieto výskyty zlúčime do jedného, výsledkom bude tiež uzavretý
+sled.
 \end{pozn}
-\begin{lem}
+\begin{veta}
 \label{minimum}
 Minimálny počet hrán, ktoré agent potrebuje prejsť pri konštrukcii 
 hrany pomocou
 portov je rovný alebo väčší ako dĺžka najmenšej kružnice, na ktorej sa táto
 hrana v konštruovanom grafe nachádza.
-\end{lem}
+\end{veta}
 
 \begin{proof}
 Nájdeme menší takýto sled ako je najkratšia kružnica. Tento tvorí s
@@ -160,12 +185,12 @@ našom modely možnosť, aby hrana zanikla, musí sa táto "nová" najkratšia
 kružnica nachádzať aj v konštruovanom grafe.
 \end{proof}
 
-\begin{lem}
+\begin{veta}
 Ak má agent k dispozícii dostatočný počet značiek portov, 
 tak sa problém efektívnej konštrukcie grafu
 redukuje na hľadanie najkratšieho sledu v ktorom sú všetky vrcholy. Pri
 hamiltonovskom grafe ide o hamiltonovskú kružnicu.
-\end{lem}
+\end{veta}
 \begin{proof}
 Agent skonštruuje graf takto: prechádza vrcholmi, podľa najkratšieho sledu
 obsahujúceho všetky vrcholy, pričom mu sačí jedna návšteva každého vrcholu,
@@ -185,10 +210,10 @@ teda platí, že čím kratšie sú porty otvorené, tým menší je celkový po
 potrebných značiek.
 \end{pozn}
 
-\begin{lem}
+\begin{veta}
 Vrchol v grafe musí agent navštíviť minimálne $\frac{deg(v)}{|Z| * 2} $ krát,
 kde Z je množina značiek pre porty, ktorú ma agent k dispozícii.
-\end{lem}
+\end{veta}
 \begin{proof}
 Pri každej návšteve môže agent otovrením portov so všetkými značkami 
 vytvoriť nové hrany do vrcholov, v ktorých sú otovrené príslušné porty 
@@ -205,14 +230,16 @@ konštrukcii vykoná menej krokov.
 \end{pozn}
 
 
-\subsection{Jedna značka pre porty}
-
-\begin{lem}
+\section{Jedna značka pre porty}
+V tejto časti sa budeme zaoberať všeobecnými výsledkami pre model, v ktorom
+má agent k dispozícii len jedinú značku preporty a teda v grafe môže byť
+naraz otvorený len jediný port.
+\begin{veta}
 Najmenej krokov agent na konštrukciu konkrétnej hrany medzi už existujúcimi
 vrcholmi použije, ak pôjde do najbližšieho z nich, otvorí v ňom port a
 následne najkratšou cestou po už existujúcich hranách prejde do druhého
 vrcholu a otvorí v ňom port.
-\end{lem}
+\end{veta}
 \begin{proof}
 Agent má k dispozícii len jednu značku pre porty. Teda počas konštrukcie
 hrany medzi už existujúcimi vrcholmi, žiadne nové hrany v grafe,
@@ -230,14 +257,14 @@ Aby bol tento a teda aj celkový počet krokov čo najkratší, pôjde agent do
 najbližšieho z vrcholov konštruovanej portovej hrany.
 \end{proof}
 
-\begin{lem}
+\begin{veta}
 Agent, ktorý má k dispozícii len jednu značku pre porty, 
 musí prejsť pri konštrukcii grafu aspoň k krokov, kde 
 $k =min_{i=1}^{y}\{\sum_{e \in G(E); e \notin G(K_{i})} j(e)-1  \}$, 
 kde K je kostra grafu G; y je počet navzájom rôznych kostier garfu G; j(e) je najmenšia kružnica v
 grafe obsahujúca hranu e a $K_{i}$ je i-ta kostra, pričom $K_{i} \equiv K_{j}
 \iff i \equiv j$
-\end{lem}
+\end{veta}
 \begin{proof}
 Podľa vety \ref{minimum} musí agent prejsť pri konštrukcii hrany aspoň dĺžku
 minimálnej kružnice bez jednej - bez hrany ktorú tým konštruuje. Keďže má k
@@ -249,12 +276,12 @@ prejde agent ich súčet.
 
 
 
-\begin{lem}
+\begin{veta}
 Po použití operácie NH, ktorou vznikne hrana h, sa agent už nedostane do
 už existujúceho vrchola bez následného použitia
 operácie OP, ktorá vytvorí hranu do vrcholov starších ako h,
 alebo bez opätovného prejdenia po hrane h.
-\end{lem}
+\end{veta}
 \begin{proof}
 Vrchol v, ktorý vznikne operáciou NH je so zvyškom grafu spojený len hranou
 h, ktorá tvorí most, do vzniku hrany operáciou OP, medzi komponentmi na oboch
@@ -262,11 +289,11 @@ stranách tohto mostu. Teda jediný spôsob ako prejsť medzi týmito dvomi
 časťami grafu je po moste, ktorý ich spája - po hrane h.
 \end{proof}
 
-\begin{lem}
+\begin{veta}
 Existuje graf, pri ktorého konštrukcii na najmenej krokov, agent
 skonštruuje kostrové hrany, ktoré s konštruovanou portovou hranou netvoria
 tvoriaci cyklus.
-\end{lem}
+\end{veta}
 \begin{proof}
 Napríklad cyklus, kde do každého vrchola pridáme hranu do vrchola stupňa
 jedna. Je zrejmé, že pri konšrukcii týchto vrcholov stupňa jedna, agent
@@ -303,4 +330,3 @@ otvorených viacero porto, sa do celkového súčtu počíta len raz.
 Ako neskôr ukážeme, nie vždy spôsobí snaha skonštruovať jednu hranu na čo
 nejmenej krokov zlepšenie celkového počtu krokov agenta počas konštrukcie
 cieľového grafu.
-\chapter{Všeobecná konštrukcia}\label{chap:intro}

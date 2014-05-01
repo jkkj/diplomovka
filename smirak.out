@@ -4,10 +4,10 @@
 \BOOKMARK [1][-]{section.2.2}{Vybran\351 triedy grafov}{chapter.2}
 \BOOKMARK [0][-]{chapter.3}{Grafov\351 gramatiky}{}
 \BOOKMARK [1][-]{section.3.1}{\332vod}{chapter.3}
-\BOOKMARK [1][-]{section.3.2}{Defin\355cie}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{Hlavn\351 pr\355stupy}{chapter.3}
 \BOOKMARK [1][-]{section.3.3}{V\235eobecn\351 pojmy}{chapter.3}
 \BOOKMARK [1][-]{section.3.4}{NLC gramatiky}{chapter.3}
-\BOOKMARK [1][-]{section.3.5}{NCE}{chapter.3}
+\BOOKMARK [1][-]{section.3.5}{NCE gramatiky}{chapter.3}
 \BOOKMARK [1][-]{section.3.6}{Rozlicn\351 zn\341me v\375sledky}{chapter.3}
 \BOOKMARK [1][-]{section.3.7}{Grafov\351 gramatiky s nahr\341dzan\355m hyperhr\341n}{chapter.3}
 \BOOKMARK [0][-]{chapter.4}{Prehlad\341vanie grafu}{}
@@ -15,21 +15,21 @@
 \BOOKMARK [1][-]{section.4.2}{Prehlad\341vanie jedn\375m agentom}{chapter.4}
 \BOOKMARK [1][-]{section.4.3}{Distribuovan\351 prehlad\341vanie}{chapter.4}
 \BOOKMARK [1][-]{section.4.4}{Prehlad\341vanie s radou}{chapter.4}
-\BOOKMARK [0][-]{section*.4}{\332vod}{}
-\BOOKMARK [1][-]{section.4.5}{Defin\355cia}{section*.4}
-\BOOKMARK [1][-]{section.4.6}{Z\341kladn\351 vlastnosti}{section*.4}
-\BOOKMARK [1][-]{section.4.7}{Jedna znacka pre porty}{section*.4}
-\BOOKMARK [2][-]{subsection.4.7.1}{Dve a viac znaciek pre porty}{section.4.7}
-\BOOKMARK [0][-]{chapter.5}{Kon\235trukcia mrie\236ky}{}
-\BOOKMARK [1][-]{section.5.1}{Jedna znacka pre porty}{chapter.5}
-\BOOKMARK [0][-]{chapter.6}{N-rozmern\341 kocka}{}
-\BOOKMARK [1][-]{section.6.1}{V\235eobecn\351 v\375sledky}{chapter.6}
-\BOOKMARK [1][-]{section.6.2}{2-rozmern\341 kocka}{chapter.6}
-\BOOKMARK [1][-]{section.6.3}{3-rozmern\341 kocka}{chapter.6}
-\BOOKMARK [2][-]{subsection.6.3.1}{1 znacka}{section.6.3}
-\BOOKMARK [2][-]{subsection.6.3.2}{2 znacky}{section.6.3}
-\BOOKMARK [2][-]{subsection.6.3.3}{3 znacky}{section.6.3}
-\BOOKMARK [2][-]{subsection.6.3.4}{4 znacky}{section.6.3}
-\BOOKMARK [1][-]{section.6.4}{4-rozmern\341 kocka}{chapter.6}
-\BOOKMARK [1][-]{section.6.5}{Kon\235trukcie kociek vy\235\235\355ch rozmerov}{chapter.6}
-\BOOKMARK [0][-]{section*.8}{Literat\372ra}{}
+\BOOKMARK [0][-]{chapter.5}{Model a v\235eobecn\351 v\375sledky o kon\235trukcii}{}
+\BOOKMARK [1][-]{section.5.1}{Defin\355cia}{chapter.5}
+\BOOKMARK [1][-]{section.5.2}{Z\341kladn\351 vlastnosti}{chapter.5}
+\BOOKMARK [1][-]{section.5.3}{Jedna znacka pre porty}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.3.1}{Dve a viac znaciek pre porty}{section.5.3}
+\BOOKMARK [0][-]{chapter.6}{Kon\235trukcia mrie\236ky}{}
+\BOOKMARK [1][-]{section.6.1}{Jedna znacka pre porty}{chapter.6}
+\BOOKMARK [0][-]{chapter.7}{N-rozmern\341 kocka}{}
+\BOOKMARK [1][-]{section.7.1}{V\235eobecn\351 v\375sledky}{chapter.7}
+\BOOKMARK [1][-]{section.7.2}{2-rozmern\341 kocka}{chapter.7}
+\BOOKMARK [1][-]{section.7.3}{3-rozmern\341 kocka}{chapter.7}
+\BOOKMARK [2][-]{subsection.7.3.1}{1 znacka}{section.7.3}
+\BOOKMARK [2][-]{subsection.7.3.2}{2 znacky}{section.7.3}
+\BOOKMARK [2][-]{subsection.7.3.3}{3 znacky}{section.7.3}
+\BOOKMARK [2][-]{subsection.7.3.4}{4 znacky}{section.7.3}
+\BOOKMARK [1][-]{section.7.4}{4-rozmern\341 kocka}{chapter.7}
+\BOOKMARK [1][-]{section.7.5}{Kon\235trukcie kociek vy\235\235\355ch rozmerov}{chapter.7}
+\BOOKMARK [0][-]{section*.7}{Literat\372ra}{}

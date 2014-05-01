@@ -1,7 +1,7 @@
 %\cleardoublepage
 \phantomsection
-\addcontentsline{toc}{chapter}{Úvod}
-\chapter*{Model a všeobecné výsledky o konštrukcii}\label{chap:intro}
+%\addcontentsline{toc}{chapter}{Úvod}
+\chapter{Model a všeobecné výsledky o konštrukcii}\label{chap:intro}
 
 \section{Definícia}
 V tejto kapitole uvedieme nami používaný model a všeobecné výsledky o ňom.
@@ -82,7 +82,7 @@ ktorého otvorením hrana vznikla.
 Kostrová hrana je hrana, ktorá vznikla operáciou NH.
 \end{ozn}
 \begin{pozn}
-Ako neskôr ukážeme - "kostrové hrany" tvoria kostru grafu.
+Ako neskôr ukážeme - $"$kostrové hrany$"$ tvoria kostru grafu.
 \end{pozn}
 
 \begin{ozn}
@@ -102,40 +102,52 @@ V tejto časti kapitoly sú umiestnené výsledky platné, pre konštrukciu graf
 pomocou mobilných agentov za použitia nášho modelu, všeobecne pre každý
 graf.
 
-\begin{veta}
+Najprv sme skúmali ako sa model správa vo všeobecnosti pri konštrukcii
+všetkých grafov. Tiež aké sú obmedzenia na pohyb agenta a čím sa líšia tri
+operácie, ktoré môže vykonávať - čo mu ktorá dovoľuje.
+
+Keďže je podstatou našej práce optimalizovať model na počet krokov, ktoré
+musí agent prejsť po grafe, najprv nás zaujímalo ako sa po ňom môže
+pohyboovať a kedy sa musí do vrcholu ešte vrátiť.
+
+\begin{lem}
 Agent počas pohybu v grafe musí ísť po hranách grafu. 
-Tieto po momente keď po nich prešiel, už v grafe trvale existujú.
-\end{veta}
+Tieto hrany po momente keď po nich prešiel, už v grafe trvale existujú.
+\end{lem}
 
 \begin{proof}
 Žiadna operácia agentovi nedovoľuje priamo prejsť medzi dvoma vrcholmi, ktoré
-nespája hrana. Môže však vytvoriť kostrové hrany a potom otvorením portu
-vznikne hrana, ktorá mu umožní dostať sa do vrcholov grafe, ktoré vytvoril
-predtým. Neexistuje spôsob ako v našom modely odstrániť hranu z grafu.
+nespája hrana. Neexistuje spôsob ako v našom modely odstrániť hranu z grafu.
 \end{proof}
 
-\begin{veta}
+\begin{lem}
 Ak agent odíde z vrcholu v ktorom je súčet počtov incidentných hrán a
-otvorených portov nižší, ako je počet hrán s ktorými má byť vrchol
-incidentný v cieľovom grafe, tak sa doň počas konštrukcie musí agent neskôr
-ešte vrátiť.
-\end{veta}
+otvorených portov nižší, ako je počet hrán, s ktorými má byť vrchol
+incidentný v cieľovom grafe, potom sa do tohto vrchola musí agent
+neskôr vrátiť.
+\end{lem}
 
 \begin{proof}
 Neexistuje postupnosť operácií agenta, pomocou ktorej môže agent vytvoriť
 hranu do
 existujúceho vrchola bez jeho návštevy, ak v ňom nie je otvorený port pre
-túto hranu. Operácia NH vytvorí z vrchola v ktorom sa nachádza do nového
-vrcholu, ktorý predtým v grafe neexistoval a operáciou OPk môže agent
-vytvoriť hranu z vrchola v ktorom sa nachádza do vrchola v ktorom je
-otvorený port so značkou k. Teda ak sa
+túto hranu. 
+Teda ak sa
 v danom vrchole agent nenachádza a nemá v ňom otvorený port pre hranu,
-ktorú ide skonštruovať, nemôže to urobiť bez návštevy tohto vrchola.
+ktorú ide skonštruovať, nemôže hranu skonštruovať bez návštevy tohto vrchola.
 \end{proof}
 
-\begin{veta}
+Jedinou operáciou, ktorá umožňuje agentovi vytvárať nové hrany je operácia
+NH. Agent pri nej vytvorí hranu z vrchola, v ktorom sa práve nachádza do
+nového vrchola a v tomto vrchole sa agent ocitne. Pomerne jednoducho sa dá
+ukázať, že takto vzniknuté hrany tvoria kostru grafu. Vyplýva z toho tiež
+to, že časť grafu, ktorú agent doteraz skonštruoval je súvislá i to, že ak
+má agent skonštruovať hranu do vrchola, ktorý už existuje, nemôže na to
+využiť operáciu NH.
+
+\begin{lem}
 Hrany vytvorené operáciou "nová hrana" tvoria kostru grafu.
-\end{veta}
+\end{lem}
 \begin{proof}
 Okrem inicializačného vrcholu, všetky vrcholy vzniknú operáciou "nová hrana"
 (NH). Každý vrchol okrem inicializačného je spojený hranou, s lokálnym číslom
@@ -149,11 +161,16 @@ Počet týchto hrán je zároveň o jeden menší ako počet
 vrcholov, teda ide o kostru.
 \end{proof}
 
-\begin{veta}
+Hrany, ktoré nevznikli operáciou NH, vytvoril agent otvorením ich portov. Za
+týmto účelom musel navštíviť oba konce každej portovej hrany. Skúmali sme,
+aký najnižší počet krokov musí agent vykonať pri konštrukcii konkrétnej
+hrany.
+
+\begin{lem}
 \label{uzavrety_sled}
 Hrany, ktoré agent prejde od otvorenia prvého portu hrany po otvorenie druhého,
 tvoria v grafe s novovzniknutou hranou uzavretý sled.
-\end{veta}
+\end{lem}
 \begin{proof}
 Je to dané operáciami, ktoré môže agent vykonať. Agent totiž prechádza len
 po hranách v grafe. Z vrchola ide do incidentnej hrany a z hrany do
@@ -161,21 +178,23 @@ incidentného vrchola. Pričom žiadna hrana nemôže zaniknúť, teda medzi otv
 dvoch portov prejde agent po nejakom slede v grafe. Novovzniknutá hrana
 spája koncový a začiatočný bod tohoto sledu; tvorí s ním teda uzavretý sled.
 \end{proof}
+
 \begin{pozn}
-Zo sledu z vety \ref{uzavrety_sled} vieme vybrať kružnicu obsahujúcu práve
+Zo sledu z lemy \ref{uzavrety_sled} vieme vybrať kružnicu obsahujúcu práve
 konštruovanú hranu. Ak totiž sled nie je kružnica, obsahuje viacnásobný
 výskyt niektorého vrchola okrem počiatočného a koncového, ktoré sú pri
 uzavretom slede totožné. Ak prvky sledu medzi dvomi takýmito výskytmi
 odstránime a tieto výskyty zlúčime do jedného, výsledkom bude tiež uzavretý
 sled.
 \end{pozn}
-\begin{veta}
+
+\begin{lem}
 \label{minimum}
 Minimálny počet hrán, ktoré agent potrebuje prejsť pri konštrukcii 
 hrany pomocou
 portov je rovný alebo väčší ako dĺžka najmenšej kružnice, na ktorej sa táto
 hrana v konštruovanom grafe nachádza.
-\end{veta}
+\end{lem}
 
 \begin{proof}
 Nájdeme menší takýto sled ako je najkratšia kružnica. Tento tvorí s
@@ -185,35 +204,52 @@ našom modely možnosť, aby hrana zanikla, musí sa táto "nová" najkratšia
 kružnica nachádzať aj v konštruovanom grafe.
 \end{proof}
 
-\begin{veta}
+Agent môže mať k dispozícii viac značiek a preto môže niektoré hrany
+konštruovať súčasne. Potom jeden krok agenta môže patriť ku konštrukcii
+viacerých hrán a celkový počet krokov tak môže byť menší ako v prípade, keď
+agent konštruuje hrany po jednom. Aký je teda minimálny počet krokov, ktoré
+agent musí vykonať?
+
+Je isté, že musí skonštruovať všetky vrcholy grafu. Teda každý z nich musí
+navštíviť aspoň raz. Musí teda vykonať aspoň toľko krokov, koľko má kostra
+hrán. Tiež nemôže prejsť menej hrán, ako je dĺžka najkratšieho sledu
+obsahujúceho všetky vrcholy.
+
+
+\begin{lem}
 Ak má agent k dispozícii dostatočný počet značiek portov, 
 tak sa problém efektívnej konštrukcie grafu
 redukuje na hľadanie najkratšieho sledu v ktorom sú všetky vrcholy. Pri
 hamiltonovskom grafe ide o hamiltonovskú kružnicu.
-\end{veta}
+\end{lem}
 \begin{proof}
 Agent skonštruuje graf takto: prechádza vrcholmi, podľa najkratšieho sledu
-obsahujúceho všetky vrcholy, pričom mu sačí jedna návšteva každého vrcholu,
+obsahujúceho všetky vrcholy, pričom mu stačí jedna návšteva každého vrcholu,
  v ktorom
 otvorí potrebný počet portov príslušných značiek. Ak má v slede prejsť do
 vrcholu, ktorý ešte neexistuje, použije operáciu NH.
 \end{proof}
 
-\begin{pozn}
-Aj v tomto prípade je možná ďalšia optimalizácia a to na počet použitých
-značiek pre porty. Celkovo to funguje takto: agent otvorí port so značkou k, vytvorí pár
-kostrových hrán a následne v nejakom vrchole otvorí druhý port s rovnakou
-značkou, čím sa mu táto uvoľní. V každom vrchole, ktorý medzitým vytvorí,
-musí otvoriť porty, pre všetky hrany v konštruovanom grafe, s ktorými je v
-ňom tento vrchol incidentný. Pri tom nemôže použiť značku k. Vo všeobecnosti
-teda platí, že čím kratšie sú porty otvorené, tým menší je celkový počet
-potrebných značiek.
-\end{pozn}
 
-\begin{veta}
+Aj v tomto prípade je možná ďalšia optimalizácia a to na počet použitých
+značiek pre porty. Celkovo to funguje takto: agent otvorí port so značkou k, 
+vytvorí pár
+kostrových hrán a následne v nejakom vrchole otvorí druhý port s rovnakou
+značkou, čím sa mu značka uvoľní na ďalšie použitie. V každom vrchole, 
+ktorý agent medzitým vytvorí,
+musí otvoriť porty, pre všetky jeho budúce hrany v konštruovanom grafe.
+ Pri tom nemôže použiť značku k. Vo všeobecnosti
+teda platí, že čím kratšie sú porty otvorené, tým menší je celkový počet
+potrebných značiek, toto platí najmä v grafoch s vrcholmi rovnakého stupňa.
+
+Agent však nemusí mať dostatok značiek na to, aby mu stačila jedna návšteva
+vrchola. Aký je teda minimálny počet návštev pri konštrukcii ľubovoľného
+grafu?
+
+\begin{lem}
 Vrchol v grafe musí agent navštíviť minimálne $\frac{deg(v)}{|Z| * 2} $ krát,
 kde Z je množina značiek pre porty, ktorú ma agent k dispozícii.
-\end{veta}
+\end{lem}
 \begin{proof}
 Pri každej návšteve môže agent otovrením portov so všetkými značkami 
 vytvoriť nové hrany do vrcholov, v ktorých sú otovrené príslušné porty 
@@ -222,51 +258,64 @@ portov s navzájom rozdielnymi značkami, koľko má k dispozícii značiek
 (dvojica portov rovnakej značky v jednom vrchole by vytvorila slučku a v
 našom modely uvažujeme hrany bez slučiek).
 \end{proof}
-\begin{pozn}
+
 Ako ukážeme neskôr, pri obmedzenom množstve značiek portov môže byť
 výhodnejšie neminúť všetky značky pre porty v jednom vrchole, aj za cenu
 opakovanej návštevy. Výhodnejšie v tomto prípade znamená, že agent pri danej
 konštrukcii vykoná menej krokov.
-\end{pozn}
+
 
 
 \section{Jedna značka pre porty}
 V tejto časti sa budeme zaoberať všeobecnými výsledkami pre model, v ktorom
-má agent k dispozícii len jedinú značku preporty a teda v grafe môže byť
-naraz otvorený len jediný port.
-\begin{veta}
+má agent k dispozícii len jedinú značku pre porty a teda v grafe môže byť
+naraz otvorený len jediný port. Toto obmedzenie núti agenta konštruovať
+porotvé hrany po jednom. Nasledujúca lema hovorí, že ak sú dva vrcholy
+portovej hrany, ktorú ide agent konštruovať rôzne ďaleko, nikdy nie je
+horšie ísť do bližšieho z nich otvoriť prvý port.
+
+
+\begin{lem}
 Najmenej krokov agent na konštrukciu konkrétnej hrany medzi už existujúcimi
 vrcholmi použije, ak pôjde do najbližšieho z nich, otvorí v ňom port a
 následne najkratšou cestou po už existujúcich hranách prejde do druhého
-vrcholu a otvorí v ňom port.
-\end{veta}
+vrcholu a otvorí port v ňom.
+\end{lem}
 \begin{proof}
 Agent má k dispozícii len jednu značku pre porty. Teda počas konštrukcie
 hrany medzi už existujúcimi vrcholmi, žiadne nové hrany v grafe,
- ktoré by ležali na ceste medzi koncami tejto hrany nevznikn.
+ ktoré by ležali na ceste medzi koncami tejto hrany nevzniknú.
  Jediné nové hrany môžu vzniknúť operáciou NH, ale
 tieto by viedli do "slepej uličky" (komponentu grafu obsahujúceho len nové
-vrcholy a spojeného mostom so zvyškom grafu), z ktorej by sa musel agent vracať a je
-zrejmé, že ak ich konštrukciu vynechá, z pohľadu najmenšieho počtu ťahov na
-konštrukciu tejto portovej hrany nič nepokazí. V neorientovanom grafe
+vrcholy a spojeného mostom so zvyškom grafu), z ktorej by sa musel agent vracať 
+V grafe
 pri jednej značke pre port je najkratšia cesta od otvorenia prvého po
 otvorenie druhého portu hrany rovnaká bez ohľadu na to, 
 v ktorom vrchole agent otvorí prvý port hrany.
-Jediné, čo sa mení, je počet krokov po otvorenie prvého z portov.
+Jediné, čo sa mení, je počet krokov po otvorenie prvého z portov a poloha
+agenta po konštrukcii.
 Aby bol tento a teda aj celkový počet krokov čo najkratší, pôjde agent do
-najbližšieho z vrcholov konštruovanej portovej hrany.
+najbližšieho z vrcholov konštruovanej portovej hrany. Ak v pôvodnej
+konštrukcii agent končil v druhom vrchole hrany, na jeden krok doň prejde.
+Táto konštrukcia teda nie je horšia.
 \end{proof}
 
-\begin{veta}
+Najmenší počet krokov, ktoré agent vykoná pri konštrukcii jednej
+portovej hrany je dĺžka najkratšej kružnice, na ktorej leží. Pre všetky
+portové hrany je to potom suma týchto kružníc. Ktpré hrany sú portové závisí
+id toho, ktoré sú kostrové. Preto v nasledujúcej leme robíme dolný odhad
+počtu krokov cez všetky kostry.
+
+\begin{lem}
 Agent, ktorý má k dispozícii len jednu značku pre porty, 
 musí prejsť pri konštrukcii grafu aspoň k krokov, kde 
 $k =min_{i=1}^{y}\{\sum_{e \in G(E); e \notin G(K_{i})} j(e)-1  \}$, 
 kde K je kostra grafu G; y je počet navzájom rôznych kostier garfu G; j(e) je najmenšia kružnica v
 grafe obsahujúca hranu e a $K_{i}$ je i-ta kostra, pričom $K_{i} \equiv K_{j}
 \iff i \equiv j$
-\end{veta}
+\end{lem}
 \begin{proof}
-Podľa vety \ref{minimum} musí agent prejsť pri konštrukcii hrany aspoň dĺžku
+Podľa lemy \ref{minimum} musí agent prejsť pri konštrukcii hrany aspoň dĺžku
 minimálnej kružnice bez jednej - bez hrany ktorú tým konštruuje. Keďže má k
 dispozícii len jednu značku pre porty, ďalšiu hranu môže začať konštruovať
 až keď dokončil predošlú. Pri každej hrane prejde teda aspoň dĺžku
@@ -274,14 +323,17 @@ najmenšej kružnice, v ktorej sa táto hrana nachádza mínus jedna. Dokopy
 prejde agent ich súčet.
 \end{proof}
 
+V grafe, ktorý agent doteraz skonštruoval, môžu byť niektoré vrcholy ďalej
+ako v konečnom grafe. Kostrová hrana je v čase svojho vzniku mostom a medzi
+časťami grafu, ktoré spája môže agent prechádzať len po nej až dovtedy, kým
+medzi nimi nevytvorí nejakú portovú hranu. 
 
-
-\begin{veta}
-Po použití operácie NH, ktorou vznikne hrana h, sa agent už nedostane do
+\begin{lem}
+Po použití operácie NH, ktorou vznikne hrana h, sa agent nedostane do
 už existujúceho vrchola bez následného použitia
 operácie OP, ktorá vytvorí hranu do vrcholov starších ako h,
 alebo bez opätovného prejdenia po hrane h.
-\end{veta}
+\end{lem}
 \begin{proof}
 Vrchol v, ktorý vznikne operáciou NH je so zvyškom grafu spojený len hranou
 h, ktorá tvorí most, do vzniku hrany operáciou OP, medzi komponentmi na oboch
@@ -289,11 +341,11 @@ stranách tohto mostu. Teda jediný spôsob ako prejsť medzi týmito dvomi
 časťami grafu je po moste, ktorý ich spája - po hrane h.
 \end{proof}
 
-\begin{veta}
+\begin{lem}
 Existuje graf, pri ktorého konštrukcii na najmenej krokov, agent
 skonštruuje kostrové hrany, ktoré s konštruovanou portovou hranou netvoria
 tvoriaci cyklus.
-\end{veta}
+\end{lem}
 \begin{proof}
 Napríklad cyklus, kde do každého vrchola pridáme hranu do vrchola stupňa
 jedna. Je zrejmé, že pri konšrukcii týchto vrcholov stupňa jedna, agent

@@ -557,6 +557,14 @@ začiatočného bodu nasledujúceho podľa postupnosti konštrukcie týchto ťah
 Konštrukcia vyžaduje, aby hrany, po ktorých prejde agent pri konštrukcii
 portovej hrany buď už existovali alebo boli kostrové.
 
+Prerušenia, ktoré vieme dokázať sú v rohoch. Rohový vrchol má stupeň len
+dva. Teda portový ťah v ňom môže mať len koniec alebo cez neho nemusí ísť.
+Ľahko sa dá ukázať, že nie je horšia konštrukcie, kde roh skonštruujeme
+spolu s jedným z jeho susedov od takej, kde skonštruujeme jeho susedné
+vrcholy a agent odíde konštruovať inde. Rohy sú štyri. Jeden z nich bol
+možno skonštruovaný ako prvý a jeden ako posledný. Stále však ostávajú dva z
+nich.
+
 TODO
 \iffalse
 \begin{proof}
@@ -941,4 +949,57 @@ konštruovanom grafe stupeň:
 ...
 Ako sa správa konštrukcia na okrajoch mriežky?
 \fi
+
+\section{Viac značiek pre porty}
+Mriežka aj cyklická mriežka sú grafy, ktoré sa dajú skonštruovať na $|V| - 1$
+krokov, ak má agent k dispozícii dostatočný počet portov. Ako pri všetkých
+grafoch aj tu je počet použitých značiek aspoň veľkosť najväčšieho rezu aký
+počas konštrukcie dosiahla už skonštruovaná množina vrcholov do zvyšku
+grafu.
+
+Pri konštrukcii jedným ťahom potrebuje agent pre mriežku $m$ portov a pre
+cyklickú mriežku $2m + 1$.
+
+\begin{lem}
+\label{aspoň}
+Aspoň v jednej dimenzii mriežky nastane stav, keď je skonštruovaný vrchol v každej
+jej súradnici a zároveň nie je taká súradnica, že všetky vrcholy s ňou sú už
+skonštruované.
+\end{lem}
+
+\begin{proof}
+Skôr alebo neskôr musí byť nejaký vrchol skonštruovaný v každej súradnici.
+Ak sa skôr stalo, že by boli skonštruované všetky vrcholy s nejakou
+súradnicou ako bol v nejakej inej skonštruovaný jediný vrchol, tak veta
+platí pre druhú dimenziu.
+\end{proof}
+
+\begin{veta}
+Pri konštrukcii mriežky jedným ťahom je potredných aspoň toľko značiek ako
+je menší z jej rozmerov. Pri konštrukcii cyklickej mriežky je to dvojnásobok
+menšieho z rozmerov. Takáto konštrukcia existuje.
+\end{veta}
+\begin{proof}
+Na základe lemy \ref{aspoň} vieme, že pre niektorú dimenziu existuje stav,
+kedy pre každú súradnicu je vytvorený nejaký vrchol a zároveň pre žiadnu nie
+sú vytvorené všetky. Z toho vyplýva pre mriežku, že je otvorených aspoň
+toľko portov ako je súradníc, lebo pre každú súradnicu existuje vrchol,
+ktorý susedí s už vytvoreným a ešte vytvorený nie je.
+
+Pre cyklickú mriežku olatí, že v každej súradnici existujú minimálne dva
+otvorené porty. Vrcholy v jednej súradnici totiž tvoria cyklus.
+
+Vo vrchole, kde agent práve stojí, nemusia byť otvorené porty. Keďže však za
+každú súradnicu, v ktorej nie sú vytvorené všetky vrcholy a nejaké už áno,
+sú otvorené porty navyše, tak agent prechádza najprv vrcholy s rovnakou 
+súradnicou v dlhšej dimenzii, kým neprejde pre danú súradnicu všetky a potom
+prejde do inej. Pri tomto prechode musú otvoriť ten posledný port.
+
+Mriežku pri konštrukcii agent prechádza po súradniciach dlhšieho rozmeru,
+pričom najprv vytvorí kraj v kratšom rozmere s najnižšou súradnicou dlhšieho
+rozmeru a potom vždy vrhcoly o jedna väčšej súradnice. Ak $m <= n$, tak má v
+momente konštrukcie druhého vrchola druhej súradnice otvorených $m$ portov
+pre mriežku a $2m + 1$ pre cyklickú mriežku.
+\end{proof}
+
 

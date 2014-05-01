@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  1 MAY 2014 12:56
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  1 MAY 2014 14:33
 entering extended mode
  %&-line parsing enabled.
 **smirak
@@ -982,7 +982,13 @@ Overfull \hbox (1.7636pt too wide) in paragraph at lines 492--500
 ruhej sa lí²ia. Kaºdému
  []
 
-[30]) (./lemy1.tex [31]
+[30]
+
+Package hyperref Warning: Composite letter `\textasciicaron+c'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 953.
+
+[31]) (./lemy1.tex [32]
 Kapitola 7.
 
 Overfull \hbox (1.99701pt too wide) in paragraph at lines 13--26
@@ -990,7 +996,7 @@ Overfull \hbox (1.99701pt too wide) in paragraph at lines 13--26
 ch. Polohu agenta môºeme
  []
 
-[32
+[33
 
 ]
 Overfull \hbox (12.20767pt too wide) in paragraph at lines 95--97
@@ -998,17 +1004,17 @@ Overfull \hbox (12.20767pt too wide) in paragraph at lines 95--97
 áv²tevy vr-cholu otváraním
  []
 
-[33] [34] [35] [36] [37]
+[34] [35] [36] [37] [38]
 Overfull \hbox (1.37337pt too wide) in paragraph at lines 349--392
 \T1/lmr/m/n/12 vr-cholov, ktorej budú súrad-nice v di-men-z-iách pride-lené rov
 -nako ako vr-cholom v men²om
  []
 
-[38] [39] [40]
+[39] [40] [41]
 
-LaTeX Warning: Reference `substitucia' on page 41 undefined on input line 559.
+LaTeX Warning: Reference `substitucia' on page 42 undefined on input line 559.
 
-[41] [42]
+[42] [43]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
@@ -1019,7 +1025,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 688.
 
-[43]
+[44]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
@@ -1030,7 +1036,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 735.
 
-[44] [45]) [46] (./smirak.bbl) [47
+[45] [46]) [47] (./smirak.bbl) [48
 
 
 ] (./smirak.aux)
@@ -1039,13 +1045,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 9403 strings out of 494936
- 134824 string characters out of 1181020
+ 9409 strings out of 494936
+ 134874 string characters out of 1181020
  250391 words of memory out of 3000000
- 12274 multiletter control sequences out of 15000+50000
+ 12276 multiletter control sequences out of 15000+50000
  77884 words of font info for 63 fonts, out of 3000000 for 9000
  24 hyphenation exceptions out of 8191
- 38i,9n,58p,247b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,9n,58p,247b,428s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/s
 hare/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
@@ -1059,9 +1065,9 @@ are/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on smirak.pdf (54 pages, 474898 bytes).
+Output written on smirak.pdf (55 pages, 479589 bytes).
 PDF statistics:
- 652 PDF objects out of 1000 (max. 8388607)
- 196 named destinations out of 1000 (max. 500000)
- 281 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 666 PDF objects out of 1000 (max. 8388607)
+ 200 named destinations out of 1000 (max. 500000)
+ 289 words of extra memory for PDF output out of 10000 (max. 10000000)
 

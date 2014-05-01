@@ -326,7 +326,7 @@ prejde agent ich súčet.
 V grafe, ktorý agent doteraz skonštruoval, môžu byť niektoré vrcholy ďalej
 ako v konečnom grafe. Kostrová hrana je v čase svojho vzniku mostom a medzi
 časťami grafu, ktoré spája môže agent prechádzať len po nej až dovtedy, kým
-medzi nimi nevytvorí nejakú portovú hranu. 
+medzi nimi nevytvorí nejakú portovú hranu.
 
 \begin{lem}
 Po použití operácie NH, ktorou vznikne hrana h, sa agent nedostane do
@@ -340,6 +340,11 @@ h, ktorá tvorí most, do vzniku hrany operáciou OP, medzi komponentmi na oboch
 stranách tohto mostu. Teda jediný spôsob ako prejsť medzi týmito dvomi
 časťami grafu je po moste, ktorý ich spája - po hrane h.
 \end{proof}
+
+Vo väčšine prípadov sa agentovi neoplatí zachádzať do vrcholov, v ktorých
+nejde otvoriť port a ktoré neležia na priamej ceste do vrchola kam ide.
+Poprípade sa mu neoplatí vracať sa pri pohybe medzi otvorením prvého a
+druhého portu nejakej hrany. Existujú však grafy, kde je to výhodné.
 
 \begin{lem}
 Existuje graf, pri ktorého konštrukcii na najmenej krokov, agent
@@ -359,26 +364,39 @@ vrcholy cyklu, pričom v každom skonštuuje aj príslušný vrchol stupňa jedn
 ktorým je tento incidentný.
 \end{proof}
 
+Tiež si vieme predstaviť, že pri viacerých značkách pre porty
+ by sa nejednalo len o kostrové hrany. Napríklad
+pri grafe tvorenom dosť dlhým cyklom, kde by v niektorých vrcholoch bol cez
+most pripojený cyklus dĺžky tri. Ak by mal agent k dispozícii dve značky re
+porty, otvoril by port pre jednu hranu z dlhého cyklu a pri jeho konštrukcii
+by v každom vrchole s mostom $"$zašiel$"$ skonštruovať malý cyklus, aby sa
+do tohto vrchola nemusel vracať neskôr.
 
 \subsection{Dve a viac značiek pre porty}
 Ušetriť (agent vykoná menej krokov) oproti situácii, 
 keď agent môže použiť len jednu značku pre porty
-možno v prípade že má k dispozícii viaceron značiek pre porty vtedy,
+možno v prípade že má k dispozícii viaceron značiek pre porty napríklad vtedy,
  ak konštruovaný graf obsahuje cykly, kotré majú spoločné hrany.
-Vtedy, ak agent pri konštrukcii niektorej hrany, 
-prechádza vrcholom s ktorým bude incidentná niektorá
+Ak agent pri konštrukcii niektorej hrany, 
+prechádza vrcholom s ktorým bude incidentná niektorá nasledujúca
 portová
-hrana, ktorú bude konštruovať po tejto,
- v ňom otvorí port. Následne sa do tohto vrchola už nemusí pri konštrukcii
-tejto nasledujúcej portovej hrany vracať otvoriť port, ak existuje
-kratšia cesta do druhého koncového vrchola tejto hrany. V metrike
+hrana, môže v ňom otvoriť port. 
+
+Následne sa do tohto vrchola už nemusí pri konštrukcii
+tejto portovej hrany vracať otvoriť port, 
+
+V metrike
 vzdialeností, kde sa počíta počet hrán najkratšej cesty medzi dvomi vrcholmi
-ako ich vzdialenosť platí trojuholníková nerovnosť. Z tohto dôvodu agent
-nevykoná viac krokov pri najlacnejšej (na najmenej krokov) 
+ako ich vzdialenosť platí trojuholníková nerovnosť. Teda agent
+nevykoná viac krokov pri najlacnejšej 
 konštrukcii portovej hrany ak jeden port tejto hrany otvorí skôr oproti
-konštrukcii kde ho otvorí neskôr, pričom sa kroky rátajú až po dokončení
+konštrukcii kde ho otvorí neskôr, ak sa kroky rátajú až po dokončení
 predošlej portovej hrany. Krok, vykonaný agentom v čase, keď má tento
-otvorených viacero porto, sa do celkového súčtu počíta len raz.
-Ako neskôr ukážeme, nie vždy spôsobí snaha skonštruovať jednu hranu na čo
-nejmenej krokov zlepšenie celkového počtu krokov agenta počas konštrukcie
-cieľového grafu.
+otvorených viacero porto, sa do celkového súčtu krokov konštrukcie grafu 
+počíta len raz.
+Ako sme ukázali na konci predošlej časti, nie vždy spôsobí snaha skonštruovať 
+jednu hranu na čo
+nejmenej krokov zlepšenie celkového počtu krokov agenta počas konštrukcie.
+
+Výhodnosť tej-ktorej konštrukcie pre daný graf závisý od konkrétneho grafu.
+Preto sme sa vo výskume ďalej venovali už konkrétny triedam grafov.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  1 MAY 2014 11:57
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  1 MAY 2014 12:56
 entering extended mode
  %&-line parsing enabled.
 **smirak
@@ -920,111 +920,117 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 363.
+(hyperref)                removing `\textasciicaron' on input line 375.
 
-) (./lemy1.tex (./mriezka.tex [20]
+[20]) (./mriezka.tex [21]
 Kapitola 6.
 
-Overfull \hbox (5.32848pt too wide) in paragraph at lines 17--26
+Overfull \hbox (5.32848pt too wide) in paragraph at lines 20--29
 [][]\T1/lmr/bx/n/12 Ozna£enie 9. []\T1/lmr/m/it/12 Po-jem di-men-zie v pro-dukt
 e kartézskeho sú£inu $\OML/lmm/m/it/12 G$\T1/lmr/m/it/12 , grafov $\OML/lmm/m/i
 t/12 U$ \T1/lmr/m/it/12 a $\OML/lmm/m/it/12 V$ \T1/lmr/m/it/12 zavedieme
  []
 
 
-Overfull \hbox (0.58423pt too wide) in paragraph at lines 29--33
+Overfull \hbox (0.58423pt too wide) in paragraph at lines 32--36
 \T1/lmr/m/it/12 grafov tak, aby sa oz-na£e-nia sused-ných vr-cholov lí²ili o je
 dna, v prí-pade cyk-lickej mrieºky
  []
 
-[21
+[22
 
 ]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 57.
+(hyperref)                removing `\textasciicaron' on input line 60.
 
 
-Overfull \hbox (3.42522pt too wide) in paragraph at lines 65--70
+Overfull \hbox (3.42522pt too wide) in paragraph at lines 68--73
 []\T1/lmr/m/n/12 Pre kon²truk-ciu mrieºky s jed-nou zna£kou pre porty sme dokáz
 ali, ºe sa dá skon²truo-
  []
 
+[23]
+Overfull \hbox (5.35562pt too wide) in paragraph at lines 116--120
+\T1/lmr/m/n/12 sme dokázali, ºe pri kaºdej kon²rukcii je pre kaºdú di-men-ziu n
+e-jaká hrana, pri kon²trukcii
+ []
 
-Overfull \hbox (3.80257pt too wide) in paragraph at lines 112--116
+
+Overfull \hbox (3.80257pt too wide) in paragraph at lines 129--133
 []\T1/lmr/m/n/12 Majme tvo-riaci cyk-lus hrany $\OML/lmm/m/it/12 h$\T1/lmr/m/n/
 12 . Kaºdú por-tovú hranu, okrem $\OML/lmm/m/it/12 h$ \T1/lmr/m/n/12 v ¬om nahr
 adíme
  []
 
-[22] [23] [24] [25]
-Overfull \hbox (18.04059pt too wide) in paragraph at lines 300--303
+[24] [25] [26] [27]
+Overfull \hbox (18.04059pt too wide) in paragraph at lines 330--333
 []\T1/lmr/m/n/12 Agent vykonáva: OP,NH,NH,NH,OP,(n-2)krát (OP,S1,NH,NH,OP),S1,N
 H,HN,OP
  []
 
-[26] [27]
-Overfull \hbox (2.21938pt too wide) in paragraph at lines 443--452
+[28]
+Overfull \hbox (2.21938pt too wide) in paragraph at lines 473--482
 []\T1/lmr/m/n/12 Z úseku e²te neskon²truo-vaných vr-cholov, ktorý susedí s úsek
 om vr-cholov so stup¬om
  []
 
-
-Overfull \hbox (1.7636pt too wide) in paragraph at lines 462--470
+[29]
+Overfull \hbox (1.7636pt too wide) in paragraph at lines 492--500
 []\T1/lmr/m/n/12 Vrcholy na jen-dom okraji majú jednu súrad-nicu rov-nakú a v d
 ruhej sa lí²ia. Kaºdému
  []
 
-[28]) [29]
+[30]) (./lemy1.tex [31]
 Kapitola 7.
 
-Overfull \hbox (1.99701pt too wide) in paragraph at lines 16--29
+Overfull \hbox (1.99701pt too wide) in paragraph at lines 13--26
 []\T1/lmr/m/n/12 Susedia vr-chola sa navzájom lí²ia v práve dvoch súrad-ni-ci-a
 ch. Polohu agenta môºeme
  []
 
-[30
+[32
 
 ]
-Overfull \hbox (12.20767pt too wide) in paragraph at lines 98--100
+Overfull \hbox (12.20767pt too wide) in paragraph at lines 95--97
 []\T1/lmr/m/n/12 Otázkou os-táva, ko©ko hrán vie agent vytvori´ po£as jed-nej n
 áv²tevy vr-cholu otváraním
  []
 
-[31] [32] [33] [34] [35]
-Overfull \hbox (1.37337pt too wide) in paragraph at lines 352--395
+[33] [34] [35] [36] [37]
+Overfull \hbox (1.37337pt too wide) in paragraph at lines 349--392
 \T1/lmr/m/n/12 vr-cholov, ktorej budú súrad-nice v di-men-z-iách pride-lené rov
 -nako ako vr-cholom v men²om
  []
 
-[36] [37] [38]
+[38] [39] [40]
 
-LaTeX Warning: Reference `substitucia' on page 39 undefined on input line 562.
+LaTeX Warning: Reference `substitucia' on page 41 undefined on input line 559.
 
-[39] [40]
-
-Package hyperref Warning: Composite letter `\textasciicaron+c'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 684.
-
+[41] [42]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 691.
-
-[41]
-
-Package hyperref Warning: Composite letter `\textasciicaron+c'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 709.
+(hyperref)                removing `\textasciicaron' on input line 681.
 
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 738.
+(hyperref)                removing `\textasciicaron' on input line 688.
 
-[42] [43]) [44] (./smirak.bbl) [45
+[43]
+
+Package hyperref Warning: Composite letter `\textasciicaron+c'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 706.
+
+
+Package hyperref Warning: Composite letter `\textasciicaron+c'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 735.
+
+[44] [45]) [46] (./smirak.bbl) [47
 
 
 ] (./smirak.aux)
@@ -1033,8 +1039,8 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 9402 strings out of 494936
- 134820 string characters out of 1181020
+ 9403 strings out of 494936
+ 134824 string characters out of 1181020
  250391 words of memory out of 3000000
  12274 multiletter control sequences out of 15000+50000
  77884 words of font info for 63 fonts, out of 3000000 for 9000
@@ -1053,9 +1059,9 @@ are/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on smirak.pdf (52 pages, 471036 bytes).
+Output written on smirak.pdf (54 pages, 474898 bytes).
 PDF statistics:
- 645 PDF objects out of 1000 (max. 8388607)
- 195 named destinations out of 1000 (max. 500000)
+ 652 PDF objects out of 1000 (max. 8388607)
+ 196 named destinations out of 1000 (max. 500000)
  281 words of extra memory for PDF output out of 10000 (max. 10000000)
 

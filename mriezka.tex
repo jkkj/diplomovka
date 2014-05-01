@@ -13,6 +13,9 @@ súčinu. Výsledky v tejto kapitole môžu byť užitočné pri hľadaní konš
 grafov, ktoré sú výsledkom kartézskyh súčinov zložitejších grafov. Cesta a
 cyklus totiž patria medzi najjednoduchšie podgrafy.
 
+Na začiatok potrebujeme niekoľko označení, aby sme sa dokázali v mrižke a
+cyklickej mriežke dobre orientovať.
+
 \begin{ozn}
 Pojem dimenzie v produkte kartézskeho súčinu $G$, grafov $U$ a $V$ 
 zavedieme prirodzene vzhľadom
@@ -79,6 +82,14 @@ ich parita. Pokiaľ sa teda zmení, musela byť nahrádzaná hrana s nepárnym
 počtom výskytov ostatných súradníc v tvoriacom cykle a tento nepárny výskyt
 musel agent $"$odšľapať$"$.
 
+Uvažovať o konštrukcii cyklickej mriežky v prípade, že agent má k dispozícii
+len jednu značku preporty má viacero dôvodov. Jedným môže byť konštrukcia
+kartézskeho súčinu zložitejších grafov, ktorého je nejaká cyklická mriežka
+podgrafom za situácie, že agent má veľmi obmedzený počet značiek pre porty.
+
+Nasledujúcich niekoľko lem platí o konštrukcii grafov naším modelom
+všeobecne, ale ich potreba sa obzvlášť prejavila pri hľadaní efektívnej
+konštrukcie mriežky.
 
 \begin{lem}
 Kostrové hrana je staršia, vznikla skôr, ako všetky portové hrany incidentné
@@ -102,6 +113,12 @@ staršie ako hrana $h$, ktorú agent vytvoril až potom, ako po týchto hranách
 prešiel.
 \end{proof}
 
+Nasledujúce lemy sme použili najmä pri dôkaze výsledku o cyklickej mriežke,
+kde sme dokázali, že pri každej konšrukcii je pre každú dimenziu nejaká
+hrana, pri konštrukcii ktorej agent prejde po všetkých súradniciach tejto
+dimenzie - okrem súradnice tejto hrany.
+
+Tiež nasleduje zavedenie niekoľkých ďalších použitých pojmov.
 
 \begin{lem}
 \label{cyklus}
@@ -148,7 +165,9 @@ spája nejaká hrana s vrcholom so súradnicou k
 v grafe prislúchajúcom dimenzii d.
 \end{ozn}
 
-
+Pre každú súradnicu vieme zistiť koľkokrát prešiel agent po nejakej hrane v
+tejto súradnici. Zaujíma nás špeciálne parita tohto počtu a pre každú
+súradnicu zvlášť.
 
 \begin{lem}
 Portová hrana v súradnici k v cyklickej mriežke má v tvoriacom cykle 
@@ -196,7 +215,17 @@ platí predošlý dôkaz. Z toho je jasné, že iba prechody po konštruovanej
 hrane majú odlišnú paritu počtu svojich výskytov.
 \end{proof}
 
+Dokázali sme lemu o rozdielnosti parít, ktorú použijeme v nasledujúcej vete.
+Užitočný nám ďalej je fakt, že ak je parita prechodov po nejakej súradnici
+nepárna, agent po nej musel aspoň raz prejsť. Podarilo sa nám dokázať, že
+pri konštrukcii niektorej hrany cyklickej mriežky musel agent prejsť medzi
+otvorením jej prvého a druhého portu po každej inej súradnici nepárny počet
+krát. Teda musel prejsť aspoň toľko krokov, koľko je zvyšných súradníc, čo
+je o jedna menej ako príslušný rozmer mriežky.
 
+Tento výsledok umožňuje posun dolného odhadu počtu krokov konštrukcie
+cyklickej mriežky. Ukazuje, že nie je možné každú jej hranu skonštruovať na
+tri kroky.
 
 \begin{veta}
 Pri ľubovoľnej konštrukcii cyklickej mriežky G rozmerov $n \times m$ 
@@ -237,7 +266,6 @@ a nemohol tak urobiť v jej súradnici, musel prejsť po všetkých ostatných
 súradniciach a teda vykonať aspoň n-1 respektíve m-1 krokov v prípade, že
 platí alternatíva s dvomi rôznymi hranami. Alebo n+m - 1 ak platí
 alternatíva s jedinou hranou. 
-
 
 Pozrieme sa na ľubovoľnú kostru. V tejto kostre sa nachádzajú všetky vrcholy
 grafu. Aký je tvorivý cyklus jednotlivých portových hrán. V tvorivom cykle
@@ -291,6 +319,8 @@ konštrukcii musí vykonať aspoň $n - 1$ krokov pre prvú dimenziu a $m - 1$
 iných  krokov pre druhú dimenziu.
 \end{proof}
 
+Nasledovná veta dokazuje hornú hranicu pre počet krokov potrebných na
+konštrukciu mriežky s použitím jedinej zančky pre porty.
 
 \begin{veta}
 Mriežku $m \times n$ je možné s použitím jedinej značky pre port zostrojiť
@@ -524,6 +554,8 @@ sa na to, ako sa správa ťah z porotvých hrán pri konštrukcii a ako jeho
 ťahov na to treba a aká je vzdialenosť koncového bodu predošlého od
 začiatočného bodu nasledujúceho podľa postupnosti konštrukcie týchto ťahov.
 
+Konštrukcia vyžaduje, aby hrany, po ktorých prejde agent pri konštrukcii
+portovej hrany buď už existovali alebo boli kostrové.
 
 TODO
 \iffalse
@@ -897,8 +929,7 @@ Nie po každej kostre sa dá výhodne konštruovať mriežka ...
 napr. pre 3 x 3 existuje kostra, kde portové hrany tvoria ťah, ale nedajú sa
 podľa neho konštruovať ...
 
-Konštrukcia vyžaduje, aby tri hrany po ktorých prejde agent pri konštrukcii
-portovej hrany buď už existovali alebo boli kostrové ...
+ ...
 
 agent vytvorí prvú portovú hranu ... ak skončí vo vrchole ktorý má v
 konštruovanom grafe stupeň:

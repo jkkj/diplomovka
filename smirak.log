@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  2 MAY 2014 10:43
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  2 MAY 2014 10:46
 entering extended mode
  %&-line parsing enabled.
 **smirak
@@ -784,16 +784,14 @@ anony-mous graph, hy-per-cube,
 \c@veta=\count126
 \c@pozn=\count127
 \c@ozn=\count128
-
-(./abstrakt.tex) (./uvod.tex [1
-
-]
+ (./uvod.tex
 Kapitola 1.
-[2
+[1
 
-]) (./definicie.tex [3]
+
+]) (./definicie.tex [2]
 Kapitola 2.
-[4
+[3
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -808,16 +806,16 @@ Overfull \hbox (4.13136pt too wide) in paragraph at lines 92--94
 uje v²etky hrany, ktorých
  []
 
-[5]
+[4]
 Overfull \hbox (2.1927pt too wide) in paragraph at lines 152--154
 [][]\T1/lmr/bx/n/12 Definícia 18. []\T1/lmr/m/it/12 n-rozmerná kocka $\OML/lmm/
 m/it/12 Q[]$ \T1/lmr/m/it/12 je graf, ktorý vznikol ako kartézsky sú£in $\OML/l
 mm/m/it/12 n$ \T1/lmr/m/it/12 £inite©ov
  []
 
-) (./teoruvod.tex [6]
+) (./teoruvod.tex [5]
 Kapitola 3.
-[7
+[6
 
 ]
 Overfull \hbox (2.2877pt too wide) in paragraph at lines 68--73
@@ -832,7 +830,7 @@ Overfull \hbox (21.42096pt too wide) in paragraph at lines 76--88
 sú roz²írením NLC grafových
  []
 
-[8]
+[7]
 Overfull \hbox (3.81435pt too wide) in paragraph at lines 90--100
 [][]\T1/lmr/bx/n/12 Definícia 21. []\T1/lmr/m/it/12 ed-NCE grafová gra-matika j
 e defi-no-vaná ako 6-tica $\OML/lmm/m/it/12 G \OT1/lmr/m/n/12 = (^^F; ^^A; ^^@;
@@ -856,20 +854,20 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 141.
 
-[9]
+[8]
 Overfull \hbox (4.53487pt too wide) in paragraph at lines 160--187
 \T1/lmr/m/n/12 Pre úplnos´ venu-jeme krátky priestor aj vle-po-va-ciemu prís-tu
 pu v grafových gra-matikách.
  []
 
-) (./prehladavanie.tex [10]
+) (./prehladavanie.tex [9]
 Kapitola 4.
 
 Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 1.
 
-[11
+[10
 
 ]
 
@@ -877,7 +875,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 64.
 
-[12]
+[11]
 
 Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                not defined in PD1 encoding,
@@ -900,11 +898,11 @@ Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 122.
 
-[13]) (./zac1.tex [14]
+[12]) (./zac1.tex [13]
 Kapitola 5.
-[15
+[14
 
-] [16]
+] [15]
 Overfull \hbox (0.13417pt too wide) in paragraph at lines 124--128
 \T1/lmr/m/it/12 otvorených por-tov niº²í, ako je po£et hrán, s ktorými má by´ v
 r-chol in-ci-dentný v cie©ovom
@@ -916,13 +914,13 @@ Overfull \hbox (22.35681pt too wide) in paragraph at lines 152--162
 erá-ciou "nová hrana"(NH).
  []
 
-[17]
+[16]
 Overfull \hbox (19.19295pt too wide) in paragraph at lines 200--205
 []\T1/lmr/m/n/12 Nájdeme men²í takýto sled ako je na-jkrat²ia kruºnica. Tento t
 vorí s novovzniknutou
  []
 
-[18]
+[17]
 Overfull \hbox (2.31253pt too wide) in paragraph at lines 254--260
 []\T1/lmr/m/n/12 Pri kaºdej náv²teve môºe agent otovrením por-tov so v²etkými z
 na£kami vytvori´
@@ -933,13 +931,13 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 269.
 
-[19] [20]
+[18] [19]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 375.
 
-[21]) (./mriezka.tex [22]
+[20]) (./mriezka.tex [21]
 Kapitola 6.
 
 Overfull \hbox (5.32848pt too wide) in paragraph at lines 20--29
@@ -954,7 +952,7 @@ Overfull \hbox (0.58423pt too wide) in paragraph at lines 32--36
 dna, v prí-pade cyk-lickej mrieºky
  []
 
-[23
+[22
 
 ]
 
@@ -968,7 +966,7 @@ Overfull \hbox (3.42522pt too wide) in paragraph at lines 68--73
 ali, ºe sa dá skon²truo-
  []
 
-[24]
+[23]
 Overfull \hbox (5.35562pt too wide) in paragraph at lines 116--120
 \T1/lmr/m/n/12 sme dokázali, ºe pri kaºdej kon²rukcii je pre kaºdú di-men-ziu n
 e-jaká hrana, pri kon²trukcii
@@ -981,31 +979,31 @@ Overfull \hbox (3.80257pt too wide) in paragraph at lines 129--133
 adíme
  []
 
-[25] [26] [27] [28]
+[24] [25] [26] [27]
 Overfull \hbox (18.04059pt too wide) in paragraph at lines 330--333
 []\T1/lmr/m/n/12 Agent vykonáva: OP,NH,NH,NH,OP,(n-2)krát (OP,S1,NH,NH,OP),S1,N
 H,HN,OP
  []
 
-[29]
+[28]
 Overfull \hbox (2.21938pt too wide) in paragraph at lines 473--482
 []\T1/lmr/m/n/12 Z úseku e²te neskon²truo-vaných vr-cholov, ktorý susedí s úsek
 om vr-cholov so stup¬om
  []
 
-[30]
+[29]
 Overfull \hbox (1.7636pt too wide) in paragraph at lines 492--500
 []\T1/lmr/m/n/12 Vrcholy na jen-dom okraji majú jednu súrad-nicu rov-nakú a v d
 ruhej sa lí²ia. Kaºdému
  []
 
-[31]
+[30]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 953.
 
-[32]) (./lemy1.tex [33]
+[31]) (./lemy1.tex [32]
 Kapitola 7.
 
 Overfull \hbox (1.99701pt too wide) in paragraph at lines 13--26
@@ -1013,7 +1011,7 @@ Overfull \hbox (1.99701pt too wide) in paragraph at lines 13--26
 ch. Polohu agenta môºeme
  []
 
-[34
+[33
 
 ]
 Overfull \hbox (12.20767pt too wide) in paragraph at lines 95--97
@@ -1021,17 +1019,17 @@ Overfull \hbox (12.20767pt too wide) in paragraph at lines 95--97
 áv²tevy vr-cholu otváraním
  []
 
-[35] [36] [37] [38] [39]
+[34] [35] [36] [37] [38]
 Overfull \hbox (1.37337pt too wide) in paragraph at lines 349--392
 \T1/lmr/m/n/12 vr-cholov, ktorej budú súrad-nice v di-men-z-iách pride-lené rov
 -nako ako vr-cholom v men²om
  []
 
-[40] [41] [42]
+[39] [40] [41]
 
-LaTeX Warning: Reference `substitucia' on page 43 undefined on input line 559.
+LaTeX Warning: Reference `substitucia' on page 42 undefined on input line 559.
 
-[43] [44]
+[42] [43]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
@@ -1042,7 +1040,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 688.
 
-[45]
+[44]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
@@ -1053,7 +1051,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 735.
 
-[46] [47]) [48] (./smirak.bbl) [49
+[45] [46]) [47] (./smirak.bbl) [48
 
 
 ] (./smirak.aux)
@@ -1062,8 +1060,8 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 9420 strings out of 494936
- 134997 string characters out of 1181020
+ 9417 strings out of 494936
+ 134964 string characters out of 1181020
  250391 words of memory out of 3000000
  12276 multiletter control sequences out of 15000+50000
  77884 words of font info for 63 fonts, out of 3000000 for 9000
@@ -1082,9 +1080,9 @@ are/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on smirak.pdf (58 pages, 488350 bytes).
+Output written on smirak.pdf (57 pages, 485457 bytes).
 PDF statistics:
- 678 PDF objects out of 1000 (max. 8388607)
- 203 named destinations out of 1000 (max. 500000)
+ 674 PDF objects out of 1000 (max. 8388607)
+ 202 named destinations out of 1000 (max. 500000)
  289 words of extra memory for PDF output out of 10000 (max. 10000000)
 

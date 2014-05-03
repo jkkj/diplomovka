@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  2 MAY 2014 10:46
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  4 MAY 2014 00:23
 entering extended mode
  %&-line parsing enabled.
 **smirak
@@ -744,12 +744,26 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./abstrakt.tex)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+<zadanie.pdf, id=165, page=1, 597.23125pt x 845.1575pt>
+File: zadanie.pdf Graphic file (type pdf)
+
+<use zadanie.pdf, page 1>
+File: zadanie.pdf Graphic file (type pdf)
+ <use zadanie.pdf, page 1>
+File: zadanie.pdf Graphic file (type pdf)
+ <use zadanie.pdf, page 1>
+File: zadanie.pdf Graphic file (type pdf)
+
+<use zadanie.pdf, page 1>
+File: zadanie.pdf Graphic file (type pdf)
+ <use zadanie.pdf, page 1> [3 <./zadanie.pdf>]
+(./abstrakt.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 45--215
 
  []
 
-[3] [4] (./abstractEN.tex)
+[4] [5] (./abstractEN.tex)
 Underfull \hbox (badness 10000) in paragraph at lines 47--231
 
  []
@@ -760,23 +774,24 @@ Underfull \hbox (badness 1348) in paragraph at lines 47--231
 anony-mous graph, hy-per-cube,
  []
 
-[5] (./smirak.toc [6
+[6] (./predhovor.tex) [7] (./smirak.toc [8
 
 ])
 \tf@toc=\write4
 \openout4 = `smirak.toc'.
 
- [7] (./smirak.lof)
+ [9] (./smirak.lof)
 \tf@lof=\write5
 \openout5 = `smirak.lof'.
 
- [8
+ [10
 
-] (./smirak.lot)
+]
+(./smirak.lot)
 \tf@lot=\write6
 \openout6 = `smirak.lot'.
 
- [9
+ [11
 
 ]
 \c@lem=\count124
@@ -980,30 +995,36 @@ adíme
  []
 
 [24] [25] [26] [27]
-Overfull \hbox (18.04059pt too wide) in paragraph at lines 330--333
+
+Package hyperref Warning: Composite letter `\textasciicaron+c'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 322.
+
+
+Overfull \hbox (18.04059pt too wide) in paragraph at lines 331--334
 []\T1/lmr/m/n/12 Agent vykonáva: OP,NH,NH,NH,OP,(n-2)krát (OP,S1,NH,NH,OP),S1,N
 H,HN,OP
  []
 
 [28]
-Overfull \hbox (2.21938pt too wide) in paragraph at lines 473--482
+Overfull \hbox (2.21938pt too wide) in paragraph at lines 431--440
 []\T1/lmr/m/n/12 Z úseku e²te neskon²truo-vaných vr-cholov, ktorý susedí s úsek
 om vr-cholov so stup¬om
  []
 
 [29]
-Overfull \hbox (1.7636pt too wide) in paragraph at lines 492--500
+Overfull \hbox (1.7636pt too wide) in paragraph at lines 450--458
 []\T1/lmr/m/n/12 Vrcholy na jen-dom okraji majú jednu súrad-nicu rov-nakú a v d
 ruhej sa lí²ia. Kaºdému
  []
 
-[30]
+[30] [31] [32]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 953.
+(hyperref)                removing `\textasciicaron' on input line 613.
 
-[31]) (./lemy1.tex [32]
+[33]) (./lemy1.tex [34]
 Kapitola 7.
 
 Overfull \hbox (1.99701pt too wide) in paragraph at lines 13--26
@@ -1011,7 +1032,7 @@ Overfull \hbox (1.99701pt too wide) in paragraph at lines 13--26
 ch. Polohu agenta môºeme
  []
 
-[33
+[35
 
 ]
 Overfull \hbox (12.20767pt too wide) in paragraph at lines 95--97
@@ -1019,17 +1040,17 @@ Overfull \hbox (12.20767pt too wide) in paragraph at lines 95--97
 áv²tevy vr-cholu otváraním
  []
 
-[34] [35] [36] [37] [38]
+[36] [37] [38] [39] [40]
 Overfull \hbox (1.37337pt too wide) in paragraph at lines 349--392
 \T1/lmr/m/n/12 vr-cholov, ktorej budú súrad-nice v di-men-z-iách pride-lené rov
 -nako ako vr-cholom v men²om
  []
 
-[39] [40] [41]
+[41] [42] [43]
 
-LaTeX Warning: Reference `substitucia' on page 42 undefined on input line 559.
+LaTeX Warning: Reference `substitucia' on page 44 undefined on input line 559.
 
-[42] [43]
+[44] [45]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
@@ -1040,7 +1061,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 688.
 
-[44]
+[46]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
@@ -1051,7 +1072,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 735.
 
-[45] [46]) [47] (./smirak.bbl) [48
+[47] [48]) [49] (./smirak.bbl) [50
 
 
 ] (./smirak.aux)
@@ -1060,13 +1081,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 9417 strings out of 494936
- 134964 string characters out of 1181020
+ 9433 strings out of 494936
+ 135164 string characters out of 1181020
  250391 words of memory out of 3000000
- 12276 multiletter control sequences out of 15000+50000
+ 12282 multiletter control sequences out of 15000+50000
  77884 words of font info for 63 fonts, out of 3000000 for 9000
  24 hyphenation exceptions out of 8191
- 38i,9n,58p,247b,428s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,16n,58p,247b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
@@ -1080,9 +1101,9 @@ are/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on smirak.pdf (57 pages, 485457 bytes).
+Output written on smirak.pdf (61 pages, 566803 bytes).
 PDF statistics:
- 674 PDF objects out of 1000 (max. 8388607)
- 202 named destinations out of 1000 (max. 500000)
- 289 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 725 PDF objects out of 1000 (max. 8388607)
+ 207 named destinations out of 1000 (max. 500000)
+ 312 words of extra memory for PDF output out of 10000 (max. 10000000)
 

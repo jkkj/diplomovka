@@ -538,7 +538,7 @@ skonštruovať buď tak, že vytvoril portový ťah začínajúci v jednom rohu 
 končiaci v druhom. Ako však už vieme, najlacnejšie je v tomto prípade
 skonštruovať najprv zvyšok mriežky a z IP sme na nej urobili aspoň $m - 1$
 krokov navyše. Teda celkovo to bude $m$ krokov nad tri korky na portovú
-hranu..
+hranu.
 
 Alebo mohol agent okraj skonštruovať
 pomocou viacerých ťahov, ktoré doň prišli zvnútra mriežky. Ťah, ktorý by šiel
@@ -556,7 +556,8 @@ aspoň $m$ krokov na konštrukciu mriežky bez okraja.
 
 Zistili sme však, že IP musíme upraviť. Vieme totiž nájsť konštrukciu s len
 ôsmimi prerušeniami. Agent pri nej však minie o veľa viac krokov navyše ako
-pri nami dokázanej hornej hranici.
+pri nami dokázanej hornej hranici. ďalej sme sa s matematickou indukciou
+nedostali.
 
 V podstate $2 m - 2$ prerušení je oproti počtu vrcholov dosť málo, teda v
 drvivej väčšine vrcholov prerušenie nebude. Vnútorný vrchol bez prerušenia má dve
@@ -606,9 +607,25 @@ ktorý má všetky štyri hrany kostrové sa zvýši minimálny počet listov ko
 na okraji o dva a za každé prerušenie o jedna. Toto ešte viac zvyšuje počet
 vnútorných vrcholov s nimi susediacich.
 
+Každé prerušenie vnútri mriežky zvyšuje počet okrajových vrcholov, v ktorých
+byť prerušenie nemôže. Počet prerušení, ktoré môžu byť celkovo v mriežke
+znižuje aj dĺžka jednotlivých prerušení. Keďže každé prerušenie musí mať dĺžku
+aspoň jedna. Ťahy z portových hrán konštruovaných na tri kroky tvoria spolu
+s hranami prerušení sled. Horný odhad jeho dĺžky sme stanovili a pre danú
+mriežku je súčet dĺžok ťahov z portových hrán stály. Ak ho chceme skrátiť a
+tým získať lepšiu konštrukciu, musíme znížiť počet hrán prerušenia.
 
+Keď už cez niektoré vrcholy prechádza ťah, tak je väčšinou určené ako má ťah
+prechádzať cez ich susedov, ak sa v nich nemá prerušiť. Súčasne platí, že
+ťahy z portových hrán sa nemôžu pretínať, čo obmedzuje aj ďalšie smerovanie
+ťahov. Tiež vieme, že na okraji mriežky, ktorá má oba rozmery väčšie ako
+jedna, musia byť aspoň dve prerušenia kvôli rohom. Ľahko sa dá dokázať, že
+ak sú oba rozmery väčšie ako dva, tak dve prerušenia nestačia a konštrukcia
+s tromi prerušeniami vyvolá ďalšie prerušenia vnútri mriežky.
 
-
+Ďalej sa nám s výskumom v tomto smere dostať nepodarilo. Domnievame sa, že
+by pomohlo rozobratie všetkých možných variant konštrukcií malých mriežok, na
+ktorých by sa mohli objaviť ďalšie zákonitosti.
 
 \section{Viac značiek pre porty}
 Mriežka aj cyklická mriežka sú grafy, ktoré sa dajú skonštruovať na $|V| - 1$

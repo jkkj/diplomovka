@@ -789,7 +789,7 @@ raz. Táto postupnosť totiž určuje aj to, koľko krokov musí agent vykonať 
 to, aby vytvoril daný počet portových hrán. Jedna z možností pre agenta je
 opakovane prechádzať túto postupnosť a otvoriť port v prípade, že má voľnú
 značku až kým nebudú všetky portové hrany skonštruované. Ako však ukazujú
-konštrukcie hyperkociek nižších dimenzií, nie  je to vždy optimálne
+konštrukcie hyperkociek malých rozmerov, nie  je to vždy optimálne
 riešenie.
 
 Limitujúcim faktorom je pre agenta mohutnosť množiny značiek, ktorú má k

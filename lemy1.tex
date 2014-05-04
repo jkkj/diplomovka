@@ -805,5 +805,21 @@ otvorené
 naraz, teda aj to ako dlhý prefix postupnosti P sa môže v postupnosti R
 opakovať. Ten je daný maximom naraz otvorených portov. Toto maximum môže byť
 nanajvýš rovné počtu značiek, ktoré má agent k dispozícii.
+\\ \\
+Ďalším dôležitým prvkom na postupnosti P je čas po koľkých krokoch sa
+uvoľňujú značky portov na ďalšie použitie. Vo vrcholoch, ktoré sú pred
+posledným maximom potrebného počtu značiek ich agent musí mať k dispozícii,
+ale po ňom ich môže použiť na konštrukciu hrán, ktoré už nepatria danému
+prefixu postupnosti P. Takto sa môžu napájať Ďalšie postupnosti, ktoré sú
+optimálne na počet hrán medzi ich vrcholmi. Príkladom je konštrukcia
+trojrozmernej kocky s dvomi značkami pre porty. Kde sa na seba napájali
+päťvrcholové úseky postupnosti P s dvomi vnútornými hranami. 
 
-
+Aby vytvoril prvé dve portové hrany, musel agent prejsť aspoň päť vrcholov.
+Po troch krokoch sa mu uvoľnila značka a pri ceste do piateho vrchola ju
+mohol opäť použiť v treťom alebo štvrtom vrchole. Tým začal konštruovať
+ďalšiu postupnosť s dvomi vnútornými hranami v čase, keď ešte dokončoval
+prvú. Aj od otvorenia druhého portu v tejto konštrukcii vieme nájsť ďalšiu
+päťvrcholovú postupnosť s dvomi hranami. Týmto spôsobom sa môžu rôzne
+prekrývať, nikdy však nemôže byť postupnosť s väčším počtom vnútorných
+portových hrán ako prefix postupnosti P rovnakej dĺžky.

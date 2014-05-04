@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  4 MAY 2014 14:59
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  4 MAY 2014 15:33
 entering extended mode
  %&-line parsing enabled.
 **smirak
@@ -873,7 +873,7 @@ mr/m/it/12 .
 
 Overfull \hbox (1.38971pt too wide) in paragraph at lines 102--105
 []\T1/lmr/m/n/12 Vo v²eobec-nosti mnoºinu grafov izomorfných s grafom H budeme 
-zna£it $\OT1/lmr/m/n/12 [\OML/lmm/m/it/12 H\OT1/lmr/m/n/12 ]$\T1/lmr/m/n/12 . N
+zna£i´ $\OT1/lmr/m/n/12 [\OML/lmm/m/it/12 H\OT1/lmr/m/n/12 ]$\T1/lmr/m/n/12 . N
 iekedy
  []
 
@@ -915,7 +915,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+l'
 
 Overfull \hbox (16.83899pt too wide) in paragraph at lines 106--117
 []\T1/lmr/m/n/12 Autori skú-majú dis-tribuo-vanú verziu kla-sick-ého prob-lému 
-pre-h©ada-nia garfu s návratom
+pre-h©ada-nia grafu s návratom
  []
 
 
@@ -953,7 +953,7 @@ vorí s novovzniknutou
 
 [17]
 Overfull \hbox (2.31253pt too wide) in paragraph at lines 254--260
-[]\T1/lmr/m/n/12 Pri kaºdej náv²teve môºe agent otovrením por-tov so v²etkými z
+[]\T1/lmr/m/n/12 Pri kaºdej náv²teve môºe agent otvorením por-tov so v²etkými z
 na£kami vytvori´
  []
 
@@ -998,9 +998,9 @@ ali, ºe sa dá skon²truo-
  []
 
 [23]
-Overfull \hbox (5.35562pt too wide) in paragraph at lines 116--120
-\T1/lmr/m/n/12 sme dokázali, ºe pri kaºdej kon²rukcii je pre kaºdú di-men-ziu n
-e-jaká hrana, pri kon²trukcii
+Overfull \hbox (9.92496pt too wide) in paragraph at lines 116--120
+\T1/lmr/m/n/12 sme dokázali, ºe pri kaºdej kon²trukcii je pre kaºdú di-men-ziu 
+ne-jaká hrana, pri kon²trukcii
  []
 
 
@@ -1019,7 +1019,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 
 Overfull \hbox (18.04059pt too wide) in paragraph at lines 331--334
 []\T1/lmr/m/n/12 Agent vykonáva: OP,NH,NH,NH,OP,(n-2)krát (OP,S1,NH,NH,OP),S1,N
-H,HN,OP
+H,NH,OP
  []
 
 [28]
@@ -1030,7 +1030,7 @@ om vr-cholov so stup¬om
 
 [29]
 Overfull \hbox (1.7636pt too wide) in paragraph at lines 450--458
-[]\T1/lmr/m/n/12 Vrcholy na jen-dom okraji majú jednu súrad-nicu rov-nakú a v d
+[]\T1/lmr/m/n/12 Vrcholy na jed-nom okraji majú jednu súrad-nicu rov-nakú a v d
 ruhej sa lí²ia. Kaºdému
  []
 
@@ -1122,7 +1122,7 @@ are/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on smirak.pdf (64 pages, 576075 bytes).
+Output written on smirak.pdf (64 pages, 575932 bytes).
 PDF statistics:
  748 PDF objects out of 1000 (max. 8388607)
  215 named destinations out of 1000 (max. 500000)

@@ -19,7 +19,7 @@ V konečnom dôsledku však možno rozlíšiť dva hlavné prístupy ku grafový
 gramatikám - algoritmický (spájací) a algebraický (lepiaci).
 Pre ilustráciu uvedieme niekoľko tried a skúmaných problémov.
 Grafové gramatiky sa týkajú našej práce len okrajovo, v prípade hlbšieho 
-záujmu oporúčame čitateľovi publikáciu Handbook of Graph Grammars \cite{GG} ,
+záujmu odporúčame čitateľovi publikáciu Handbook of Graph Grammars \cite{GG} ,
 z ktorej sme aj my čerpali.
 
 \section{Všeobecné pojmy}
@@ -46,7 +46,7 @@ viacero prirodzených spôsobov definovania mechanizmu $E$ a obmedzení na
 NLC (Node Label Controlled) grafové gramatiky sú jedným 
 z najjednoduchších mechanizmov prepisovania grafov. Pravidlá NLC gramatiky 
 sú tvaru $X \to D$, kde X je značka (label) prepisovaného vrchola a D je 
-dcérsky graf. Pre použitie pravidie v NLC neexistujú žiadne obmedzenia, teda 
+dcérsky graf. Pre použitie pravidiel v NLC neexistujú žiadne obmedzenia, teda 
 pravidlo sa môže použiť na ľubovoľný vrchol so značkou X.
 Vkladanie je v NLC lokálne, tj. vrcholy grafu D môžu byť spojené len s tými 
 vrcholmi, s ktorými bol spojený prepísaný vrchol X.
@@ -58,10 +58,10 @@ pravidiel môžu vzniknúť rôzne grafy.
 
 \begin{defin}
 NLC grafová gramatika je 5-tica $G = (\Sigma ;\Delta ; P;C; S)$ kde
-$\Sigma  - \Delta$  je abeceda neterminálnych znaciek uzlov a
+$\Sigma  - \Delta$  je abeceda neterminálnych značiek uzlov a
  $\Delta  (\Delta  \subseteq  \Sigma )$ je abeceda
-terminálnych znaciek uzlov. P je konecná množina NLC pravidiel, C je
-binárna relácia spojení nad $\Sigma$  a S je pociatocný graf.
+terminálnych značiek uzlov. P je konečná množina NLC pravidiel, C je
+binárna relácia spojení nad $\Sigma$  a S je počiatočný graf.
 \end{defin}
 
 \begin{defin}
@@ -99,7 +99,7 @@ $(D,C) \in  GRE_{\Sigma ,\Gamma }$. Relácia spojení je
 $C \subseteq  \Sigma \times \Gamma \times \Gamma V_H \times {in,out}$.
 \end{defin}
 
-Vo všeobecnosti množinu grafov izomorfných s grafom H budeme značit
+Vo všeobecnosti množinu grafov izomorfných s grafom H budeme značiť
 $[ H ] $. Niekedy sa hovorí o H ako „konkrétnom“ grafe a o $[ H ]$ ako „abstraktnom“
 grafe.
 
@@ -168,13 +168,13 @@ prepísaná štruktúrou $R$. $R$ však musí mať, kvôli lepiacemu prístupu,
 rovnaký počet externých vrcholov ako nahrádzaná hrana typov.
 Gramatiky v tejto skupine majú konečný počet pravidiel a počiatočnú
 štruktúru. Jazyk tvoria množiny konečných štruktúr odvodených takouto
-gramatikou. Prepísanie hyperhrany je bezkontexotvé, pretože nezasahuje do
+gramatikou. Prepísanie hyperhrany je bezkontextové, pretože nezasahuje do
 okolia. Bolo dokázaných niekoľko výsledkov, ktoré majú blízko k podobným
 bezkontextovým gramatikám na reťazcoch. Ukázalo sa, že veľa zaujímavých
 problémov je pre tieto gramatiky rozhodnuteľných.
 Môžeme sa pýtať dva typy otázok: či hypergrafy generované príslušnou
 gramatikou spĺňajú vybrané vlastnosti alebo klasickú otázku príslušnosti do
-jazyka. Otázka príslušmosti je vo všeobecnosti NP-kompletná a len niektoré
+jazyka. Otázka príslušnosti je vo všeobecnosti NP-kompletná a len niektoré
 obmedzené  triedy sú polynomiálne ťažké.
 \iffalse
 /? TODO

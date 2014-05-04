@@ -66,7 +66,7 @@ vyhlásiť, či je starší, mladší alebo rovnako starý ako iný prvok. Plat�
 hrana je rovnako stará ako jej druhý port. Všeobecne prvky vzniknuté jednou
 operáciou sú rovnako staré. Pri modely s jediným agentom sú operácie
 vykonávané sekvenčne a podľa ich poradia vieme určiť aj "vek" objektov,
-ktoré ic vykonaním vzniknú.
+ktoré ich vykonaním vzniknú.
 \end{ozn}
 
 \begin{ozn}
@@ -86,7 +86,7 @@ Ako neskôr ukážeme - $"$kostrové hrany$"$ tvoria kostru grafu.
 \end{pozn}
 
 \begin{ozn}
-Medzi otovrením prvého a druhého portu portovej hrany $h$, prejde agent po slede
+Medzi otvorením prvého a druhého portu portovej hrany $h$, prejde agent po slede
 vrcholov. Najmenší cyklus z tohto uzavretého sledu obsahujúci
  hranu $h$ budeme označovať tvorivý cyklus hrany $h$. Hrany tohto cyklu bez
 hrany $h$ tvoria konštrukčnú cestu hrany $h$.
@@ -108,7 +108,7 @@ operácie, ktoré môže vykonávať - čo mu ktorá dovoľuje.
 
 Keďže je podstatou našej práce optimalizovať model na počet krokov, ktoré
 musí agent prejsť po grafe, najprv nás zaujímalo ako sa po ňom môže
-pohyboovať a kedy sa musí do vrcholu ešte vrátiť.
+pohybovať a kedy sa musí do vrcholu ešte vrátiť.
 
 \begin{lem}
 Agent počas pohybu v grafe musí ísť po hranách grafu. 
@@ -156,7 +156,7 @@ konca hrany
 sa dá
 z každého vrchola grafu dostať do inicializačného, teda podgraf, 
 tvorený hranami
-pochádzajúcimi z oprácií NH, je súvislý. 
+pochádzajúcimi z operácií NH, je súvislý. 
 Počet týchto hrán je zároveň o jeden menší ako počet
 vrcholov, teda ide o kostru.
 \end{proof}
@@ -251,8 +251,8 @@ Vrchol v grafe musí agent navštíviť minimálne $\frac{deg(v)}{|Z| * 2} $ kr�
 kde Z je množina značiek pre porty, ktorú ma agent k dispozícii.
 \end{lem}
 \begin{proof}
-Pri každej návšteve môže agent otovrením portov so všetkými značkami 
-vytvoriť nové hrany do vrcholov, v ktorých sú otovrené príslušné porty 
+Pri každej návšteve môže agent otvorením portov so všetkými značkami 
+vytvoriť nové hrany do vrcholov, v ktorých sú otvorené príslušné porty 
 a následne otvoriť toľko
 portov s navzájom rozdielnymi značkami, koľko má k dispozícii značiek
 (dvojica portov rovnakej značky v jednom vrchole by vytvorila slučku a v
@@ -270,7 +270,7 @@ konštrukcii vykoná menej krokov.
 V tejto časti sa budeme zaoberať všeobecnými výsledkami pre model, v ktorom
 má agent k dispozícii len jedinú značku pre porty a teda v grafe môže byť
 naraz otvorený len jediný port. Toto obmedzenie núti agenta konštruovať
-porotvé hrany po jednom. Nasledujúca lema hovorí, že ak sú dva vrcholy
+portové hrany po jednom. Nasledujúca lema hovorí, že ak sú dva vrcholy
 portovej hrany, ktorú ide agent konštruovať rôzne ďaleko, nikdy nie je
 horšie ísť do bližšieho z nich otvoriť prvý port.
 
@@ -302,7 +302,7 @@ Táto konštrukcia teda nie je horšia.
 
 Najmenší počet krokov, ktoré agent vykoná pri konštrukcii jednej
 portovej hrany je dĺžka najkratšej kružnice, na ktorej leží. Pre všetky
-portové hrany je to potom suma týchto kružníc. Ktpré hrany sú portové závisí
+portové hrany je to potom suma týchto kružníc. Ktoré hrany sú portové závisí
 id toho, ktoré sú kostrové. Preto v nasledujúcej leme robíme dolný odhad
 počtu krokov cez všetky kostry.
 
@@ -310,7 +310,7 @@ počtu krokov cez všetky kostry.
 Agent, ktorý má k dispozícii len jednu značku pre porty, 
 musí prejsť pri konštrukcii grafu aspoň k krokov, kde 
 $k =min_{i=1}^{y}\{\sum_{e \in G(E); e \notin G(K_{i})} j(e)-1  \}$, 
-kde K je kostra grafu G; y je počet navzájom rôznych kostier garfu G; j(e) je najmenšia kružnica v
+kde K je kostra grafu G; y je počet navzájom rôznych kostier grafu G; j(e) je najmenšia kružnica v
 grafe obsahujúca hranu e a $K_{i}$ je i-ta kostra, pričom $K_{i} \equiv K_{j}
 \iff i \equiv j$
 \end{lem}
@@ -353,14 +353,14 @@ tvoriaci cyklus.
 \end{lem}
 \begin{proof}
 Napríklad cyklus, kde do každého vrchola pridáme hranu do vrchola stupňa
-jedna. Je zrejmé, že pri konšrukcii týchto vrcholov stupňa jedna, agent
-urébí operácie NH a S1, lebo nemôže ostať vo vrchole ak ešte nedokončil graf
+jedna. Je zrejmé, že pri konštrukcii týchto vrcholov stupňa jedna, agent
+urobí operácie NH a S1, lebo nemôže ostať vo vrchole ak ešte nedokončil graf
 a iná hrana z neho nevedie. Tiež je zrejmé, že takýto graf má práve jednu
 portovú hranu a to ľubovoľnú hranu cyklu. Pri jej konštrukcii prejde agent
 cez všetky vrcholy v cykle a ak by neskonštruoval príslušný vrchol stupňa
 jedna incidentný s vrcholom cyklu, pri jeho prvej návšteve, musel by sa doň
-vrátiť a teda vykonať viac krokov. Agent treda otvorí port a skonštruuje
-vrcholy cyklu, pričom v každom skonštuuje aj príslušný vrchol stupňa jedna s
+vrátiť a teda vykonať viac krokov. Agent treba otvorí port a skonštruuje
+vrcholy cyklu, pričom v každom skonštruuje aj príslušný vrchol stupňa jedna s
 ktorým je tento incidentný.
 \end{proof}
 
@@ -375,8 +375,8 @@ do tohto vrchola nemusel vracať neskôr.
 \subsection{Dve a viac značiek pre porty}
 Ušetriť (agent vykoná menej krokov) oproti situácii, 
 keď agent môže použiť len jednu značku pre porty
-možno v prípade že má k dispozícii viaceron značiek pre porty napríklad vtedy,
- ak konštruovaný graf obsahuje cykly, kotré majú spoločné hrany.
+možno v prípade že má k dispozícii viacero značiek pre porty napríklad vtedy,
+ ak konštruovaný graf obsahuje cykly, ktoré majú spoločné hrany.
 Ak agent pri konštrukcii niektorej hrany, 
 prechádza vrcholom s ktorým bude incidentná niektorá nasledujúca
 portová
@@ -396,7 +396,7 @@ otvorených viacero porto, sa do celkového súčtu krokov konštrukcie grafu
 počíta len raz.
 Ako sme ukázali na konci predošlej časti, nie vždy spôsobí snaha skonštruovať 
 jednu hranu na čo
-nejmenej krokov zlepšenie celkového počtu krokov agenta počas konštrukcie.
+najmenej krokov zlepšenie celkového počtu krokov agenta počas konštrukcie.
 
-Výhodnosť tej-ktorej konštrukcie pre daný graf závisý od konkrétneho grafu.
+Výhodnosť tej-ktorej konštrukcie pre daný graf závisí od konkrétneho grafu.
 Preto sme sa vo výskume ďalej venovali už konkrétny triedam grafov.

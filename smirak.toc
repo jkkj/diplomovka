@@ -1,39 +1,40 @@
 \select@language {slovak}
-\contentsline {chapter}{\numberline {1}\IeC {\'U}vod}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Z\IeC {\'a}kladn\IeC {\'e} pojmy a def\IeC {\'\i }n\IeC {\'\i }cie}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Graf}{3}{section.2.1}
-\contentsline {section}{\numberline {2.2}Vybran\IeC {\'e} triedy grafov}{5}{section.2.2}
-\contentsline {chapter}{\numberline {3}Grafov\IeC {\'e} gramatiky}{6}{chapter.3}
-\contentsline {section}{\numberline {3.1}\IeC {\'U}vod}{6}{section.3.1}
-\contentsline {section}{\numberline {3.2}Hlavn\IeC {\'e} pr\IeC {\'\i }stupy}{6}{section.3.2}
-\contentsline {section}{\numberline {3.3}V\IeC {\v s}eobecn\IeC {\'e} pojmy}{6}{section.3.3}
-\contentsline {section}{\numberline {3.4}NLC gramatiky}{7}{section.3.4}
-\contentsline {section}{\numberline {3.5}NCE gramatiky}{7}{section.3.5}
-\contentsline {section}{\numberline {3.6}Rozli\IeC {\v c}n\IeC {\'e} zn\IeC {\'a}me v\IeC {\'y}sledky}{8}{section.3.6}
-\contentsline {section}{\numberline {3.7}Grafov\IeC {\'e} gramatiky s nahr\IeC {\'a}dzan\IeC {\'\i }m hyperhr\IeC {\'a}n}{9}{section.3.7}
-\contentsline {chapter}{\numberline {4}Preh\IeC {\v l}ad\IeC {\'a}vanie grafu}{10}{chapter.4}
-\contentsline {section}{\numberline {4.1}\IeC {\'U}vod}{10}{section.4.1}
-\contentsline {section}{\numberline {4.2}Preh\IeC {\v l}ad\IeC {\'a}vanie jedn\IeC {\'y}m agentom}{11}{section.4.2}
-\contentsline {section}{\numberline {4.3}Distribuovan\IeC {\'e} preh\IeC {\v l}ad\IeC {\'a}vanie}{12}{section.4.3}
-\contentsline {section}{\numberline {4.4}Preh\IeC {\v l}ad\IeC {\'a}vanie s radou}{12}{section.4.4}
-\contentsline {chapter}{\numberline {5}Model a v\IeC {\v s}eobecn\IeC {\'e} v\IeC {\'y}sledky o kon\IeC {\v s}trukcii}{14}{chapter.5}
-\contentsline {section}{\numberline {5.1}Defin\IeC {\'\i }cia}{14}{section.5.1}
-\contentsline {section}{\numberline {5.2}Z\IeC {\'a}kladn\IeC {\'e} vlastnosti}{16}{section.5.2}
-\contentsline {section}{\numberline {5.3}Jedna zna\IeC {\v c}ka pre porty}{18}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Dve a viac zna\IeC {\v c}iek pre porty}{20}{subsection.5.3.1}
-\contentsline {chapter}{\numberline {6}Kon\IeC {\v s}trukcia mrie\IeC {\v z}ky}{22}{chapter.6}
-\contentsline {section}{\numberline {6.1}Jedna zna\IeC {\v c}ka pre porty}{23}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}\IeC {\'U}vahy o kon\IeC {\v s}trukcii mrie\IeC {\v z}ky s jednou zna\IeC {\v c}kou pre porty}{28}{subsection.6.1.1}
-\contentsline {section}{\numberline {6.2}Viac zna\IeC {\v c}iek pre porty}{33}{section.6.2}
-\contentsline {chapter}{\numberline {7}N-rozmern\IeC {\'a} kocka}{35}{chapter.7}
-\contentsline {section}{\numberline {7.1}V\IeC {\v s}eobecn\IeC {\'e} v\IeC {\'y}sledky}{36}{section.7.1}
-\contentsline {section}{\numberline {7.2}2-rozmern\IeC {\'a} kocka}{46}{section.7.2}
-\contentsline {section}{\numberline {7.3}3-rozmern\IeC {\'a} kocka}{46}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}1 zna\IeC {\v c}ka}{46}{subsection.7.3.1}
-\contentsline {subsection}{\numberline {7.3.2}2 zna\IeC {\v c}ky}{46}{subsection.7.3.2}
-\contentsline {subsection}{\numberline {7.3.3}3 zna\IeC {\v c}ky}{47}{subsection.7.3.3}
-\contentsline {subsection}{\numberline {7.3.4}4 zna\IeC {\v c}ky}{47}{subsection.7.3.4}
-\contentsline {section}{\numberline {7.4}4-rozmern\IeC {\'a} kocka}{48}{section.7.4}
-\contentsline {paragraph}{1 zna\IeC {\v c}ka}{48}{section*.5}
-\contentsline {section}{\numberline {7.5}Kon\IeC {\v s}trukcie kociek vy\IeC {\v s}\IeC {\v s}\IeC {\'\i }ch rozmerov}{48}{section.7.5}
-\contentsline {chapter}{Literat\IeC {\'u}ra}{50}{section*.6}
+\contentsline {chapter}{\IeC {\'U}vod}{1}{section*.4}
+\contentsline {chapter}{\numberline {1}Z\IeC {\'a}kladn\IeC {\'e} pojmy a def\IeC {\'\i }n\IeC {\'\i }cie}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Graf}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Vybran\IeC {\'e} triedy grafov}{5}{section.1.2}
+\contentsline {chapter}{\numberline {2}Grafov\IeC {\'e} gramatiky}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}\IeC {\'U}vod}{6}{section.2.1}
+\contentsline {section}{\numberline {2.2}Hlavn\IeC {\'e} pr\IeC {\'\i }stupy}{6}{section.2.2}
+\contentsline {section}{\numberline {2.3}V\IeC {\v s}eobecn\IeC {\'e} pojmy}{6}{section.2.3}
+\contentsline {section}{\numberline {2.4}NLC gramatiky}{7}{section.2.4}
+\contentsline {section}{\numberline {2.5}NCE gramatiky}{7}{section.2.5}
+\contentsline {section}{\numberline {2.6}Rozli\IeC {\v c}n\IeC {\'e} zn\IeC {\'a}me v\IeC {\'y}sledky}{8}{section.2.6}
+\contentsline {section}{\numberline {2.7}Grafov\IeC {\'e} gramatiky s nahr\IeC {\'a}dzan\IeC {\'\i }m hyperhr\IeC {\'a}n}{9}{section.2.7}
+\contentsline {chapter}{\numberline {3}Preh\IeC {\v l}ad\IeC {\'a}vanie grafu}{10}{chapter.3}
+\contentsline {section}{\numberline {3.1}\IeC {\'U}vod}{10}{section.3.1}
+\contentsline {section}{\numberline {3.2}Preh\IeC {\v l}ad\IeC {\'a}vanie jedn\IeC {\'y}m agentom}{11}{section.3.2}
+\contentsline {section}{\numberline {3.3}Distribuovan\IeC {\'e} preh\IeC {\v l}ad\IeC {\'a}vanie}{12}{section.3.3}
+\contentsline {section}{\numberline {3.4}Preh\IeC {\v l}ad\IeC {\'a}vanie s radou}{12}{section.3.4}
+\contentsline {chapter}{\numberline {4}Model a v\IeC {\v s}eobecn\IeC {\'e} v\IeC {\'y}sledky o kon\IeC {\v s}trukcii}{14}{chapter.4}
+\contentsline {section}{\numberline {4.1}Defin\IeC {\'\i }cia}{14}{section.4.1}
+\contentsline {section}{\numberline {4.2}Z\IeC {\'a}kladn\IeC {\'e} vlastnosti}{16}{section.4.2}
+\contentsline {section}{\numberline {4.3}Jedna zna\IeC {\v c}ka pre porty}{18}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Dve a viac zna\IeC {\v c}iek pre porty}{20}{subsection.4.3.1}
+\contentsline {chapter}{\numberline {5}Kon\IeC {\v s}trukcia mrie\IeC {\v z}ky}{22}{chapter.5}
+\contentsline {section}{\numberline {5.1}Jedna zna\IeC {\v c}ka pre porty}{23}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}\IeC {\'U}vahy o kon\IeC {\v s}trukcii mrie\IeC {\v z}ky s jednou zna\IeC {\v c}kou pre porty}{28}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Viac zna\IeC {\v c}iek pre porty}{33}{section.5.2}
+\contentsline {chapter}{\numberline {6}N-rozmern\IeC {\'a} kocka}{35}{chapter.6}
+\contentsline {section}{\numberline {6.1}V\IeC {\v s}eobecn\IeC {\'e} v\IeC {\'y}sledky}{36}{section.6.1}
+\contentsline {section}{\numberline {6.2}2-rozmern\IeC {\'a} kocka}{46}{section.6.2}
+\contentsline {section}{\numberline {6.3}3-rozmern\IeC {\'a} kocka}{46}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}1 zna\IeC {\v c}ka}{46}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}2 zna\IeC {\v c}ky}{46}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}3 zna\IeC {\v c}ky}{47}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}4 zna\IeC {\v c}ky}{47}{subsection.6.3.4}
+\contentsline {section}{\numberline {6.4}4-rozmern\IeC {\'a} kocka}{48}{section.6.4}
+\contentsline {paragraph}{1 zna\IeC {\v c}ka}{48}{section*.7}
+\contentsline {section}{\numberline {6.5}Kon\IeC {\v s}trukcie kociek vy\IeC {\v s}\IeC {\v s}\IeC {\'\i }ch rozmerov}{48}{section.6.5}
+\contentsline {chapter}{Z\IeC {\'a}ver}{49}{section*.8}
+\contentsline {chapter}{Literat\IeC {\'u}ra}{52}{section*.10}

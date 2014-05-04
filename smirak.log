@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  4 MAY 2014 00:23
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  4 MAY 2014 14:52
 entering extended mode
  %&-line parsing enabled.
 **smirak
@@ -603,7 +603,11 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-) (./smirak.aux)
+) (./smirak.aux
+
+LaTeX Warning: Label `chap:intro' multiply defined.
+
+)
 \openout1 = `smirak.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
@@ -623,8 +627,7 @@ LaTeX Font Info:    ... okay on input line 81.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
 LaTeX Font Info:    ... okay on input line 81.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 81.
-
-(/usr/share/texmf/tex/latex/lm/t1lmr.fd
+ (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
@@ -745,7 +748,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<zadanie.pdf, id=165, page=1, 597.23125pt x 845.1575pt>
+<zadanie.pdf, id=169, page=1, 597.23125pt x 845.1575pt>
 File: zadanie.pdf Graphic file (type pdf)
 
 <use zadanie.pdf, page 1>
@@ -774,7 +777,23 @@ Underfull \hbox (badness 1348) in paragraph at lines 47--231
 anony-mous graph, hy-per-cube,
  []
 
-[6] (./predhovor.tex) [7] (./smirak.toc [8
+[6] (./predhovor.tex
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 13.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 13.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 13.
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--59
+
+ []
+
+)
+Overfull \vbox (175.60172pt too high) has occurred while \output is active []
+
+
+[7] (./smirak.toc [8
 
 ])
 \tf@toc=\write4
@@ -786,8 +805,7 @@ anony-mous graph, hy-per-cube,
 
  [10
 
-]
-(./smirak.lot)
+] (./smirak.lot)
 \tf@lot=\write6
 \openout6 = `smirak.lot'.
 
@@ -800,22 +818,14 @@ anony-mous graph, hy-per-cube,
 \c@pozn=\count127
 \c@ozn=\count128
  (./uvod.tex
-Kapitola 1.
 [1
 
 
 ]) (./definicie.tex [2]
-Kapitola 2.
+Kapitola 1.
 [3
 
 ]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 51.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 51.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 51.
-
 Overfull \hbox (4.13136pt too wide) in paragraph at lines 92--94
 []\T1/lmr/m/it/12 Indukovaný pod-graf je taký graf, ktorého mnoºina hrán ob-sah
 uje v²etky hrany, ktorých
@@ -829,7 +839,7 @@ mm/m/it/12 n$ \T1/lmr/m/it/12 £inite©ov
  []
 
 ) (./teoruvod.tex [5]
-Kapitola 3.
+Kapitola 2.
 [6
 
 ]
@@ -876,7 +886,7 @@ pu v grafových gra-matikách.
  []
 
 ) (./prehladavanie.tex [9]
-Kapitola 4.
+Kapitola 3.
 
 Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                not defined in PD1 encoding,
@@ -914,7 +924,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                removing `\textasciicaron' on input line 122.
 
 [12]) (./zac1.tex [13]
-Kapitola 5.
+Kapitola 4.
 [14
 
 ] [15]
@@ -953,7 +963,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                removing `\textasciicaron' on input line 375.
 
 [20]) (./mriezka.tex [21]
-Kapitola 6.
+Kapitola 5.
 
 Overfull \hbox (5.32848pt too wide) in paragraph at lines 20--29
 [][]\T1/lmr/bx/n/12 Ozna£enie 9. []\T1/lmr/m/it/12 Po-jem di-men-zie v pro-dukt
@@ -1025,7 +1035,7 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                removing `\textasciicaron' on input line 613.
 
 [33]) (./lemy1.tex [34]
-Kapitola 7.
+Kapitola 6.
 
 Overfull \hbox (1.99701pt too wide) in paragraph at lines 13--26
 []\T1/lmr/m/n/12 Susedia vr-chola sa navzájom lí²ia v práve dvoch súrad-ni-ci-a
@@ -1072,20 +1082,25 @@ Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 735.
 
-[47] [48]) [49] (./smirak.bbl) [50
+[47] [48]) (./zaver.tex [49] [50
+
+]) [51] (./smirak.bbl) [52
 
 
 ] (./smirak.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 9433 strings out of 494936
- 135164 string characters out of 1181020
+ 9448 strings out of 494936
+ 135315 string characters out of 1181020
  250391 words of memory out of 3000000
- 12282 multiletter control sequences out of 15000+50000
- 77884 words of font info for 63 fonts, out of 3000000 for 9000
+ 12286 multiletter control sequences out of 15000+50000
+ 86416 words of font info for 65 fonts, out of 3000000 for 9000
  24 hyphenation exceptions out of 8191
  38i,16n,58p,247b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/en
@@ -1099,11 +1114,12 @@ nts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb
 1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/sh
 are/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
-0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on smirak.pdf (61 pages, 566803 bytes).
+/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/
+type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
+Output written on smirak.pdf (63 pages, 589098 bytes).
 PDF statistics:
- 725 PDF objects out of 1000 (max. 8388607)
- 207 named destinations out of 1000 (max. 500000)
- 312 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 751 PDF objects out of 1000 (max. 8388607)
+ 213 named destinations out of 1000 (max. 500000)
+ 320 words of extra memory for PDF output out of 10000 (max. 10000000)
 

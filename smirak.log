@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  4 MAY 2014 14:52
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdfcslatex 2013.10.28)  4 MAY 2014 14:59
 entering extended mode
  %&-line parsing enabled.
 **smirak
@@ -607,6 +607,9 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 
 LaTeX Warning: Label `chap:intro' multiply defined.
 
+
+LaTeX Warning: Label `chap:intro' multiply defined.
+
 )
 \openout1 = `smirak.aux'.
 
@@ -767,49 +770,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 45--215
  []
 
 [4] [5] (./abstractEN.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 47--231
+Underfull \hbox (badness 10000) in paragraph at lines 25--231
 
  []
 
 
-Underfull \hbox (badness 1348) in paragraph at lines 47--231
+Underfull \hbox (badness 1348) in paragraph at lines 25--231
 \T1/lmr/bx/n/12 Key words: \T1/lmr/m/n/12 graph con-struc-tions, agent, robot, 
 anony-mous graph, hy-per-cube,
  []
 
 [6] (./predhovor.tex
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 13.
+(Font)              <10> on input line 16.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 13.
+(Font)              <7> on input line 16.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 13.
+(Font)              <5> on input line 16.
+ [7
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--59
+]
+Underfull \hbox (badness 10000) in paragraph at lines 49--64
 
  []
 
-)
-Overfull \vbox (175.60172pt too high) has occurred while \output is active []
 
+Underfull \hbox (badness 10000) in paragraph at lines 49--64
 
-[7] (./smirak.toc [8
+ []
+
+) [8] (./smirak.toc [9
 
 ])
 \tf@toc=\write4
 \openout4 = `smirak.toc'.
 
- [9] (./smirak.lof)
+ [10] (./smirak.lof)
 \tf@lof=\write5
 \openout5 = `smirak.lof'.
 
- [10
+ [11
 
 ] (./smirak.lot)
 \tf@lot=\write6
 \openout6 = `smirak.lot'.
 
- [11
+ [12
 
 ]
 \c@lem=\count124
@@ -817,8 +823,8 @@ Overfull \vbox (175.60172pt too high) has occurred while \output is active []
 \c@veta=\count126
 \c@pozn=\count127
 \c@ozn=\count128
- (./uvod.tex
-[1
+
+(./uvod.tex [1
 
 
 ]) (./definicie.tex [2]
@@ -1096,11 +1102,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9448 strings out of 494936
- 135315 string characters out of 1181020
+ 9446 strings out of 494936
+ 135292 string characters out of 1181020
  250391 words of memory out of 3000000
- 12286 multiletter control sequences out of 15000+50000
- 86416 words of font info for 65 fonts, out of 3000000 for 9000
+ 12284 multiletter control sequences out of 15000+50000
+ 77884 words of font info for 63 fonts, out of 3000000 for 9000
  24 hyphenation exceptions out of 8191
  38i,16n,58p,247b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/en
@@ -1114,12 +1120,11 @@ nts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb
 1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/sh
 are/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on smirak.pdf (63 pages, 589098 bytes).
+/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy1
+0.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
+Output written on smirak.pdf (64 pages, 576075 bytes).
 PDF statistics:
- 751 PDF objects out of 1000 (max. 8388607)
- 213 named destinations out of 1000 (max. 500000)
+ 748 PDF objects out of 1000 (max. 8388607)
+ 215 named destinations out of 1000 (max. 500000)
  320 words of extra memory for PDF output out of 10000 (max. 10000000)
 

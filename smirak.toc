@@ -1,5 +1,5 @@
 \select@language {slovak}
-\contentsline {chapter}{\IeC {\'U}vod}{1}{section*.4}
+\contentsline {chapter}{\IeC {\'U}vod}{1}{section*.5}
 \contentsline {chapter}{\numberline {1}Z\IeC {\'a}kladn\IeC {\'e} pojmy a def\IeC {\'\i }n\IeC {\'\i }cie}{3}{chapter.1}
 \contentsline {section}{\numberline {1.1}Graf}{3}{section.1.1}
 \contentsline {section}{\numberline {1.2}Vybran\IeC {\'e} triedy grafov}{5}{section.1.2}
@@ -34,7 +34,7 @@
 \contentsline {subsection}{\numberline {6.3.3}3 zna\IeC {\v c}ky}{47}{subsection.6.3.3}
 \contentsline {subsection}{\numberline {6.3.4}4 zna\IeC {\v c}ky}{47}{subsection.6.3.4}
 \contentsline {section}{\numberline {6.4}4-rozmern\IeC {\'a} kocka}{48}{section.6.4}
-\contentsline {paragraph}{1 zna\IeC {\v c}ka}{48}{section*.7}
+\contentsline {paragraph}{1 zna\IeC {\v c}ka}{48}{section*.8}
 \contentsline {section}{\numberline {6.5}Kon\IeC {\v s}trukcie kociek vy\IeC {\v s}\IeC {\v s}\IeC {\'\i }ch rozmerov}{48}{section.6.5}
-\contentsline {chapter}{Z\IeC {\'a}ver}{49}{section*.8}
-\contentsline {chapter}{Literat\IeC {\'u}ra}{52}{section*.10}
+\contentsline {chapter}{Z\IeC {\'a}ver}{49}{section*.9}
+\contentsline {chapter}{Literat\IeC {\'u}ra}{52}{section*.11}
